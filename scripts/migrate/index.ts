@@ -13,9 +13,17 @@ import {
   workSchema,
 } from "../../src/lib/schemas";
 import type { ProtoWork } from "./authorities";
+import { shouldRefuse } from "./guard";
 import { migrate } from "./works";
 
-const [protoDir = "prototype", contentDir = "content"] = process.argv.slice(2);
+const argv = process.argv.slice(2);
+const [protoDir = "prototype", contentDir = "content"] = argv.filter(a => !a.startsWith("--"));
+
+const refusal = shouldRefuse(contentDir, argv);
+if (refusal) {
+  console.error(refusal);
+  process.exit(1);
+}
 const REPORT_PATH = "tasks/migration-report.md";
 
 const SCHEMAS: Record<string, z.ZodType> = {
@@ -66,14 +74,17 @@ for (const e of validateCatalogue({
   problems.push(`${e.file}: ${e.path} : ${e.message}`);
 }
 
-// Regenerate from scratch: stale generated files must not survive a rerun. books.yaml is never touched.
-for (const dir of Object.keys(SCHEMAS)) {
-  const target = join(contentDir, dir);
-  mkdirSync(target, { recursive: true });
-  for (const f of readdirSync(target)) if (f.endsWith(".yaml")) rmSync(join(target, f));
-}
-for (const [path, obj] of Object.entries(files)) {
-  writeFileSync(join(contentDir, path), dump(obj, { lineWidth: -1, noRefs: true }));
+// Validate first, write after: a failed validation leaves content/ untouched (only the report is written).
+if (problems.length === 0) {
+  // Regenerate from scratch: stale generated files must not survive a rerun. books.yaml is never touched.
+  for (const dir of Object.keys(SCHEMAS)) {
+    const target = join(contentDir, dir);
+    mkdirSync(target, { recursive: true });
+    for (const f of readdirSync(target)) if (f.endsWith(".yaml")) rmSync(join(target, f));
+  }
+  for (const [path, obj] of Object.entries(files)) {
+    writeFileSync(join(contentDir, path), dump(obj, { lineWidth: -1, noRefs: true }));
+  }
 }
 
 const counts = Object.keys(SCHEMAS).map(d => `${d}: ${Object.keys(files).filter(p => p.startsWith(`${d}/`)).length}`);
