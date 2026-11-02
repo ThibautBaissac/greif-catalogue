@@ -5,6 +5,13 @@
 [build.environment]
   NODE_VERSION = "22"
 
+# Temporary: remove this block when the catalogue is ready for search indexing.
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
 [context.deploy-preview.environment]
   CATALOGUE_EDITORIAL = "1"
 
