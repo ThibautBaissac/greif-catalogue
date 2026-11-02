@@ -1,0 +1,145 @@
+id: bomben-auf-engelland-1976
+th: '75'
+book: 2
+title: Bomben auf Engelland
+subtitle: Air de concert
+opus: '71'
+scoring: Voix de femme, saxophone alto en *mi* bémol et piano
+categories:
+- vocal-ensemble
+movements:
+- bars: 97
+  text_incipit: Wir fühlen in Horsten
+text:
+  credit: Wilhelm Stöppler
+  authors:
+  - name: Wilhelm Stöppler
+    role: author
+composition:
+  text: '1976'
+  from: '1976'
+dedication:
+  text: Pour ceux de mon peuple, morts assassinés pendant la dernière guerre
+sources:
+  status: located
+  siglum: F-Pbmgf
+  items:
+  - text: '1\) Ms. autographe à l''encre noire avec ajouts au crayon et à l''encre rouge et bleue, paginé
+      : 1-14 ; X f., 14 pages de musique, papier filigrané JD, 270 x 350 à 22 portées ; nombreux passages
+      biffés et raturés, avec indications de tempos, de nuances et de phrasé, complet. Page de titre :
+      « Bomben auf Engelland | Air de concert | pour voix, saxophone alto et piano | Pour ceux de mon
+      peuple morts | assassinés pendant la dernière | guerre. | Olivier Greif. | 74-76 | Range [EXTRAIT
+      FINAL] | Duration : circa 8'' ».'
+  - text: '2\) Partie de saxophone : ms. autographe à l''encre noire avec ajouts au crayon, paginé : 1-5
+      ; 218 x 303, 16 portées, 5 pages de musique, avec indications de tempo, de nuances et de phrasé,
+      complet. Page de titre : « Saxophone | Bomben auf Engelland | Air de concert | pour voix, saxophone
+      alto | et piano. | [signé] Olivier Greif. | 74/76 ». Signature de l''auteur à la verticale de la
+      barre de mesure finale, dernière page.'
+  papers:
+  - filigrané JD
+  features:
+  - autograph
+remarks:
+- Révision de l'œuvre de 1974 en 1976 avec notamment l'ajout d'une partie de saxophone alto.
+editions:
+- text: Symétrie, 2006, M-2318-0199-6
+  publisher: Symétrie
+  year: 2006
+premiere:
+- date: '1976-12-13'
+  place: Paris, Théâtre Essaïon
+  city: Paris
+  performers:
+  - name: Nell Froger
+    role: voix
+  - name: Ryo Noda
+    role: saxophone
+  - name: Olivier Greif
+    role: piano
+  text: Paris, Théâtre Essaïon, 13 décembre 1976 par Nell Froger (voix), Ryo Noda (saxophone) et l'auteur
+    (piano)
+performances:
+- date: '1977-10-10'
+  place: Paris, Théâtre 13
+  city: Paris
+  performers:
+  - name: Nell Froger
+    role: voix
+  - name: Ryo Noda
+    role: saxophone
+  - name: Olivier Greif
+    role: piano
+  text: Paris, Théâtre 13, 10 octobre 1977 par les mêmes interprètes
+- date: '1978-02-20'
+  place: 'France Culture, « Un musicien français : Olivier Greif » par Gérard Auffray'
+  city: Radio (France Culture)
+  performers:
+  - name: Nell Froger
+    role: voix
+  - name: Ryo Noda
+    role: saxophone
+  - name: Olivier Greif
+    role: piano
+  text: 'France Culture, « Un musicien français : Olivier Greif » par Gérard Auffray, 20 février 1978
+    par les mêmes interprètes'
+- date: '1980-03-18'
+  place: Nanterre, Foyer Maurice Ravel
+  city: Nanterre
+  performers:
+  - name: Nell Froger
+    role: voix
+  - name: Ryo Noda
+    role: saxophone
+  - name: Olivier Greif
+    role: piano
+  text: Nanterre, Foyer Maurice Ravel, 18 mars 1980 par les mêmes interprètes
+- date: '1982-08-07'
+  place: Landerrouat (Gironde), église Saint Jean-Baptiste
+  city: Landerrouat
+  performers:
+  - name: Nell Froger
+    role: voix
+  - name: Jean Baillon
+    role: saxophone
+  - name: Olivier Greif
+    role: piano
+  text: Landerrouat (Gironde), église Saint Jean-Baptiste, 7 août 1982 par Nell Froger (voix), Jean Baillon
+    (saxophone) et l'auteur (piano)
+- date: '2005-05-13'
+  place: Vincennes, Conservatoire municipal
+  city: Vincennes
+  performers:
+  - name: Doris Lamprecht
+    role: voix
+  - name: Claude Delangle
+    role: saxophone
+  - name: Jacques Castérède
+    role: piano
+  text: Vincennes, Conservatoire municipal, 13 mai 2005 par Doris Lamprecht (voix), Claude Delangle (saxophone)
+    et Jacques Castérède (piano)
+duration: 8'
+documents:
+- '« Cette œuvre, écrite d''abord pour voix et piano en 1974, fut remaniée en 1976 et augmentée d''une
+  partie de saxophone alto. Le texte utilisé est celui d''une chanson qu''entonnaient les pilotes de la
+  Luftwaffe avant de bombarder l''Angleterre. Le cynisme terrible du texte est tout entier contenu dans
+  le jeu de mots du titre [*Bomben auf England* : Bombes sur l''Angleterre, et *Bomben auf Engelland*
+  : Bombes sur le pays des anges]. L''œuvre est écrite en hommage à la mémoire de ceux du peuple juif
+  qui moururent assassinés par les nazis lors de la dernière guerre. Il s''agit d''une création. » Olivier
+  Greif, notice de programme du concert du 13 déc. 1976 au théâtre Essaïon'
+- « *Bomben* [...] Le texte d'un chant de guerre entonné par les pilotes de la Luftwaffe au moment de
+  bombarder la Grande-Bretagne, traité comme un Air de concert – imprégné d'une ambiance de cabaret –,
+  comme pour en accentuer l'horreur … » Note laissée à l'attention de Marcel Landowski accompagné de l'enregistrement
+  de l'œuvre sur cassette, CdB 19 mai 1993
+bibliography:
+- ref: François-Sappey & Nectoux (2013)
+  pages: 70, 76, 167, 177, 284, 293-294, 310, 319
+discography:
+- text: '*Le Rêve du monde* (2010)'
+  title: Le Rêve du monde
+  year: 2010
+related:
+- id: bomben-auf-engelland
+  relation: revision:inverse
+editorial_notes:
+- Ajouter ?
+- Compléter les valeurs « X » (feuillets, pages, mesures)
