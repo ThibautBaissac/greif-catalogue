@@ -12,6 +12,7 @@ import {
   roleSchema,
   workSchema,
 } from "./lib/schemas";
+import { uiSchema } from "./lib/ui-schema";
 
 const yamlDir = <S extends z.ZodType>(dir: string, schema: S) =>
   defineCollection({ loader: glob({ pattern: "*.yaml", base: `./content/${dir}` }), schema });
@@ -29,6 +30,7 @@ export const collections = {
     }),
     schema: bookSchema.extend({ id: z.string() }),
   }),
+  ui: yamlDir("ui", uiSchema),
   pages: defineCollection({
     loader: glob({ pattern: "**/*.mdoc", base: "./content/pages" }),
     schema: z.object({ title: z.string() }),

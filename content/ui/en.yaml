@@ -1,0 +1,228 @@
+site: Olivier Greif
+siteSub: Thematic Catalogue of Works
+skipLink: Skip to content
+mainNav: Main navigation
+nav:
+  catalogue: Catalogue
+  indexes: Indexes
+  journal: Journal
+  search: Search
+  about: About
+otherLang: Français
+otherLangCode: FR
+footerStatus: Working version
+heroEyebrow: Thematic and critical catalogue
+stats:
+  entries: entries
+  located: located manuscripts
+  performances: performances
+  journal: journal extracts
+book: Book
+books: Books
+work: work
+works: works
+worksCount:
+  one: '{n} work'
+  other: '{n} works'
+th: Th
+opus: op.
+noOpus: without opus
+bars: bars
+barsUnknown: bars ?
+inPreparation: In preparation
+partial: in progress
+f:
+  scoring: Scoring
+  composition: Composition
+  duration: Duration
+  text: Text
+  dedication: Dedication
+  sources: Manuscript source
+  audio: Audio source
+  remarks: Remarks
+  intertextual: Intertextual annotations
+  editions: Edition
+  unpublished: Unpublished
+  premiere: First performance
+  premiereRec: First recording
+  performances: Performances
+  journal: Journal
+  documents: Documents
+  bibliography: Bibliography
+  discography: Discography
+  videography: Videography
+  related: Related works
+  altTitles: Other titles
+  movements: Incipits
+  cite: Cite this entry
+  editorial: Editorial notes
+  siglum: Collection
+  performers: Performers
+  place: Place
+  date: Date
+entrySections: Entry sections
+premiereTag: premiere
+pageIndex: Page index
+worksPerYear: Works per year
+unpublishedUncertain: Unpublished (to be checked)
+srcStatus:
+  located: Located
+  not_located: Not located
+  lost: Lost
+features:
+  autograph: autograph
+  draft: draft
+  sketch: sketch
+  fair_copy: fair copy
+  unfinished: unfinished
+  incomplete: incomplete
+relation:
+  revision: Revised version
+  revision_inverse: Earlier version
+  extract: Movement extracted and revised
+  extract_inverse: Extracted from
+  version: Other version
+  version_inverse: Other version
+  companion: Contemporary work
+  companion_inverse: Contemporary work
+  cycle: Piece intended for the cycle
+  cycle_inverse: Cycle
+  shared-material: Shared material
+  shared-material_inverse: Shared material
+  sketch: Sketch for
+  sketch_inverse: Sketch
+cat:
+  piano: Solo piano
+  two-pianos: Two pianos and piano four hands
+  voice-piano: Voice and piano
+  vocal-ensemble: Voice and ensemble
+  chamber: Chamber music
+  choral: Choir
+  orchestra: Orchestra
+  undetermined: Scoring to be determined
+roles:
+  author: author of the text
+  translator: translator
+  dedicatee: dedicatee
+  performer: performer
+personFilter:
+  all: All
+  author: Authors of texts
+  dedicatee: Dedicatees
+  performer: Performers
+months:
+  - January
+  - February
+  - March
+  - April
+  - May
+  - June
+  - July
+  - August
+  - September
+  - October
+  - November
+  - December
+unknownDate: date unknown
+unknownPlace: Place not specified
+incipitMissing: Incipit forthcoming
+frOnly: Descriptive text is given in French, the language of the sources.
+prev: Previous entry
+next: Next entry
+citeTemplate: “Th {th} — {title},” in Thematic Catalogue of the Works of Olivier Greif [online], {url} (accessed {date}).
+copy: Copy
+copied: Copied
+searchPlaceholder: Title, person, place, word from the journal…
+searchHint:
+  one: '{n} entry'
+  other: '{n} entries'
+searchNone: No entry matches.
+searchUnavailable: Search index unavailable.
+filterAll: All
+filterBook: Book
+filterCat: Scoring
+filterStatus: Status
+status:
+  published: Published
+  unpublished: Unpublished
+  lostms: Ms. not located
+sortBy: Sort
+sortTh: Th
+sortTitle: Title
+sortDate: Date
+col:
+  th: Th
+  title: Title
+  opus: Op.
+  scoring: Scoring
+  date: Composition
+  year: Year
+  work: Work
+  performers: Performers
+  place: Place
+  date2: Date
+  pages: Pages
+  count: Entries
+idx:
+  chrono:
+    title: Chronology
+    desc: Works ordered by date of composition.
+  opus:
+    title: Opus concordance
+    desc: Opus numbers from the composer's own catalogue and Th numbers.
+  titles:
+    title: Titles
+    desc: Titles, alternative titles and movement titles.
+  incipits:
+    title: Text incipits
+    desc: First lines of the vocal works.
+  persons:
+    title: People
+    desc: Authors of texts, dedicatees and performers.
+  places:
+    title: Places
+    desc: Places of first and later performances.
+  performances:
+    title: Performances
+    desc: Every documented performance, by date.
+  scoring:
+    title: Scoring
+    desc: Works by instrumental and vocal forces.
+  sources:
+    title: Manuscripts
+    desc: Collections, paper types and state of the sources.
+  editions:
+    title: Editions
+    desc: Publishers, plate numbers and unpublished works.
+  biblio:
+    title: Bibliography
+    desc: Concordance of cited pages.
+  disco:
+    title: Discography and videography
+    desc: Recordings and films.
+  journal:
+    title: Journal
+    desc: Extracts from the composer's journal and letters, in chronological order.
+  dashboard:
+    title: Editorial status
+    desc: 'Working space: missing data and editorial notes.'
+notCited: Entries with no documented first performance
+lostOrUnlocated: Sources not located or lost
+papers: Paper types
+featuresTitle: Type and state of sources
+bySiglum: By collection
+unpublishedList: Unpublished works
+forthcoming: forthcoming
+movementTitles: Movement titles
+altTitleOf: see
+entryOf: in
+seeWork: See entry
+sinceDate: Updated
+dashboardWarn: Working page, to be left out of the public site (build option --public).
+nameVariants: Name variants merged in the indexes
+unresolved: Cross-references to resolve
+completeness: Completeness
+incipitsFound: incipits
+barsKnown: bar counts
+lineBreak: line break
+unresolvedRef: Cross-reference to resolve

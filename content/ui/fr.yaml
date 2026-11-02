@@ -1,0 +1,228 @@
+site: Olivier Greif
+siteSub: Catalogue thématique des œuvres
+skipLink: Aller au contenu
+mainNav: Navigation principale
+nav:
+  catalogue: Catalogue
+  indexes: Index
+  journal: Carnet de bord
+  search: Recherche
+  about: À propos
+otherLang: English
+otherLangCode: EN
+footerStatus: Version de travail
+heroEyebrow: Catalogue thématique et critique
+stats:
+  entries: notices
+  located: manuscrits localisés
+  performances: exécutions
+  journal: extraits du carnet de bord
+book: Livre
+books: Livres
+work: œuvre
+works: œuvres
+worksCount:
+  one: '{n} œuvre'
+  other: '{n} œuvres'
+th: Th
+opus: op.
+noOpus: sans opus
+bars: mes.
+barsUnknown: mes. ?
+inPreparation: En préparation
+partial: en cours de rédaction
+f:
+  scoring: Effectif
+  composition: Composition
+  duration: Durée
+  text: Texte
+  dedication: Dédicace
+  sources: Source manuscrite
+  audio: Source sonore
+  remarks: Remarques
+  intertextual: Ajouts intertextuels
+  editions: Édition
+  unpublished: Inédit
+  premiere: Création
+  premiereRec: Création discographique
+  performances: Exécutions
+  journal: Carnet de bord
+  documents: Documents
+  bibliography: Bibliographie
+  discography: Discographie
+  videography: Vidéographie
+  related: Œuvres liées
+  altTitles: Autres titres
+  movements: Incipits
+  cite: Citer cette notice
+  editorial: Notes de rédaction
+  siglum: Fonds
+  performers: Interprètes
+  place: Lieu
+  date: Date
+entrySections: Rubriques de la notice
+premiereTag: création
+pageIndex: Index des pages
+worksPerYear: Nombre d'œuvres par année
+unpublishedUncertain: Inédit (à vérifier)
+srcStatus:
+  located: Localisée
+  not_located: Non localisée
+  lost: Perdue
+features:
+  autograph: autographe
+  draft: brouillon
+  sketch: ébauche
+  fair_copy: mise au net
+  unfinished: inachevé
+  incomplete: incomplet
+relation:
+  revision: Version révisée
+  revision_inverse: Version primitive
+  extract: Mouvement extrait et révisé
+  extract_inverse: Extrait de
+  version: Autre version
+  version_inverse: Autre version
+  companion: Œuvre contemporaine
+  companion_inverse: Œuvre contemporaine
+  cycle: Pièce destinée au cycle
+  cycle_inverse: Cycle
+  shared-material: Matériau partagé
+  shared-material_inverse: Matériau partagé
+  sketch: Ébauche pour
+  sketch_inverse: Ébauche
+cat:
+  piano: Piano seul
+  two-pianos: Deux pianos et piano à quatre mains
+  voice-piano: Voix et piano
+  vocal-ensemble: Voix et ensemble
+  chamber: Musique de chambre
+  choral: Chœur
+  orchestra: Orchestre
+  undetermined: Effectif à préciser
+roles:
+  author: auteur du texte
+  translator: traducteur
+  dedicatee: dédicataire
+  performer: interprète
+personFilter:
+  all: Toutes
+  author: Auteurs des textes
+  dedicatee: Dédicataires
+  performer: Interprètes
+months:
+  - janvier
+  - février
+  - mars
+  - avril
+  - mai
+  - juin
+  - juillet
+  - août
+  - septembre
+  - octobre
+  - novembre
+  - décembre
+unknownDate: date inconnue
+unknownPlace: Lieu non précisé
+incipitMissing: Incipit à venir
+frOnly: ''
+prev: Notice précédente
+next: Notice suivante
+citeTemplate: « Th {th} — {title} », dans Catalogue thématique des œuvres d'Olivier Greif [en ligne], {url} (consulté le {date}).
+copy: Copier
+copied: Copié
+searchPlaceholder: Titre, personne, lieu, mot du carnet de bord…
+searchHint:
+  one: '{n} notice'
+  other: '{n} notices'
+searchNone: Aucune notice ne correspond.
+searchUnavailable: Index de recherche indisponible.
+filterAll: Tout
+filterBook: Livre
+filterCat: Effectif
+filterStatus: État
+status:
+  published: Éditée
+  unpublished: Inédite
+  lostms: Ms. non localisé
+sortBy: Trier
+sortTh: Th
+sortTitle: Titre
+sortDate: Date
+col:
+  th: Th
+  title: Titre
+  opus: Op.
+  scoring: Effectif
+  date: Composition
+  year: Année
+  work: Œuvre
+  performers: Interprètes
+  place: Lieu
+  date2: Date
+  pages: Pages
+  count: Notices
+idx:
+  chrono:
+    title: Chronologie
+    desc: Les œuvres classées par date de composition.
+  opus:
+    title: Concordance des opus
+    desc: Numéros d'opus du catalogue autographe et numéros Th.
+  titles:
+    title: Titres
+    desc: Titres, titres alternatifs et titres de mouvements.
+  incipits:
+    title: Incipits littéraires
+    desc: Premiers vers des œuvres vocales.
+  persons:
+    title: Personnes
+    desc: Auteurs des textes, dédicataires et interprètes.
+  places:
+    title: Lieux
+    desc: Lieux des créations et des exécutions.
+  performances:
+    title: Créations et exécutions
+    desc: Toutes les exécutions documentées, par date.
+  scoring:
+    title: Effectifs
+    desc: Les œuvres par formation instrumentale et vocale.
+  sources:
+    title: Manuscrits
+    desc: Fonds, types de papier et état des sources.
+  editions:
+    title: Éditions
+    desc: Éditeurs, cotes et œuvres inédites.
+  biblio:
+    title: Bibliographie
+    desc: Concordance des pages citées.
+  disco:
+    title: Discographie et vidéographie
+    desc: Enregistrements et films.
+  journal:
+    title: Carnet de bord
+    desc: Extraits du journal et de la correspondance, dans l'ordre chronologique.
+  dashboard:
+    title: État de la rédaction
+    desc: 'Espace de travail : données manquantes et notes de rédaction.'
+notCited: Notices sans création documentée
+lostOrUnlocated: Sources non localisées ou perdues
+papers: Types de papier
+featuresTitle: Nature et état des sources
+bySiglum: Par fonds
+unpublishedList: Œuvres inédites
+forthcoming: à paraître
+movementTitles: Titres de mouvements
+altTitleOf: voir
+entryOf: dans
+seeWork: Voir la notice
+sinceDate: Mis à jour
+dashboardWarn: Page de travail, à exclure de la version publique (option --public du générateur).
+nameVariants: Variantes de noms fusionnées dans les index
+unresolved: Renvois à résoudre
+completeness: Complétude
+incipitsFound: incipits
+barsKnown: mesures
+lineBreak: saut de ligne
+unresolvedRef: Renvoi à résoudre
