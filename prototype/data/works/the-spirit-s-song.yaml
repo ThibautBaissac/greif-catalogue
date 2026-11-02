@@ -1,0 +1,48 @@
+id: the-spirit-s-song
+th: '62'
+book: 2
+title: The Spirit's Song
+opus: '58'
+scoring: Voix et piano
+categories:
+- voice-piano
+movements:
+- bars: 118
+text:
+  credit: Anne Hunter (1742-1821)
+  authors:
+  - name: Anne Hunter
+    role: author
+composition:
+  text: 7 mai 1975
+  from: '1975-05-07'
+dedication:
+  text: À Esther Galil
+  persons:
+  - Esther Galil
+sources:
+  status: located
+  siglum: F-Pbmgf
+  items:
+  - text: 'Brouillon autographe au crayon, non paginé ; X., 12 pages de musique, papier filigrané JD,
+      270 x 350 mm à 20 portées ; quelques ratures, avec indications de tempo, de nuance et de phrasé,
+      inachevé ?, complet. Première page : deux traits parallèles au crayon rouge dans l''angle supérieur
+      gauche avec « Light Music » à l''encre noire, en haut au milieu « "The Spirit''s Song" » souligné,
+      et dans l''angle supérieur droit « To Esther Galil | a grateful | Spirit ! », à côté, « Olivier
+      Greif [souligné] | 7.V.75 ». Quatrième page : Les nom et prénom du compositeur sont écrits à l''encre
+      noire à cinq reprises en haut de la page et débordent sur le texte musical ; une autre occurrence
+      se trouve sur la cinquième page, où c''est écrit une fois en haut à gauche.'
+  papers:
+  - filigrané JD
+  features:
+  - draft
+  - autograph
+  - unfinished
+remarks:
+- Si l'indication « Light Music » en première page semble conseiller l'exécution de cette pièce au sein
+  du cycle homonyme, *cf.* [[light-music]], elle reste néanmoins une œuvre indépendante.
+related:
+- id: light-music
+  relation: cycle:inverse
+editorial_notes:
+- Reproduction de l'intégralité des poèmes ?

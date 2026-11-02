@@ -1,0 +1,53 @@
+id: sonate-piano-07
+th: '31'
+book: 1
+title: Sonate pour piano nº7
+subtitle: Cinq Pièces
+alt_titles:
+- title: Cinq pièces pour piano
+  source: Ms.
+opus: '28'
+scoring: Piano
+categories:
+- piano
+movements:
+- title: -1-
+  bars: 15
+- title: -2-
+  bars: 13
+- title: -3-
+  bars: 38
+- title: -4-
+  bars: 5
+- title: -5-
+composition:
+  text: mars 1969
+  from: 1969-03
+dedication:
+  persons:
+  - Glenn Gould
+sources:
+  status: located
+  siglum: F-Pbmgf
+  items:
+  - text: 'Ms. autographe à l''encre noire et au crayon, non paginé ; 2 f., 2 pages de musique, papier
+      filigrané JD, 270 x 350 mm à 20 portées ; sans indications de tempo, de nuance ni de phrasé, inachevé,
+      sans nº de mes., complet. Page de titre : « Cinq Pièces pour piano | Olivier Greif | mars 69 ».
+      La 3^e^ pièce est dédiée à Glenn Gould et porte l''ajout au crayon « [Sonate nº7] » ; elle comporte
+      une large section raturée avec ajout de deux mesures au crayon. La 5^e^ pièce est inachevée : elle
+      débute par 6 mesures à l''encre noire suivies de 4 systèmes au crayon puis des têtes de notes sans
+      hampes sur 2 pages et demie.'
+  papers:
+  - filigrané JD
+  features:
+  - autograph
+  - unfinished
+remarks:
+- 'Ce Ms. est une mise au net inachevée ultérieure (date non précisée) à la date de composition originelle.
+  Le CaG indique pour cette œuvre : « 3 pièces [biffé et remplacé par] 7^e^ Sonate pour piano ».'
+unpublished: true
+bibliography:
+- ref: François-Sappey & Nectoux (2013)
+  pages: 156, 292
+editorial_notes:
+- À continuer...

@@ -1,0 +1,183 @@
+id: sonate-violon-piano-02
+th: '20'
+book: 1
+title: Sonate pour violon et piano nº2
+opus: '17'
+scoring: Violon et piano
+categories:
+- chamber
+movements:
+- title: « I/INTRODUCTION »
+- title: « II/SCHERZO »
+- title: « III/ANDANTE »
+- title: « IV/FINAL »
+composition:
+  text: janvier – juin 1967
+  from: 1967-01
+  to: 1967-06
+dedication:
+  text: À Devy Erlih
+  persons:
+  - Devy Erlih
+sources:
+  status: located
+  siglum: F-Pbmgf
+  items:
+  - text: 'Ms. autographe à l''encre noire, paginé : 1-12 ; 6 f., 12 pages de musique, 270 x 348 mm à
+      12 portées ; une mesure biffée page 12, avec indications de tempo, de nuances et de phrasé, sans
+      nº de mes., complet. Page 1 : « 4 – Final » en haut au milieu.'
+  features:
+  - autograph
+remarks:
+- Premier prix de composition au CNSM en 1967.
+editions:
+- text: Alphonse Leduc, 1968, A.L. 23976
+  publisher: Alphonse Leduc
+  year: 1968
+premiere:
+- date: '1968-12-06'
+  place: Paris, Salle Gaveau
+  city: Paris
+  performers:
+  - name: Devy Erlih
+    role: violon
+  - name: Olivier Greif
+    role: piano
+  text: Paris, Salle Gaveau, 6 décembre 1968, par Devy Erlih (violon) et l'auteur (piano)
+performances:
+- date: '1969-06-02'
+  place: Paris, Salle Pleyel
+  city: Paris
+  performers:
+  - name: Devy Erlih
+    role: violon
+  - name: Olivier Greif
+    role: piano
+  text: Paris, Salle Pleyel, 2 juin 1969, par les mêmes interprètes
+- date: '2004-01-06'
+  place: Paris, CNR, « Cantus Formus »
+  city: Paris
+  performers:
+  - name: Geneviève Laurenceau
+    role: violon
+  - name: Lorène de Ratuld
+    role: piano
+  text: Paris, CNR, « Cantus Formus », 6 janvier 2004, par Geneviève Laurenceau (violon) et Lorène de
+    Ratuld (piano)
+- date: '2004-01-16'
+  place: Gabon, Libreville
+  country: Gabon
+  city: Libreville
+  performers:
+  - name: Geneviève Laurenceau
+    role: violon
+  - name: Lorène de Ratuld
+    role: piano
+  text: Gabon, Libreville, 16 janvier 2004, par les mêmes interprètes
+- date: '2004-02-18'
+  place: Gabon, Port-Gentil
+  country: Gabon
+  city: Port-Gentil
+  performers:
+  - name: Geneviève Laurenceau
+    role: violon
+  - name: Lorène de Ratuld
+    role: piano
+  text: Gabon, Port-Gentil, 18 février 2004, par les mêmes interprètes
+- date: '2005-01-20'
+  place: Paris, École Normale Supérieure
+  city: Paris
+  performers:
+  - name: Geneviève Laurenceau
+    role: violon
+  - name: Lorène de Ratuld
+    role: piano
+  text: Paris, École Normale Supérieure, 20 janvier 2005, par les mêmes interprètes
+- date: '2006-05-11'
+  place: Paris, L'Archipel
+  city: Paris
+  performers:
+  - name: et 22 février
+    role: par les mêmes interprètes
+  text: Paris, L'Archipel, 11 mai 2006 et 22 février, par les mêmes interprètes
+- date: '2007-03-09'
+  place: Paris, Grand Salon de l'Hôtel des Invalides
+  city: Paris
+  performers:
+  - name: Luc Héry
+    role: violon
+  - name: Franz Michel
+    role: piano
+  text: Paris, Grand Salon de l'Hôtel des Invalides, 9 mars 2007, par Luc Héry (violon) et Franz Michel
+    (piano)
+- date: '2020-08-09'
+  place: Vienne, Mairie de Frozes
+  city: Frozes (Vienne)
+  performers:
+  - name: Antigone Hourt
+    role: violon
+  - name: Nicolas Hourt
+    role: piano
+  text: Vienne, Mairie de Frozes, 9 août 2020, par Antigone Hourt (violon) et Nicolas Hourt (piano)
+- date: '2020-08-22'
+  place: Vienne, Château de Chiré-en-Montreuil
+  city: Chiré-en-Montreuil (Vienne)
+  performers:
+  - name: Antigone Hourt
+    role: violon
+  - name: Nicolas Hourt
+    role: piano
+  text: Vienne, Château de Chiré-en-Montreuil, 22 août 2020, par Antigone Hourt (violon) et Nicolas Hourt
+    (piano)
+duration: 15'40
+journal:
+- date_text: 21 mars 1967
+  date: '1967-03-21'
+  quotes:
+  - « J'obtiens le premier prix de la classe de composition avec une Sonate pour violon et piano. Lors
+    du concours public où elle est interprétée par Devy Erlih et moi-même, salle Berlioz, on remarque
+    dans l'assistance la présence de Jacques Brel. »
+  - '« Tony Aubin intervient auprès de son éditeur, Leduc, afin qu''il publie ma Sonate pour violon et
+    piano. Il me remet en cadeau une lettre, à lui adressée par Gilbert Leduc – qui assistait au concours
+    de composition –, dont voici un extrait : [...] J''attends l''acceptation de son père, tuteur naturel,
+    pour mettre en gravure sa sonate qui, lorsque j''y repense, est vraiment la pièce maîtresse de tout
+    le dernier concours de la rue de Madrid. »'
+- date_text: 6 déc. 1968
+  date: '1968-12-06'
+  quotes:
+  - |-
+    « Je donne mon premier concert public important : un récital à la Salle Gaveau avec le violoniste Devy Erlih. Au programme : [...] la création "mondiale" de la Sonate qui m'a valu le premier prix de la classe de composition [...].
+
+    J'extrais des commentaires du programme, dus à Maurice Imbert, celui-ci, sur mon travail : "[...] La Sonate pour violon et piano de M. Olivier Greif dont on va avoir la primeur absolue, fut écrite cette année-là aussi. Elle comprend quatre parties dont l'initiale ne s'inspire pas de la 'forme sonate', mais de celle du prélude, ce qu'indique d'ailleurs le vocable la désignant : Introduction. Un thème dont l'intensité croît *poco a poco* est à sa racine. Le second mouvement oppose deux motifs, l'un léger, l'autre plus marqué. L'Andante d'après s'appuie sur une idée calme et le développement fugué de sa section centrale trouble à peine la tranquillité du morceau. Le Finale, coulé dans le moule du rondo, évoque une danse slave."
+
+    Critique due à la plume d'Olivier Alain, parue dans le "Figaro" :
+
+    "[...] La sonate pour piano et violon qu'il a signé lui-même confirme encore cette impression : les ombres et les lumières n'ont jamais un parfum révolutionnaire, encore que l'introduction dégage une vraie poésie. [...]" »
+- date_text: 13 décembre 1968
+  date: '1968-12-13'
+  quotes:
+  - |-
+    « Article, signé Claude Chamfray, paru dans la revue "Le Mois Musical" :
+
+    "[...] Dans son œuvre, O. Greif prouve qu'il sait écrire et construire. La plume est ferme, elle ne s'égare pas en vains bavardages et l'on ne saurait tenir rigueur à un compositeur de dix-huit ans de subir des influences."
+
+    Article de Lily Bienvenu, paru dans une revue musicale dont je ne retrouve pas le nom :
+
+    "L'atmosphère de tension croissante et décroissante dont l'exposition apparaît déjà si intérieure dans le premier mouvement ; le tourbillon d'esprit du Scherzo, la recherche incolore du III où perce, dans un halo, une personnalité ; le caractère slovaque du final si étonnamment écrit pour le violon expriment éloquemment, dans cette création de la sonate d'Olivier Greif, l'éclosion d'une nature d'élite."
+bibliography:
+- ref: François-Sappey & Nectoux (2013)
+  pages: 22, 155, 202, 282, 292, 304, 318-319
+discography:
+- text: '*Greif à l''Archipel* (2006)'
+  title: Greif à l'Archipel
+  year: 2006
+- text: '*The Meeting of the Waters* (2010)'
+  title: The Meeting of the Waters
+  year: 2010
+- text: '*Le Rêve du monde* (2010)'
+  title: Le Rêve du monde
+  year: 2010
+videography:
+- text: Olivier Greif, compositeur, DVD nº 5
+editorial_notes:
+- Obtention du scan de la copie professionnelle conservée chez Leduc ?

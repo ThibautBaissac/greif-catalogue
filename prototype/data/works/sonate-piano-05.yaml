@@ -1,0 +1,85 @@
+id: sonate-piano-05
+th: '29'
+book: 1
+title: Sonate pour piano nº5
+subtitle: Trois Pièces
+alt_titles:
+- title: Trois pièces
+  source: Ms., CaG
+opus: '26'
+scoring: Piano
+categories:
+- piano
+movements:
+- title: -1- Andante
+  bars: 12
+- title: -2- Andante
+  bars: 9
+- title: -3- L'istesso tempo
+  bars: 12
+composition:
+  text: '1969'
+  from: '1969'
+sources:
+  status: located
+  siglum: F-Pbmgf
+  items:
+  - text: 'Ms. autographe à l''encre noire avec ajouts au crayon, non paginé ; 2 f., 2 pages de musique,
+      papier filigrané JD, 270 x 350 mm à 20 portées ; avec indications de tempo, de nuances et de phrasé,
+      sans nº de mes., complet. Page de titre : « trois pièces | piano | Olivier Greif | 69 »'
+  papers:
+  - filigrané JD
+  features:
+  - autograph
+remarks:
+- 'Ce Ms. est une mise au net ultérieure (date non précisée) à la date de composition originelle. Le CaG
+  indique pour cette œuvre : « 3 pièces [biffé et remplacé par] 5^e^ Sonate pour piano »'
+premiere:
+- date: '2010-11-03'
+  place: Paris, L'entrepôt
+  city: Paris
+  performers:
+  - name: Nicolas Horvath
+    role: piano
+  text: Paris, L'entrepôt, 3 novembre 2010 par Nicolas Horvath (piano)
+performances:
+- date: '2010-11-06'
+  place: Italie, Venaria Reale, église Sant-Uberto
+  country: Italie
+  city: Venaria Reale
+  performers:
+  - name: Nicolas Horvath
+    role: piano
+  text: Italie, Venaria Reale, église Sant-Uberto, 6 novembre 2010 par le même interprète
+- date: '2011-06-05'
+  place: République Tchèque, Prague, Ruby Studio
+  country: République Tchèque
+  city: Prague
+  performers:
+  - name: Nicolas Horvath
+    role: piano
+  text: République Tchèque, Prague, Ruby Studio, 5 juin 2011 par le même interprète
+- date: '2012-02-24'
+  place: États-Unis, Floride, Palm Beach, Helen K. Persson Recital Hall
+  country: États-Unis
+  city: Palm Beach (Floride)
+  performers:
+  - name: Nicolas Horvath
+    role: piano
+  text: États-Unis, Floride, Palm Beach, Helen K. Persson Recital Hall, 24 février 2012 par le même interprète
+- date: '2012-11-25'
+  place: Paris, église américaine
+  city: Paris
+  performers:
+  - name: Nicolas Horvath
+    role: piano
+  text: Paris, église américaine, 25 novembre 2012 par le même interprète
+- date: '2013-02-19'
+  place: Ukraine, Kiev, Ukrainian Academy of music
+  country: Ukraine
+  city: Kiev
+  performers:
+  - name: Nicolas Horvath
+    role: piano
+  text: Ukraine, Kiev, Ukrainian Academy of music, 19 février 2013 par le même interprète
+duration: 1'40

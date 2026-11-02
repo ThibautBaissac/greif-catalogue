@@ -1,0 +1,39 @@
+id: sonate-piano-06
+th: '30'
+book: 1
+title: Sonate pour piano nº6
+alt_titles:
+- title: Sonate pour piano nº2
+  source: CaG, biffé
+opus: '27'
+scoring: Piano
+categories:
+- piano
+movements:
+- {}
+composition:
+  text: '1969'
+  from: '1969'
+sources:
+  status: located
+  siglum: F-Pbmgf
+  items:
+  - text: 'Ms. autographe au crayon avec ajouts à l''encre bleue, paginé : 1-21 ; 11 f., 19 pages de musique,
+      papier filigrané JD, 270 x 350 mm à 30 portées ; une seule indication de tempo : *Lento-quasi cadenza*,
+      sans indication de nuances ni de phrasé, sans nº de mes., inachevé, complet. Page 1 : « Sonate pour
+      piano » en haut au milieu, « New York – 1969 | Olivier Greif » en haut à droite. Pages 20 et 21
+      : 5 systèmes au crayon contenant des têtes de notes sans hampes et s''interrompant en haut de la
+      page 21.'
+  papers:
+  - filigrané JD
+  features:
+  - autograph
+  - unfinished
+remarks:
+- 'Le CaG indique pour cette œuvre : [« 6^e^ » à l''encre rouge ajouté ultérieurement] Sonate pour piano
+  [« nº2 » biffé]'
+unpublished: true
+documents:
+- « La 6^e^ Sonate pour piano et pianiste (comme un pianiste de jazz, le pianiste a un micro et chante
+  [du moins intervient vocalement] des textes d'Agatha Christie. » Nathalie Cholodenko, interview d'Olivier
+  Greif pour la rubrique « Musique », Revue de l'Association des Médecins Israélites de France, 1975

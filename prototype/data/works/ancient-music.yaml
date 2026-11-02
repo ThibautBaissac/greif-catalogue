@@ -1,0 +1,53 @@
+id: ancient-music
+th: '47'
+book: 1
+title: Ancient Music
+opus: '42'
+scoring: Piano
+categories:
+- piano
+movements:
+- {}
+composition:
+  text: 23 mars 1974
+  from: '1974-03-23'
+dedication:
+  text: Michel Béroff
+  persons:
+  - Michel Béroff
+sources:
+  status: located
+  siglum: F-Pbmgf
+  items:
+  - text: 'Brouillon autographe ébauché à l''encre noire avec ajouts à l''encre rouge, partiellement paginé
+      : I-XVII, sans p. XIII ; X f., 27 pages de musique, papier filigrané JD, 270 x 350 mm à 20 portées
+      ; s. d., sans dédicace, lourdement raturé, difficilement lisible, avec indications de tempo, de
+      nuances et de phrasé, avec nº de mes., inachevé, complet. Page 1 : « Adagio » biffé en haut à gauche,
+      « Wilhelm Furtwängler und E-D F. Gewidmet | [signé] Olivier 19771 [*sic*] » en haut à droite.'
+  papers:
+  - filigrané JD
+  features:
+  - draft
+  - sketch
+  - autograph
+  - unfinished
+journal:
+- date_text: 8 mars 1974
+  date: '1974-03-08'
+  quotes:
+  - « Engendrement d'*Ancient Music* dédié à Michel Béroff. (Rare sentiment de plénitude). »
+- date_text: 14 mars 1974
+  date: '1974-03-14'
+  quotes:
+  - '« *Ancient Music* : Inventaire des tics musicaux, depuis longtemps passés de l''Histoire de la Musique
+    aux organismes humains, et dont la présence est écrasante. »'
+- date_text: 23 mars 1974
+  date: '1974-03-23'
+  quotes:
+  - « Terminé *Ancient Music*.'
+documents:
+- « Ancient Music (titre tiré d'Ezra Pound). » Nathalie Cholodenko, interview d'Olivier Greif pour la
+  rubrique « Musique », Revue de l'Association des Médecins Israélites de France, 1975
+editorial_notes:
+- À revoir avec le manuscrit !
+- Compléter les valeurs « X » (feuillets, pages, mesures)

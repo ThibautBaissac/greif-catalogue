@@ -1,0 +1,26 @@
+id: sonate-deux-pianos-02
+th: '66'
+book: 2
+title: Sonate pour deux pianos nº2
+opus: '62'
+scoring: Deux pianos
+categories:
+- two-pianos
+movements:
+- {}
+dedication:
+  persons:
+  - Antoine Herbart
+journal:
+- date_text: 10 janvier 1976
+  date: '1976-01-10'
+  quotes:
+  - « J'apprends de suicide, il y a un mois, de mon merveilleux ami Antoine Herbart. »
+- date_text: 12 janvier 1976
+  date: '1976-01-12'
+  quotes:
+  - « Je dédie ma Deuxième Sonate pour deux pianos, en cours de composition, in memoriam Antoine Herbart.
+    »
+related:
+- id: la-perigourdine
+  relation: sketch:inverse

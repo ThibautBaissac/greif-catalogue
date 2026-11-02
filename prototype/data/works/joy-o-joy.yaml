@@ -1,0 +1,12 @@
+id: joy-o-joy
+th: 70b
+book: 2
+title: Joy! O Joy!
+scoring: Chœur
+categories:
+- choral
+movements:
+- {}
+related:
+- id: o-joy-o-joy
+  relation: version:inverse

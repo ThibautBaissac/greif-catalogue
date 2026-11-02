@@ -1,0 +1,20 @@
+# Les six Livres définis par Olivier Greif.
+# status : complete | partial | planned
+- number: 1
+  roman: I
+  status: complete
+- number: 2
+  roman: II
+  status: partial
+- number: 3
+  roman: III
+  status: planned
+- number: 4
+  roman: IV
+  status: planned
+- number: 5
+  roman: V
+  status: planned
+- number: 6
+  roman: VI
+  status: planned

@@ -1,0 +1,44 @@
+id: variations-sur-un-theme-de-r-schumann
+th: '12'
+book: 1
+title: Variations sur un thème de R. Schumann
+opus: '9'
+scoring: Piano
+categories:
+- piano
+movements:
+- {}
+composition:
+  text: mars 1966
+  from: 1966-03
+sources:
+  status: located
+  siglum: F-Pbmgf
+  items:
+  - text: '1\) Ms. autographe [1^e^ version] à l''encre noire avec ajouts au crayon, non paginé ; X f.,
+      X pages de musique, papier Passantino nº10 medium, 240 x 320 mm à 14 portées ; avec indications
+      de tempo, de nuances et de phrasé, sans nº de mes., complet. Première page : « – œuvre vingtième
+      – » en haut à gauche, « 3 variations sur un thème de | Schumann | piano » en haut au milieu et «
+      [signé] Olivier mars | 1966 » en haut à droite. Le Ms. porte les indications « the | end » à droite
+      de la barre de mesure finale et « 2''30'''' [signé] Olivier | 1966 » en dessous du dernier système
+      de la dernière page. Thème (8 mes.) et 3 variations, 1^e^ var. – 16 mes. ; 2^e^ var. – 32 mes. ;
+      3^e^ var. – 35 mes.'
+  - text: '2\) Ms. autographe [2^e^ version] à l''encre noire avec ajouts au crayon, non paginé ; 6 f.,
+      4 p. de musique, papier filigrané JD, 270 x 350 mm à 20 portées ; sans indication de tempo, de nuance
+      et de phrasé, inachevé, complet. Page de titre : « Variations sur un thême [*sic*] de R. Schumann
+      | [Davidsbündler nº XI] | piano | Olivier Greif | 1966 ». Thème (9 mes.) et 3 variations, 1^e^ var.
+      – 24 mes. ; 2^e^ var. – 36 mes., inachevée.'
+  papers:
+  - Passantino nº10 medium
+  - filigrané JD
+  features:
+  - autograph
+  - unfinished
+remarks:
+- Le 2^e^ Ms. est une mise au net inachevée ultérieure (date non précisée) à la date de composition originelle.
+unpublished: true
+bibliography:
+- ref: François-Sappey & Nectoux (2013)
+  pages: 72, 175, 291
+editorial_notes:
+- Compléter les valeurs « X » (feuillets, pages, mesures)

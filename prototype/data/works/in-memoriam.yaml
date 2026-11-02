@@ -1,0 +1,146 @@
+id: in-memoriam
+th: 35a
+book: 1
+title: In memoriam
+opus: '31'
+scoring: Piano
+categories:
+- piano
+movements:
+- {}
+composition:
+  text: '1969'
+  from: '1969'
+dedication:
+  text: À la mémoire de Gustav Mahler
+  persons:
+  - Gustav Mahler
+sources:
+  status: located
+  siglum: F-Pbmgf
+  items:
+  - text: 'Ms. autographe à l''encre noire avec ajouts au crayon, non paginé ; 7 f., 19 pages de musique,
+      papier filigrané JD, 270 x 350 mm à 14 portées ; sans indication de tempo, sans nuances ni phrasé,
+      complet. Page 1 : « in memoriam Gustav Mahler ; "in memoriam" ; Olivier 19669 [*sic*] | New York
+      ». Le Ms. porte l''indication « the | end » à droite de la barre de mesure finale et « Olivier 19669
+      [*sic*] | New York » en-dessous du dernier système de la dernière page.'
+  papers:
+  - filigrané JD
+  features:
+  - autograph
+remarks:
+- Fragments ?
+editions:
+- text: Donemus, 2018, D 18206
+  publisher: Donemus
+  year: 2018
+premiere:
+- date: '1970'
+  place: New York, Juilliard School of Music
+  city: New York
+  performers:
+  - name: Olivier Greif
+    role: piano
+  text: New York, Juilliard School of Music, 1970 par l'auteur (piano)
+- date: '1976-03-18'
+  place: Paris, salon de Mme Louis Jacquinot
+  city: Paris
+  performers:
+  - name: Olivier Greif
+    role: piano
+  text: Paris, salon de Mme Louis Jacquinot, 18 mars 1976, par l'auteur (piano)
+performances:
+- date: '1978-09-12'
+  place: Italie, Pescara
+  country: Italie
+  city: Pescara
+  performers:
+  - name: Olivier Greif
+    role: piano
+  text: Italie, Pescara, 12 septembre 1978, par l'auteur (piano)
+- date: '1978-09-27'
+  place: Paris, Centre Rachi
+  city: Paris
+  performers:
+  - name: Olivier Greif
+    role: piano
+  text: Paris, Centre Rachi, 27 septembre 1978, par l'auteur (piano)
+- date: '1982-03-16'
+  place: Belgique, Bruxelles, Hôtel Charlier
+  country: Belgique
+  city: Bruxelles
+  performers:
+  - name: Olivier Greif
+    role: piano
+  text: Belgique, Bruxelles, Hôtel Charlier, 16 mars 1982, par l'auteur (piano)
+- date: '1985-04-23'
+  place: Auditorium du siège de la Cie Total
+  performers:
+  - name: Olivier Greif
+    role: piano
+  text: Auditorium du siège de la Cie Total, 23 avril 1985, par l'auteur (piano)
+- date: '2018-03-08'
+  place: Paris, CRR, Salle d'orgue
+  city: Paris
+  performers:
+  - name: Hélène Fouquart
+    role: piano
+  text: Paris, CRR, Salle d'orgue, 8 mars 2018, par Hélène Fouquart (piano)
+- date: '2019-05-25'
+  place: Paris, CRR, Auditorium Marcel Landowski
+  city: Paris
+  performers:
+  - name: Hélène Fouquart
+    role: piano
+  text: Paris, CRR, Auditorium Marcel Landowski, 25 mai 2019, par la même interprète
+- date: '2021-10-01'
+  place: Paris, Bibliothèque musicale La Grange-Fleuret
+  city: Paris
+  performers:
+  - name: Philippe Hattat
+    role: piano
+  text: Paris, Bibliothèque musicale La Grange-Fleuret, 1 octobre 2021, par Philippe Hattat (piano)
+duration: 10'
+journal:
+- date_text: 8 octobre 1971
+  date: '1971-10-08'
+  quotes:
+  - |-
+    « En me rejouant il y a quelques instants de cela mon *In Memoriam* pour piano, l'entrevue que j'eus en juin de cette année avec Maurice Fleuret et Henry-Louis de la Grange me revint à la mémoire.
+
+    C'est ce même travail que j'interprétais pour eux. Maurice Fleuret, en particulier, se montra très franc à mon égard. Il trouvait cela "inaudible". "Vous jouez bien de votre instrument. Mais la composition, c'est autre chose. Votre musique est morte. Il faut la réveiller aux préoccupations de notre époque." »
+- date_text: 26 octobre 1972
+  date: '1972-10-26'
+  quotes:
+  - « A onze heures, arrivée à la classe de Tony Aubin d'Aram Khatchatourian, accompagné d'une interprète.
+    Je joue pour lui *In Memoriam*. "Vous avez un très grand talent", me dit-il. Il fait d'autres commentaires
+    sur moi à Tony. Il pose ensuite des questions aux uns et aux autres. Il souhaite notamment savoir
+    l'importance que nous attachons au public. »
+- date_text: 11 mai 1975
+  date: '1975-05-11'
+  quotes:
+  - « [...] Messiaen n'a pas du tout aimé *In Memoriam* que je lui jouais voilà cinq ans ! »
+- date_text: 13 mars 1992
+  date: '1992-03-13'
+  quotes:
+  - '« Comment ne pas me souvenir que j''ai moi-même rencontré Henry-Louis de la Grange et Maurice Fleuret
+    afin de leur jouer ma musique, alors que je venais tout juste d''avoir vingt et un ans ? Je m''étais
+    rendu chez eux et leur avais joué ma petite pièce pour piano : *In memoriam*. Je revois encore l''emplacement
+    du piano. "Vous n''avez pas assez de personnalité. Vous devriez abandonner la composition, il y a
+    trop de concurrence", fut leur conseil. »'
+documents:
+- 'Note de programme écrite par le compositeur pour le concert du 27 septembre 1978 pour la 3^e^ nuit
+  de l''AMIF au centre Rachi de Paris :'
+- '« *In Memoriam* fut composé en 1969, alors que l''auteur étudiait à New York sous la direction de Luciano
+  Berio. C''est une sorte de flot subjectif (Joyce parlerait de "Stream of consciousness") bâti pourtant
+  sur une trame formelle stricte : celle de l''allegro de sonate.'
+- Comme dans le troisième mouvement de la *Sinfonia* de Berio (dont il est permis de déceler l'influence),
+  on y entend plusieurs dizaines de thèmes empruntés à des œuvres connues du répertoire classique et contemporain
+  ; non point suite fortuite de collages, mais plutôt tourbillon émotionnel entraînant dans sa chute quelques-uns
+  des moments forts de l'histoire de la musique, violant la paix de notre mémoire... »
+bibliography:
+- ref: François-Sappey & Nectoux (2013)
+  pages: 35, 76, 121, 169, 283, 292, 302
+related:
+- id: in-paradisum
+  relation: companion

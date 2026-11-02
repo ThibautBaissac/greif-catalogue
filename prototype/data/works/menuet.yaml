@@ -1,0 +1,27 @@
+id: menuet
+th: '61'
+book: 2
+title: Menuet
+opus: '57'
+scoring: Piano
+categories:
+- piano
+movements:
+- bars: 74
+composition:
+  text: '1975'
+  from: '1975'
+sources:
+  status: located
+  siglum: F-Pbmgf
+  items:
+  - text: 'Brouillon autographe au crayon, non paginé ; 1 f., 2 pages de musique, papier filigrané JD,
+      270 x 350 mm à 22 portées ; s. d., sans indication de tempo, de nuance ni de phrasé, sans nº de
+      mes., inachevé, complet. Première page : en haut au milieu, au crayon « -3- [Dialogue, biffé et
+      remplacé par] Menuet ».'
+  papers:
+  - filigrané JD
+  features:
+  - draft
+  - autograph
+  - unfinished

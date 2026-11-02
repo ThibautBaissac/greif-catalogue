@@ -1,0 +1,40 @@
+id: sonate-piano-01
+th: '7'
+book: 1
+title: Sonate pour piano nº1
+subtitle: Sonatine
+alt_titles:
+- title: Sonatine
+  source: Ms.
+- title: 1re Sonate pour piano
+  source: CaG
+opus: '4'
+scoring: Piano
+categories:
+- piano
+movements:
+- bars: 101
+composition:
+  text: '1965'
+  from: '1965'
+sources:
+  status: located
+  siglum: F-Pbmgf
+  items:
+  - text: 'Ms. autographe à l''encre noire avec ajouts au crayon, non paginé ; 4 f., 6 p. de musique,
+      papier filigrané JD, 270 x 350 mm à 20 portées ; avec indication de tempo, de nuances et de phrasé,
+      sans nº de mes., complet. Page de titre : « Sonatine | piano | Olivier Greif | mars 65 ». Choral
+      – 15 mes. ; Choral – 5 mes. ; Variation en récurrence – 5 mes. ; Choral – 6 mes. ; Rigoureux – 6
+      mes. ; 1^e^ var. – 11 mes. ; 2^e^ var. – 10 mes. ; 3^e^ var. – 14 mes. ; Choral – 7 mes. + 6 mes.
+      ; Finale – 16 mes.'
+  papers:
+  - filigrané JD
+  features:
+  - autograph
+remarks:
+- Ce Ms. est une mise au net ultérieure (date non précisée) à la date de composition originelle. Intitulée
+  *Sonatine* sur le Ms, l'œuvre est sous-titrée « 1^re^ Sonate pour piano » dans le CaG.
+unpublished: true
+bibliography:
+- ref: François-Sappey & Nectoux (2013)
+  pages: 161, 175, 291

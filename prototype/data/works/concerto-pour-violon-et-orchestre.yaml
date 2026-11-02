@@ -1,0 +1,31 @@
+id: concerto-pour-violon-et-orchestre
+th: '32'
+book: 1
+title: Concerto pour violon et orchestre
+opus: '25'
+scoring: Version pour violon et piano
+categories:
+- orchestra
+movements:
+- bars: 407
+composition:
+  text: '1969'
+  from: '1969'
+sources:
+  status: located
+  siglum: F-Pbmgf
+  items:
+  - text: 'Brouillon autographe au crayon et à l''encre bleue, non paginé ; 4 f., 54 pages de musique,
+      papier non identifié, 268 x 348 mm à 12 portées ; contient quelques indications d''instrumentation,
+      nombreux passages lourdement raturés, difficilement lisible, sans indication de tempo, avec quelques
+      indications de nuance et de phrasé, sans nº de mes., complet. Première page : en haut au milieu,
+      « – Concerto pour violon et orchestre – | (en 1 mouvement) », en haut à droite, « [signé] Olivier
+      69 | lundi 14 avr. | 69 ».'
+  papers:
+  - non identifié
+  features:
+  - draft
+  - autograph
+bibliography:
+- ref: François-Sappey & Nectoux (2013)
+  pages: 23, 292

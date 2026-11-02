@@ -1,0 +1,80 @@
+id: sonate-piano-09
+th: 37a
+book: 1
+title: Sonate pour piano nº9
+subtitle: Paradisiac Memories Suite
+alt_titles:
+- title: Paradisiac Memories
+  source: Ms.
+- title: Heavenly Memories
+  source: catalogue tapuscrit
+opus: '33'
+scoring: Piano
+categories:
+- piano
+movements:
+- title: -1- A Mourning Brew
+  bars: 20
+- title: -2- The Ægyptian Mathematician
+  bars: 68
+- title: -3- Stars ! Stars !
+  bars: 33
+- title: -4- 42^nd^ Street-Rondo-
+  bars: 339
+composition:
+  text: février – juin 1970
+  from: 1970-02
+  to: 1970-06
+dedication:
+  persons:
+  - Marilyn Monroe
+  - Busby Berkeley
+sources:
+  status: located
+  siglum: F-Pbmgf
+  items:
+  - text: 'Ms. autographe à l''encre noire avec ajouts au crayon, non paginé ; 7 f., 23 pages de musique,
+      papier non identifié, 270 x 350 mm à 14 portées ; sans indications de tempo, de nuance ni de phrasé,
+      avec nº de mes., complet. Page 1 : en haut à gauche, « New York | february – june 19770 » [*sic*]
+      ; en haut à droite, « – Paradisiac Memories – |a suite for piano » ; en haut au milieu, « -1- A
+      Mourning Brew | -2- The Ægyptian Mathematician | -3- Stars! Stars! | -4- 42^nd^ Street ». Le 3^e^
+      mvt porte la dédicace : « to the memory of | Marilyn Monroe » et la mention « attaca | il | rondo
+      » à droite de la barre de mesure finale du mvt. Le 4^e^ mvt porte la dédicace : « to the memory
+      of Busby Berkeley » et la mention « the end » à droite de la barre de mesure finale du mvt avec
+      « Olivier 19770 » [*sic*] en-dessous du dernier système de la dernière page.'
+  papers:
+  - non identifié
+  features:
+  - autograph
+remarks:
+- Le dernier mvt, « 42^nd^ Street – Rondo », a été extrait de la *Suite* et révisé (changements minimes)
+  par l'auteur pour le concours de l'école normale de musique de Paris de 1980, *cf*. [[42nd-street]].
+  L'œuvre porte le sous-titre de « Heavenly Memories » dans l'une des versions tapuscrites du catalogue
+  du compositeur.
+journal:
+- date_text: 15 avril 1971
+  date: '1971-04-15'
+  quotes:
+  - '« J''ai reçu aujourd''hui la visite de Madame Liberman. (Épouse du directeur des Éditions Condé-Nast,
+    elle a été l''amie intime de Prokofiev et de Stravinsky.) [...] J''ai commencé par lui jouer mes trois
+    pièces de 1967. "Je ne m''attendais pas à ce que ce soit si classique, mais c''est de la très bonne
+    musique." J''enchaîne avec "Paradisiac Memories". "Vous aimez les titres", commente-t-elle. À la fin
+    du morceau : "Vous avez beaucoup de talent, c''est incontestable." »'
+- date_text: 9 juin 1973
+  date: '1973-06-09'
+  quotes:
+  - « Bien cher Marc, | Merci de ta clairvoyance. Sans toi, mes étoiles dormiraient au fonds d'une poubelle.*
+    | Olivier Greif | *(J'avais l'intention de jeter le manuscrit du troisième mouvement – Stars ! – de
+    ma suite | pour piano "Paradisiac Memories", mais Marc m'en a dissuadé.) »
+documents:
+- « Paradisiac Memories | – for solo harpsichord – » écrit par le compositeur au vº de la pièce « The
+  Best Buy », au-dessus du brouillon de la pièce « The Fierce Rabbit » (1971) toutes deux intégrées au
+  *Piano Book*, [[?]], op. 78.
+bibliography:
+- ref: François-Sappey & Nectoux (2013)
+  pages: 28, 76
+related:
+- id: 42nd-street
+  relation: extract
+editorial_notes:
+- 'Renvoi(s) à résoudre : ThX, op. 78'

@@ -1,0 +1,77 @@
+id: suite
+th: '13'
+book: 1
+title: Suite
+opus: '10'
+scoring: Quatuor à cordes
+categories:
+- chamber
+movements:
+- title: « 1 Allegro tranquillo »
+- title: « 2 Scherzo »
+- title: « 3 Intermezzo »
+- title: « 4 Finale »
+composition:
+  text: '1966'
+  from: '1966'
+sources:
+  status: located
+  siglum: F-Pbmgf
+  items:
+  - text: 'Ms. autographe à l''encre noire avec ajouts au crayon, paginé : 1-52 ; 26 f., 51 pages de musique,
+      273 x 367 mm à 12 portées ; avec indications de tempo et de nuances, indications de phrasé, sans
+      nº de mes., avec repères numériques et coups d''archets ajoutés par les créateurs, conducteur sans
+      parties séparées, complet. Page de titre : « Olivier Greif | Suite | pour | quatuor à cordes | 1
+      Allegro tranquillo | 2 Scherzo | 3 Intermezzo | 4 Finale | 1966 Paris ». Ms. relié par un fil blanc
+      à une couverture cartonnée de couleur marron.'
+  features:
+  - autograph
+editions:
+- text: '*à paraître,* Édition musicales Artchipel'
+  publisher: Artchipel
+  status: forthcoming
+premiere:
+- date: '1966'
+  place: Paris, CNSM
+  city: Paris
+  performers:
+  - name: Quatuor Pascal de l'ORTF
+    role: ensemble
+  - name: Jacques Dumont
+    role: violons
+  - name: Louis Perlemuter
+    role: violons
+  - name: Léon Pascal
+    role: alto
+  - name: Jean-Claude Ribera
+    role: violoncelle
+  text: 'Paris, CNSM, (date ?) 1966, Quatuor Pascal de l''ORTF : Jacques Dumont, Louis Perlemuter (violons)
+    , Léon Pascal (alto), Jean-Claude Ribera (violoncelle)'
+performances:
+- date: '2019-09-29'
+  place: Nancy, Opéra National de Lorraine
+  city: Nancy
+  performers:
+  - name: Ensemble Stanislas
+    role: ensemble
+  - name: Bertrand Menut
+    role: violons
+  - name: Misa Hasegawa
+    role: violons
+  - name: Paul Fenton
+    role: alto
+  - name: François Oechslin
+    role: violoncelle
+  text: 'Nancy, Opéra National de Lorraine, 29 septembre 2019, par l''Ensemble Stanislas : Bertrand Menut,
+    Misa Hasegawa (violons), Paul Fenton (alto) et François Oechslin (violoncelle).'
+duration: 17'
+journal:
+- date_text: '1966'
+  date: '1966'
+  context: date exacte ? pour l'examen de la classe de composition
+  quotes:
+  - « J'obtiens un premier accessit au concours de fin d'année de la classe de composition en présentant
+    un Quatuor à cordes. »
+bibliography:
+- ref: François-Sappey & Nectoux (2013)
+  pages: 22, 282, 306

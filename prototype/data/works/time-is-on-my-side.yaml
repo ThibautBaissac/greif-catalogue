@@ -1,0 +1,43 @@
+id: time-is-on-my-side
+th: '63'
+book: 2
+title: Time is on my side
+opus: '59'
+scoring: Voix et piano
+categories:
+- voice-piano
+movements:
+- bars: 26
+text:
+  credit: Jerry Ragovoy
+  authors:
+  - name: Jerry Ragovoy
+    role: author
+composition:
+  text: 10 mai 1975
+  from: '1975-05-10'
+dedication:
+  text: Pour Litta de la Fressange
+  persons:
+  - Litta de la Fressange
+sources:
+  status: located
+  siglum: F-Pbmgf
+  items:
+  - text: Brouillon autographe
+  features:
+  - draft
+  - autograph
+remarks:
+- Si l'indication « Light Music » en première page semble conseiller l'exécution de cette pièce au sein
+  du cycle homonyme, *cf.* [[light-music]], elle reste néanmoins une œuvre indépendante.
+journal:
+- date_text: 11 mai 1975
+  date: '1975-05-11'
+  quotes:
+  - « [...] "Time is on my side" (une petite chanson écrite l'après-midi même) »
+related:
+- id: light-music
+  relation: cycle:inverse
+editorial_notes:
+- Reproduction de l'intégralité des poèmes ?

@@ -1,0 +1,71 @@
+id: and-death-shall-have-no-dominion
+th: '46'
+book: 1
+title: Cantate
+subtitle: And Death Shall Have no Dominion
+alt_titles:
+- title: Cantate sur un poème de Dylan Thomas
+  source: Ms.
+opus: '41'
+scoring: Voix de femme, voix d'homme et orchestre (version chant, piano)
+categories:
+- orchestra
+- vocal-ensemble
+movements:
+- bars: 511
+  text_incipit: Dominion, And Death shall have no Dominion
+text:
+  credit: Dylan Thomas
+  authors:
+  - name: Dylan Thomas
+    role: author
+composition:
+  text: 16 – 23 février 1974
+  from: '1974-02-16'
+  to: '1974-02-23'
+dedication:
+  text: À sa mère
+  persons:
+  - Mère du compositeur
+sources:
+  status: located
+  siglum: F-Pbmgf
+  items:
+  - text: 'Ms. autographe à l''encre noire avec ajouts au crayon rouge et à l''encre rouge, paginé : 3-44
+      ; X f., 42 pages de musique, papier filigrané JD, 270 x 350 mm à 20 portées ; nombreux passages
+      biffés, accompagnement manquant à plusieurs endroits, collettes pages 7 et 38 ; avec indications
+      de tempo, de nuances et de phrasé, avec nº de mes. encadrés, conducteur sans parties séparées, complet.
+      Page de titre : « Cantate | sur un poême [*sic*] de Dylan Thomas : | "And Death Shall Have no Dominion"
+      | pour soprano solo, baryton solo, piano solo | 2 fl + 1 picolo | 3 ob | 3 cl | 3 fg | 3 tr | 3
+      cors | 3 trb + 1 tuba | 1 saxo ténor | timb (do, réb, mib) | batterie comprenant : 1 gr. C – 1c.
+      c. – 1 t.t. | cow bells | blocks chinois | 16 février 1974 – 23 février 1974 | Olivier Greif ».
+      Au vº : « range – soprano : [EXTRAIT FINAL] | baryton : [EXTRAIT FINAL] | total duration – circa
+      : 22'' » ; en bas à droite, « for my mother, | Olivier Greif | dix-neuf-cent-soixante-quatorze ».
+      « 23-2-74 » à la droite de la barre de mesure finale de la dernière page avec la signature du compositeur
+      dans le coin inférieur droit de la page ; au vº, une nomenclature est listée à l''encre noire :
+      « piccolo – 1.8^va^ | fl. | ob. | cl. | b. cl - + 1.8^va^ | fg | ?fg - + 1.8^va^ | cors (en fa)
+      + 1.5^te^ | tr. | trb. | tuba + 1.8^va^ | saxo alto (en mi b) + 1.6^te^ M ».'
+  papers:
+  - filigrané JD
+  features:
+  - autograph
+journal:
+- date_text: 26 février 1974
+  date: '1974-02-26'
+  quotes:
+  - « C'est donc bien en sept jours que j'ai écrit une cantate sur un texte de Dylan Thomas. »
+- date_text: 13 mars 1974
+  date: '1974-03-13'
+  quotes:
+  - « J'avance l'orchestration de "And Death Shall Have no Dominion". »
+- date_text: 26 mai 1974
+  date: '1974-05-26'
+  context: lettre à sa mère
+  quotes:
+  - « En ce jour de fête, daigne accepter la dédicace de ma Cantate "And Death Shall Have no Dominion".
+    »
+bibliography:
+- ref: François-Sappey & Nectoux (2013)
+  pages: 29-30, 84, 293
+editorial_notes:
+- Compléter les valeurs « X » (feuillets, pages, mesures)

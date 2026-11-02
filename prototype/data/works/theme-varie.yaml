@@ -1,0 +1,33 @@
+id: theme-varie
+th: '8'
+book: 1
+title: Thème varié
+opus: '5'
+scoring: Piano
+categories:
+- piano
+movements:
+- bars: 171
+composition:
+  text: '1965'
+  from: '1965'
+sources:
+  status: located
+  siglum: F-Pbmgf
+  items:
+  - text: 'Ms. autographe à l''encre noire avec ajouts au crayon, non paginé ; 5 f., 8 pages de musique,
+      papier filigrané JD, 270 x 350 mm à 20 portées ; quelques passages biffés, avec indication de tempo,
+      de nuances et de phrasé, sans nº de mes., complet. Page de titre : « Thême [*sic*] varié | piano
+      | Olivier Greif | 65 ». Thème (4 mes.) et 6 variations, 1^e^ var. – 11 mes. ; 2^e^ var. – 58 mes.
+      ; 3^e^ var. – 6 mes. ; 4^e^ var. – 29 mes. ; 5^e^ var. – 29 mes. ; 6^e^ var. – 24 mes.'
+  papers:
+  - filigrané JD
+  features:
+  - autograph
+remarks:
+- Le thème initial est de Tony Aubin. Ce Ms. est une mise au net ultérieure (date non précisée) à la date
+  de composition originelle.
+unpublished: true
+bibliography:
+- ref: François-Sappey & Nectoux (2013)
+  pages: 175, 291

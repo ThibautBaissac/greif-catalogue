@@ -1,0 +1,110 @@
+id: cinq-chansons-enfantines
+th: '4'
+book: 1
+title: Cinq Chansons enfantines
+alt_titles:
+- title: Cinq Mélodies
+  source: CaG
+opus: '1'
+scoring: Voix et piano
+categories:
+- voice-piano
+movements:
+- title: 1 [La Grande sœur]
+  bars: 7
+  text_incipit: La grande sœur que j'aimais tant
+- title: 2 [Je suis parti]
+  bars: 29
+  text_incipit: Je suis parti / Quand l'aube s'éveille
+- title: 3 [Bel oiseau]
+  bars: 27
+  text_incipit: Bel oiseau / viens ici et je te plumerai
+- title: 4 [Je voudrais aller]
+  bars: 21
+  text_incipit: Je voudrais aller sur la lune
+- title: 5 [Le soir, Maman]
+  bars: 24
+  text_incipit: Le soir, Maman vient me border
+text:
+  credit: Olivier Greif
+  authors:
+  - name: Olivier Greif
+    role: author
+composition:
+  text: '1961'
+  from: '1961'
+dedication:
+  text: « À ma belle-sœur Annette | À mon neveu Emmanuel »
+  persons:
+  - Annette (belle-sœur du compositeur)
+  - Emmanuel (neveu du compositeur)
+sources:
+  status: located
+  siglum: F-Pbmgf
+  items:
+  - text: 'Ms. autographe à l''encre noire avec ajouts au crayon, paginé : 1-8 ; 5 f., 8 pages de musique,
+      papier filigrané JD, 270 x 350 mm à 22 portées ; avec indications de tempo, de nuances et de phrasé,
+      avec nº de mes., complet. Page de titre : « 5 chansons enfantines | Olivier Greif | 61 – 73 | voice
+      & piano ».'
+  papers:
+  - filigrané JD
+  features:
+  - autograph
+remarks:
+- Nous ignorons si la version d'origine a subi des modifications lors de cette mise au net datant de 1973.
+  La dédicace a été ajoutée lors de la révision. Le titre de l'œuvre a été changé dans le CaG pour celui
+  de « Cinq Mélodies » mais conserve son titre d'origine sur le Ms. Les titres des mouvements ne figurent
+  pas sur le Ms. mais sont renseignés dans le CaG.
+editions:
+- text: Donemus, 2018, D 18216
+  publisher: Donemus
+  year: 2018
+premiere:
+- date: '2001-05-14'
+  place: Paris, Théâtre du Tambour Royal
+  city: Paris
+  performers:
+  - name: Jacques Loiseleur des Longchamps
+    role: baryton
+  - name: Grigori Abramian
+    role: piano
+  text: Paris, Théâtre du Tambour Royal, 14 mai 2001, par Jacques Loiseleur des Longchamps (baryton) et
+    Grigori Abramian (piano)
+performances:
+- date: '2004-10-16'
+  place: Paris, Christie's
+  city: Paris
+  performers:
+  - name: Jacques Loiseleur des Longchamps
+    role: baryton
+  - name: Grigori Abramian
+    role: piano
+  text: Paris, Christie's, 16 octobre 2004, par les mêmes interprètes
+- date: '2010-05-15'
+  place: Grange de La Prée
+  city: Grange de La Prée
+  performers:
+  - name: Jacques Loiseleur des Longchamps
+    role: baryton
+  - name: Léo de Bono
+    role: piano
+  text: Grange de La Prée, 15 mai 2010, par Jacques Loiseleur des Longchamps (baryton) et Léo de Bono
+    (piano)
+- date: '2013-01-13'
+  place: Dijon, Hôtel Maleteste
+  city: Dijon
+  performers:
+  - name: Jacques Loiseleur des Longchamps
+    role: baryton
+  - name: Mary Olivon
+    role: piano
+  text: Dijon, Hôtel Maleteste, 13 janvier 2013, par Jacques Loiseleur des Longchamps (baryton) et Mary
+    Olivon (piano)
+duration: 4'40
+bibliography:
+- ref: François-Sappey & Nectoux (2013)
+  pages: 18, 21, 73, 150-152, 282, 291
+videography:
+- text: Les Incontournables, DVD nº 7
+editorial_notes:
+- Reproduction de l'intégralité des poèmes ?

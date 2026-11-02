@@ -1,0 +1,27 @@
+id: the-little-and-the-fat
+th: '22'
+book: 1
+title: The Little and The Fat
+opus: '19'
+scoring: Piano
+categories:
+- piano
+movements:
+- bars: 123
+composition:
+  text: septembre – octobre 1967
+  from: 1967-09
+  to: 1967-10
+sources:
+  status: located
+  siglum: F-Pbmgf
+  items:
+  - text: 'Ms. autographe à l''encre noire, non paginé ; 4 f., 6 pages de musique, 265 x 340 mm à 14 portées
+      ; avec indications de tempo, de nuance et de phrasé, sans nº de mes., complet. Page de titre : «
+      – œuvre trente neuvième – | [signé] Olivier | septembre – octobre | 1967 | "the little and the fat"
+      | – pour piano solo – | [signé] Olivier | 1967 ». Le Ms. porte l''indication « the end » à droite
+      de la barre de mesure finale et « 4'' Olivier | - septembre octobre1967 - » en dessous du dernier
+      système.'
+  features:
+  - autograph
+unpublished: true

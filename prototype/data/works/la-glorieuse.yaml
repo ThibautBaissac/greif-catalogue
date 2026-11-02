@@ -1,0 +1,50 @@
+id: la-glorieuse
+th: '39'
+book: 1
+title: La Glorieuse
+alt_titles:
+- title: Les Glorieuses
+  source: Ms.
+opus: '35'
+scoring: Fugue pour piano
+categories:
+- piano
+movements:
+- bars: 339
+composition:
+  text: 2 janvier 1971
+  from: '1971-01-02'
+dedication:
+  text: Pour Patricia Aubertin
+  persons:
+  - Patricia Aubertin
+sources:
+  status: located
+  siglum: F-Pbmgf
+  items:
+  - text: 'Brouillon autographe à l''encre rouge avec ajouts à l''encre noire, bleue et au feutre violet,
+      non paginé ; X f., 15 pages de musique, papier filigrané JD ?, 270 x 350 mm à 14 portées ; avec
+      indications de tempo, de nuances et de phrasé, sans nº de mes., inachevé, complet. Page de titre
+      : dessins raturés, nombreux traits, numéros et gribouillis ; au milieu de la page, « pour Patricia
+      Aubertin | "les glorieuses" | Paris le 2 janvier | 1971 » ; écrit à la verticale gauche de la page
+      : « le propre du génie | c''est d''être constamment | dépassé par soi-même ». Au vº : fragment de
+      texte musical (4 mes.) portant les indications « *page I ; * page I bis » ; au milieu de la page
+      : « "les glorieuses" | 1) les glorieuses mathématiques | 2) les glorieuses érotiques | [signé] Olivier
+      » ; grosse portion de texte musical lourdement raturé en bas de la page. Page 1 : dans le coin supérieur
+      gauche, « pour Patricia Aubertin », titre biffé au milieu, dans le coin supérieur droit « [signé
+      ] Olivier | le 2 janvier 1971 », dans la marge droite « texte | de | Matila | Ghyka | et de Pius
+      | Servien | et de | Aristoxène | de | Tarente | et de | Leibniz ».'
+  papers:
+  - filigrané JD
+  features:
+  - draft
+  - autograph
+  - unfinished
+remarks:
+- 'Le CaG indique pour cette œuvre : « La Glorieuse | fugue pour piano »'
+bibliography:
+- ref: François-Sappey & Nectoux (2013)
+  pages: 204, 293
+editorial_notes:
+- Décrire la suite du ms.
+- Compléter les valeurs « X » (feuillets, pages, mesures)

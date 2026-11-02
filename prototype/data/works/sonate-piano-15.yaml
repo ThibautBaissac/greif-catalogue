@@ -1,0 +1,27 @@
+id: sonate-piano-15
+th: '58'
+book: 2
+title: Sonate pour piano nº15
+subtitle: de guerre
+alt_titles:
+- title: Sonate de guerre
+  source: Carnet de bord
+opus: '54'
+scoring: Piano
+categories:
+- piano
+movements:
+- title: « -1- »
+  bars: 337
+- title: « -2- In memoriam Louise Clavius Marius »
+  bars: 90
+- title: « -3- Toccata »
+  bars: 211
+dedication:
+  persons:
+  - Louise Clavius Marius
+journal:
+- date_text: 16 juin 1975
+  date: '1975-06-16'
+  quotes:
+  - « Madame Clavius est morte hier. Je lui dédie l'adagio de ma Sonate (in memoriam). »

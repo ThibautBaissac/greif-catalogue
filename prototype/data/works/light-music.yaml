@@ -1,0 +1,173 @@
+id: light-music
+th: '53'
+book: 2
+title: Light Music
+opus: '49'
+scoring: Voix de femme, voix d'homme et piano
+categories:
+- voice-piano
+movements:
+- title: « Nº1. Wir traümte von einem Königskind... »
+  bars: 132
+- title: « Nº2. Werdet nur nicht ungeduldig »
+  bars: 166
+- title: « 1) Die Rose, die Lilie, die Taube, die Sonne »
+  bars: 44
+- title: « 2) Ein Jüngling liebt ein Mädchen »
+  bars: 96
+- title: « 3) Es stehen unbeweglich Die Sterne in der Höh' »
+  bars: 69
+- title: « Warum sind denn die Rosen so Blass »
+  bars: 67
+- title: « Nacht lag auf meinen Augen »
+  bars: 169
+text:
+  credit: Olivier Greif
+  authors:
+  - name: Olivier Greif
+    role: author
+composition:
+  text: 1972 – 1974
+  from: '1972'
+  to: '1974'
+dedication:
+  text: '« Warum sind denn die Rosen so Blass » : un Ms. à la mémoire de Claus Schenk, Graf von Stauffenberg
+    et un autre Ms. mis au net porte une dédicace ultérieure à la date de composition à Stephan Genz.'
+  persons:
+  - Guy de Chambure
+  - Gala Barbisan
+  - Claus Schenk Graf von Stauffenberg
+  - Stephan Genz
+sources:
+  status: located
+  siglum: F-Pbmgf
+  intro: 'Ce cycle est un ensemble composite de sept *Lieder* (dont deux inachevés : 1 et 7). La description
+    suivante respecte la structure qui se dégage de l''organisation des *Lieder* : séparés les uns des
+    autres, ils datent tous de 1974, à l''exception du bloc central de trois Lieder datés de 1972. Le
+    premier et le dernier sont en duo pour soprano et baryton avec piano, les autres sont pour baryton
+    et piano.'
+  items:
+  - label: '1'
+    text: 'Brouillon autographe au crayon, paginé : 1-10 ; X f., 10 pages de musique, papier filigrané
+      JD, 270 x 350 à 22 portées ; sans indication de tempo, avec quelques indications de nuances et de
+      phrasé, sans nº de mes., inachevé, complet. Page de titre : deux traits parallèles au crayon rouge
+      dans l''angle supérieur gauche, en haut à gauche « Light Music » doublement souligné, en haut à
+      droite « Soprano – Baryton – Piano », au milieu « nº1 | Duet. Soprano – Baryton | & piano | Wir
+      traümte von einem Königskind... | H. Heine | Olivier Greif | 3-10-74 ». Au vº de la page 10 : esquisse
+      de deux systèmes à deux portées au crayon et en dessous, esquisse d''un système de trois portées
+      à l''encre.'
+  - label: '2'
+    text: 'Ms. autographe au crayon, paginé : 1-6 ; X f., 6 pages de musique, papier filigrané JD, 270
+      x 350 à 22 portées ; avec indications de tempo, de nuance et de phrasé, nº de mesures à l''encre
+      bleue, signature à la verticale de la barre de mesure finale, complet. Page de titre : dans le coin
+      supérieur gauche « baryton » en rouge doublement souligné, au milieu en haut « Light Music [souligné]
+      | nº2 », au milieu « Werdet nur nicht ungeduldig, | H. Heine | baryton & piano | voice & piano |
+      Olivier Greif | 1 octobre 74 ». Vº page 6 laissé blanc.'
+  - label: 3 – 5
+    text: '. [Bloc de trois *Lieder*] Ms. autographe à l''encre noire avec ajouts au crayon, paginé :
+      1-14 ; X f., 13 pages de musique, papier filigrané JD, 270 x 350 à 22 portées ; avec indications
+      de tempo, de nuance et de phrasé, complet. Page de titre : en haut, au milieu « Light music » au
+      crayon, au milieu « Trois Lieder | (Heinrich Heine) | Lyrisches Intermezzo », au milieu en dessous
+      « Olivier Greif | avril – mai 72 | voice & piano ». **3.** Lied 1, 2 p. de musique, page 2 : en
+      haut à gauche « À Monsieur | Guy de Chambure » à l''encre noire, en haut au milieu « 1) Die Rose,
+      die Lilie, die Taube, die Sonne » à l''encre noire ; page 3 : date à l''encre noire à la verticale
+      de la barre de mesure finale « 23 avril ». **4.** Lied 2, 6 pages de musique, page 4 : en haut à
+      gauche « À Madame | Gala Barbisan » à l''encre noire, en haut au milieu « 2) Ein Jüngling liebt
+      ein Mädchen » à l''encre noire ; page 9 : date à l''encre noire à la verticale de la barre de mesure
+      finale « 10 mai ». **5.** Lied 3, 5 p. de musique, page 10 : en haut au milieu « 3) Es stehen unbeweglich
+      Die Sterne in der Höh'' » à l''encre noire ; page 14 : date à l''encre noire à la verticale de la
+      barre de mesure finale « 7 mai ». Dernière page rº/vº laissée blanche.'
+  - label: 6a
+    text: 'Ms. autographe à l''encre noire, paginé : 3-7 ; 5 pages de musique, papier filigrané JD, 270
+      x 350 à 20 portées ; avec indications de tempo, de nuance et de phrasé, nº de mesures à l''encre
+      rouge, complet. Page de titre, rº : dans le coin supérieur gauche « soprano [en rouge, biffé et
+      remplacé par baryton au crayon » doublement souligné de rouge, au milieu en haut « Light Music »
+      au crayon doublement souligné, au milieu « Warum sind denn die Rosen so Blass » [souligné à l''encre
+      bleue] | H. Heine | Olivier Greif | [information biffée] | 27 mars 74 | voice & piano [souligné
+      à l''encre bleue] » à l''encre noire ; au vº : en haut au milieu « in memoriam Claus Schenk, Graf
+      von Stauffenberg », au milieu vers le bas, « Range [clé de sol suivie de do – mi]| Duration – circa
+      5'' » à l''encre noire. Vº page 7 laissée blanche.'
+  - label: 6b
+    text: 'Ms. autographe à l''encre noire et correcteur liquide, non paginé ; 5 pages de musique, papier
+      Star nº26, 270 x 340 à 20 portées ; avec indications de tempo, de nuance et de phrasé, sans nº de
+      mesures, complet. Page de titre, rº : au milieu « Warum sind denn die Rosen so Blass [souligné]
+      | (Heinrich Heine) | 27 mars 1974 | [signé] Haridas » à l''encre noire ; au vº : au milieu, « for
+      Stefan [*sic*] Genz | as a token of humble admiration. | Nov. 17^th^, 1996 | [signature] » à l''encre
+      noire. Vº de la dernière page laissée blanche.'
+  - label: '7'
+    text: 'Ms. autographe à l''encre noire, paginé : 2-15 ; 14 pages de musique, papier filigrané JD,
+      270 x 350 à 22 portées ; nombreux passages biffés, avec indications de tempo, de nuance et de phrasé,
+      avec nº de mes., inachevé, complet. Page de titre : en haut à droite « Nacht lag auf meinen Augen,
+      [souligné] | poem by Heinrich Heine | 21 avril 74 | Olivier Greif | duet – Soprano & | Baryton |
+      piano » à l''encre noire. Vº page 15 + une page laissées blanches.'
+  papers:
+  - filigrané JD
+  - Star nº26
+  features:
+  - draft
+  - autograph
+  - unfinished
+remarks:
+- Les deux mélodies indépendantes *The Spirit's Song* et *Time is on my side* ([[the-spirit-s-song]],
+  op. 58 et [[time-is-on-my-side]], op.59) portent toutes deux la mention "Light Music" en haut à gauche
+  de leur première page de Ms., laissant entendre qu'elles étaient destinées à rejoindre le cycle lors
+  de l'exécution complète prévue par le compositeur, *cf*. Carnet de bord, 4 octobre 1974.
+premiere:
+- date: '2012-01-07'
+  place: Paris, CRR, « Cantus Formus »
+  city: Paris
+  performers:
+  - name: Jacques Loiseleur des Longchamps
+    role: baryton
+  - name: Sophie Angebault
+    role: soprano
+  - name: Mary Olivon
+    role: piano
+  text: Paris, CRR, « Cantus Formus », 7 janvier 2012 par Jacques Loiseleur des Longchamps (baryton),
+    Sophie Angebault (soprano) et Mary Olivon (piano)
+performances:
+- date: '2021-10-14'
+  place: Paris, CNSM
+  city: Paris
+  performers:
+  - name: Olivier Cesarini
+    role: baryton
+  - name: '[?]'
+    role: pianiste ?
+  text: Paris, CNSM, 14 octobre 2021, par Olivier Cesarini (baryton) et pianiste ?
+duration: 17'20
+journal:
+- date_text: 27 mars 1974
+  date: '1974-03-27'
+  quotes:
+  - « Écrit "Warum sind denn die Rosen so Blass?". »
+- date_text: 21 avril 1974
+  date: '1974-04-21'
+  quotes:
+  - « Je commence "Nacht lag auf meinen Augen". »
+- date_text: 2 octobre 1974
+  date: '1974-10-02'
+  quotes:
+  - « Fini d'écrire "Werdet mir nicht ungeduldig" commence hier au soir. »
+- date_text: 4 octobre 1974
+  date: '1974-10-04'
+  quotes:
+  - « Commencé hier (et presque achevé) "Mir traümte von einem Königskind". Toutes ces petites pièces
+    (Lieder, duos et éventuellement morceaux de piano, inclus deux lieder de 1972, "Die Sterne in der
+    Höh'" et "Ein Hüngling liebt ein Mädchen", dans l'ensemble d'un caractère trop sérieux) seront regroupées
+    plus tard en un cycle appelé "Light Music". Musique légère, sans prétention, bien ouvragée, écrite
+    pour mon plaisir. L'ensemble occupera la durée d'une soirée, un entracte est prévu. Chaque morceau
+    peut être joué séparément du cycle. »
+bibliography:
+- ref: François-Sappey & Nectoux (2013)
+  pages: 28, 68, 70, 153-154, 158, 177, 293, 308
+related:
+- id: the-spirit-s-song
+  relation: cycle
+- id: time-is-on-my-side
+  relation: cycle
+- id: wiener-konzert
+  relation: shared-material
+editorial_notes:
+- Reproduction de l'intégralité des poèmes ?
+- Compléter les valeurs « X » (feuillets, pages, mesures)

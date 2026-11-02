@@ -1,0 +1,13 @@
+id: o-joy-o-joy
+th: 70a
+book: 2
+title: O Joy ! O Joy !
+opus: '66'
+scoring: Chœur
+categories:
+- choral
+movements:
+- {}
+related:
+- id: joy-o-joy
+  relation: version

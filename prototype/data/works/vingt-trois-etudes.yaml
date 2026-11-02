@@ -1,0 +1,61 @@
+id: vingt-trois-etudes
+th: '25'
+book: 1
+title: Vingt-trois Études
+alt_titles:
+- title: Vingt études
+  source: Ms.
+opus: '21'
+scoring: Piano
+categories:
+- piano
+movements:
+- incipit_count: 23
+composition:
+  text: mai 1968
+  from: 1968-05
+dedication:
+  text: À Katya Labèque
+  persons:
+  - Katia Labèque
+sources:
+  status: located
+  siglum: F-Pbmgf
+  intro: Ms composite constitué d'un lot de feuilles recopiées à une date ultérieure (non précisée) à
+    la date de composition (études nº1 à 7) et d'un lot de feuilles extraites du Ms. d'origine (études
+    nº11 à 26) pour un total de vingt-trois études comme indiqué dans le CaG.
+  items:
+  - text: '1\) Ms. autographe à l''encre noire avec ajouts au crayon gris, rouge et bleu, paginé : 1-16
+      ; 9 f., 21 pages de musique, papier filigrané JD, 270 x 350 mm à 22 portées ; quelques passages
+      biffés, avec indications de tempo, de nuance et de phrasé, avec nº de mes., complet. Page de titre
+      : « À Katya Labèque | vingt études | Olivier Greif | mai 68 | piano ». Page 4 et 5 : indication
+      au crayon « intervertir l''ordre | de la 2^e^ et de la | 3^e^ étude. » Page 8 : les 5 dernières
+      mesures de l''étude nº4 sont biffées, une alternative au crayon est écrite en dessous du dernier
+      système avec l''avant dernier accord de la version biffée encadré comme accord final.'
+  - text: 2\) Ms. autographe à l'encre noire avec ajouts au crayon, non paginé ; 11 f., 22 pages de musique,
+      papier Passantino nº14, 265 x 340 à 14 portées, avec indications de tempo, de nuance et de phrasé,
+      sans nº de mes., complet. Les études nº11, 17 et 23 portent des traces de ratures au crayon sur
+      la totalité de la page partiellement effacées ; l'étude nº16 porte aussi des traces de rature et
+      est biffée d'une grande croix au crayon sur la totalité de la page ; toutes les études à l'exception
+      des nº11 et 16 sont marquées d'une petite croix au crayon à gauche du titre. La dernière page de
+      l'étude nº26 porte la mention « the | end » à droite de la barre de mesure finale et « [signé] Olivier
+      mai 1968 » en dessous du dernier système.
+  papers:
+  - filigrané JD
+  - Passantino nº14
+  features:
+  - autograph
+unpublished: true
+journal:
+- date_text: 2 juin 1969
+  date: '1969-06-02'
+  quotes:
+  - '« Dans le cadre de l''émission de télévision "Les jeunes invités de la musique", produite par Tasso
+    Janopoulos, l''écrivain Paul Vialar me reçoit et j''interprète la Toccata de Bach et Quatre études
+    de mon cru. » [Greif a interprété quatre études extraites de l''op. 21 : « La Machine à coudre »,
+    « La Tourmentée », « La Chasseresse », « Les Tourterelles » ainsi qu''une autre étude absente du manuscrit.
+    Le contenu de cette émission est consultable dans les archives INA : date de diffusion, 19.04.1969
+    ; ID Notice : CPF92017489.]'
+bibliography:
+- ref: François-Sappey & Nectoux (2013)
+  pages: 23, 157-158, 169, 292

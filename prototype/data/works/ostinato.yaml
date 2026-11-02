@@ -1,0 +1,38 @@
+id: ostinato
+th: '21'
+book: 1
+title: Ostinato
+opus: '18'
+scoring: Piano
+categories:
+- piano
+movements:
+- bars: 170
+composition:
+  text: '1967'
+  from: '1967'
+sources:
+  status: located
+  siglum: F-Pbmgf
+  items:
+  - text: 'Ms. autographe à l''encre noire avec ajouts au crayon, non paginé ; 7 f., 12 pages de musique,
+      papier filigrané JD, 270 x 350 mm à 20 portées ; avec indications de tempo, de nuance et de phrasé,
+      sans nº de mes., complet. Page de titre : « Ostinato | Olivier | piano | Olivier Greif | 67 ».'
+  papers:
+  - filigrané JD
+  features:
+  - autograph
+remarks:
+- Ce Ms. est une mise au net ultérieure (date non précisée) à la date de composition originelle.
+unpublished: true
+documents:
+- « Je dis à Olivier que l'*Ostinato*, à un certain point de son développement, provoque infailliblement
+  en moi des frissons, et que cette grande sensualité me fait penser à Beethoven. En effet, me répond-il,
+  mon *Ostinato* est aussi une masturbation, comme les œuvres de Beethoven. À chaque phase de la progression,
+  il ajoute un peu de jouissance. Mais comme le désir devient proportionnellement plus grand, on a l'impression
+  qu'il nous est enlevé, ce qui ne fait qu'intensifier le désir. La fin, bien sûr, représente l'orgasme.
+  L'*Ostinato* est une fleur qui s'ouvre et qui trouve son épanouissement en elle-même. » Patricia Aubertin,
+  [Journal intime], 1967
+bibliography:
+- ref: François-Sappey & Nectoux (2013)
+  pages: 177, 206, 292

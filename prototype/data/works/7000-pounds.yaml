@@ -1,0 +1,23 @@
+id: 7000-pounds
+th: 44b
+book: 1
+title: 7000 Pounds
+scoring: Piano
+categories:
+- piano
+movements:
+- bars: 63
+composition:
+  text: '1972'
+  from: '1972'
+audio_source: INA
+remarks:
+- Incipits restitués d'après la transcription d'oreille du témoignage sonore conservé à l'INA. Bien que
+  l'œuvre soit basée sur le même système d'écriture que sa version antérieure, *Le Triomphe de la tonalité*,
+  le texte diffère sensiblement. Son titre lui fut attribué en 1992, *cf*. [[le-triomphe-de-la-tonalite]].
+duration: 3'20
+related:
+- id: le-triomphe-de-la-tonalite
+  relation: revision:inverse
+editorial_notes:
+- 'Création : Consulter l''INA'
