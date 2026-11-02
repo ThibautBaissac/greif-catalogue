@@ -719,7 +719,7 @@ Le rendu reproduit `personsPage()`, `places()` et `performancesPage()` (`prototy
 
 **Risk:** normal
 
-- [ ] **Step 1: Écrire les tests**
+- [x] **Step 1: Écrire les tests**
   - `sourcesModel(cat).byInstitution` → `[["f-pbmgf", [sonate-a]]]` ; `lost` → `[lied-b]` ; `byFeature` contient `draft` → `[sonate-a]`
   - `editionsModel(cat).byPublisher` → `[["Symétrie", [{work: sonate-a, …}]]]` ; `unpublished` → `[lied-b]`
   - `biblioModel(cat)[0].pageIndex.map(p => p.page)` → `["28","35"]`
@@ -728,8 +728,8 @@ Le rendu reproduit `personsPage()`, `places()` et `performancesPage()` (`prototy
   - `formatReference({short:"F&N (2013)", type:"book", title:"Le Rêve du monde", editor:[{family:"François-Sappey", given:"Brigitte"}], author:[], issued:"2013", publisher:"Symétrie", "publisher-place":"Lyon"}, "fr")` → `"François-Sappey, Brigitte (dir.), <em>Le Rêve du monde</em>, Lyon, Symétrie, 2013."` (données de test, pas une vraie référence)
   - `formatReference({short:"F&N (2013)", type:"other", author:[], editor:[]}, "fr")` → `"F&amp;N (2013)"`
   - site : `dist/fr/manuscrits/`, `dist/fr/editions/`, `dist/fr/bibliographie/`, `dist/fr/discographie/` et `dist/fr/carnet-de-bord/` existent ; `dist/fr/carnet-de-bord/index.html` contient `id="j1973"`
-- [ ] **Step 2: Échec** → FAIL. **Step 3: Implémenter.** **Step 4: Succès** : `npm test && npm run build && npm run test:site` → PASS.
-- [ ] **Step 5: Commit** : `git add src tests && git commit -m "Add manuscripts, editions, bibliography, discography and journal indexes"`
+- [x] **Step 2: Échec** → FAIL. **Step 3: Implémenter.** **Step 4: Succès** : `npm test && npm run build && npm run test:site` → PASS.
+- [x] **Step 5: Commit** : `git add src tests && git commit -m "Add manuscripts, editions, bibliography, discography and journal indexes"`
 
 ### Task 16: Pages éditoriales (Markdoc) et recherche Pagefind
 
@@ -748,14 +748,14 @@ Le rendu reproduit `personsPage()`, `places()` et `performancesPage()` (`prototy
 - Recherche : on charge `/pagefind/pagefind-ui.js` et `/pagefind/pagefind-ui.css` (générés au build). `new PagefindUI({ element: "#search", showSubResults: true, showImages: false })`, puis si `?q=` est présent : `ui.triggerSearch(q)`. Pagefind choisit l'index de la langue d'après `<html lang>`. Le formulaire de l'accueil (`.hero-search`) envoie `q` vers `pageUrl("search", lang)`.
 - CSS Pagefind : seulement les variables `--pagefind-ui-font`, `--pagefind-ui-primary`, `--pagefind-ui-text`, `--pagefind-ui-border`, alignées sur les tokens existants de `global.css`.
 
-- [ ] **Step 1: Écrire les tests**
+- [x] **Step 1: Écrire les tests**
   - `dist/fr/a-propos/index.html` contient `F-Pbmgf` et un `<table>` ; `dist/en/about/index.html` contient `Abbreviations`
   - `dist/fr/index.html` contient `six Livres`
   - `dist/pagefind/pagefind-ui.js` existe ; `dist/pagefind/` contient un fichier `.pf_meta` dont le nom commence par `pagefind.fr` et un autre qui commence par `pagefind.en`
   - `dist/fr/recherche/index.html` contient `id="search"`
-- [ ] **Step 2: Échec** → FAIL. **Step 3: Implémenter.**
-- [ ] **Step 4: Succès** : `npm run build && npm run test:site` → PASS ; `npm run preview` → `/fr/recherche/?q=Heine` doit lister Wiener Konzert. La recherche ne fonctionne qu'après le build, pas en `dev`.
-- [ ] **Step 5: Commit** : `git add content/pages src tests && git commit -m "Add editable home and about pages and Pagefind search"`
+- [x] **Step 2: Échec** → FAIL. **Step 3: Implémenter.**
+- [x] **Step 4: Succès** : `npm run build && npm run test:site` → PASS ; `npm run preview` → `/fr/recherche/?q=Heine` doit lister Wiener Konzert. La recherche ne fonctionne qu'après le build, pas en `dev`.
+- [x] **Step 5: Commit** : `git add content/pages src tests && git commit -m "Add editable home and about pages and Pagefind search"`
 
 ### Task 17: Mode éditorial et tableau de bord
 
@@ -773,16 +773,16 @@ Le rendu reproduit `personsPage()`, `places()` et `performancesPage()` (`prototy
 
 **Risk:** normal
 
-- [ ] **Step 1: Écrire les tests**
+- [x] **Step 1: Écrire les tests**
   - `completeness(sonate-a)` → `checks {composition:true, sources:true, bars:true, duration:false}`, `score 0.75`
   - `completeness(zeta-d).checks.composition` → `false`
   - `dashboardModel(cat).unresolved.map(w => w.id)` → `["lied-b"]` ; `incompleteBibliography` → `["francois-sappey-nectoux-2013"]`
   - site, build normal (assertions `it.skipIf(process.env.CATALOGUE_EDITORIAL === "1")`) : `dist/fr/redaction/` n'existe pas ; aucune page ne contient `class="field is-editorial"`
   - site, build avec `CATALOGUE_EDITORIAL=1` : le test est écrit sous la forme `it.runIf(process.env.CATALOGUE_EDITORIAL === "1")`. `dist/fr/redaction/index.html` existe et contient `<meta name="robots" content="noindex">` ; `dist/fr/oeuvres/wiener-konzert/index.html` contient `#redaction`
-- [ ] **Step 2: Échec** → FAIL.
-- [ ] **Step 3: Implémenter.** Remplacer la lecture directe de `process.env` de la tâche 13 par `isEditorial()`.
-- [ ] **Step 4: Succès** : `npm test && npm run build && npm run test:site && CATALOGUE_EDITORIAL=1 npm run build && CATALOGUE_EDITORIAL=1 npm run test:site` → PASS.
-- [ ] **Step 5: Commit** : `git add src tests && git commit -m "Add editorial mode with dashboard and editorial notes"`
+- [x] **Step 2: Échec** → FAIL.
+- [x] **Step 3: Implémenter.** Remplacer la lecture directe de `process.env` de la tâche 13 par `isEditorial()`.
+- [x] **Step 4: Succès** : `npm test && npm run build && npm run test:site && CATALOGUE_EDITORIAL=1 npm run build && CATALOGUE_EDITORIAL=1 npm run test:site` → PASS.
+- [x] **Step 5: Commit** : `git add src tests && git commit -m "Add editorial mode with dashboard and editorial notes"`
 
 ### Task 18: Données ouvertes, citation et documentation
 
@@ -799,15 +799,15 @@ Le rendu reproduit `personsPage()`, `places()` et `performancesPage()` (`prototy
 
 **Risk:** normal
 
-- [ ] **Step 1: Écrire les tests**
+- [x] **Step 1: Écrire les tests**
   - `toOpenData(cat).works.length` → `4` ; aucune clé `editorial_notes` à aucun niveau ; `works[0].url.fr` → `"/fr/oeuvres/sonate-a/"`
   - `toCsv(cat).split("\n")[0]` → l'en-tête exacte ci-dessus ; la ligne de `lied-b` contient le texte L'Île et `voice-piano`
   - un titre contenant `,` est entouré de guillemets
   - site : `dist/data/catalogue.json` se parse en JSON et contient 82 œuvres ; `dist/data/works.csv` a 83 lignes non vides
-- [ ] **Step 2: Échec** → FAIL. **Step 3: Implémenter.**
-- [ ] **Step 4: `CITATION.cff`** (`cff-version: 1.2.0`, `title: "Catalogue thématique des œuvres d'Olivier Greif"`, `type: dataset`, `authors` = l'utilisateur, à faire compléter par lui, `license` à faire choisir par l'utilisateur, `repository-code` = l'URL GitHub) et **`README.md`** (lancement, structure, saisie via Keystatic, mode éditorial, publication d'une version citable : release GitHub `vX.Y.Z`, puis DOI Zenodo une fois l'intégration activée par l'utilisateur sur zenodo.org). Remplacer `prototype/README.md` n'est pas nécessaire.
-- [ ] **Step 5: Succès** : `npm test && npm run build && npm run test:site` → PASS.
-- [ ] **Step 6: Commit** : `git add src tests CITATION.cff README.md && git commit -m "Publish open data exports and citation metadata"`
+- [x] **Step 2: Échec** → FAIL. **Step 3: Implémenter.**
+- [x] **Step 4: `CITATION.cff`** (`cff-version: 1.2.0`, `title: "Catalogue thématique des œuvres d'Olivier Greif"`, `type: dataset`, `authors` = l'utilisateur, à faire compléter par lui, `license` à faire choisir par l'utilisateur, `repository-code` = l'URL GitHub) et **`README.md`** (lancement, structure, saisie via Keystatic, mode éditorial, publication d'une version citable : release GitHub `vX.Y.Z`, puis DOI Zenodo une fois l'intégration activée par l'utilisateur sur zenodo.org). Remplacer `prototype/README.md` n'est pas nécessaire.
+- [x] **Step 5: Succès** : `npm test && npm run build && npm run test:site` → PASS.
+- [x] **Step 6: Commit** : `git add src tests CITATION.cff README.md && git commit -m "Publish open data exports and citation metadata"`
 
 ## End of tasks
 
