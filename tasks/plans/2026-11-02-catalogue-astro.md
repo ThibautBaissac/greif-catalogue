@@ -265,7 +265,7 @@ Les champs sont exactement ceux du tableau « Modèle de données » de la spec.
 - Un nombre écrit entre guillemets dans le YAML est une chaîne : `th` et `opus` restent des chaînes.
 - Tolérance aux sorties du CMS : tout champ scalaire **optionnel** (chaîne, nombre, EDTF, id d'autorité) est enveloppé dans un helper `optional(schema)` qui traite `""` et `null` comme absents (`z.preprocess(v => v === "" || v === null ? undefined : v, schema.optional())`). Un champ obligatoire vide reste une erreur.
 
-- [ ] **Step 1: Écrire les tests** (au niveau de `workSchema.safeParse` et des autres schémas)
+- [x] **Step 1: Écrire les tests** (au niveau de `workSchema.safeParse` et des autres schémas)
   - minimal `{title:"Adagio", th:"7", book:1, scoring:{fr:"Piano",en:"Piano"}, categories:["piano"]}` → succès ; `movements` vaut `[]` et `unpublished` vaut `false`
   - `th:"7 bis"` → échec sur `th`
   - `categories:[]` → échec
@@ -278,10 +278,10 @@ Les champs sont exactement ceux du tableau « Modèle de données » de la spec.
   - `booksFileSchema` sur `content/books.yaml` → succès ; avec cinq Livres seulement → échec
   - minimal + `opus: ""`, `duration: null`, `composition: {text: "1973", date: ""}` → succès, et ces trois champs sont `undefined` après parse
   - minimal + `title: ""` → échec
-- [ ] **Step 2: Échec** : `npm test tests/lib/schemas.test.ts` → FAIL.
-- [ ] **Step 3: Implémenter** `schemas.ts`, puis `content.config.ts` qui importe les schémas.
-- [ ] **Step 4: Succès** : PASS. Créer aussi `content/books.yaml` (six Livres, statuts repris de `prototype/data/books.yaml`), puis lancer `npx astro sync` → sans erreur.
-- [ ] **Step 5: Commit** : `git add src/lib/schemas.ts src/content.config.ts content/books.yaml tests/lib/schemas.test.ts && git commit -m "Define content schemas and Astro collections"`
+- [x] **Step 2: Échec** : `npm test tests/lib/schemas.test.ts` → FAIL.
+- [x] **Step 3: Implémenter** `schemas.ts`, puis `content.config.ts` qui importe les schémas.
+- [x] **Step 4: Succès** : PASS. Créer aussi `content/books.yaml` (six Livres, statuts repris de `prototype/data/books.yaml`), puis lancer `npx astro sync` → sans erreur.
+- [x] **Step 5: Commit** : `git add src/lib/schemas.ts src/content.config.ts content/books.yaml tests/lib/schemas.test.ts && git commit -m "Define content schemas and Astro collections"`
 
 ### Task 6: Domaine catalogue : construction et validation
 
@@ -320,7 +320,7 @@ Le jeu de données `fixtureInput`, à créer exactement ainsi :
   - `lied-b` : th "10", book 1, title "L'Île", scoring {fr "Voix et piano", en "Voice and piano"}, categories [voice-piano], text {credit "Heinrich Heine", authors [{person heinrich-heine, role author}]}, movements [{title "1", text_incipit "Vergiftet sind meine Lieder", bars 30}], composition {text "1972", date "1972"}, unpublished true, sources {status lost, items [], papers [], features []}, remarks ["cf. [[sonate-a]] et [[?]]"], performances [{premiere false, date "1976-03-18", place prague, performers [{person nell-froger, role soprano}], text "…"}], editorial_notes ["Compléter les mesures"]
   - `zeta-d` : th "50", book 2, title "Zeta", scoring Piano/Piano, categories [piano], composition {text "inconnue"}
 
-- [ ] **Step 1: Écrire les tests**
+- [x] **Step 1: Écrire les tests**
   - `validateCatalogue(fixtureInput)` → `[]`
   - copie avec `lied-b.th = "2"` → une erreur, `{file:"works/lied-b", path:"th"}`, message contenant `sonate-a`
   - copie avec `remarks ["[[inconnu]]"]` dans `etude-c` → erreur `{file:"works/etude-c", path:"remarks.0"}` ; `[[?]]` seul ne produit pas d'erreur
@@ -334,10 +334,10 @@ Le jeu de données `fixtureInput`, à créer exactement ainsi :
   - `neighbours("etude-c")` → `{prev: sonate-a, next: lied-b}` ; `neighbours("sonate-a").prev` → `undefined`
   - `performances.map(r => r.perf.date)` → `["1974-04-24","1976-03-18"]`
   - `personUsages.get("nell-froger").performer.length` → `2` ; `personUsages.get("heinrich-heine")` → `author` = [lied-b], `dedicatee` = [sonate-a]
-- [ ] **Step 2: Échec** : `npm test tests/lib/catalogue.test.ts` → FAIL.
-- [ ] **Step 3: Implémenter.** Les renvois `[[id]]` sont cherchés dans **toutes** les chaînes de l'œuvre : parcours récursif de l'objet, le chemin étant construit avec des points et les indices. `getCatalogue` est le seul module qui importe `astro:content`.
-- [ ] **Step 4: Succès** : PASS.
-- [ ] **Step 5: Commit** : `git add src/lib/catalogue*.ts tests/fixtures tests/lib/catalogue.test.ts && git commit -m "Add catalogue domain model and cross-reference validation"`
+- [x] **Step 2: Échec** : `npm test tests/lib/catalogue.test.ts` → FAIL.
+- [x] **Step 3: Implémenter.** Les renvois `[[id]]` sont cherchés dans **toutes** les chaînes de l'œuvre : parcours récursif de l'objet, le chemin étant construit avec des points et les indices. `getCatalogue` est le seul module qui importe `astro:content`.
+- [x] **Step 4: Succès** : PASS.
+- [x] **Step 5: Commit** : `git add src/lib/catalogue*.ts tests/fixtures tests/lib/catalogue.test.ts && git commit -m "Add catalogue domain model and cross-reference validation"`
 
 ### Task 7: Migration : autorités
 
