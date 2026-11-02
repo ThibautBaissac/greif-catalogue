@@ -1,0 +1,57 @@
+---
+import LetterNav from "~/components/LetterNav.astro";
+import WorkRef from "~/components/WorkRef.astro";
+import { getCatalogue } from "~/lib/catalogue-astro";
+import type { Lang } from "~/lib/edtf";
+import { getUi } from "~/lib/i18n";
+import { personsModel } from "~/lib/indexes/persons";
+import StdPage from "./StdPage.astro";
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const ui = await getUi(lang);
+const cat = await getCatalogue();
+const groups = personsModel(cat);
+const fr = lang === "en" ? "fr" : undefined;
+---
+<StdPage key="persons" {lang} {ui}>
+  <div class="chips" role="group">
+    {Object.entries(ui.personFilter).map(([role, label], i) => (
+      <button type="button" class="chip" data-role={role} aria-pressed={i === 0 ? "true" : "false"}>{label}</button>
+    ))}
+  </div>
+  <LetterNav letters={groups.map(([l]) => l)} />
+  {groups.map(([letter, people]) => (
+    <section class="letter" id={`l-${letter}`}>
+      <h2 class="letter-h">{letter}</h2>
+      <ul class="persons">
+        {people.map(p => (
+          <li id={p.id} data-roles={p.roles.join(" ")}>
+            <p class="p-name"><strong>{p.surname}</strong>{p.given ? `, ${p.given}` : ""}</p>
+            {p.blocks.map(block => (
+              <div class="p-role">
+                <span class="role-lab">{ui.roles[block.role]}</span>{" "}
+                {block.works.map((w, i) => {
+                  const roles = w.roles.map(r => cat.roles.get(r)?.[lang] ?? r);
+                  const detail = [roles.join(", "), w.years].filter(Boolean).join(", ");
+                  return (
+                    <Fragment>
+                      {i > 0 && "; "}
+                      <span class="p-w">
+                        <WorkRef work={w.work} {lang} {ui} {cat} />
+                        {detail && <Fragment>{" "}<span class="muted" lang={fr}>({detail})</span></Fragment>}
+                      </span>
+                    </Fragment>
+                  );
+                })}
+              </div>
+            ))}
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+  <script>
+    import "../../scripts/persons-filter.ts";
+  </script>
+</StdPage>

@@ -1,0 +1,26 @@
+---
+import PerfTable from "~/components/PerfTable.astro";
+import { getCatalogue } from "~/lib/catalogue-astro";
+import type { Lang } from "~/lib/edtf";
+import { getUi } from "~/lib/i18n";
+import { placesModel } from "~/lib/indexes/places";
+import StdPage from "./StdPage.astro";
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const ui = await getUi(lang);
+const cat = await getCatalogue();
+const groups = placesModel(cat, ui.unknownPlace);
+const fr = lang === "en" ? "fr" : undefined;
+---
+<StdPage key="places" {lang} {ui}>
+  <nav class="letters wide">
+    {groups.map(g => <a href={`#p-${g.key}`} lang={fr}>{g.label} <span class="muted">{g.rows.length}</span></a>)}
+  </nav>
+  {groups.map(g => (
+    <section class="place" id={`p-${g.key}`}>
+      <h2 class="sec-h" lang={fr}>{g.label}</h2>
+      <PerfTable rows={g.rows} showWork {lang} {ui} {cat} />
+    </section>
+  ))}
+</StdPage>

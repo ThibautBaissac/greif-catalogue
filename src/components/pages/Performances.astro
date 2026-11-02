@@ -1,0 +1,22 @@
+---
+import PerfTable from "~/components/PerfTable.astro";
+import WorkRef from "~/components/WorkRef.astro";
+import { getCatalogue } from "~/lib/catalogue-astro";
+import type { Lang } from "~/lib/edtf";
+import { getUi } from "~/lib/i18n";
+import { performancesModel } from "~/lib/indexes/performances";
+import StdPage from "./StdPage.astro";
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const ui = await getUi(lang);
+const cat = await getCatalogue();
+const { rows, withoutPerformance } = performancesModel(cat);
+---
+<StdPage key="performances" {lang} {ui}>
+  <PerfTable {rows} showWork {lang} {ui} {cat} />
+  <h2 class="sec-h">{ui.notCited}</h2>
+  <ul class="wl cols">
+    {withoutPerformance.map(w => <li><WorkRef work={w} {lang} {ui} {cat} /></li>)}
+  </ul>
+</StdPage>

@@ -4,6 +4,9 @@ import Catalogue from "./Catalogue.astro";
 import Chrono from "./Chrono.astro";
 import Indexes from "./Indexes.astro";
 import Opus from "./Opus.astro";
+import Performances from "./Performances.astro";
+import Persons from "./Persons.astro";
+import Places from "./Places.astro";
 import Scoring from "./Scoring.astro";
 import TextIncipits from "./TextIncipits.astro";
 import Titles from "./Titles.astro";
@@ -21,4 +24,7 @@ export const PAGE_COMPONENTS: Partial<Record<PageKey, AstroComponentFactory>> = 
   titles: Titles,
   incipits: TextIncipits,
   scoring: Scoring,
+  persons: Persons,
+  places: Places,
+  performances: Performances,
 };
