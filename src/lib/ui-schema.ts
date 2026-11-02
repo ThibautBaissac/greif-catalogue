@@ -33,6 +33,7 @@ export const uiSchema = z
     otherLangCode: str,
     footerStatus: str,
     footerEditorial: str,
+    notFound: strings(["eyebrow", "title", "desc", "home", "search"]),
     heroEyebrow: str,
     stats: strings(["entries", "located", "performances", "journal"]),
     book: str,

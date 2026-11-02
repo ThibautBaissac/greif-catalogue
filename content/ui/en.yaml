@@ -12,6 +12,12 @@ otherLang: Français
 otherLangCode: FR
 footerStatus: Working version
 footerEditorial: Editorial version (not public)
+notFound:
+  eyebrow: Error 404
+  title: Page not found
+  desc: This address does not match any page in the catalogue. It may have changed or contain an error.
+  home: Return to the home page
+  search: Search the catalogue
 heroEyebrow: Thematic and critical catalogue
 stats:
   entries: entries

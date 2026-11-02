@@ -321,6 +321,38 @@ section:not(.yr) > .yr-h { margin: 2rem 0 .8rem; color: var(--red); }
 .abbr dd { margin: 0; }
 .motif { display: flex; align-items: flex-start; }
 
+/* ---------- page introuvable */
+.not-found-page { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; }
+.not-found-page[hidden] { display: none; }
+.not-found-page .error-page { flex: 1; display: grid; align-items: center; }
+.not-found-page .site-foot { margin-top: 0; }
+.error-layout {
+  width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, .75fr);
+  align-items: center; gap: 3rem 5rem; padding-block: clamp(3rem, 9vw, 7rem);
+}
+.error-copy { max-width: 38rem; }
+.error-copy h1 { font: 400 var(--s-2xl)/1.05 var(--f-display); letter-spacing: -.005em; }
+.error-copy .lede { margin-top: 1rem; }
+.error-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1.2rem; margin-top: 1.8rem; }
+.error-actions .btn { display: inline-flex; align-items: center; min-height: 2.75rem; text-decoration: none; }
+.error-actions .btn:hover { background: var(--ink); color: var(--paper); text-decoration: underline; text-underline-offset: .2em; }
+.error-search { font: 600 var(--s-sm)/1.3 var(--f-ui); padding-block: .7rem; }
+.error-mark {
+  position: relative; isolation: isolate; min-height: 15rem; display: grid; place-items: center;
+  border-block: 1px solid var(--staff);
+  background: repeating-linear-gradient(to bottom, transparent 0, transparent 24px, var(--staff) 24px, var(--staff) 25px);
+}
+.error-mark::before, .error-mark::after {
+  content: ""; position: absolute; z-index: -1; left: 8%; width: 84%; height: 3px;
+  background: var(--red); transform: rotate(-8deg); transform-origin: center; border-radius: 2px;
+}
+.error-mark::before { top: 42%; }
+.error-mark::after { top: 58%; transform: rotate(7deg); }
+.error-mark span {
+  font: 500 clamp(5rem, 13vw, 9rem)/1 var(--f-display); color: var(--ink);
+  background: var(--paper); padding-inline: .18em; font-variant-numeric: lining-nums tabular-nums;
+}
+
 /* rédaction */
 .warn { background: var(--red-wash); color: var(--red); font: 500 var(--s-sm)/1.4 var(--f-ui); padding: .7rem 1rem; border-radius: 3px; }
 .dash td { font-size: var(--s-sm); }
@@ -348,5 +380,7 @@ section:not(.yr) > .yr-h { margin: 2rem 0 .8rem; color: var(--red); }
   .books { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cat .c-sc { display: none; }
   .hero-search { flex-direction: column; }
+  .error-layout { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; padding-block: 3rem; }
+  .error-mark { min-height: 10rem; }
 }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }

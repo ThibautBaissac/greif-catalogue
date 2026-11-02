@@ -1,0 +1,53 @@
+---
+import type { Lang } from "~/lib/edtf";
+import { formatEdtf } from "~/lib/edtf";
+import { isEditorial } from "~/lib/editorial";
+import { getUi, pageUrl } from "~/lib/i18n";
+
+const { lang } = Astro.props as { lang: Lang };
+const ui = await getUi(lang);
+const other: Lang = lang === "fr" ? "en" : "fr";
+const navKeys = ["catalogue", "indexes", "journal", "search", "about"] as const;
+const buildDate = formatEdtf(new Date().toISOString().slice(0, 10), lang, ui.months);
+---
+
+<div class="not-found-page" data-not-found-page={lang} lang={lang} hidden={lang === "en"}>
+  <a class="skip" href={`#main-${lang}`}>{ui.skipLink}</a>
+  <header class="site-head">
+    <div class="wrap head-row">
+      <a class="brand" href={pageUrl("home", lang)}>
+        <span class="brand-name">{ui.site}</span><span class="brand-sub">{ui.siteSub}</span>
+      </a>
+      <nav class="site-nav" aria-label={ui.mainNav}>
+        {navKeys.map(key => <a href={pageUrl(key, lang)}>{ui.nav[key]}</a>)}
+        <a class="lang" href={pageUrl("home", other)} hreflang={other} lang={other} title={ui.otherLang}>{ui.otherLangCode}</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id={`main-${lang}`} class="error-page">
+    <div class="wrap error-layout">
+      <div class="error-copy">
+        <p class="eyebrow">{ui.notFound.eyebrow}</p>
+        <h1>{ui.notFound.title}</h1>
+        <p class="lede">{ui.notFound.desc}</p>
+        <div class="error-actions">
+          <a class="btn" href={pageUrl("home", lang)}>{ui.notFound.home}</a>
+          <a class="error-search" href={pageUrl("search", lang)}>{ui.notFound.search}</a>
+        </div>
+      </div>
+      <div class="error-mark" aria-hidden="true">
+        <span>404</span>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap foot-row">
+      <p>{ui.site} (1950–2000) · {ui.siteSub}</p>
+      <p class="muted">
+        {isEditorial() ? ui.footerEditorial : ui.footerStatus} · {ui.sinceDate} {buildDate} · <a href={pageUrl("about", lang)}>{ui.nav.about}</a>
+      </p>
+    </div>
+  </footer>
+</div>

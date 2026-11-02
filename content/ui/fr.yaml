@@ -12,6 +12,12 @@ otherLang: English
 otherLangCode: EN
 footerStatus: Version de travail
 footerEditorial: Version éditoriale (non publique)
+notFound:
+  eyebrow: Erreur 404
+  title: Page introuvable
+  desc: Cette adresse ne correspond à aucune page du catalogue. Elle a peut-être changé ou contient une erreur.
+  home: Revenir à l’accueil
+  search: Rechercher dans le catalogue
 heroEyebrow: Catalogue thématique et critique
 stats:
   entries: notices

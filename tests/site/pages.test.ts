@@ -21,6 +21,25 @@ describe("editable pages", () => {
   });
 });
 
+describe("not found page", () => {
+  it("provides a custom error page in the generated site", () => {
+    const root = page("dist/404.html");
+
+    expect(root.querySelector('meta[name="robots"]')?.getAttribute("content")).toBe("noindex");
+    expect(root.querySelector('[data-not-found-page="fr"] h1')?.text.trim()).toBe("Page introuvable");
+    expect(root.querySelector('[data-not-found-page="en"] h1')?.text.trim()).toBe("Page not found");
+  });
+
+  it("offers localized routes back into the catalogue", () => {
+    const root = page("dist/404.html");
+
+    expect(root.querySelector('[data-not-found-page="fr"] .error-actions .btn')?.getAttribute("href")).toBe("/fr/");
+    expect(root.querySelector('[data-not-found-page="fr"] .error-search')?.getAttribute("href")).toBe("/fr/recherche/");
+    expect(root.querySelector('[data-not-found-page="en"] .error-actions .btn')?.getAttribute("href")).toBe("/en/");
+    expect(root.querySelector('[data-not-found-page="en"] .error-search')?.getAttribute("href")).toBe("/en/search/");
+  });
+});
+
 describe("search", () => {
   it("builds a Pagefind index per language and the JS API", () => {
     expect(existsSync("dist/pagefind/pagefind.js")).toBe(true);

@@ -1,0 +1,43 @@
+---
+import NotFound from "~/components/pages/NotFound.astro";
+import { getUi } from "~/lib/i18n";
+import "~/styles/global.css";
+
+const fr = await getUi("fr");
+const en = await getUi("en");
+const clientCopy = {
+  fr: { title: `${fr.notFound.title} · ${fr.site}`, desc: fr.notFound.desc },
+  en: { title: `${en.notFound.title} · ${en.site}`, desc: en.notFound.desc },
+};
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>{clientCopy.fr.title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content={clientCopy.fr.desc} />
+    <meta name="robots" content="noindex" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=IBM+Plex+Sans+Condensed:wght@400;500;600&display=swap"
+    />
+  </head>
+  <body data-lang="fr">
+    <NotFound lang="fr" />
+    <NotFound lang="en" />
+    <script is:inline define:vars={{ clientCopy }}>
+      const lang = window.location.pathname.split("/")[1] === "en" ? "en" : "fr";
+      document.documentElement.lang = lang;
+      document.body.dataset.lang = lang;
+      document.title = clientCopy[lang].title;
+      document.querySelector('meta[name="description"]').content = clientCopy[lang].desc;
+      document.querySelectorAll("[data-not-found-page]").forEach(page => {
+        page.hidden = page.dataset.notFoundPage !== lang;
+      });
+    </script>
+  </body>
+</html>
