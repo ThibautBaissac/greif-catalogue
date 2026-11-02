@@ -10,15 +10,16 @@ Prérequis : Node 22 ou plus récent (`.nvmrc`).
 npm install
 npm run dev          # http://localhost:4321, Keystatic sur /keystatic (stockage local)
 npm run build        # astro build, puis index de recherche Pagefind dans dist/
-npm run preview      # aperçu du build
+python3 -m http.server -d dist 4322   # aperçu du build : http://localhost:4322/fr/
 npm test             # tests unitaires (src/lib, migration, parité Keystatic)
 npm run test:site    # tests du site généré : à lancer après npm run build
+npm run test:site:editorial   # build éditorial (CATALOGUE_EDITORIAL=1) puis tests du site
 npm run check        # astro check (TypeScript)
 npm run validate     # valide content/ contre les schémas et les renvois
 ```
 
 - La recherche (Pagefind) n'existe qu'après `npm run build` ; elle ne fonctionne pas en `npm run dev`.
-- Si l'adaptateur Netlify empêche `npm run preview` de démarrer, servir `dist/` avec un serveur statique quelconque.
+- `npm run preview` ne démarre pas avec l'adaptateur Netlify : pour parcourir le build, servir `dist/` avec un serveur statique (par exemple la commande `python3 -m http.server` ci-dessus, ou `npx http-server dist`).
 
 ## Structure
 
@@ -29,7 +30,7 @@ content/
   books.yaml             les six Livres
   ui/{fr,en}.yaml        toutes les chaînes d'interface
   pages/{fr,en}/*.mdoc   pages éditoriales (introduction de l'accueil, à propos)
-public/incipits/<id>/<n>.png   incipits musicaux
+public/incipits/         incipits musicaux, téléversés dans Keystatic (mouvement, champ « Incipit musical »)
 src/lib/                 domaine (schémas Zod, catalogue, EDTF, balisage, index, export)
 src/pages/ src/components/ src/layouts/   routes et mise en forme
 scripts/migrate/         migration ponctuelle depuis le prototype

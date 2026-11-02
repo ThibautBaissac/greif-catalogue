@@ -1,5 +1,6 @@
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { describe, expect, it } from "vitest";
+import { WORK_COUNT } from "./helpers";
 
 const editorial = process.env.CATALOGUE_EDITORIAL === "1";
 
@@ -30,7 +31,7 @@ describe("editorial build", () => {
 
   it.runIf(editorial)("the dashboard has one row per work", () => {
     const html = readFileSync("dist/fr/redaction/index.html", "utf8");
-    expect(html.match(/<tr>/g)?.length).toBe(83);
+    expect(html.match(/<tr>/g)?.length).toBe(WORK_COUNT + 1);
   });
 
   it.runIf(editorial)("work pages carry editorial notes and link to them", () => {

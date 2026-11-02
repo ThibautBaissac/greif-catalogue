@@ -12,6 +12,7 @@
     "preview": "astro preview",
     "test": "vitest run --project unit",
     "test:site": "vitest run --project site",
+    "test:site:editorial": "CATALOGUE_EDITORIAL=1 astro build && pagefind --site dist && CATALOGUE_EDITORIAL=1 vitest run --project site",
     "check": "astro check",
     "migrate": "tsx scripts/migrate/index.ts prototype content",
     "validate": "tsx scripts/validate.ts"
