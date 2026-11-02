@@ -1,6 +1,7 @@
+title: 42^nd^ Stree
 th: 37b
 book: 1
-title: 42^nd^ Street
+alt_titles: []
 scoring:
   fr: Piano
   en: Piano
@@ -8,9 +9,12 @@ categories:
   - piano
 movements:
   - bars: 335
+text:
+  authors: []
 composition:
   text: '1970'
   date: '1970'
+duration: 7'40
 dedication:
   text: Pour Devadip et Urmila
   persons:
@@ -19,12 +23,25 @@ dedication:
 sources:
   status: located
   intro: '*cf*. [[sonate-piano-09]]'
+  items: []
+  papers: []
+  features: []
 remarks:
-  - 'Nom de l''auteur sur l''édition, « Haridas Olivier Greif ». Témoignage sonore par l''auteur au piano dans l''émission radiophonique « Démarches » (épisodes 1 et 2), diffusé le 15 et le 22 janvier 1977 sur France Culture et présenté par Gérard Julien Salvy. INA, notices ID : PHD99252339 et PHD99228330.'
+  - >-
+    Nom de l'auteur sur l'édition, « Haridas Olivier Greif ». Témoignage sonore
+    par l'auteur au piano dans l'émission radiophonique « Démarches » (épisodes
+    1 et 2), diffusé le 15 et le 22 janvier 1977 sur France Culture et présenté
+    par Gérard Julien Salvy. INA, notices ID : PHD99252339 et PHD99228330.
+intertextual: []
+documents: []
+premiere_recording:
+  - '*Olivier Greif, Musique de chambre* (2010) par Bertrand Giraud (piano)'
 editions:
   - text: Max Eschig, 1980, M.E. 8421
     publisher: Max Eschig
     year: 1980
+    status: ''
+unpublished: false
 performances:
   - premiere: true
     date: '2011-01-03'
@@ -33,7 +50,9 @@ performances:
     performers:
       - person: bertrand-giraud
         role: piano
-    text: Allemagne, Heidelberg, Deutsch-Amerikanisches Institut, 3 janvier 2011, par Bertrand Giraud (piano)
+    text: >-
+      Allemagne, Heidelberg, Deutsch-Amerikanisches Institut, 3 janvier 2011,
+      par Bertrand Giraud (piano)
   - premiere: false
     date: '2017-05-13'
     venue: Paris, Reid Hall
@@ -66,12 +85,12 @@ performances:
       - person: jonathan-benichou
         role: piano
     text: Nice, Musée Marc Chagall, 21 mars 2022, par Jonathan Benichou (piano)
-premiere_recording:
-  - '*Olivier Greif, Musique de chambre* (2010) par Bertrand Giraud (piano)'
-duration: 7'40
+journal: []
 bibliography:
   - ref: francois-sappey-nectoux-2013
     pages: 22, 28, 68, 167, 204, 292, 302
+discography: []
+videography: []
 related: []
 editorial_notes:
   - retrouver le manuscrit ayant servi à la gravure
