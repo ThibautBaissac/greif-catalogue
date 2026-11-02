@@ -28,6 +28,17 @@ export const BIB_TYPES = ["book", "chapter", "article-journal", "thesis", "webpa
 const optional = <T extends z.ZodType>(schema: T) =>
   z.preprocess(v => (v === "" || v === null ? undefined : v), schema.optional());
 
+const isEmpty = (v: unknown): boolean =>
+  v === undefined ||
+  v === null ||
+  v === "" ||
+  (Array.isArray(v) && v.length === 0) ||
+  (typeof v === "object" && !Array.isArray(v) && Object.values(v).every(isEmpty));
+
+/** Optional object: the CMS always writes it, with every field empty when untouched, which means absent. */
+const optionalObject = <T extends z.ZodType>(schema: T) =>
+  z.preprocess(v => (isEmpty(v) ? undefined : v), schema.optional());
+
 /** Required text: an empty value is an error. */
 const text = z.string().min(1);
 
@@ -88,41 +99,42 @@ export const workSchema = z
     scoring_note: optional(z.string()),
     categories: z.array(z.enum(CATEGORIES)).min(1),
     movements: z.array(movementSchema).default([]),
-    text: z
-      .object({
-        credit: text,
-        poem_title: optional(z.string()),
-        authors: z
-          .array(
-            z
-              .object({
-                person: authorityId,
-                role: z.enum(["author", "translator"]),
-                as_written: optional(z.string()),
-              })
-              .strict(),
-          )
-          .default([]),
-      })
-      .strict()
-      .optional(),
-    composition: z.object({ text, date: optional(edtf) }).strict().optional(),
+    text: optionalObject(
+      z
+        .object({
+          credit: text,
+          poem_title: optional(z.string()),
+          authors: z
+            .array(
+              z
+                .object({
+                  person: authorityId,
+                  role: z.enum(["author", "translator"]),
+                  as_written: optional(z.string()),
+                })
+                .strict(),
+            )
+            .default([]),
+        })
+        .strict(),
+    ),
+    composition: optionalObject(z.object({ text, date: optional(edtf) }).strict()),
     duration: optional(z.string()),
-    dedication: z
-      .object({ text: optional(z.string()), persons: z.array(authorityId).default([]) })
-      .strict()
-      .optional(),
-    sources: z
-      .object({
-        status: z.enum(SOURCE_STATUS),
-        institution: optional(authorityId),
-        intro: optional(z.string()),
-        items: z.array(z.object({ label: optional(z.string()), text }).strict()).default([]),
-        papers: z.array(z.string()).default([]),
-        features: z.array(z.enum(SOURCE_FEATURES)).default([]),
-      })
-      .strict()
-      .optional(),
+    dedication: optionalObject(
+      z.object({ text: optional(z.string()), persons: z.array(authorityId).default([]) }).strict(),
+    ),
+    sources: optionalObject(
+      z
+        .object({
+          status: z.enum(SOURCE_STATUS),
+          institution: optional(authorityId),
+          intro: optional(z.string()),
+          items: z.array(z.object({ label: optional(z.string()), text }).strict()).default([]),
+          papers: z.array(z.string()).default([]),
+          features: z.array(z.enum(SOURCE_FEATURES)).default([]),
+        })
+        .strict(),
+    ),
     audio_source: optional(z.string()),
     remarks: z.array(z.string()).default([]),
     intertextual: z.array(z.string()).default([]),
@@ -173,15 +185,16 @@ export const personSchema = z
     given: optional(z.string()),
     kind: z.enum(["person", "ensemble"]).default("person"),
     dates: optional(edtf),
-    identifiers: z
-      .object({
-        bnf: optional(z.string()),
-        viaf: optional(z.string()),
-        isni: optional(z.string()),
-        wikidata: optional(z.string()),
-      })
-      .strict()
-      .optional(),
+    identifiers: optionalObject(
+      z
+        .object({
+          bnf: optional(z.string()),
+          viaf: optional(z.string()),
+          isni: optional(z.string()),
+          wikidata: optional(z.string()),
+        })
+        .strict(),
+    ),
     variants: z.array(z.string()).default([]),
     note: optional(z.string()),
   })

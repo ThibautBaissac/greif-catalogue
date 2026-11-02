@@ -2,6 +2,8 @@ import { z } from "astro/zod";
 import { CATEGORIES, RELATIONS, SOURCE_FEATURES, SOURCE_STATUS } from "./schemas";
 
 const str = z.string();
+/** Empty in the FR file: Keystatic omits an empty text, so a missing key reads as "". */
+const maybeEmpty = z.string().default("");
 const plural = z.object({ one: str, other: str }).strict();
 const strings = <K extends string>(keys: readonly K[]) =>
   z.object(Object.fromEntries(keys.map(k => [k, str])) as Record<K, typeof str>).strict();
@@ -63,7 +65,7 @@ export const uiSchema = z
     unknownDate: str,
     unknownPlace: str,
     incipitMissing: str,
-    frOnly: str,
+    frOnly: maybeEmpty,
     prev: str,
     next: str,
     citeTemplate: str,

@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { load as loadYaml } from "js-yaml";
 import { describe, expect, test } from "vitest";
+import { uiSchema } from "~/lib/ui-schema";
 import {
   bibliographySchema,
   booksFileSchema,
@@ -103,6 +104,43 @@ describe("workSchema", () => {
   });
 });
 
+describe("workSchema: what Keystatic writes for untouched fields", () => {
+  // Regression: Keystatic always writes the optional objects, with empty values inside.
+  test("treats an optional object whose fields are all empty as absent", () => {
+    const r = workSchema.safeParse({
+      ...minimal,
+      text: { credit: "", authors: [] },
+      composition: { text: "", date: "" },
+      dedication: { text: "", persons: [] },
+      sources: { status: "", institution: "", intro: "", items: [], papers: [], features: [] },
+    });
+    expect(failedPaths(r)).toEqual([]);
+    expect(r.data?.text).toBeUndefined();
+    expect(r.data?.composition).toBeUndefined();
+    expect(r.data?.sources).toBeUndefined();
+  });
+
+  test("still reports the required field of a partly filled optional object", () => {
+    const r = workSchema.safeParse({ ...minimal, text: { credit: "", poem_title: "Ode" } });
+    expect(failedPaths(r)).toContain("text.credit");
+  });
+
+  test("a partly filled sources object without status is rejected", () => {
+    const r = workSchema.safeParse({ ...minimal, sources: { status: "", features: ["autograph"] } });
+    expect(failedPaths(r)).toContain("sources.status");
+  });
+
+  test("accepts the empty values Keystatic writes for an untouched edition", () => {
+    const r = workSchema.safeParse({ ...minimal, editions: [{ text: "Symétrie", status: "", year: null }] });
+    expect(failedPaths(r)).toEqual([]);
+  });
+
+  test("accepts an empty identifiers object on a person", () => {
+    const r = personSchema.safeParse({ name: "X", surname: "X", identifiers: {} });
+    expect(r.success).toBe(true);
+  });
+});
+
 describe("personSchema", () => {
   test("accepts an ensemble", () => {
     const r = personSchema.safeParse({ name: "Ensemble X", surname: "Ensemble X", kind: "ensemble" });
@@ -132,5 +170,20 @@ describe("booksFileSchema", () => {
   test("rejects five Books", () => {
     const file = load();
     expect(booksFileSchema.safeParse({ books: file.books.slice(0, 5) }).success).toBe(false);
+  });
+});
+
+describe("uiSchema: what Keystatic writes for untouched fields", () => {
+  // Regression: Keystatic omits an empty text, and `frOnly` is legitimately empty in content/ui/fr.yaml.
+  test("treats a missing frOnly as an empty string", () => {
+    const { frOnly: _omitted, ...rest } = loadYaml(readFileSync("content/ui/fr.yaml", "utf8")) as Record<string, unknown>;
+    const r = uiSchema.safeParse(rest);
+    expect(r.success).toBe(true);
+    expect(r.data?.frOnly).toBe("");
+  });
+
+  test("still rejects any other missing key", () => {
+    const { prev: _omitted, ...rest } = loadYaml(readFileSync("content/ui/fr.yaml", "utf8")) as Record<string, unknown>;
+    expect(uiSchema.safeParse(rest).success).toBe(false);
   });
 });

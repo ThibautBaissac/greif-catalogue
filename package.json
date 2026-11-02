@@ -13,7 +13,8 @@
     "test": "vitest run --project unit",
     "test:site": "vitest run --project site",
     "check": "astro check",
-    "migrate": "tsx scripts/migrate/index.ts prototype content"
+    "migrate": "tsx scripts/migrate/index.ts prototype content",
+    "validate": "tsx scripts/validate.ts"
   },
   "dependencies": {
     "@astrojs/markdoc": "^2.1.2",
