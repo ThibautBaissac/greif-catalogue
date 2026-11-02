@@ -553,7 +553,7 @@ La page reproduit `workPage()` (`prototype/build.mjs:216-328`) avec les nouvelle
 - JSON-LD `MusicComposition`, comme dans `prototype/build.mjs:319-325`, avec `dateCreated` = début EDTF.
 - `data-pagefind-body` sur `<article class="notice">` ; `data-pagefind-filter="book"` (valeur `"<ui.book> <roman>"`) et un `data-pagefind-filter="category"` par catégorie (libellé `ui.cat[c]`) dans des éléments cachés ; `data-pagefind-meta="th"`.
 
-- [ ] **Step 1: Écrire les tests** (`tests/site/work.test.ts`, sur `dist/`)
+- [x] **Step 1: Écrire les tests** (`tests/site/work.test.ts`, sur `dist/`)
   - `dist/fr/oeuvres/wiener-konzert/index.html` existe ; `<h1>` contient `Wiener Konzert` ; `.th-big` contient `45`
   - la page contient les sections `#textes`, `#dedicace`, `#sources`, `#executions`, `#carnet`, `#bibliographie`, `#liens`, `#citer`, dans cet ordre
   - `#executions tbody tr.is-premiere` → 1 ligne, contenant `24 avril 1974`
@@ -561,10 +561,10 @@ La page reproduit `workPage()` (`prototype/build.mjs:216-328`) avec les nouvelle
   - `dist/en/works/wiener-konzert/index.html` : `<html lang="en">`, `.lang-note` présent, la composition affiche `26 November 1973`, l'effectif vaut `Female voice and piano`
   - aucune page d'œuvre ne contient `is-editorial` : assertion écrite `it.skipIf(process.env.CATALOGUE_EDITORIAL === "1")`, car `test:site` sera aussi lancé sur le build éditorial à partir de la tâche 17
   - le nombre de pages d'œuvre est de 82 pour chaque langue
-- [ ] **Step 2: Échec** : `npm run build && npm run test:site` → FAIL.
-- [ ] **Step 3: Implémenter** le gabarit, les composants et la route.
-- [ ] **Step 4: Succès** : même commande → PASS. Ouvrir `npm run dev` → `/fr/oeuvres/wiener-konzert/` et comparer visuellement avec `prototype/dist/fr/oeuvres/wiener-konzert.html` (régénérer le prototype avec `cd prototype && npm i && npm run build` si nécessaire).
-- [ ] **Step 5: Commit** : `git add src tests/site && git commit -m "Render work entries with shared layout"`
+- [x] **Step 2: Échec** : `npm run build && npm run test:site` → FAIL.
+- [x] **Step 3: Implémenter** le gabarit, les composants et la route.
+- [x] **Step 4: Succès** : même commande → PASS. Ouvrir `npm run dev` → `/fr/oeuvres/wiener-konzert/` et comparer visuellement avec `prototype/dist/fr/oeuvres/wiener-konzert.html` (régénérer le prototype avec `cd prototype && npm i && npm run build` si nécessaire).
+- [x] **Step 5: Commit** : `git add src tests/site && git commit -m "Render work entries with shared layout"`
 
 ### Task 12: Accueil, catalogue et premier déploiement
 
@@ -606,16 +606,16 @@ Règles :
     CATALOGUE_EDITORIAL = "1"
   ```
 
-- [ ] **Step 1: Écrire les tests**
+- [x] **Step 1: Écrire les tests**
   - `homeModel(buildCatalogue(fixtureInput)).stats` → `{entries:4, located:1, performances:2, journal:1}`
   - `homeModel(...).books[0]` → `{number:1, count:3, thFirst:"2", thLast:"10", yearFirst:1972, yearLast:1973}` ; `books[2].count` → `0`
   - `catalogueModel(...)` : statut de `sonate-a` → `["published"]` ; de `lied-b` → `["unpublished","lostms"]` ; `q` de `lied-b` contient `"l'ile"` et `"voix et piano"`
   - site : `dist/fr/catalogue/index.html` a 82 lignes `table.cat tbody tr` et 6 sections `.book` ; `dist/en/catalogue/index.html` existe ; `dist/fr/index.html` contient 4 `.stats div`
   - modifier `tests/site/smoke.test.ts` : `dist/index.html` contient `url=/fr/`, et `dist/fr/index.html` contient `Olivier Greif`
-- [ ] **Step 2: Échec** : `npm test tests/lib/indexes && npm run build && npm run test:site` → FAIL.
-- [ ] **Step 3: Implémenter.**
-- [ ] **Step 4: Succès** : PASS ; dans `npm run dev`, filtrer par Livre II puis taper « sonate » : le compteur se met à jour.
-- [ ] **Step 5: Commit** : `git add -A src public netlify.toml tests astro.config.mjs && git commit -m "Add home and catalogue pages with Netlify config"`
+- [x] **Step 2: Échec** : `npm test tests/lib/indexes && npm run build && npm run test:site` → FAIL.
+- [x] **Step 3: Implémenter.**
+- [x] **Step 4: Succès** : PASS ; dans `npm run dev`, filtrer par Livre II puis taper « sonate » : le compteur se met à jour.
+- [x] **Step 5: Commit** : `git add -A src public netlify.toml tests astro.config.mjs && git commit -m "Add home and catalogue pages with Netlify config"`
 - [ ] **Step 6: Premier déploiement (action de l'utilisateur)**
   1. Créer le dépôt GitHub `ThibautBaissac/greif-catalogue` (privé ou public), puis `git remote add origin … && git push -u origin main`.
   2. Sur Netlify : « Add new site » → « Import from GitHub » → ce dépôt. Les réglages viennent de `netlify.toml`.
@@ -659,7 +659,7 @@ Règles reprises du prototype :
   Tri `localeCompare(…, "fr")` sur `sortTitle`.
 - Incipits littéraires : tri `fold(text).localeCompare(…, "fr")`. `author` = nom de la première personne de `text.authors`. `movementTitle` seulement si l'œuvre a plus d'un mouvement.
 
-- [ ] **Step 1: Écrire les tests** (fixture)
+- [x] **Step 1: Écrire les tests** (fixture)
   - `hubModel(cat,false).length` → `13` ; `hubModel(cat,true).at(-1).key` → `"dashboard"` ; compteur de `performances` → `2`
   - `chronoModel(cat).groups.map(g => g.year)` → `[1972, 1973, null]` ; le groupe `null` contient `etude-c` et `zeta-d` ; `strip` → `[{year:1972,count:1},{year:1973,count:1}]`
   - `opusModel(cat).withOpus.map(w => w.id)` → `["sonate-a"]` ; `without.length` → `3`
@@ -668,10 +668,10 @@ Règles reprises du prototype :
   - `textIncipitsModel(cat)` → `[{text:"Vergiftet sind meine Lieder", work: lied-b, author:"Heinrich Heine"}]`
   - `scoringModel(cat)` → 8 entrées ; `piano` contient 3 œuvres
   - site : `dist/fr/chronologie/index.html`, `dist/en/chronology/index.html`, `dist/fr/titres/index.html`, `dist/fr/opus/index.html`, `dist/fr/incipits-litteraires/index.html`, `dist/fr/effectifs/index.html` et `dist/fr/index-general/index.html` existent ; le hub n'a pas de lien vers `/fr/redaction/` (assertion `it.skipIf(process.env.CATALOGUE_EDITORIAL === "1")`)
-- [ ] **Step 2: Échec** → FAIL.
-- [ ] **Step 3: Implémenter** les modèles purs, puis les composants enregistrés dans `PAGE_COMPONENTS`. `editorial` vaut provisoirement `process.env.CATALOGUE_EDITORIAL === "1"` ; il sera remplacé par `isEditorial()` en tâche 17.
-- [ ] **Step 4: Succès** : `npm test && npm run build && npm run test:site` → PASS.
-- [ ] **Step 5: Commit** : `git add src tests && git commit -m "Add chronology, opus, titles, text incipit and scoring indexes"`
+- [x] **Step 2: Échec** → FAIL.
+- [x] **Step 3: Implémenter** les modèles purs, puis les composants enregistrés dans `PAGE_COMPONENTS`. `editorial` vaut provisoirement `process.env.CATALOGUE_EDITORIAL === "1"` ; il sera remplacé par `isEditorial()` en tâche 17.
+- [x] **Step 4: Succès** : `npm test && npm run build && npm run test:site` → PASS.
+- [x] **Step 5: Commit** : `git add src tests && git commit -m "Add chronology, opus, titles, text incipit and scoring indexes"`
 
 ### Task 14: Index, partie 2 : personnes, lieux, exécutions
 
@@ -691,14 +691,14 @@ Règles reprises du prototype :
 
 Le rendu reproduit `personsPage()`, `places()` et `performancesPage()` (`prototype/build.mjs:443-479`). Les ancres sont `id="<personId>"` pour une personne et `#p-<key>` pour un lieu. `persons-filter.ts` reprend le bloc « Personnes : filtre par rôle » de `prototype/assets/app.js:33-43`.
 
-- [ ] **Step 1: Écrire les tests** (fixture)
+- [x] **Step 1: Écrire les tests** (fixture)
   - `personsModel(cat)` donne les lettres `["F","G","H"]` ; Froger a `roles: ["performer"]` et un bloc `performer` avec 2 œuvres, la première ayant `roles: ["soprano"]` et `years: "1974"`
   - Heine a `roles` contenant `author` et `dedicatee`
   - `placesModel(cat).map(p => p.label)` → `["Paris","Prague (République Tchèque)"]`
   - `performancesModel(cat).withoutPerformance.map(w => w.id)` → `["etude-c","zeta-d"]`
   - site : `dist/fr/personnes/index.html` contient `id="heinrich-heine"` ; `dist/fr/lieux/index.html` contient `id="p-paris"` ; tous les liens `.pl` de `dist/fr/oeuvres/wiener-konzert/index.html` pointent vers une ancre qui existe dans `dist/fr/personnes/index.html`
-- [ ] **Step 2: Échec** → FAIL. **Step 3: Implémenter.** **Step 4: Succès** : `npm test && npm run build && npm run test:site` → PASS.
-- [ ] **Step 5: Commit** : `git add src tests && git commit -m "Add people, places and performances indexes"`
+- [x] **Step 2: Échec** → FAIL. **Step 3: Implémenter.** **Step 4: Succès** : `npm test && npm run build && npm run test:site` → PASS.
+- [x] **Step 5: Commit** : `git add src tests && git commit -m "Add people, places and performances indexes"`
 
 ### Task 15: Index, partie 3 : manuscrits, éditions, bibliographie, discographie, carnet de bord
 
