@@ -1,0 +1,36 @@
+---
+import Markup from "~/components/Markup.astro";
+import WorkRef from "~/components/WorkRef.astro";
+import { getCatalogue } from "~/lib/catalogue-astro";
+import { edtfYear, type Lang } from "~/lib/edtf";
+import { getUi } from "~/lib/i18n";
+import { scoringModel } from "~/lib/indexes/scoring";
+import StdPage from "./StdPage.astro";
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const ui = await getUi(lang);
+const cat = await getCatalogue();
+const groups = scoringModel(cat);
+---
+<StdPage key="scoring" {lang} {ui}>
+  <nav class="letters wide">
+    {groups.map(({ category, works }) => <a href={`#c-${category}`}>{ui.cat[category]} <span class="muted">{works.length}</span></a>)}
+  </nav>
+  {groups.filter(g => g.works.length > 0).map(({ category, works }) => (
+    <section id={`c-${category}`}>
+      <h2 class="sec-h">{ui.cat[category]}</h2>
+      <ul class="wl">
+        {works.map(w => {
+          const year = edtfYear(w.composition?.date);
+          return (
+            <li>
+              <WorkRef work={w} {lang} {ui} {cat} />{" "}
+              <span class="muted"><Markup src={w.scoring[lang]} {lang} {ui} {cat} />{year !== null ? ` · ${year}` : ""}</span>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  ))}
+</StdPage>

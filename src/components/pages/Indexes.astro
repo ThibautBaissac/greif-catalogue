@@ -1,0 +1,26 @@
+---
+import { getCatalogue } from "~/lib/catalogue-astro";
+import type { Lang } from "~/lib/edtf";
+import { getUi, pageUrl } from "~/lib/i18n";
+import { hubModel } from "~/lib/indexes/hub";
+import StdPage from "./StdPage.astro";
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const ui = await getUi(lang);
+const entries = hubModel(await getCatalogue(), process.env.CATALOGUE_EDITORIAL === "1");
+const idx = ui.idx as Record<string, { title: string; desc: string }>;
+---
+<StdPage key="indexes" {lang} {ui} eyebrow={ui.siteSub} lede="">
+  <ul class="idx-grid">
+    {entries.map(({ key, count }) => (
+      <li>
+        <a href={pageUrl(key, lang)}>
+          <span class="idx-n">{key === "dashboard" ? "" : count}</span>
+          <span class="idx-t">{idx[key].title}</span>
+          <span class="idx-d">{idx[key].desc}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</StdPage>

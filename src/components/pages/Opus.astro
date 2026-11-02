@@ -1,0 +1,36 @@
+---
+import WorkTitle from "~/components/WorkTitle.astro";
+import { getCatalogue } from "~/lib/catalogue-astro";
+import { edtfYear, type Lang } from "~/lib/edtf";
+import { getUi, workUrl } from "~/lib/i18n";
+import { opusModel } from "~/lib/indexes/opus";
+import StdPage from "./StdPage.astro";
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const ui = await getUi(lang);
+const cat = await getCatalogue();
+const { withOpus, without } = opusModel(cat);
+---
+<StdPage key="opus" {lang} {ui}>
+  {[{ works: withOpus, heading: undefined }, { works: without, heading: ui.noOpus }].map(({ works, heading }) => (
+    <Fragment>
+      {heading && <h2 class="sec-h">{heading}</h2>}
+      <div class="table-scroll">
+        <table class="cat">
+          <thead><tr><th>{ui.col.opus}</th><th>{ui.col.th}</th><th>{ui.col.title}</th><th>{ui.col.year}</th></tr></thead>
+          <tbody>
+            {works.map(w => (
+              <tr>
+                <td class="c-op">{w.opus ? <Fragment>{ui.opus}&nbsp;{w.opus}</Fragment> : "—"}</td>
+                <td class="c-th"><a href={workUrl(w.id, lang)}>{w.th}</a></td>
+                <td><a href={workUrl(w.id, lang)}><WorkTitle work={w} {lang} {ui} {cat} /></a></td>
+                <td class="c-date">{edtfYear(w.composition?.date) ?? "—"}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </Fragment>
+  ))}
+</StdPage>

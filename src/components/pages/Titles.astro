@@ -1,0 +1,45 @@
+---
+import LetterNav from "~/components/LetterNav.astro";
+import Markup from "~/components/Markup.astro";
+import WorkRef from "~/components/WorkRef.astro";
+import WorkTitle from "~/components/WorkTitle.astro";
+import { getCatalogue } from "~/lib/catalogue-astro";
+import type { Lang } from "~/lib/edtf";
+import { getUi, workUrl } from "~/lib/i18n";
+import { titlesModel } from "~/lib/indexes/titles";
+import StdPage from "./StdPage.astro";
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const ui = await getUi(lang);
+const cat = await getCatalogue();
+const { titles, movements } = titlesModel(cat);
+const fr = lang === "en" ? "fr" : undefined;
+---
+<StdPage key="titles" {lang} {ui}>
+  <LetterNav letters={titles.map(([l]) => l)} />
+  {titles.map(([letter, items]) => (
+    <section class="letter" id={`l-${letter}`}>
+      <h2 class="letter-h">{letter}</h2>
+      <ul class="idx">
+        {items.map(item =>
+          item.kind === "main" ? (
+            <li>
+              <a href={workUrl(item.work.id, lang)}><WorkTitle work={item.work} {lang} {ui} {cat} /></a>{" "}
+              <span class="thn">Th&nbsp;{item.work.th}</span>
+            </li>
+          ) : (
+            <li class="alt">
+              <cite><Markup src={item.title} {lang} {ui} {cat} /></cite>{" "}
+              <span class="muted" lang={fr}>({item.source})</span> → <WorkRef work={item.work} {lang} {ui} {cat} />
+            </li>
+          ),
+        )}
+      </ul>
+    </section>
+  ))}
+  <h2 class="sec-h">{ui.movementTitles}</h2>
+  <ul class="idx cols">
+    {movements.map(m => <li><span lang={fr}>{m.title}</span> — <WorkRef work={m.work} {lang} {ui} {cat} /></li>)}
+  </ul>
+</StdPage>

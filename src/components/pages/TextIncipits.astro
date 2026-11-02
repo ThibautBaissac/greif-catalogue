@@ -1,0 +1,27 @@
+---
+import Markup from "~/components/Markup.astro";
+import WorkRef from "~/components/WorkRef.astro";
+import { getCatalogue } from "~/lib/catalogue-astro";
+import type { Lang } from "~/lib/edtf";
+import { getUi } from "~/lib/i18n";
+import { textIncipitsModel } from "~/lib/indexes/textIncipits";
+import StdPage from "./StdPage.astro";
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const ui = await getUi(lang);
+const cat = await getCatalogue();
+const items = textIncipitsModel(cat);
+const fr = lang === "en" ? "fr" : undefined;
+---
+<StdPage key="incipits" {lang} {ui}>
+  <ul class="idx inc">
+    {items.map(i => (
+      <li>
+        <span class="txt-inc" lang={fr}><Markup src={i.text} {lang} {ui} {cat} /></span>{" "}
+        <span class="muted">{i.author ? `${i.author} · ` : ""}</span><WorkRef work={i.work} {lang} {ui} {cat} />
+        {i.movementTitle && <Fragment>{" "}<span class="muted" lang={fr}><Markup src={i.movementTitle} {lang} {ui} {cat} /></span></Fragment>}
+      </li>
+    ))}
+  </ul>
+</StdPage>

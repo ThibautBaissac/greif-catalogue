@@ -1,0 +1,40 @@
+---
+import Markup from "~/components/Markup.astro";
+import WorkRef from "~/components/WorkRef.astro";
+import { getCatalogue } from "~/lib/catalogue-astro";
+import { formatEdtf, type Lang } from "~/lib/edtf";
+import { getUi } from "~/lib/i18n";
+import { chronoModel } from "~/lib/indexes/chrono";
+import StdPage from "./StdPage.astro";
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const ui = await getUi(lang);
+const cat = await getCatalogue();
+const { strip, groups } = chronoModel(cat);
+const max = Math.max(...strip.map(s => s.count), 1);
+---
+<StdPage key="chrono" {lang} {ui}>
+  <div class="yearstrip" role="img" aria-label={ui.worksPerYear}>
+    {strip.map(({ year, count }) => (
+      <a href={`#y${year}`} class={`yb${count ? "" : " empty"}`} title={`${year} : ${count}`}>
+        <span class="bar" style={`--h:${count / max}`}></span><span class="yl">{String(year).slice(2)}</span>
+      </a>
+    ))}
+  </div>
+  {groups.map(({ year, works }) => (
+    <section class="yr" id={year === null ? "y-unknown" : `y${year}`}>
+      <h2 class="yr-h">{year === null ? ui.unknownDate : year}</h2>
+      <ul class="wl">
+        {works.map(w => (
+          <li>
+            <WorkRef work={w} {lang} {ui} {cat} />{" "}
+            <span class="muted">
+              {w.composition?.date ? `${formatEdtf(w.composition.date, lang, ui.months)} · ` : ""}<Markup src={w.scoring[lang]} {lang} {ui} {cat} />
+            </span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</StdPage>

@@ -1,0 +1,5 @@
+---
+type Props = { letters: string[] };
+const { letters } = Astro.props;
+---
+<nav class="letters" aria-label="A–Z">{letters.map(l => <a href={`#l-${l}`}>{l}</a>)}</nav>
