@@ -1,0 +1,50 @@
+---
+import WorkRef from "~/components/WorkRef.astro";
+import { getCatalogue } from "~/lib/catalogue-astro";
+import type { Lang } from "~/lib/edtf";
+import { getUi } from "~/lib/i18n";
+import { sourcesModel } from "~/lib/indexes/sources";
+import StdPage from "./StdPage.astro";
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const ui = await getUi(lang);
+const cat = await getCatalogue();
+const { byInstitution, byPaper, byFeature, lost } = sourcesModel(cat);
+const fr = lang === "en" ? "fr" : undefined;
+---
+<StdPage key="sources" {lang} {ui}>
+  <h2 class="sec-h">{ui.bySiglum}</h2>
+  <div class="grid-2">
+    {byInstitution.map(([id, works]) => (
+      <section class="card">
+        <h3><span class="siglum">{cat.institutions.get(id)?.siglum ?? id}</span> <span class="muted">{works.length}</span></h3>
+        <ul class="wl compact">{works.map(w => <li><WorkRef work={w} {lang} {ui} {cat} /></li>)}</ul>
+      </section>
+    ))}
+  </div>
+  <h2 class="sec-h">{ui.papers}</h2>
+  <div class="grid-2">
+    {byPaper.map(([paper, works]) => (
+      <section class="card">
+        <h3><span lang={fr}>{paper}</span> <span class="muted">{works.length}</span></h3>
+        <ul class="wl compact">{works.map(w => <li><WorkRef work={w} {lang} {ui} {cat} /></li>)}</ul>
+      </section>
+    ))}
+  </div>
+  <h2 class="sec-h">{ui.featuresTitle}</h2>
+  <div class="grid-2">
+    {byFeature.map(([feature, works]) => (
+      <section class="card">
+        <h3>{ui.features[feature]} <span class="muted">{works.length}</span></h3>
+        <ul class="wl compact">{works.map(w => <li><WorkRef work={w} {lang} {ui} {cat} /></li>)}</ul>
+      </section>
+    ))}
+  </div>
+  <h2 class="sec-h">{ui.lostOrUnlocated}</h2>
+  <ul class="wl">
+    {lost.map(w => (
+      <li><WorkRef work={w} {lang} {ui} {cat} /> <span class="tag tag-red">{ui.srcStatus[w.sources!.status]}</span></li>
+    ))}
+  </ul>
+</StdPage>

@@ -1,0 +1,41 @@
+---
+import Markup from "~/components/Markup.astro";
+import WorkRef from "~/components/WorkRef.astro";
+import { getCatalogue } from "~/lib/catalogue-astro";
+import type { Lang } from "~/lib/edtf";
+import { getUi } from "~/lib/i18n";
+import { discoModel } from "~/lib/indexes/disco";
+import StdPage from "./StdPage.astro";
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const ui = await getUi(lang);
+const cat = await getCatalogue();
+const sections = [
+  { label: ui.f.discography, groups: discoModel(cat, "discography") },
+  { label: ui.f.videography, groups: discoModel(cat, "videography") },
+];
+const fr = lang === "en" ? "fr" : undefined;
+---
+<StdPage key="disco" {lang} {ui}>
+  {sections.map(({ label, groups }) => (
+    <Fragment>
+      <h2 class="sec-h">{label}</h2>
+      <div class="grid-2">
+        {groups.map(({ title, year, items }) => (
+          <section class="card">
+            <h3><cite lang={fr}>{title}</cite>{year !== undefined && <Fragment>{" "}<span class="muted">{year}</span></Fragment>}</h3>
+            <ul class="wl compact">
+              {items.map(({ work, details }) => (
+                <li>
+                  <WorkRef {work} {lang} {ui} {cat} />
+                  {details && <Fragment>{" "}<span class="muted"><Markup src={details} orig {lang} {ui} {cat} /></span></Fragment>}
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
+    </Fragment>
+  ))}
+</StdPage>

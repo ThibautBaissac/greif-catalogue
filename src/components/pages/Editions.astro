@@ -1,0 +1,31 @@
+---
+import Markup from "~/components/Markup.astro";
+import WorkRef from "~/components/WorkRef.astro";
+import { getCatalogue } from "~/lib/catalogue-astro";
+import type { Lang } from "~/lib/edtf";
+import { getUi } from "~/lib/i18n";
+import { editionsModel } from "~/lib/indexes/editions";
+import StdPage from "./StdPage.astro";
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const ui = await getUi(lang);
+const cat = await getCatalogue();
+const { byPublisher, unpublished } = editionsModel(cat);
+---
+<StdPage key="editions" {lang} {ui}>
+  <div class="grid-2">
+    {byPublisher.map(([publisher, items]) => (
+      <section class="card">
+        <h3>{publisher} <span class="muted">{items.length}</span></h3>
+        <ul class="wl compact">
+          {items.map(({ work, edition }) => (
+            <li><WorkRef {work} {lang} {ui} {cat} /> <span class="muted"><Markup src={edition.text} orig {lang} {ui} {cat} /></span></li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+  <h2 class="sec-h">{ui.unpublishedList} <span class="muted">{unpublished.length}</span></h2>
+  <ul class="wl cols">{unpublished.map(w => <li><WorkRef work={w} {lang} {ui} {cat} /></li>)}</ul>
+</StdPage>

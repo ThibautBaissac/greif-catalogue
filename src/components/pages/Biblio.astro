@@ -1,0 +1,54 @@
+---
+import WorkTitle from "~/components/WorkTitle.astro";
+import { formatReference } from "~/lib/bibliography";
+import { getCatalogue } from "~/lib/catalogue-astro";
+import type { Lang } from "~/lib/edtf";
+import { getUi, workUrl } from "~/lib/i18n";
+import { biblioModel } from "~/lib/indexes/biblio";
+import StdPage from "./StdPage.astro";
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const ui = await getUi(lang);
+const cat = await getCatalogue();
+const blocks = biblioModel(cat);
+const fr = lang === "en" ? "fr" : undefined;
+---
+<StdPage key="biblio" {lang} {ui}>
+  {blocks.map(({ entry, citations, pageIndex }) => (
+    <section id={entry.id}>
+      <h2 class="sec-h" lang={fr} set:html={formatReference(entry, lang)} />
+      <div class="table-scroll">
+        <table class="cat">
+          <thead><tr><th>{ui.col.th}</th><th>{ui.col.title}</th><th>{ui.col.pages}</th></tr></thead>
+          <tbody>
+            {citations.map(({ work, pages }) => (
+              <tr>
+                <td class="c-th"><a href={workUrl(work.id, lang)}>{work.th}</a></td>
+                <td><WorkTitle {work} {lang} {ui} {cat} /></td>
+                <td class="c-pages">{pages && <Fragment>p.&nbsp;{pages}</Fragment>}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {pageIndex.length > 0 && (
+        <Fragment>
+          <h3 class="sub-h">{ui.pageIndex}</h3>
+          <dl class="pageidx">
+            {pageIndex.map(({ page, works }) => (
+              <div>
+                <dt>p.&nbsp;{page}</dt>
+                <dd>
+                  {works.map((w, i) => (
+                    <Fragment>{i > 0 && ", "}<a href={workUrl(w.id, lang)}>Th&nbsp;{w.th}</a></Fragment>
+                  ))}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </Fragment>
+      )}
+    </section>
+  ))}
+</StdPage>

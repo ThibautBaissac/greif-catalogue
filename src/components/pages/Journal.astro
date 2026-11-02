@@ -1,0 +1,27 @@
+---
+import JournalEntry from "~/components/JournalEntry.astro";
+import { getCatalogue } from "~/lib/catalogue-astro";
+import type { Lang } from "~/lib/edtf";
+import { getUi } from "~/lib/i18n";
+import { journalAnchor, journalModel } from "~/lib/indexes/journal";
+import StdPage from "./StdPage.astro";
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const ui = await getUi(lang);
+const cat = await getCatalogue();
+const groups = journalModel(cat);
+---
+<StdPage key="journal" active="journal" {lang} {ui}>
+  <nav class="letters" aria-label={ui.idx.journal.title}>
+    {groups.map(({ year }) => <a href={`#${journalAnchor(year)}`}>{year ?? "?"}</a>)}
+  </nav>
+  {groups.map(({ year, entries }) => (
+    <section id={journalAnchor(year)}>
+      <h2 class="yr-h">{year ?? ui.unknownDate}</h2>
+      <div class="journal">
+        {entries.map(({ entry, work }) => <JournalEntry {entry} {work} {lang} {ui} {cat} />)}
+      </div>
+    </section>
+  ))}
+</StdPage>
