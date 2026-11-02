@@ -1,5 +1,5 @@
-import type { Catalogue, WorkEntry } from "../catalogue";
-import { stripMarkup } from "../markup";
+import { thResolver, type Catalogue, type WorkEntry } from "../catalogue";
+import { stripMarkup, type ThResolver } from "../markup";
 import { sortTitle } from "../text";
 import { letterGroups } from "./letters";
 
@@ -15,8 +15,8 @@ export type TitlesModel = {
 const byTitle = (a: string, b: string) => a.localeCompare(b, "fr");
 
 /** Même nettoyage que le prototype : numérotation, guillemets et crochets retirés ; un titre vide ou numérique est écarté. */
-function cleanMovementTitle(title: string): string | undefined {
-  const clean = stripMarkup(title)
+function cleanMovementTitle(title: string, th: ThResolver): string | undefined {
+  const clean = stripMarkup(title, th)
     .replace(/^[«\s]+|[»\s]+$/g, "")
     .replace(/^(-?\s*[IVX\d]+\s*[-.)/]?\s*-?\s*|Nº\s*\d+\.?\s*|\d+\)\s*)/i, "")
     .replace(/^\[|\]$/g, "")
@@ -25,6 +25,7 @@ function cleanMovementTitle(title: string): string | undefined {
 }
 
 export function titlesModel(cat: Catalogue): TitlesModel {
+  const th = thResolver(cat);
   const items = cat.works
     .flatMap((work): { item: TitleItem; key: string }[] => [
       { item: { kind: "main", work }, key: sortTitle(work.title) },
@@ -38,7 +39,7 @@ export function titlesModel(cat: Catalogue): TitlesModel {
   const movements = cat.works
     .flatMap(work =>
       work.movements.flatMap(m => {
-        const title = m.title === undefined ? undefined : cleanMovementTitle(m.title);
+        const title = m.title === undefined ? undefined : cleanMovementTitle(m.title, th);
         return title ? [{ title, work, key: sortTitle(title) }] : [];
       }),
     )

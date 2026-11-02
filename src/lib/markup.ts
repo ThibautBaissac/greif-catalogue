@@ -20,22 +20,27 @@ const XREF = () => /\[\[([^\[\]]*)\]\]/g;
 const esc = (s: string): string =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
+/** Un renvoi est remplacé par un jeton, puis rétabli en dernier : les substitutions de style ne touchent pas son HTML (titre contenant « | » ou « * »). */
+const token = (i: number): string => `\uE000${i}\uE001`;
+
 function transform(src: string, o: MarkupOptions): string {
-  let h = esc(src);
-  h = h.replace(XREF(), (_m, id: string) => {
+  const refs: string[] = [];
+  let h = esc(src).replace(XREF(), (_m, id: string) => {
     if (id === "?") {
-      return `<span class="xref unresolved" title="${esc(o.labels.unresolved)}">Th&nbsp;?</span>`;
+      refs.push(`<span class="xref unresolved" title="${esc(o.labels.unresolved)}">Th&nbsp;?</span>`);
+    } else {
+      const target = o.resolve(id);
+      if (!target) throw new UnknownXrefError(id);
+      refs.push(`<a class="xref" href="${esc(target.href)}" title="${esc(target.title)}">Th&nbsp;${esc(target.th)}</a>`);
     }
-    const target = o.resolve(id);
-    if (!target) throw new UnknownXrefError(id);
-    return `<a class="xref" href="${esc(target.href)}" title="${esc(target.title)}">Th&nbsp;${esc(target.th)}</a>`;
+    return token(refs.length - 1);
   });
   h = h.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
   h = h.replace(/\*([^*\n]+?)\*/g, "<em>$1</em>");
   h = h.replace(/\^([^^\s][^^]*)\^/g, "<sup>$1</sup>");
   h = h.replace(/ \| /g, ` <span class="lb" aria-label="${esc(o.labels.lineBreak)}">|</span> `);
   h = h.replace(/\[sic\]/g, "[<em>sic</em>]");
-  return h;
+  return h.replace(/\uE000(\d+)\uE001/g, (_m, i: string) => refs[Number(i)]);
 }
 
 export const renderInline = (src: string, o: MarkupOptions): string =>
@@ -47,12 +52,15 @@ export const renderBlock = (src: string, o: MarkupOptions): string =>
     .map((p) => `<p>${p.replace(/\n/g, "<br>")}</p>`)
     .join("");
 
-export function stripMarkup(src: string, resolve?: MarkupOptions["resolve"]): string {
+/** Texte nu : seul le numéro Th du renvoi est nécessaire, d'où un résolveur plus étroit que `MarkupOptions["resolve"]`. */
+export type ThResolver = (id: string) => { th: string } | undefined;
+
+export function stripMarkup(src: string, resolve: ThResolver): string {
   return src
     .replace(/\^([^^]*)\^/g, "$1")
     .replace(/\*/g, "")
     .replace(XREF(), (_m, id: string) => {
-      const target = id === "?" ? undefined : resolve?.(id);
+      const target = id === "?" ? undefined : resolve(id);
       return target ? `Th ${target.th}` : "Th ?";
     });
 }

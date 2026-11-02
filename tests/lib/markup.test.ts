@@ -54,6 +54,12 @@ describe("renderInline", () => {
     expect(error).toBeInstanceOf(UnknownXrefError);
     expect((error as UnknownXrefError).id).toBe("nope");
   });
+  test("a referenced title containing \" | \" does not corrupt the title attribute", () => {
+    const pipe: MarkupOptions["resolve"] = () => ({ th: "7", title: "A | B", href: "/fr/oeuvres/ab/" });
+    const out = renderInline("cf. [[ab]] et c | d", { resolve: pipe, labels });
+    expect(out).toContain('<a class="xref" href="/fr/oeuvres/ab/" title="A | B">Th&nbsp;7</a>');
+    expect(out).toContain('c <span class="lb" aria-label="saut de ligne">|</span> d');
+  });
   test("an editorial bracket before a reference stays visible", () => {
     expect(renderInline("[[[wiener-konzert]], op.40]", o)).toBe(`[${XREF}, op.40]`);
   });
@@ -68,6 +74,12 @@ describe("renderBlock", () => {
 describe("stripMarkup", () => {
   test("plain text with Th numbers", () => {
     expect(stripMarkup("42^nd^ *Street* [[wiener-konzert]] [[?]]", resolve)).toBe("42nd Street Th 45 Th ?");
+  });
+});
+
+describe("stripMarkup with a resolver", () => {
+  test("a valid reference gives its Th number, never \"Th ?\"", () => {
+    expect(stripMarkup("Variations sur [[wiener-konzert]]", resolve)).toBe("Variations sur Th 45");
   });
 });
 

@@ -1,4 +1,4 @@
-import type { Catalogue } from "./catalogue";
+import { thResolver, type Catalogue } from "./catalogue";
 import type { Lang } from "./edtf";
 import { stripMarkup, type MarkupOptions } from "./markup";
 import type { Plural, Ui } from "./ui-schema";
@@ -54,7 +54,7 @@ export async function getUi(lang: Lang): Promise<Ui> {
 export const markupOptions = (ui: Ui, lang: Lang, cat: Catalogue): MarkupOptions => ({
   resolve: id => {
     const work = cat.byId.get(id);
-    return work && { th: work.th, title: stripMarkup(work.title), href: workUrl(id, lang) };
+    return work && { th: work.th, title: stripMarkup(work.title, thResolver(cat)), href: workUrl(id, lang) };
   },
   labels: { lineBreak: ui.lineBreak, unresolved: ui.unresolvedRef },
 });

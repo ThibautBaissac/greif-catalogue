@@ -1,4 +1,4 @@
-import type { Catalogue } from "./catalogue";
+import { thResolver, type Catalogue } from "./catalogue";
 import { stripMarkup } from "./markup";
 import { workUrl } from "./i18n";
 
@@ -49,13 +49,14 @@ const COLUMNS = [
 const field = (value: string): string => (/[",\r\n]/.test(value) ? `"${value.replace(/"/g, '""')}"` : value);
 
 export function toCsv(cat: Catalogue): string {
+  const th = thResolver(cat);
   const rows = cat.works.map(w =>
     [
       w.id,
       w.th,
       String(w.book),
-      stripMarkup(w.title),
-      w.subtitle ? stripMarkup(w.subtitle) : "",
+      stripMarkup(w.title, th),
+      w.subtitle ? stripMarkup(w.subtitle, th) : "",
       w.opus ?? "",
       w.scoring.fr,
       w.scoring.en,

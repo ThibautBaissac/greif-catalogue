@@ -1,5 +1,5 @@
 ---
-import type { Catalogue, WorkEntry } from "~/lib/catalogue";
+import { thResolver, type Catalogue, type WorkEntry } from "~/lib/catalogue";
 import type { Lang } from "~/lib/edtf";
 import type { Ui } from "~/lib/i18n";
 import type { Movement } from "~/lib/schemas";
@@ -9,7 +9,7 @@ import Markup from "./Markup.astro";
 type Props = { work: WorkEntry; index: number; movement: Movement; lang: Lang; ui: Ui; cat: Catalogue };
 const { work, index, movement: m, lang, ui, cat } = Astro.props;
 const fr = lang === "en" ? "fr" : undefined;
-const label = stripMarkup(m.title ?? work.title);
+const label = stripMarkup(m.title ?? work.title, thResolver(cat));
 const expected = `public/incipits/${work.id}/${index + 1}.png`;
 ---
 <figure class="mvt">

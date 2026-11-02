@@ -1,4 +1,4 @@
-import type { Catalogue, WorkEntry } from "../catalogue";
+import { thResolver, type Catalogue, type WorkEntry } from "../catalogue";
 import { fold } from "../text";
 import { stripMarkup } from "../markup";
 import { CATEGORIES, type Book, type Category } from "../schemas";
@@ -16,18 +16,18 @@ const statusOf = (w: WorkEntry): WorkStatus[] => [
   ...(w.sources && w.sources.status !== "located" ? (["lostms"] as const) : []),
 ];
 
-const searchText = (w: WorkEntry): string =>
+const searchText = (w: WorkEntry, cat: Catalogue): string =>
   fold(
     [w.title, w.subtitle, ...w.alt_titles.map(a => a.title), w.scoring.fr, w.opus ? `op ${w.opus}` : undefined]
       .filter((s): s is string => !!s)
-      .map(s => stripMarkup(s))
+      .map(s => stripMarkup(s, thResolver(cat)))
       .join(" "),
   );
 
 export function catalogueModel(cat: Catalogue): CatalogueModel {
   const books = cat.books.map(book => ({
     book,
-    works: cat.works.filter(w => w.book === book.number).map(work => ({ work, status: statusOf(work), q: searchText(work) })),
+    works: cat.works.filter(w => w.book === book.number).map(work => ({ work, status: statusOf(work), q: searchText(work, cat) })),
   }));
   const used = new Set(cat.works.flatMap(w => w.categories));
   return { books, categories: CATEGORIES.filter(c => used.has(c)) };

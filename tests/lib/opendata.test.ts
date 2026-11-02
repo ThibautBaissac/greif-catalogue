@@ -110,4 +110,14 @@ describe("toCsv", () => {
     };
     expect(toCsv(buildCatalogue(input))).toContain('w,1,1,"Un, deux ""trois""\nquatre",,');
   });
+
+  test("a cross-reference in a title is written with the referenced Th number", () => {
+    const work = (id: string, th: string, title: string) => ({
+      id,
+      data: workSchema.parse({ th, book: 1, title, scoring: { fr: "Piano", en: "Piano" }, categories: ["piano"] }),
+    });
+    const input = { ...fixtureInput, works: [work("a", "45", "Wiener"), work("b", "46", "Variations sur [[a]]")] };
+    const rows = toCsv(buildCatalogue(input)).split("\n");
+    expect(rows[2]).toBe("b,46,1,Variations sur Th 45,,,Piano,Piano,piano,,false,/fr/oeuvres/b/");
+  });
 });

@@ -9,6 +9,7 @@ import PerfTable from "~/components/PerfTable.astro";
 import WorkRef from "~/components/WorkRef.astro";
 import WorkTitle from "~/components/WorkTitle.astro";
 import { getCatalogue } from "~/lib/catalogue-astro";
+import { thResolver } from "~/lib/catalogue";
 import { edtfSortKey, formatEdtf, type Lang } from "~/lib/edtf";
 import { isEditorial } from "~/lib/editorial";
 import { fill, getUi, pageUrl, WORK_DIR, workUrl } from "~/lib/i18n";
@@ -30,7 +31,8 @@ const fr = lang === "en" ? "fr" : undefined;
 const { prev, next } = cat.neighbours(w.id);
 const book = cat.books.find(b => b.number === w.book);
 const roman = book?.roman ?? String(w.book);
-const title = stripMarkup(w.title);
+const strip = (s: string) => stripMarkup(s, thResolver(cat));
+const title = strip(w.title);
 const catalogueUrl = pageUrl("catalogue", lang);
 const personHref = (pid: string) => `${pageUrl("persons", lang)}#${pid}`;
 const personName = (pid: string) => cat.persons.get(pid)?.name ?? pid;
@@ -49,7 +51,7 @@ const compIsPlain = lang === "en" && !!w.composition?.date;
 
 // Rubriques
 const authors = w.text?.authors ?? [];
-const textSameAsAuthor = !!w.text && authors.length === 1 && stripMarkup(w.text.credit) === personName(authors[0].person);
+const textSameAsAuthor = !!w.text && authors.length === 1 && strip(w.text.credit) === personName(authors[0].person);
 const has = {
   textes: !!w.text,
   dedicace: !!(w.dedication?.text || w.dedication?.persons.length),
@@ -94,14 +96,14 @@ const citeText = fill(ui.citeTemplate, { th: w.th, title, url: "[URL]", date: bu
 const jsonld = {
   "@context": "https://schema.org",
   "@type": "MusicComposition",
-  name: title + (w.subtitle ? ` « ${stripMarkup(w.subtitle)} »` : ""),
+  name: title + (w.subtitle ? ` « ${strip(w.subtitle)} »` : ""),
   identifier: `Th ${w.th}`,
   composer: { "@type": "Person", name: "Olivier Greif" },
   ...(w.composition?.date ? { dateCreated: edtfSortKey(w.composition.date) } : {}),
   ...(w.opus ? { alternateName: `op. ${w.opus}` } : {}),
   ...(authors.length ? { lyricist: authors.map(a => ({ "@type": "Person", name: personName(a.person) })) } : {}),
 };
-const desc = `Th ${w.th}, ${title}, ${w.scoring[lang]}${w.composition ? ", " + stripMarkup(w.composition.text) : ""}`;
+const desc = `Th ${w.th}, ${title}, ${w.scoring[lang]}${w.composition ? ", " + strip(w.composition.text) : ""}`;
 const other: Lang = lang === "fr" ? "en" : "fr";
 ---
 <Base lang={lang} title={`Th ${w.th} ${title}`} {desc} alt={workUrl(w.id, other)} active="catalogue" {jsonld}>

@@ -13,6 +13,12 @@ import type {
 } from "./schemas";
 import { compareTh } from "./th";
 
+/** Résolveur de `stripMarkup` : un renvoi valide donne le numéro Th de l'œuvre visée. */
+export const thResolver =
+  (cat: { byId: Map<string, { th: string }> }) =>
+  (id: string): { th: string } | undefined =>
+    cat.byId.get(id);
+
 export type Entry<T> = { id: string; data: T };
 
 export type CatalogueInput = {
