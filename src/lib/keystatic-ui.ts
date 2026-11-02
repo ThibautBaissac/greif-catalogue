@@ -1,8 +1,8 @@
 import { fields, type ComponentSchema } from "@keystatic/core";
 import type { z } from "astro/zod";
+import { EDTF_DATE } from "./edtf";
 
 /** EDTF subset of `edtf.ts` as an anchored regex source: one date or an interval of two. */
-const EDTF_DATE = String.raw`(?:\d{4}(?:-(?:0[1-9]|1[0-2])(?:-(?:0[1-9]|[12]\d|3[01]))?)?|\d{3}X)[?~]?`;
 export const EDTF_PATTERN = `^${EDTF_DATE}(?:/${EDTF_DATE})?$`;
 
 /** Same, for an optional Keystatic text field: Keystatic also tests the pattern against an empty value. */

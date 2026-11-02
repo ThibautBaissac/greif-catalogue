@@ -6,6 +6,7 @@ import { getCatalogue } from "~/lib/catalogue-astro";
 import type { Lang } from "~/lib/edtf";
 import { getUi, pageUrl, tn, type PageKey } from "~/lib/i18n";
 import { homeModel } from "~/lib/indexes/home";
+import { INDEX_KEYS } from "~/lib/ui-schema";
 
 export const getStaticPaths = (() => (["fr", "en"] as const).map(lang => ({ params: { lang } }))) satisfies GetStaticPaths;
 
@@ -17,10 +18,7 @@ const { Content: Intro } = await render(intro);
 const { stats, books } = homeModel(await getCatalogue());
 const other: Lang = lang === "fr" ? "en" : "fr";
 const statCards = (["entries", "located", "performances", "journal"] as const).map(k => [ui.stats[k], stats[k]] as const);
-const indexKeys: PageKey[] = [
-  "chrono", "opus", "titles", "incipits", "persons", "places", "performances", "scoring", "sources", "editions",
-  "biblio", "disco", "journal",
-];
+const indexKeys: readonly PageKey[] = INDEX_KEYS;
 const idx = ui.idx as Record<string, { title: string; desc: string }>;
 ---
 <Base {lang} alt={pageUrl("home", other)} active="home" bodyClass="home">

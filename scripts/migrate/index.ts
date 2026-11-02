@@ -2,16 +2,8 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync
 import { basename, join } from "node:path";
 import { dump, load } from "js-yaml";
 import type { z } from "astro/zod";
-import { validateCatalogue, type Entry } from "../../src/lib/catalogue";
-import {
-  bibliographySchema,
-  booksFileSchema,
-  institutionSchema,
-  personSchema,
-  placeSchema,
-  roleSchema,
-  workSchema,
-} from "../../src/lib/schemas";
+import { assembleCatalogueInput, validateCatalogue, type Entry } from "../../src/lib/catalogue";
+import { booksFileSchema, COLLECTION_SCHEMAS } from "../../src/lib/schemas";
 import type { ProtoWork } from "./authorities";
 import { shouldRefuse } from "./guard";
 import { migrate } from "./works";
@@ -26,14 +18,7 @@ if (refusal) {
 }
 const REPORT_PATH = "tasks/migration-report.md";
 
-const SCHEMAS: Record<string, z.ZodType> = {
-  works: workSchema,
-  persons: personSchema,
-  places: placeSchema,
-  institutions: institutionSchema,
-  roles: roleSchema,
-  bibliography: bibliographySchema,
-};
+const SCHEMAS: Record<string, z.ZodType> = COLLECTION_SCHEMAS;
 
 const worksDir = join(protoDir, "data", "works");
 const works: ProtoWork[] = readdirSync(worksDir)
@@ -62,15 +47,7 @@ for (const [path, obj] of Object.entries(files)) {
 }
 
 const books = booksFileSchema.parse(load(readFileSync(join(contentDir, "books.yaml"), "utf8"))).books;
-for (const e of validateCatalogue({
-  works: entries.works,
-  persons: entries.persons,
-  places: entries.places,
-  institutions: entries.institutions,
-  roles: entries.roles,
-  bibliography: entries.bibliography,
-  books,
-})) {
+for (const e of validateCatalogue(await assembleCatalogueInput(dir => entries[dir], books))) {
   problems.push(`${e.file}: ${e.path} : ${e.message}`);
 }
 

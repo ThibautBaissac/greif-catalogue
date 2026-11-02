@@ -1,15 +1,17 @@
 import { edtfSortKey } from "./edtf";
 import { extractRefs } from "./markup";
-import type {
-  BibEntry,
-  Book,
-  Institution,
-  Performance,
-  Person,
-  Place,
-  Relation,
-  Role,
-  Work,
+import {
+  COLLECTION_SCHEMAS,
+  type BibEntry,
+  type Book,
+  type CollectionDir,
+  type Institution,
+  type Performance,
+  type Person,
+  type Place,
+  type Relation,
+  type Role,
+  type Work,
 } from "./schemas";
 import { compareTh } from "./th";
 
@@ -30,6 +32,19 @@ export type CatalogueInput = {
   bibliography: Entry<BibEntry>[];
   books: Book[];
 };
+
+/**
+ * Assembles a CatalogueInput: `entriesOf` returns the entries of one collection directory
+ * (Astro's `getCollection`, the YAML files read by `validate`, the migration output).
+ */
+export async function assembleCatalogueInput(
+  entriesOf: (dir: CollectionDir) => Entry<unknown>[] | Promise<Entry<unknown>[]>,
+  books: Book[],
+): Promise<CatalogueInput> {
+  const dirs = Object.keys(COLLECTION_SCHEMAS) as CollectionDir[];
+  const loaded = await Promise.all(dirs.map(async dir => [dir, await entriesOf(dir)] as const));
+  return { ...(Object.fromEntries(loaded) as Pick<CatalogueInput, CollectionDir>), books };
+}
 
 export type WorkEntry = Work & { id: string };
 export type RelationKey = Relation | `${Relation}:inverse`;

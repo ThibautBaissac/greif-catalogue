@@ -13,10 +13,12 @@ const entries = <K extends string>(keys: readonly K[]) =>
     z.ZodObject<{ title: typeof str; desc: typeof str }, z.core.$strict>
   >).strict();
 
-export const IDX_KEYS = [
+/** Index pages listed on the hub and the home page; the editorial dashboard is not one of them. */
+export const INDEX_KEYS = [
   "chrono", "opus", "titles", "incipits", "persons", "places", "performances", "scoring",
-  "sources", "editions", "biblio", "disco", "journal", "dashboard",
+  "sources", "editions", "biblio", "disco", "journal",
 ] as const;
+export const IDX_KEYS = [...INDEX_KEYS, "dashboard"] as const;
 
 const relationKeys = RELATIONS.flatMap(r => [r, `${r}_inverse`] as const);
 

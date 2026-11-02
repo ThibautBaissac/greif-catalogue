@@ -1,6 +1,8 @@
 export type Lang = "fr" | "en";
 
-const SIMPLE = /^(\d{3}[\dX])(?:-(0[1-9]|1[0-2])(?:-(0[1-9]|[12]\d|3[01]))?)?[?~]?$/;
+/** One EDTF date of the supported subset, as an unanchored regex source: `YYYY`, `YYYY-MM`, `YYYY-MM-DD` or `YYYX`, then an optional `?` or `~`. */
+export const EDTF_DATE = String.raw`(?:\d{4}(?:-(?:0[1-9]|1[0-2])(?:-(?:0[1-9]|[12]\d|3[01]))?)?|\d{3}X)[?~]?`;
+const SIMPLE = new RegExp(`^${EDTF_DATE}$`);
 
 type Parsed = {
   year: string;
@@ -10,15 +12,12 @@ type Parsed = {
 };
 
 function parseSimple(s: string): Parsed | null {
-  const m = SIMPLE.exec(s);
-  if (!m) return null;
-  const [, year, month, day] = m;
-  if (year.includes("X") && month) return null;
+  if (!SIMPLE.test(s)) return null;
   const last = s[s.length - 1];
   return {
-    year,
-    month: month ? Number(month) : undefined,
-    day: day ? Number(day) : undefined,
+    year: s.slice(0, 4),
+    month: s[4] === "-" ? Number(s.slice(5, 7)) : undefined,
+    day: s[7] === "-" ? Number(s.slice(8, 10)) : undefined,
     qualifier: last === "?" || last === "~" ? last : "",
   };
 }

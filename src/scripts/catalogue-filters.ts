@@ -1,10 +1,10 @@
 // Catalogue : filtres par Livre, effectif, état et texte. Reprend `prototype/assets/app.js`.
 import { tn } from "../lib/plural";
+import { fold } from "../lib/text";
 
 const $ = <T extends Element>(selector: string, root: ParentNode = document) => root.querySelector<T>(selector);
 const $$ = <T extends Element>(selector: string, root: ParentNode = document) =>
   Array.from(root.querySelectorAll<T>(selector));
-const fold = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 
 const fBook = $<HTMLSelectElement>("#f-book");
 const fCat = $<HTMLSelectElement>("#f-cat");

@@ -1,5 +1,7 @@
+import { readdirSync } from "node:fs";
 import { describe, expect, test } from "vitest";
-import { buildCatalogue, validateCatalogue, type CatalogueInput } from "~/lib/catalogue";
+import { assembleCatalogueInput, buildCatalogue, validateCatalogue, type CatalogueInput } from "~/lib/catalogue";
+import { COLLECTION_SCHEMAS } from "~/lib/schemas";
 import { fixtureInput } from "../fixtures/catalogue";
 
 const copy = (): CatalogueInput => structuredClone(fixtureInput);
@@ -166,5 +168,24 @@ describe("buildCatalogue", () => {
     expect(ids(heine.dedicatee)).toEqual(["sonate-a"]);
     expect(heine.translator).toEqual([]);
     expect(heine.performer).toEqual([]);
+  });
+});
+
+describe("collections", () => {
+  test("COLLECTION_SCHEMAS covers every entity directory of content/", () => {
+    const dirs = readdirSync("content", { withFileTypes: true })
+      .filter(d => d.isDirectory() && !["ui", "pages"].includes(d.name))
+      .map(d => d.name);
+    expect(Object.keys(COLLECTION_SCHEMAS).sort()).toEqual(dirs.sort());
+  });
+
+  test("assembleCatalogueInput builds a CatalogueInput from a per-collection loader", async () => {
+    const asked: string[] = [];
+    const input = await assembleCatalogueInput(async dir => {
+      asked.push(dir);
+      return fixtureInput[dir];
+    }, fixtureInput.books);
+    expect(input).toEqual(fixtureInput);
+    expect(asked.sort()).toEqual(Object.keys(COLLECTION_SCHEMAS).sort());
   });
 });

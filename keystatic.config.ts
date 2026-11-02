@@ -2,7 +2,18 @@ import { collection, config, fields, singleton } from "@keystatic/core";
 import { load as loadYaml } from "js-yaml";
 import frYaml from "./content/ui/fr.yaml?raw";
 import { EDTF_FIELD_PATTERN, uiToKeystatic } from "./src/lib/keystatic-ui";
-import { BIB_TYPES, CATEGORIES, RELATIONS, SOURCE_FEATURES, SOURCE_STATUS } from "./src/lib/schemas";
+import {
+  BIB_TYPES,
+  BOOK_STATUS,
+  CATEGORIES,
+  EDITION_STATUS,
+  PERSON_KINDS,
+  RELATIONS,
+  SOURCE_FEATURES,
+  SOURCE_STATUS,
+  TEXT_ROLES,
+} from "./src/lib/schemas";
+import { TH_PATTERN } from "./src/lib/th";
 import { uiSchema } from "./src/lib/ui-schema";
 
 const yaml = { data: "yaml" } as const;
@@ -23,6 +34,8 @@ const integer = (label: string, min?: number, max?: number) => fields.integer({ 
 const options = <const T extends readonly string[]>(values: T) => values.map(value => ({ label: value, value }));
 const optionalSelect = <const T extends readonly string[]>(label: string, values: T) =>
   fields.select({ label, options: [{ label: "—", value: "" }, ...options(values)], defaultValue: "" });
+const TEXT_ROLE_LABELS: Record<(typeof TEXT_ROLES)[number], string> = { author: "Auteur", translator: "Traducteur" };
+const PERSON_KIND_LABELS: Record<(typeof PERSON_KINDS)[number], string> = { person: "Personne", ensemble: "Ensemble" };
 const strings = (label: string, itemLabel?: string) =>
   fields.array(fields.text({ label: itemLabel ?? label, multiline: true }), { label });
 const relationship = (label: string, collection: string, isRequired = false) =>
@@ -45,7 +58,7 @@ const workFields = {
   title: slugField("Titre"),
   th: fields.text({
     label: "Th",
-    validation: { isRequired: true, pattern: { regex: /^\d+[a-z]?$/, message: "Un nombre, éventuellement suivi d'une lettre (ex. 45, 45a)" } },
+    validation: { isRequired: true, pattern: { regex: TH_PATTERN, message: "Un nombre, éventuellement suivi d'une lettre (ex. 45, 45a)" } },
   }),
   book: fields.integer({ label: "Livre", validation: { isRequired: true, min: 1, max: 6 } }),
   subtitle: text("Sous-titre"),
@@ -83,11 +96,8 @@ const workFields = {
             person: relationship("Personne", "persons", true),
             role: fields.select({
               label: "Rôle",
-              options: [
-                { label: "Auteur", value: "author" },
-                { label: "Traducteur", value: "translator" },
-              ],
-              defaultValue: "author",
+              options: TEXT_ROLES.map(value => ({ label: TEXT_ROLE_LABELS[value], value })),
+              defaultValue: TEXT_ROLES[0],
             }),
             as_written: text("Nom tel qu'écrit"),
           },
@@ -129,7 +139,7 @@ const workFields = {
         text: required("Texte", true),
         publisher: text("Éditeur"),
         year: integer("Année"),
-        status: optionalSelect("Statut", ["uncertain", "forthcoming"] as const),
+        status: optionalSelect("Statut", EDITION_STATUS),
       },
       { label: "Édition" },
     ),
@@ -244,11 +254,8 @@ export default config({
         given: text("Prénom"),
         kind: fields.select({
           label: "Nature",
-          options: [
-            { label: "Personne", value: "person" },
-            { label: "Ensemble", value: "ensemble" },
-          ],
-          defaultValue: "person",
+          options: PERSON_KINDS.map(value => ({ label: PERSON_KIND_LABELS[value], value })),
+          defaultValue: PERSON_KINDS[0],
         }),
         dates: date("Dates"),
         identifiers: fields.object(
@@ -323,7 +330,7 @@ export default config({
               roman: required("Chiffre romain"),
               status: fields.select({
                 label: "Statut",
-                options: options(["complete", "partial", "planned"] as const),
+                options: options(BOOK_STATUS),
                 defaultValue: "planned",
               }),
             },

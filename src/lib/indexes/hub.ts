@@ -1,11 +1,9 @@
 import type { Catalogue } from "../catalogue";
 import type { PageKey } from "../i18n";
 import { CATEGORIES } from "../schemas";
+import { INDEX_KEYS } from "../ui-schema";
 
-const KEYS = [
-  "chrono", "opus", "titles", "incipits", "persons", "places", "performances", "scoring",
-  "sources", "editions", "biblio", "disco", "journal",
-] as const satisfies readonly PageKey[];
+const KEYS = INDEX_KEYS satisfies readonly PageKey[];
 
 type HubKey = (typeof KEYS)[number];
 

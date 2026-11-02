@@ -1,5 +1,6 @@
 import { z } from "astro/zod";
 import { isEdtf } from "./edtf";
+import { TH_PATTERN } from "./th";
 
 export const CATEGORIES = [
   "piano",
@@ -22,6 +23,10 @@ export const RELATIONS = [
   "shared-material",
   "sketch",
 ] as const;
+export const TEXT_ROLES = ["author", "translator"] as const;
+export const EDITION_STATUS = ["uncertain", "forthcoming"] as const;
+export const PERSON_KINDS = ["person", "ensemble"] as const;
+export const BOOK_STATUS = ["complete", "partial", "planned"] as const;
 export const BIB_TYPES = ["book", "chapter", "article-journal", "thesis", "webpage", "other"] as const;
 
 /** Optional scalar: the CMS writes "" or null for an empty field, both mean absent. */
@@ -88,7 +93,7 @@ const journalSchema = z
 export const workSchema = z
   .object({
     title: text,
-    th: z.string().regex(/^\d+[a-z]?$/),
+    th: z.string().regex(TH_PATTERN),
     book: z.number().int().min(1).max(6),
     subtitle: optional(z.string()),
     alt_titles: z
@@ -109,7 +114,7 @@ export const workSchema = z
               z
                 .object({
                   person: authorityId,
-                  role: z.enum(["author", "translator"]),
+                  role: z.enum(TEXT_ROLES),
                   as_written: optional(z.string()),
                 })
                 .strict(),
@@ -147,7 +152,7 @@ export const workSchema = z
             text,
             publisher: optional(z.string()),
             year: optional(z.number().int()),
-            status: optional(z.enum(["uncertain", "forthcoming"])),
+            status: optional(z.enum(EDITION_STATUS)),
           })
           .strict(),
       )
@@ -183,7 +188,7 @@ export const personSchema = z
     name: text,
     surname: text,
     given: optional(z.string()),
-    kind: z.enum(["person", "ensemble"]).default("person"),
+    kind: z.enum(PERSON_KINDS).default("person"),
     dates: optional(edtf),
     identifiers: optionalObject(
       z
@@ -237,11 +242,22 @@ export const bookSchema = z
   .object({
     number: z.number().int().min(1).max(6),
     roman: text,
-    status: z.enum(["complete", "partial", "planned"]),
+    status: z.enum(BOOK_STATUS),
   })
   .strict();
 
 export const booksFileSchema = z.object({ books: z.array(bookSchema).length(6) }).strict();
+
+/** Entity collections stored as one YAML file per entry, by `content/` directory. */
+export const COLLECTION_SCHEMAS = {
+  works: workSchema,
+  persons: personSchema,
+  places: placeSchema,
+  institutions: institutionSchema,
+  roles: roleSchema,
+  bibliography: bibliographySchema,
+} as const;
+export type CollectionDir = keyof typeof COLLECTION_SCHEMAS;
 
 export type Work = z.output<typeof workSchema>;
 export type Movement = Work["movements"][number];
