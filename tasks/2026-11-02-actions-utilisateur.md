@@ -6,8 +6,8 @@ Plan : `tasks/plans/2026-11-02-catalogue-astro.md`. Toutes les tâches sont impl
 
 Lire `tasks/migration-report.md`, puis ouvrir quelques notices de `content/works/` et les comparer avec `prototype/data/works/`. Trois cas sont à trancher dans Keystatic :
 
-- **`sonate-violon-piano-02`** : l'exécution « Paris, L'Archipel, 11 mai 2006 et 22 février, par les mêmes interprètes » a perdu l'interprète factice « et 22 février ». Il faut créer une seconde exécution datée (année à confirmer), avec les mêmes interprètes.
-- **`light-music`** (exécution du 14 octobre 2021) : le pianiste non identifié `[?]` a été retiré. Il faut l'ajouter comme personne si son nom est connu, sinon le laisser tel quel.
+- **`sonate-violon-piano-02`** : l'exécution « Paris, L'Archipel, 11 mai 2006 et 22 février, par les mêmes interprètes » a perdu l'interprète factice « et 22 février ». La formulation d'origine est désormais affichée en remarque (champ `note`). Pour structurer : créer une seconde exécution datée (année à confirmer), avec les mêmes interprètes.
+- **`light-music`** (exécution du 14 octobre 2021) : le pianiste non identifié `[?]` a été retiré, et la formulation d'origine est affichée en remarque. Il faut l'ajouter comme personne si son nom est connu, sinon le laisser tel quel.
 - **`la-chanson-de-gaspard-hauser`** : l'élément de source vide portant l'étiquette « Inédit ? » a été converti en texte de source. Il est peut-être préférable de supprimer cet élément et de garder l'information en note de rédaction.
 
 Les notes `[migration]` correspondantes s'affichent dans le tableau de bord, en mode rédaction.
