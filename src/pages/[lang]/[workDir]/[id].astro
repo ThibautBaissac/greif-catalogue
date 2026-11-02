@@ -107,15 +107,15 @@ const desc = `Th ${w.th}, ${title}, ${w.scoring[lang]}${w.composition ? ", " + s
 const other: Lang = lang === "fr" ? "en" : "fr";
 ---
 <Base lang={lang} title={`Th ${w.th} ${title}`} {desc} alt={workUrl(w.id, other)} active="catalogue" {jsonld}>
-  <nav class="crumbs wrap" aria-label="breadcrumb">
+  <nav class="crumbs wrap" aria-label={ui.breadcrumb}>
     <a href={catalogueUrl}>{ui.nav.catalogue}</a> <span>›</span>
     <a href={`${catalogueUrl}#livre-${w.book}`}>{ui.book} {roman}</a> <span>›</span>
     <span>Th {w.th}</span>
   </nav>
   <article class="notice wrap" data-pagefind-body>
     <div hidden>
-      <span data-pagefind-filter="book">{ui.book} {roman}</span>
-      {w.categories.map(c => <span data-pagefind-filter="category">{ui.cat[c]}</span>)}
+      <span data-pagefind-filter={ui.filterBook}>{ui.book} {roman}</span>
+      {w.categories.map(c => <span data-pagefind-filter={ui.filterCat}>{ui.cat[c]}</span>)}
       <span data-pagefind-meta="th">{w.th}</span>
     </div>
     <header class="notice-head">
@@ -160,7 +160,7 @@ const other: Lang = lang === "fr" ? "en" : "fr";
     {w.movements.length > 0 && (
       <section class="incipits" aria-label={ui.f.movements}>
         <div class={`mvts${w.movements.length > 1 ? " multi" : ""}`}>
-          {w.movements.map((m, i) => <Incipit work={w} index={i} movement={m} {lang} {ui} {cat} />)}
+          {w.movements.map(m => <Incipit work={w} movement={m} {lang} {ui} {cat} />)}
         </div>
       </section>
     )}
@@ -273,7 +273,7 @@ const other: Lang = lang === "fr" ? "en" : "fr";
           <Field id="bibliographie" label={labels.bibliographie}>
             <ul class="plain">
               {w.bibliography.map(b => (
-                <li lang={fr}>{cat.bibliography.get(b.ref)?.short}{b.pages && <Fragment>, p.&nbsp;{b.pages}</Fragment>}</li>
+                <li lang={fr}>{cat.bibliography.get(b.ref)?.short}{b.pages && <Fragment>, {ui.pageAbbr}&nbsp;{b.pages}</Fragment>}</li>
               ))}
             </ul>
           </Field>
@@ -309,7 +309,7 @@ const other: Lang = lang === "fr" ? "en" : "fr";
         </section>
       </div>
     </div>
-    <nav class="pager" aria-label="pager">
+    <nav class="pager" aria-label={ui.pager}>
       {prev
         ? <a class="pg prev" href={workUrl(prev.id, lang)}><span class="pg-lab">← {ui.prev}</span><span class="thn">Th&nbsp;{prev.th}</span>{" "}<WorkTitle work={prev} {lang} {ui} {cat} /></a>
         : <span></span>}

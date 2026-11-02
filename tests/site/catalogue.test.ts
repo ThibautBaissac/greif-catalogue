@@ -1,13 +1,14 @@
 import { existsSync, readFileSync } from "node:fs";
 import { parse } from "node-html-parser";
 import { describe, expect, it } from "vitest";
+import { WORK_COUNT } from "./helpers";
 
 const page = (path: string) => parse(readFileSync(path, "utf8"));
 
 describe("catalogue page", () => {
-  it("lists the 82 works in 6 book sections (FR)", () => {
+  it("lists every work in 6 book sections (FR)", () => {
     const doc = page("dist/fr/catalogue/index.html");
-    expect(doc.querySelectorAll("table.cat tbody tr")).toHaveLength(82);
+    expect(doc.querySelectorAll("table.cat tbody tr")).toHaveLength(WORK_COUNT);
     expect(doc.querySelectorAll("section.book")).toHaveLength(6);
   });
 
@@ -16,6 +17,15 @@ describe("catalogue page", () => {
     for (const id of ["f-book", "f-cat", "f-status", "f-q", "f-count"]) expect(doc.querySelector(`#${id}`)).not.toBeNull();
     expect(doc.querySelector('table.cat a[href="/fr/oeuvres/wiener-konzert/"]')).not.toBeNull();
     expect(doc.querySelector("#livre-1")).not.toBeNull();
+  });
+
+  it("shows the lede and labels the filter group, in both languages", () => {
+    const fr = page("dist/fr/catalogue/index.html");
+    expect(fr.querySelector("p.lede")?.text).toBe("Les œuvres dans l'ordre des Livres et des numéros Th.");
+    expect(fr.querySelector(".filters")?.getAttribute("aria-label")).toBe("Filtres du catalogue");
+    const en = page("dist/en/catalogue/index.html");
+    expect(en.querySelector("p.lede")?.text).toBe("Works in the order of the Books and Th numbers.");
+    expect(en.querySelector(".filters")?.getAttribute("aria-label")).toBe("Catalogue filters");
   });
 
   it("marks empty books as in preparation", () => {

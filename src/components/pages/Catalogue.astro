@@ -13,8 +13,8 @@ const ui = await getUi(lang);
 const cat = await getCatalogue();
 const { books, categories } = catalogueModel(cat);
 ---
-<StdPage key="catalogue" {lang} {ui} active="catalogue" lede="">
-  <div class="filters">
+<StdPage key="catalogue" {lang} {ui} active="catalogue" lede={ui.catalogueLede}>
+  <div class="filters" role="group" aria-label={ui.filtersLabel}>
     <label class="fl">
       <span>{ui.filterBook}</span>
       <select id="f-book">

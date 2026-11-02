@@ -143,6 +143,13 @@ filterAll: Tout
 filterBook: Livre
 filterCat: Effectif
 filterStatus: État
+filtersLabel: Filtres du catalogue
+personFilterLabel: Filtrer par rôle
+catalogueLede: Les œuvres dans l'ordre des Livres et des numéros Th.
+breadcrumb: Fil d'Ariane
+pager: Notice précédente et suivante
+pageAbbr: p.
+editorAbbr: dir.
 status:
   published: Éditée
   unpublished: Inédite

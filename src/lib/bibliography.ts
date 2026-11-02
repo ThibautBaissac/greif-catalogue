@@ -1,5 +1,4 @@
 import { edtfYear } from "./edtf";
-import type { Lang } from "./edtf";
 import type { BibEntry } from "./schemas";
 
 const esc = (s: string): string =>
@@ -8,13 +7,14 @@ const esc = (s: string): string =>
 const name = (n: BibEntry["author"][number]): string => (n.given ? `${n.family}, ${n.given}` : n.family);
 
 /**
- * Référence complète en HTML. Sans titre, la forme courte (`short`) fait foi : c'est le cas
+ * Référence complète en HTML ; `editorAbbr` est l'abréviation de « directeur de publication »,
+ * tirée des chaînes d'interface. Sans titre, la forme courte (`short`) fait foi : c'est le cas
  * des entrées migrées, dont la notice CSL reste à compléter.
  */
-export function formatReference(e: BibEntry, lang: Lang): string {
+export function formatReference(e: BibEntry, editorAbbr: string): string {
   if (!e.title) return esc(e.short);
   const people = e.author.length > 0 ? e.author : e.editor;
-  const role = e.author.length === 0 && e.editor.length > 0 ? (lang === "fr" ? " (dir.)" : " (ed.)") : "";
+  const role = e.author.length === 0 && e.editor.length > 0 ? ` (${editorAbbr})` : "";
   const year = edtfYear(e.issued);
   const parts = [
     people.length > 0 ? `${people.map(p => esc(name(p))).join(" ; ")}${role}` : undefined,

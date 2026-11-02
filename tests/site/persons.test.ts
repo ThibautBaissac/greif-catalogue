@@ -13,6 +13,11 @@ describe("people, places and performances pages", () => {
     expect(people.querySelectorAll(".chip[data-role]")).toHaveLength(4);
   });
 
+  it("labels the role filter group", () => {
+    expect(people.querySelector(".chips")?.getAttribute("aria-label")).toBe("Filtrer par rôle");
+    expect(page("dist/en/people/index.html").querySelector(".chips")?.getAttribute("aria-label")).toBe("Filter by role");
+  });
+
   it("each person item declares its filter roles", () => {
     expect(people.querySelector('li[id="heinrich-heine"]')?.getAttribute("data-roles")).toContain("author");
   });

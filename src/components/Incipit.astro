@@ -6,11 +6,10 @@ import type { Movement } from "~/lib/schemas";
 import { stripMarkup } from "~/lib/markup";
 import Markup from "./Markup.astro";
 
-type Props = { work: WorkEntry; index: number; movement: Movement; lang: Lang; ui: Ui; cat: Catalogue };
-const { work, index, movement: m, lang, ui, cat } = Astro.props;
+type Props = { work: WorkEntry; movement: Movement; lang: Lang; ui: Ui; cat: Catalogue };
+const { work, movement: m, lang, ui, cat } = Astro.props;
 const fr = lang === "en" ? "fr" : undefined;
 const label = stripMarkup(m.title ?? work.title, thResolver(cat));
-const expected = `public/incipits/${work.id}/${index + 1}.png`;
 ---
 <figure class="mvt">
   {m.title && <figcaption class="mvt-title" lang={fr}><Markup src={m.title} {lang} {ui} {cat} /></figcaption>}
@@ -18,7 +17,7 @@ const expected = `public/incipits/${work.id}/${index + 1}.png`;
     {m.incipit
       ? <img src={m.incipit} alt={`${ui.f.movements} : ${label}`} loading="lazy" />
       : <div class="staff-ph" role="img" aria-label={ui.incipitMissing}>
-          <span>{ui.incipitMissing}{m.incipit_count ? ` (${m.incipit_count})` : ""}</span><code>{expected}</code>
+          <span>{ui.incipitMissing}{m.incipit_count ? ` (${m.incipit_count})` : ""}</span>
         </div>}
   </div>
   <div class="mvt-meta">

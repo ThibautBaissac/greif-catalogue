@@ -1,6 +1,7 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { parse } from "node-html-parser";
 import { describe, expect, it } from "vitest";
+import { WORK_COUNT } from "./helpers";
 
 const page = (path: string) => parse(readFileSync(path, "utf8"));
 const FR = "dist/fr/oeuvres/wiener-konzert/index.html";
@@ -43,16 +44,18 @@ describe("work entry, FR", () => {
     expect(hrefs).toContain("/fr/personnes/#heinrich-heine");
   });
 
-  it("renders the placeholder for a missing incipit, with the expected path", () => {
+  it("renders the placeholder for a missing incipit, without a file path", () => {
     const ph = page(FR).querySelector(".staff-ph");
-    expect(ph?.text).toContain("public/incipits/wiener-konzert/1.png");
+    expect(ph?.text).toContain("Incipit à venir");
+    expect(ph?.querySelector("code")).toBeNull();
   });
 
   it("carries the Pagefind markers and JSON-LD", () => {
     const doc = page(FR);
     expect(doc.querySelector("article.notice")?.getAttribute("data-pagefind-body")).not.toBeUndefined();
-    expect(doc.querySelector('[data-pagefind-filter="book"]')?.text).toBe("Livre I");
-    expect(doc.querySelector('[data-pagefind-filter="category"]')?.text).toBe("Voix et piano");
+    expect(doc.querySelector('[data-pagefind-filter="Livre"]')?.text).toBe("Livre I");
+    expect(doc.querySelector('[data-pagefind-filter="Effectif"]')?.text).toBe("Voix et piano");
+    expect(page(EN).querySelector('[data-pagefind-filter="Scoring"]')?.text).toBe("Voice and piano");
     expect(doc.querySelector('[data-pagefind-meta="th"]')?.text).toBe("45");
     const ld = JSON.parse(doc.querySelector('script[type="application/ld+json"]')!.text);
     expect(ld["@type"]).toBe("MusicComposition");
@@ -86,10 +89,21 @@ describe("work entry, EN", () => {
   });
 });
 
+describe("work entry labels come from content/ui", () => {
+  it.each([[FR, "Fil d'Ariane", "Notice précédente et suivante"], [EN, "Breadcrumb", "Previous and next entry"]])(
+    "%s names its breadcrumb and pager",
+    (path, crumbs, pager) => {
+      const doc = page(path);
+      expect(doc.querySelector("nav.crumbs")?.getAttribute("aria-label")).toBe(crumbs);
+      expect(doc.querySelector("nav.pager")?.getAttribute("aria-label")).toBe(pager);
+    },
+  );
+});
+
 describe("all work pages", () => {
-  it.each([["fr", "oeuvres"], ["en", "works"]])("has 82 pages for %s", (lang, dir) => {
+  it.each([["fr", "oeuvres"], ["en", "works"]])("has one page per work for %s", (lang, dir) => {
     const dirs = readdirSync(`dist/${lang}/${dir}`).filter(d => existsSync(`dist/${lang}/${dir}/${d}/index.html`));
-    expect(dirs).toHaveLength(82);
+    expect(dirs).toHaveLength(WORK_COUNT);
   });
 
   it.skipIf(process.env.CATALOGUE_EDITORIAL === "1")("hides editorial notes in the public build", () => {

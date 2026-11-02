@@ -143,6 +143,13 @@ filterAll: All
 filterBook: Book
 filterCat: Scoring
 filterStatus: Status
+filtersLabel: Catalogue filters
+personFilterLabel: Filter by role
+catalogueLede: Works in the order of the Books and Th numbers.
+breadcrumb: Breadcrumb
+pager: Previous and next entry
+pageAbbr: p.
+editorAbbr: ed.
 status:
   published: Published
   unpublished: Unpublished

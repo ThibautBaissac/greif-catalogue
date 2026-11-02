@@ -2,10 +2,10 @@ import { describe, expect, test } from "vitest";
 import { formatReference } from "~/lib/bibliography";
 import { bibliographySchema } from "~/lib/schemas";
 
-const ref = (data: unknown, lang: "fr" | "en" = "fr") => formatReference(bibliographySchema.parse(data), lang);
+const ref = (data: unknown, editorAbbr = "dir.") => formatReference(bibliographySchema.parse(data), editorAbbr);
 
 describe("formatReference", () => {
-  test("editor without author gets (dir.) in French", () => {
+  test("editor without author gets the editor abbreviation, wrapped in parentheses", () => {
     expect(
       ref({
         short: "F&N (2013)",
@@ -19,9 +19,9 @@ describe("formatReference", () => {
       }),
     ).toBe("François-Sappey, Brigitte (dir.), <em>Le Rêve du monde</em>, Lyon, Symétrie, 2013.");
   });
-  test("editor without author gets (ed.) in English", () => {
+  test("editor without author gets the supplied abbreviation (English)", () => {
     expect(
-      ref({ short: "x", type: "book", title: "T", editor: [{ family: "Doe", given: "Jane" }] }, "en"),
+      ref({ short: "x", type: "book", title: "T", editor: [{ family: "Doe", given: "Jane" }] }, "ed."),
     ).toBe("Doe, Jane (ed.), <em>T</em>.");
   });
   test("authors are separated by a semicolon; editors are ignored when authors exist", () => {

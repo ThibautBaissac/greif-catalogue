@@ -15,7 +15,7 @@ const groups = personsModel(cat);
 const fr = lang === "en" ? "fr" : undefined;
 ---
 <StdPage key="persons" {lang} {ui}>
-  <div class="chips" role="group">
+  <div class="chips" role="group" aria-label={ui.personFilterLabel}>
     {Object.entries(ui.personFilter).map(([role, label], i) => (
       <button type="button" class="chip" data-role={role} aria-pressed={i === 0 ? "true" : "false"}>{label}</button>
     ))}

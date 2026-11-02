@@ -17,7 +17,7 @@ const fr = lang === "en" ? "fr" : undefined;
 <StdPage key="biblio" {lang} {ui}>
   {blocks.map(({ entry, citations, pageIndex }) => (
     <section id={entry.id}>
-      <h2 class="sec-h" lang={fr} set:html={formatReference(entry, lang)} />
+      <h2 class="sec-h" lang={fr} set:html={formatReference(entry, ui.editorAbbr)} />
       <div class="table-scroll">
         <table class="cat">
           <thead><tr><th>{ui.col.th}</th><th>{ui.col.title}</th><th>{ui.col.pages}</th></tr></thead>
@@ -26,7 +26,7 @@ const fr = lang === "en" ? "fr" : undefined;
               <tr>
                 <td class="c-th"><a href={workUrl(work.id, lang)}>{work.th}</a></td>
                 <td><WorkTitle {work} {lang} {ui} {cat} /></td>
-                <td class="c-pages">{pages && <Fragment>p.&nbsp;{pages}</Fragment>}</td>
+                <td class="c-pages">{pages && <Fragment>{ui.pageAbbr}&nbsp;{pages}</Fragment>}</td>
               </tr>
             ))}
           </tbody>
@@ -38,7 +38,7 @@ const fr = lang === "en" ? "fr" : undefined;
           <dl class="pageidx">
             {pageIndex.map(({ page, works }) => (
               <div>
-                <dt>p.&nbsp;{page}</dt>
+                <dt>{ui.pageAbbr}&nbsp;{page}</dt>
                 <dd>
                   {works.map((w, i) => (
                     <Fragment>{i > 0 && ", "}<a href={workUrl(w.id, lang)}>Th&nbsp;{w.th}</a></Fragment>
