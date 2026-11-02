@@ -42,6 +42,7 @@ const personHref = (id: string) => `${pageUrl("persons", lang)}#${id}`;
                 </Fragment>
               );
             })}
+            {perf.note && <div class="muted" lang={fr}><Markup src={perf.note} {lang} {ui} {cat} /></div>}
           </td>
         </tr>
       ))}

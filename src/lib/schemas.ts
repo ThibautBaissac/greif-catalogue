@@ -76,6 +76,7 @@ const performanceSchema = z
     venue: optional(z.string()),
     place: optional(z.string()),
     performers: z.array(performerSchema).default([]),
+    note: optional(z.string()),
     text,
   })
   .strict();

@@ -81,6 +81,13 @@ describe("work entry, FR", () => {
   });
 });
 
+describe("performance notes", () => {
+  it("shows the free-text wording of a performance whose performer was not structured", () => {
+    expect(readFileSync("dist/fr/oeuvres/sonate-violon-piano-02/index.html", "utf8")).toContain("22 février");
+    expect(readFileSync("dist/fr/oeuvres/light-music/index.html", "utf8")).toContain("pianiste ?");
+  });
+});
+
 describe("work entry, EN", () => {
   it("is an English page with the French-text note", () => {
     const doc = page(EN);

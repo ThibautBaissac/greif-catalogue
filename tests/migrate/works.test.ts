@@ -65,6 +65,9 @@ describe("migrate: fixtures", () => {
     const w = work("sonate-violon-piano-02");
     const persons = w.performances.flatMap(p => p.performers.map(x => x.person));
     expect(persons).not.toContain("et-22-fevrier");
+    const perf = w.performances.find(p => p.date === "2006-05-11")!;
+    expect(perf.note).toBe(perf.text);
+    expect(perf.note).toContain("22 février");
     expect(w.editorial_notes.some(n => n.startsWith("[migration] interprète non structuré"))).toBe(true);
   });
 
@@ -73,6 +76,7 @@ describe("migrate: fixtures", () => {
     const perf = w.performances.find(p => p.date === "2021-10-14")!;
     expect(perf.performers).toEqual([{ person: "olivier-cesarini", role: "baryton" }]);
     expect(perf.text).toContain("pianiste ?");
+    expect(perf.note).toBe(perf.text);
     expect(w.editorial_notes.some(n => n.startsWith("[migration] interprète non identifié"))).toBe(true);
     const all = Object.entries(files)
       .filter(([k]) => k.startsWith("works/"))
@@ -177,6 +181,7 @@ describe("migrate: synthetic cases", () => {
     ]);
     const w = out.files["works/synth.yaml"] as Work;
     expect(w.performances[0].performers).toEqual([]);
+    expect(w.performances[0].note).toBe("t");
     expect(w.editorial_notes).toContain(
       "[migration] interprète non structuré : Jean Dupont (par les mêmes interprètes)",
     );

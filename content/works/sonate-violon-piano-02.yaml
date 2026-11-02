@@ -98,6 +98,7 @@ performances:
     venue: Paris, L'Archipel
     place: paris
     performers: []
+    note: Paris, L'Archipel, 11 mai 2006 et 22 février, par les mêmes interprètes
     text: Paris, L'Archipel, 11 mai 2006 et 22 février, par les mêmes interprètes
   - premiere: false
     date: '2007-03-09'

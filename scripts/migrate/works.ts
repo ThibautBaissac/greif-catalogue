@@ -42,8 +42,10 @@ export function migrateWork(w: ProtoWork, a: Authorities, opts: MigrateOptions =
     if (p.place !== undefined) perf.venue = p.place;
     if (isText(p.city)) perf.place = slug(p.city);
     const performers: Record<string, unknown>[] = [];
+    let dropped = false;
     for (const pr of p.performers ?? []) {
       if (!isText(pr.name) || pr.name === UNIDENTIFIED) {
+        dropped = true;
         note(`[migration] interprète non identifié (${UNIDENTIFIED}, ${pr.role})`);
         report.push(`${id}: interprète non identifié (${pr.name || "nom vide"}, ${pr.role}) retiré`);
         continue;
@@ -51,6 +53,7 @@ export function migrateWork(w: ProtoWork, a: Authorities, opts: MigrateOptions =
       const raw: string = pr.role;
       const mapped = Object.hasOwn(ROLE_MAP, raw) ? ROLE_MAP[raw] : undefined;
       if (mapped === null) {
+        dropped = true;
         note(`[migration] interprète non structuré : ${pr.name} (${raw})`);
         report.push(`${id}: interprète non structuré « ${pr.name} » (${raw}) retiré`);
         continue;
@@ -64,6 +67,8 @@ export function migrateWork(w: ProtoWork, a: Authorities, opts: MigrateOptions =
       performers.push(performer);
     }
     perf.performers = performers;
+    // A removed performer leaves its trace only in the free-text wording: keep that as the note.
+    if (dropped) perf.note = p.text;
     perf.text = p.text;
     return perf;
   };

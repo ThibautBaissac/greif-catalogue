@@ -157,6 +157,7 @@ const workFields = {
           label: "Interprètes",
           itemLabel: p => p.fields.person.value ?? "",
         }),
+        note: text("Remarque", true),
         text: required("Texte", true),
       },
       { label: "Exécution" },
