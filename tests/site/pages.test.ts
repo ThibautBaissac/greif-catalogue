@@ -22,9 +22,8 @@ describe("editable pages", () => {
 });
 
 describe("search", () => {
-  it("builds a Pagefind index per language and the UI assets", () => {
-    expect(existsSync("dist/pagefind/pagefind-ui.js")).toBe(true);
-    expect(existsSync("dist/pagefind/pagefind-ui.css")).toBe(true);
+  it("builds a Pagefind index per language and the JS API", () => {
+    expect(existsSync("dist/pagefind/pagefind.js")).toBe(true);
     const metas = readdirSync("dist/pagefind").filter(f => f.endsWith(".pf_meta"));
     expect(metas.some(f => f.startsWith("pagefind.fr"))).toBe(true);
     expect(metas.some(f => f.startsWith("pagefind.en"))).toBe(true);
@@ -33,9 +32,12 @@ describe("search", () => {
   it.each([
     ["dist/fr/recherche/index.html", "fr"],
     ["dist/en/search/index.html", "en"],
-  ])("%s has the search container", (path, lang) => {
+  ])("%s has the custom search form and no default UI", (path, lang) => {
     const root = page(path);
-    expect(root.querySelector("#search")).not.toBeNull();
+    expect(root.querySelector("form.search-form #sq")).not.toBeNull();
+    expect(root.querySelector("#sq-count")).not.toBeNull();
+    expect(root.querySelector("ol.results#sq-results")).not.toBeNull();
+    expect(readFileSync(path, "utf8")).not.toContain("pagefind-ui");
     expect(root.querySelector("html")?.getAttribute("lang")).toBe(lang);
   });
 

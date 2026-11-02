@@ -62,6 +62,20 @@ describe("work entry, FR", () => {
     expect(ld.dateCreated).toBe("1973-11-26");
   });
 
+  it.each([
+    [FR, "fr"],
+    [EN, "en"],
+  ])("%s carries the Pagefind metadata, the Th filter and the title weight (%s)", (path, lang) => {
+    const doc = page(path);
+    expect(doc.querySelector('[data-pagefind-meta="title"]')?.text).toBe("Wiener Konzert");
+    expect(doc.querySelector('[data-pagefind-meta="scoring"]')?.text).toBe(
+      lang === "fr" ? "Voix de femme et piano" : "Female voice and piano",
+    );
+    expect(doc.querySelector('[data-pagefind-meta="year"]')?.text).toBe("1973");
+    expect(doc.querySelector('[data-pagefind-filter="th"]')?.text).toBe("45");
+    expect(doc.querySelector("h1")?.getAttribute("data-pagefind-weight")).toBe("10");
+  });
+
   it("has a citation with the Th number", () => {
     expect(page(FR).querySelector("#citer .cite-text")?.text).toContain("Th 45");
   });

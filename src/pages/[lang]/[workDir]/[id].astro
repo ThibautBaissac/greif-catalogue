@@ -10,7 +10,7 @@ import WorkRef from "~/components/WorkRef.astro";
 import WorkTitle from "~/components/WorkTitle.astro";
 import { getCatalogue } from "~/lib/catalogue-astro";
 import { thResolver } from "~/lib/catalogue";
-import { edtfSortKey, formatEdtf, type Lang } from "~/lib/edtf";
+import { edtfSortKey, edtfYear, formatEdtf, type Lang } from "~/lib/edtf";
 import { isEditorial } from "~/lib/editorial";
 import { fill, getUi, pageUrl, WORK_DIR, workUrl } from "~/lib/i18n";
 import { stripMarkup } from "~/lib/markup";
@@ -33,6 +33,8 @@ const book = cat.books.find(b => b.number === w.book);
 const roman = book?.roman ?? String(w.book);
 const strip = (s: string) => stripMarkup(s, thResolver(cat));
 const title = strip(w.title);
+const altTitles = w.alt_titles.map(a => strip(a.title)).join(" · ");
+const year = edtfYear(w.composition?.date);
 const catalogueUrl = pageUrl("catalogue", lang);
 const personHref = (pid: string) => `${pageUrl("persons", lang)}#${pid}`;
 const personName = (pid: string) => cat.persons.get(pid)?.name ?? pid;
@@ -117,15 +119,21 @@ const other: Lang = lang === "fr" ? "en" : "fr";
       <span data-pagefind-filter={ui.filterBook}>{ui.book} {roman}</span>
       {w.categories.map(c => <span data-pagefind-filter={ui.filterCat}>{ui.cat[c]}</span>)}
       <span data-pagefind-meta="th">{w.th}</span>
+      <span data-pagefind-filter="th">{w.th}</span>
+      <span data-pagefind-meta="title">{title}</span>
+      {w.subtitle && <span data-pagefind-meta="subtitle">{strip(w.subtitle)}</span>}
+      <span data-pagefind-meta="scoring">{strip(w.scoring[lang])}</span>
+      {year !== null && <span data-pagefind-meta="year">{year}</span>}
+      {altTitles && <span data-pagefind-meta="alt">{altTitles}</span>}
     </div>
     <header class="notice-head">
       <div class="th-mark" aria-hidden="true"></div>
       <p class="th-big"><span class="th-lab">Th</span>{w.th}</p>
       <div class="title-block">
-        <h1><WorkTitle work={w} {lang} {ui} {cat} /></h1>
+        <h1 data-pagefind-weight="10"><WorkTitle work={w} {lang} {ui} {cat} /></h1>
         <p class="opus-line">{w.opus ? <Fragment>{ui.opus}&nbsp;{w.opus}</Fragment> : ui.noOpus}</p>
         {w.alt_titles.length > 0 && (
-          <p class="alt-titles">
+          <p class="alt-titles" data-pagefind-weight="8">
             <span class="sub-label">{ui.f.altTitles}</span>{" "}
             {w.alt_titles.map((a, i) => (
               <Fragment>

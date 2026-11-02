@@ -350,6 +350,3 @@ section:not(.yr) > .yr-h { margin: 2rem 0 .8rem; color: var(--red); }
   .hero-search { flex-direction: column; }
 }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
-
-/* Pagefind */
-#search { --pagefind-ui-font: var(--f-text); --pagefind-ui-primary: var(--red); --pagefind-ui-text: var(--ink); --pagefind-ui-border: var(--rule); --pagefind-ui-background: var(--sheet); }
