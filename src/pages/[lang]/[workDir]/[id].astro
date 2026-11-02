@@ -115,7 +115,7 @@ const other: Lang = lang === "fr" ? "en" : "fr";
     <span>Th {w.th}</span>
   </nav>
   <article class="notice wrap" data-pagefind-body>
-    <div hidden>
+    <div hidden data-pagefind-ignore>
       <span data-pagefind-filter={ui.filterBook}>{ui.book} {roman}</span>
       {w.categories.map(c => <span data-pagefind-filter={ui.filterCat}>{ui.cat[c]}</span>)}
       <span data-pagefind-meta="th">{w.th}</span>
@@ -173,7 +173,7 @@ const other: Lang = lang === "fr" ? "en" : "fr";
       </section>
     )}
     <div class="notice-grid">
-      <nav class="toc" aria-label={ui.entrySections}>
+      <nav class="toc" data-pagefind-ignore aria-label={ui.entrySections}>
         {toc.map(k => <a href={`#${k}`}>{labels[k]}</a>)}<a href="#citer">{ui.f.cite}</a>
       </nav>
       <div class="fields">
@@ -310,14 +310,14 @@ const other: Lang = lang === "fr" ? "en" : "fr";
             <ul class="todo">{w.editorial_notes.map(n => <li lang="fr"><Markup src={n} {lang} {ui} {cat} /></li>)}</ul>
           </Field>
         )}
-        <section class="cite" id="citer">
+        <section class="cite" id="citer" data-pagefind-ignore>
           <h2 class="field-label">{ui.f.cite}</h2>
           <p class="cite-text" data-template={citeTemplate}>{citeText}</p>
           <button type="button" class="btn copy" data-copy=".cite-text" data-label-done={ui.copied}>{ui.copy}</button>
         </section>
       </div>
     </div>
-    <nav class="pager" aria-label={ui.pager}>
+    <nav class="pager" data-pagefind-ignore aria-label={ui.pager}>
       {prev
         ? <a class="pg prev" href={workUrl(prev.id, lang)}><span class="pg-lab">← {ui.prev}</span><span class="thn">Th&nbsp;{prev.th}</span>{" "}<WorkTitle work={prev} {lang} {ui} {cat} /></a>
         : <span></span>}

@@ -74,6 +74,9 @@ describe("work entry, FR", () => {
     expect(doc.querySelector('[data-pagefind-meta="year"]')?.text).toBe("1973");
     expect(doc.querySelector('[data-pagefind-filter="th"]')?.text).toBe("45");
     expect(doc.querySelector("h1")?.getAttribute("data-pagefind-weight")).toBe("10");
+    for (const sel of ['[data-pagefind-meta="title"]', ".toc", "#citer", ".pager"]) {
+      expect(doc.querySelector(sel)?.closest("[data-pagefind-ignore]"), sel).toBeTruthy();
+    }
   });
 
   it("has a citation with the Th number", () => {
