@@ -1,0 +1,38 @@
+{
+  "name": "greif-catalogue",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && pagefind --site dist",
+    "preview": "astro preview",
+    "test": "vitest run --project unit",
+    "test:site": "vitest run --project site",
+    "check": "astro check",
+    "migrate": "tsx scripts/migrate/index.ts prototype content"
+  },
+  "dependencies": {
+    "@astrojs/markdoc": "^2.1.2",
+    "@astrojs/netlify": "^8.2.10",
+    "@astrojs/react": "^7.1.2",
+    "@keystatic/astro": "^6.0.0",
+    "@keystatic/core": "^0.6.9",
+    "astro": "^7.4.4",
+    "js-yaml": "^5.5.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "@types/js-yaml": "^4.0.9",
+    "node-html-parser": "^9.0.6",
+    "pagefind": "^1.6.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.5"
+  }
+}
