@@ -3,6 +3,7 @@ import "~/styles/global.css";
 import type { Lang } from "~/lib/edtf";
 import { formatEdtf } from "~/lib/edtf";
 import { isEditorial } from "~/lib/editorial";
+import { serializeJsonLd } from "~/lib/jsonld";
 import { getUi, pageUrl, type PageKey } from "~/lib/i18n";
 
 type Props = {
@@ -41,7 +42,7 @@ const navKeys = ["catalogue", "indexes", "journal", "search", "about"] as const;
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=IBM+Plex+Sans+Condensed:wght@400;500;600&display=swap"
     />
-    {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
+    {jsonld && <script type="application/ld+json" set:html={serializeJsonLd(jsonld)} />}
   </head>
   <body data-lang={lang}>
     <a class="skip" href="#main">{ui.skipLink}</a>
