@@ -51,7 +51,8 @@ function keystaticPaths(fields: Record<string, KField>, prefix = ""): string[] {
 }
 
 function fieldPaths(field: KField, path: string): string[] {
-  if (field.kind === "object") return keystaticPaths(field.fields ?? {}, path);
+  // Validated object editors expose the same nested fields while using a form validation hook.
+  if (field.fields) return keystaticPaths(field.fields, path);
   if (field.kind === "array") {
     const element = `${path}.[]`;
     return [element, ...fieldPaths(field.element as KField, element)];

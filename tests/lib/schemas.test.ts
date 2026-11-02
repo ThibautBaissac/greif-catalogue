@@ -171,6 +171,13 @@ describe("booksFileSchema", () => {
     const file = load();
     expect(booksFileSchema.safeParse({ books: file.books.slice(0, 5) }).success).toBe(false);
   });
+  test("rejects a repeated Book number even when six Books remain", () => {
+    const file = load();
+    file.books[5] = { number: 5, roman: "VI", status: "planned" };
+    const result = booksFileSchema.safeParse(file);
+    expect(result.success).toBe(false);
+    expect(failedPaths(result)).toContain("books.5.number");
+  });
 });
 
 describe("uiSchema: what Keystatic writes for untouched fields", () => {

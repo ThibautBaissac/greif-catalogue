@@ -247,7 +247,18 @@ export const bookSchema = z
   })
   .strict();
 
-export const booksFileSchema = z.object({ books: z.array(bookSchema).length(6) }).strict();
+export const booksFileSchema = z
+  .object({ books: z.array(bookSchema).length(6) })
+  .strict()
+  .superRefine(({ books }, ctx) => {
+    const seen = new Set<number>();
+    books.forEach((book, i) => {
+      if (seen.has(book.number)) {
+        ctx.addIssue({ code: "custom", path: ["books", i, "number"], message: `Livre ${book.number} déjà présent` });
+      }
+      seen.add(book.number);
+    });
+  });
 
 /** Entity collections stored as one YAML file per entry, by `content/` directory. */
 export const COLLECTION_SCHEMAS = {

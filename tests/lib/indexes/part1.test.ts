@@ -103,6 +103,24 @@ describe("titlesModel", () => {
   test("movement titles that are only numerals are dropped", () => {
     expect(model.movements).toEqual([]);
   });
+  test("sorts main and alternative titles by their plain text, preserving display markup", () => {
+    const withMarkup = buildCatalogue({
+      ...fixtureInput,
+      works: [
+        {
+          id: "marked-title",
+          data: workSchema.parse({
+            th: "70", book: 2, title: "*Le Zèbre*", scoring: { fr: "Piano", en: "Piano" }, categories: ["piano"],
+            alt_titles: [{ title: "**Adagio**", source: "Ms." }],
+          }),
+        },
+      ],
+    });
+    const groups = titlesModel(withMarkup).titles;
+    expect(groups.map(([letter]) => letter)).toEqual(["A", "Z"]);
+    expect(groups[0][1][0]).toMatchObject({ kind: "alt", title: "**Adagio**" });
+    expect(groups[1][1][0].work.title).toBe("*Le Zèbre*");
+  });
   test("alternative titles are indexed with their source", () => {
     const withAlt = buildCatalogue({
       ...fixtureInput,

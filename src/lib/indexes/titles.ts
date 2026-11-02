@@ -28,10 +28,10 @@ export function titlesModel(cat: Catalogue): TitlesModel {
   const th = thResolver(cat);
   const items = cat.works
     .flatMap((work): { item: TitleItem; key: string }[] => [
-      { item: { kind: "main", work }, key: sortTitle(work.title) },
+      { item: { kind: "main", work }, key: sortTitle(stripMarkup(work.title, th)) },
       ...work.alt_titles.map(a => ({
         item: { kind: "alt" as const, title: a.title, source: a.source, work },
-        key: sortTitle(a.title),
+        key: sortTitle(stripMarkup(a.title, th)),
       })),
     ])
     .sort((a, b) => byTitle(a.key, b.key));

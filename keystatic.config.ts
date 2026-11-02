@@ -2,6 +2,7 @@ import { collection, config, fields, singleton } from "@keystatic/core";
 import { load as loadYaml } from "js-yaml";
 import frYaml from "./content/ui/fr.yaml?raw";
 import { EDTF_FIELD_PATTERN, uiToKeystatic } from "./src/lib/keystatic-ui";
+import { validatedObject, withValidation } from "./src/lib/keystatic-validation";
 import {
   BIB_TYPES,
   BOOK_STATUS,
@@ -12,6 +13,7 @@ import {
   SOURCE_FEATURES,
   SOURCE_STATUS,
   TEXT_ROLES,
+  workSchema,
 } from "./src/lib/schemas";
 import { TH_PATTERN } from "./src/lib/th";
 import { uiSchema } from "./src/lib/ui-schema";
@@ -43,8 +45,7 @@ const relationship = (label: string, collection: string, isRequired = false) =>
 const relationships = (label: string, collection: string) =>
   fields.array(relationship(label, collection, true), { label, itemLabel: p => String(p.value ?? "") });
 
-// Keystatic always writes the optional objects (text, composition, sources): their required fields
-// stay optional here, and the schema treats an all-empty object as absent (see optionalObject).
+// Empty sections remain optional; validatedObject checks partly filled sections before saving.
 const performer = fields.object(
   {
     person: relationship("Personne", "persons", true),
@@ -72,7 +73,15 @@ const workFields = {
     { label: "Effectif" },
   ),
   scoring_note: text("Note sur l'effectif", true),
-  categories: fields.multiselect({ label: "Catégories", options: options(CATEGORIES), defaultValue: [] }),
+  categories: withValidation(
+    fields.multiselect({
+      label: "Catégories",
+      description: "Choisissez au moins une catégorie.",
+      options: options(CATEGORIES),
+      defaultValue: [],
+    }),
+    value => value.length === 0 ? "Choisissez au moins une catégorie." : undefined,
+  ),
   movements: fields.array(
     fields.object(
       {
@@ -86,7 +95,7 @@ const workFields = {
     ),
     { label: "Mouvements", itemLabel: p => p.fields.title.value || "Mouvement" },
   ),
-  text: fields.object(
+  text: validatedObject(fields.object(
     {
       credit: text("Mention du texte"),
       poem_title: text("Titre du poème"),
@@ -106,15 +115,20 @@ const workFields = {
         { label: "Auteurs du texte", itemLabel: p => p.fields.person.value ?? "" },
       ),
     },
-    { label: "Texte" },
+    { label: "Texte", description: "Rubrique facultative. Renseignez « Mention du texte » si vous remplissez cette rubrique." },
+  ), workSchema.shape.text),
+  composition: validatedObject(
+    fields.object({ text: text("Texte"), date: date("Date") }, {
+      label: "Composition", description: "Rubrique facultative. Renseignez « Texte » si vous indiquez une date.",
+    }),
+    workSchema.shape.composition,
   ),
-  composition: fields.object({ text: text("Texte"), date: date("Date") }, { label: "Composition" }),
   duration: text("Durée"),
   dedication: fields.object(
     { text: text("Texte", true), persons: relationships("Dédicataires", "persons") },
     { label: "Dédicace" },
   ),
-  sources: fields.object(
+  sources: validatedObject(fields.object(
     {
       status: optionalSelect("Statut", SOURCE_STATUS),
       institution: relationship("Fonds", "institutions"),
@@ -126,8 +140,8 @@ const workFields = {
       papers: strings("Papiers", "Papier"),
       features: fields.multiselect({ label: "Caractéristiques", options: options(SOURCE_FEATURES), defaultValue: [] }),
     },
-    { label: "Sources" },
-  ),
+    { label: "Sources", description: "Rubrique facultative. Choisissez un statut si vous remplissez cette rubrique." },
+  ), workSchema.shape.sources),
   audio_source: text("Source audio", true),
   remarks: strings("Remarques", "Remarque"),
   intertextual: strings("Intertextualité", "Élément"),
