@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.12",
-    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.20.5",
     "node-html-parser": "^9.0.6",
     "pagefind": "^1.6.0",
     "tsx": "^4.23.15",
