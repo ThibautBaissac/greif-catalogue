@@ -41,11 +41,8 @@ export const pageUrl = (key: PageKey, lang: Lang): string => {
 
 export const workUrl = (id: string, lang: Lang): string => `/${lang}/${WORK_DIR[lang]}/${id}/`;
 
-export const fill = (template: string, vars: Record<string, string | number>): string =>
-  template.replace(/\{(\w+)\}/g, (m, k: string) => (k in vars ? String(vars[k]) : m));
-
-export const tn = (p: Plural, n: number, lang: Lang): string =>
-  fill(new Intl.PluralRules(lang).select(n) === "one" ? p.one : p.other, { n });
+// Dans un module à part : les scripts navigateur les importent sans tirer `astro:content`.
+export { fill, tn } from "./plural";
 
 export async function getUi(lang: Lang): Promise<Ui> {
   const { getEntry } = await import("astro:content");

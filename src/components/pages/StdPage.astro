@@ -1,0 +1,30 @@
+---
+import Base from "~/layouts/Base.astro";
+import type { Lang } from "~/lib/edtf";
+import { pageUrl, type PageKey, type Ui } from "~/lib/i18n";
+
+type Props = { key: PageKey; lang: Lang; ui: Ui; active?: PageKey; lede?: string; eyebrow?: string };
+
+const { key, lang, ui, active } = Astro.props;
+const entry = (ui.idx as Record<string, { title: string; desc: string }>)[key];
+const navLabel = (ui.nav as Record<string, string>)[key];
+const heading = entry?.title ?? navLabel ?? key;
+const lede = Astro.props.lede ?? entry?.desc ?? "";
+const eyebrow = Astro.props.eyebrow ?? (entry ? ui.nav.indexes : ui.siteSub);
+const other: Lang = lang === "fr" ? "en" : "fr";
+---
+<Base
+  {lang}
+  title={heading}
+  desc={lede}
+  alt={pageUrl(key, other)}
+  active={active ?? "indexes"}
+  noindex={key === "dashboard"}
+>
+  <div class="page-head wrap">
+    <p class="eyebrow">{eyebrow}</p>
+    <h1>{heading}</h1>
+    {lede && <p class="lede">{lede}</p>}
+  </div>
+  <div class="wrap page-body"><slot /></div>
+</Base>

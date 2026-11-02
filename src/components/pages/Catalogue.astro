@@ -1,0 +1,87 @@
+---
+import Markup from "~/components/Markup.astro";
+import WorkTitle from "~/components/WorkTitle.astro";
+import { getCatalogue } from "~/lib/catalogue-astro";
+import { formatEdtf, type Lang } from "~/lib/edtf";
+import { getUi, tn, workUrl } from "~/lib/i18n";
+import { catalogueModel } from "~/lib/indexes/catalogue";
+import StdPage from "./StdPage.astro";
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const ui = await getUi(lang);
+const cat = await getCatalogue();
+const { books, categories } = catalogueModel(cat);
+---
+<StdPage key="catalogue" {lang} {ui} active="catalogue" lede="">
+  <div class="filters">
+    <label class="fl">
+      <span>{ui.filterBook}</span>
+      <select id="f-book">
+        <option value="">{ui.filterAll}</option>
+        {books.map(({ book }) => <option value={book.number}>{ui.book} {book.roman}</option>)}
+      </select>
+    </label>
+    <label class="fl">
+      <span>{ui.filterCat}</span>
+      <select id="f-cat">
+        <option value="">{ui.filterAll}</option>
+        {categories.map(c => <option value={c}>{ui.cat[c]}</option>)}
+      </select>
+    </label>
+    <label class="fl">
+      <span>{ui.filterStatus}</span>
+      <select id="f-status">
+        <option value="">{ui.filterAll}</option>
+        {Object.entries(ui.status).map(([k, v]) => <option value={k}>{v}</option>)}
+      </select>
+    </label>
+    <label class="fl grow">
+      <span>{ui.nav.search}</span>
+      <input id="f-q" type="search" placeholder={ui.searchPlaceholder} />
+    </label>
+    <p class="count" id="f-count" aria-live="polite" data-one={ui.worksCount.one} data-other={ui.worksCount.other}></p>
+  </div>
+  {books.map(({ book, works }) => (
+    <section class="book" id={`livre-${book.number}`} data-book-section={book.number}>
+      <header class="book-head">
+        <h2><span class="roman">{book.roman}</span> {ui.book} {book.roman}</h2>
+        <p class="book-meta">
+          {works.length > 0
+            ? `Th ${works[0].work.th}–${works.at(-1)!.work.th} · ${tn(ui.worksCount, works.length, lang)}${book.status === "partial" ? ` · ${ui.partial}` : ""}`
+            : ui.inPreparation}
+        </p>
+      </header>
+      {works.length > 0 && (
+        <div class="table-scroll">
+          <table class="cat">
+            <thead>
+              <tr>
+                <th>{ui.col.th}</th><th>{ui.col.title}</th><th>{ui.col.opus}</th><th class="c-sc">{ui.col.scoring}</th><th>{ui.col.date}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {works.map(({ work: w, status, q }) => (
+                <tr data-book={w.book} data-cat={w.categories.join(" ")} data-status={status.join(" ")} data-q={q}>
+                  <td class="c-th"><a href={workUrl(w.id, lang)}>{w.th}</a></td>
+                  <td class="c-title">
+                    <a href={workUrl(w.id, lang)}><WorkTitle work={w} {lang} {ui} {cat} /></a>
+                    {w.unpublished && <Fragment>{" "}<span class="dot" title={ui.f.unpublished}></span></Fragment>}
+                  </td>
+                  <td class="c-op">{w.opus ?? <span class="muted">—</span>}</td>
+                  <td class="c-sc"><Markup src={w.scoring[lang]} {lang} {ui} {cat} /></td>
+                  <td class="c-date">
+                    {w.composition?.date ? formatEdtf(w.composition.date, lang, ui.months) : <span class="muted">—</span>}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </section>
+  ))}
+  <script>
+    import "../../scripts/catalogue-filters.ts";
+  </script>
+</StdPage>

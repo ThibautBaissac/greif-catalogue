@@ -1,0 +1,66 @@
+---
+import type { GetStaticPaths } from "astro";
+import Base from "~/layouts/Base.astro";
+import { getCatalogue } from "~/lib/catalogue-astro";
+import type { Lang } from "~/lib/edtf";
+import { getUi, pageUrl, tn, type PageKey } from "~/lib/i18n";
+import { homeModel } from "~/lib/indexes/home";
+
+export const getStaticPaths = (() => (["fr", "en"] as const).map(lang => ({ params: { lang } }))) satisfies GetStaticPaths;
+
+const lang = Astro.params.lang as Lang;
+const ui = await getUi(lang);
+const { stats, books } = homeModel(await getCatalogue());
+const other: Lang = lang === "fr" ? "en" : "fr";
+const statCards = (["entries", "located", "performances", "journal"] as const).map(k => [ui.stats[k], stats[k]] as const);
+const indexKeys: PageKey[] = [
+  "chrono", "opus", "titles", "incipits", "persons", "places", "performances", "scoring", "sources", "editions",
+  "biblio", "disco", "journal",
+];
+const idx = ui.idx as Record<string, { title: string; desc: string }>;
+---
+<Base {lang} alt={pageUrl("home", other)} active="home" bodyClass="home">
+  <section class="hero wrap">
+    <div class="hero-text">
+      <p class="eyebrow">{ui.heroEyebrow}</p>
+      <h1 class="hero-h"><span>{ui.site}</span><span class="hero-dates">1950–2000</span></h1>
+      <p class="lede">{ui.siteSub}</p>
+      <form class="hero-search" action={pageUrl("search", lang)} role="search">
+        <label class="sr" for="hs">{ui.nav.search}</label>
+        <input id="hs" name="q" type="search" placeholder={ui.searchPlaceholder} />
+        <button class="btn" type="submit">{ui.nav.search}</button>
+      </form>
+    </div>
+    <dl class="stats">
+      {statCards.map(([label, n]) => <div><dt>{label}</dt><dd>{n}</dd></div>)}
+    </dl>
+  </section>
+  <section class="wrap">
+    <h2 class="sec-h">{ui.books}</h2>
+    <ol class="books">
+      {books.map(b => (
+        <li class={`bk${b.count ? "" : " empty"}`}>
+          <a href={`${pageUrl("catalogue", lang)}#livre-${b.number}`}>
+            <span class="bk-roman">{b.roman}</span>
+            <span class="bk-t">{ui.book} {b.roman}</span>
+            <span class="bk-m">
+              {b.count > 0
+                ? <Fragment>
+                    Th {b.thFirst}–{b.thLast}<br />
+                    {b.yearFirst !== undefined && <Fragment>{b.yearFirst}–{b.yearLast}</Fragment>}<br />
+                    {tn(ui.worksCount, b.count, lang)}{b.status === "partial" && ` · ${ui.partial}`}
+                  </Fragment>
+                : ui.inPreparation}
+            </span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </section>
+  <section class="wrap">
+    <h2 class="sec-h">{ui.nav.indexes}</h2>
+    <ul class="idx-links">
+      {indexKeys.map(k => <li><a href={pageUrl(k, lang)}>{idx[k].title}</a></li>)}
+    </ul>
+  </section>
+</Base>
