@@ -81,7 +81,7 @@ export const workSchema = z
     book: z.number().int().min(1).max(6),
     subtitle: optional(z.string()),
     alt_titles: z
-      .array(z.object({ title: text, source: optional(z.string()) }).strict())
+      .array(z.object({ title: text, source: text }).strict())
       .default([]),
     opus: optional(z.string()),
     scoring: z.object({ fr: text, en: text }).strict(),

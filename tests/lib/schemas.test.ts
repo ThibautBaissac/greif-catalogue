@@ -92,6 +92,15 @@ describe("workSchema", () => {
   test("rejects a book outside 1..6", () => {
     expect(workSchema.safeParse({ ...minimal, book: 7 }).success).toBe(false);
   });
+
+  test("requires a source on every alternative title", () => {
+    const ok = workSchema.safeParse({ ...minimal, alt_titles: [{ title: "Autre", source: "Ms. 1" }] });
+    expect(ok.success).toBe(true);
+    const missing = workSchema.safeParse({ ...minimal, alt_titles: [{ title: "Autre" }] });
+    expect(missing.success).toBe(false);
+    expect(failedPaths(missing)).toContain("alt_titles.0.source");
+    expect(workSchema.safeParse({ ...minimal, alt_titles: [{ title: "Autre", source: "" }] }).success).toBe(false);
+  });
 });
 
 describe("personSchema", () => {
