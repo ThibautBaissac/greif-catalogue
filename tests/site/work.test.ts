@@ -21,7 +21,7 @@ describe("work entry, FR", () => {
     const expected = ["textes", "dedicace", "sources", "executions", "carnet", "bibliographie", "liens", "citer"];
     expect(ids.filter(id => expected.includes(id))).toEqual(expected);
     const known = ["textes", "dedicace", "sources", "remarques", "intertexte", "edition", "executions", "carnet",
-      "documents", "bibliographie", "discographie", "videographie", "liens", "citer"];
+      "documents", "bibliographie", "discographie", "videographie", "liens", "redaction", "citer"];
     expect(ids.every(id => known.includes(id))).toBe(true);
     expect(known.filter(id => ids.includes(id))).toEqual(ids);
   });

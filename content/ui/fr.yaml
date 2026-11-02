@@ -11,6 +11,7 @@ nav:
 otherLang: English
 otherLangCode: EN
 footerStatus: Version de travail
+footerEditorial: Version éditoriale (non publique)
 heroEyebrow: Catalogue thématique et critique
 stats:
   entries: notices
@@ -218,9 +219,10 @@ altTitleOf: voir
 entryOf: dans
 seeWork: Voir la notice
 sinceDate: Mis à jour
-dashboardWarn: Page de travail, à exclure de la version publique (option --public du générateur).
+dashboardWarn: Page de travail, absente de la version publique (construite sans CATALOGUE_EDITORIAL=1).
 nameVariants: Variantes de noms fusionnées dans les index
 unresolved: Renvois à résoudre
+incompleteBibliography: Références bibliographiques à compléter
 completeness: Complétude
 incipitsFound: incipits
 barsKnown: mesures

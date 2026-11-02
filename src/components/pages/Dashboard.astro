@@ -1,0 +1,52 @@
+---
+import Markup from "~/components/Markup.astro";
+import WorkTitle from "~/components/WorkTitle.astro";
+import WorkRef from "~/components/WorkRef.astro";
+import { getCatalogue } from "~/lib/catalogue-astro";
+import { dashboardModel } from "~/lib/editorial";
+import type { Lang } from "~/lib/edtf";
+import { getUi, workUrl } from "~/lib/i18n";
+import StdPage from "./StdPage.astro";
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const ui = await getUi(lang);
+const cat = await getCatalogue();
+const { rows, unresolved, variants, incompleteBibliography } = dashboardModel(cat);
+---
+<StdPage key="dashboard" {lang} {ui}>
+  <p class="warn">{ui.dashboardWarn}</p>
+  <div class="table-scroll">
+    <table class="cat dash">
+      <thead>
+        <tr>
+          <th>{ui.th}</th><th>{ui.col.title}</th><th>{ui.incipitsFound}</th><th>{ui.barsKnown}</th>
+          <th>{ui.f.composition}</th><th>{ui.f.sources}</th><th>{ui.f.duration}</th><th>{ui.completeness}</th><th>{ui.f.editorial}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map(({ work, c, notes }) => (
+          <tr>
+            <td class="c-th"><a href={workUrl(work.id, lang)}>{work.th}</a></td>
+            <td><WorkTitle {work} {lang} {ui} {cat} /></td>
+            <td class="c-num">{c.incipits}/{c.movements}</td>
+            <td class="c-num">{c.bars}/{c.movements}</td>
+            {[c.checks.composition, c.checks.sources, c.checks.duration].map(ok => (
+              <td>{ok ? "✓" : <span class="miss">—</span>}</td>
+            ))}
+            <td><span class="meter" style={`--v:${c.score}`}></span></td>
+            <td lang="fr">{notes.map(n => <div class="note"><Markup src={n} {lang} {ui} {cat} /></div>)}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <h2 class="sec-h">{ui.unresolved} <span class="muted">{unresolved.length}</span></h2>
+  <ul class="wl cols">{unresolved.map(w => <li><WorkRef work={w} {lang} {ui} {cat} /></li>)}</ul>
+  <h2 class="sec-h">{ui.nameVariants}</h2>
+  <ul class="plain">
+    {variants.map(v => <li><span class="muted">{v.variants.join(", ")}</span> → {v.person}</li>)}
+  </ul>
+  <h2 class="sec-h">{ui.incompleteBibliography} <span class="muted">{incompleteBibliography.length}</span></h2>
+  <ul class="plain">{incompleteBibliography.map(id => <li><code>{id}</code></li>)}</ul>
+</StdPage>

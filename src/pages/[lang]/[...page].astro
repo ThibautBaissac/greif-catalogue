@@ -2,10 +2,11 @@
 import type { GetStaticPaths } from "astro";
 import { PAGE_COMPONENTS } from "~/components/pages/registry";
 import type { Lang } from "~/lib/edtf";
+import { isEditorial } from "~/lib/editorial";
 import { PAGES, type PageKey } from "~/lib/i18n";
 
 export const getStaticPaths = (() => {
-  const keys = (Object.keys(PAGE_COMPONENTS) as PageKey[]).filter(k => k !== "home");
+  const keys = (Object.keys(PAGE_COMPONENTS) as PageKey[]).filter(k => k !== "home" && (k !== "dashboard" || isEditorial()));
   return (["fr", "en"] as const).flatMap(lang => keys.map(key => ({ params: { lang, page: PAGES[key][lang] }, props: { key } })));
 }) satisfies GetStaticPaths;
 

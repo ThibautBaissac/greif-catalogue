@@ -11,6 +11,7 @@ nav:
 otherLang: Français
 otherLangCode: FR
 footerStatus: Working version
+footerEditorial: Editorial version (not public)
 heroEyebrow: Thematic and critical catalogue
 stats:
   entries: entries
@@ -218,9 +219,10 @@ altTitleOf: see
 entryOf: in
 seeWork: See entry
 sinceDate: Updated
-dashboardWarn: Working page, to be left out of the public site (build option --public).
+dashboardWarn: Working page, absent from the public site (built without CATALOGUE_EDITORIAL=1).
 nameVariants: Name variants merged in the indexes
 unresolved: Cross-references to resolve
+incompleteBibliography: Bibliographic references to complete
 completeness: Completeness
 incipitsFound: incipits
 barsKnown: bar counts

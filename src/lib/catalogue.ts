@@ -58,7 +58,7 @@ const asMap = <T>(entries: Entry<T>[]): Map<string, WithId<T>> =>
   new Map(entries.map(e => [e.id, { ...e.data, id: e.id }]));
 
 /** Every string of `value`, with its dotted path (keys and array indices). */
-function* strings(value: unknown, path: string[] = []): Generator<[string, string]> {
+export function* strings(value: unknown, path: string[] = []): Generator<[string, string]> {
   if (typeof value === "string") yield [path.join("."), value];
   else if (Array.isArray(value)) for (const [i, v] of value.entries()) yield* strings(v, [...path, String(i)]);
   else if (value && typeof value === "object") {

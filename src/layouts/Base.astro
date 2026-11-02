@@ -2,6 +2,7 @@
 import "~/styles/global.css";
 import type { Lang } from "~/lib/edtf";
 import { formatEdtf } from "~/lib/edtf";
+import { isEditorial } from "~/lib/editorial";
 import { getUi, pageUrl, type PageKey } from "~/lib/i18n";
 
 type Props = {
@@ -64,7 +65,7 @@ const navKeys = ["catalogue", "indexes", "journal", "search", "about"] as const;
       <div class="wrap foot-row">
         <p>{ui.site} (1950–2000) · {ui.siteSub}</p>
         <p class="muted">
-          {ui.footerStatus} · {ui.sinceDate} {buildDate} · <a href={pageUrl("about", lang)}>{ui.nav.about}</a>
+          {isEditorial() ? ui.footerEditorial : ui.footerStatus} · {ui.sinceDate} {buildDate} · <a href={pageUrl("about", lang)}>{ui.nav.about}</a>
         </p>
       </div>
     </footer>

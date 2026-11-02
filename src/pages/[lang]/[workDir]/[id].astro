@@ -10,6 +10,7 @@ import WorkRef from "~/components/WorkRef.astro";
 import WorkTitle from "~/components/WorkTitle.astro";
 import { getCatalogue } from "~/lib/catalogue-astro";
 import { edtfSortKey, formatEdtf, type Lang } from "~/lib/edtf";
+import { isEditorial } from "~/lib/editorial";
 import { fill, getUi, pageUrl, WORK_DIR, workUrl } from "~/lib/i18n";
 import { stripMarkup } from "~/lib/markup";
 
@@ -63,6 +64,7 @@ const has = {
   discographie: w.discography.length > 0,
   videographie: w.videography.length > 0,
   liens: false,
+  redaction: isEditorial() && w.editorial_notes.length > 0,
 };
 const related = cat.related(w.id);
 has.liens = related.length > 0;
@@ -80,6 +82,7 @@ const labels = {
   discographie: ui.f.discography,
   videographie: ui.f.videography,
   liens: ui.f.related,
+  redaction: ui.f.editorial,
 };
 const order = Object.keys(labels) as (keyof typeof labels)[];
 const toc = order.filter(k => has[k]);
@@ -290,6 +293,11 @@ const other: Lang = lang === "fr" ? "en" : "fr";
                 <li><span class="rel">{relationLabel(r.relation)}</span>{" "}<WorkRef work={r.work} {lang} {ui} {cat} /></li>
               ))}
             </ul>
+          </Field>
+        )}
+        {has.redaction && (
+          <Field id="redaction" label={labels.redaction} cls="is-editorial">
+            <ul class="todo">{w.editorial_notes.map(n => <li lang="fr"><Markup src={n} {lang} {ui} {cat} /></li>)}</ul>
           </Field>
         )}
         <section class="cite" id="citer">

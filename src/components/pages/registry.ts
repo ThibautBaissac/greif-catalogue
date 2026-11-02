@@ -4,6 +4,7 @@ import About from "./About.astro";
 import Biblio from "./Biblio.astro";
 import Catalogue from "./Catalogue.astro";
 import Chrono from "./Chrono.astro";
+import Dashboard from "./Dashboard.astro";
 import Disco from "./Disco.astro";
 import Editions from "./Editions.astro";
 import Indexes from "./Indexes.astro";
@@ -41,4 +42,5 @@ export const PAGE_COMPONENTS: Partial<Record<PageKey, AstroComponentFactory>> = 
   journal: Journal,
   search: Search,
   about: About,
+  dashboard: Dashboard,
 };
