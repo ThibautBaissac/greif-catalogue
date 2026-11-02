@@ -1,0 +1,16 @@
+---
+import { getEntry, render } from "astro:content";
+import type { Lang } from "~/lib/edtf";
+import { getUi } from "~/lib/i18n";
+import StdPage from "./StdPage.astro";
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const ui = await getUi(lang);
+const entry = await getEntry("pages", `${lang}/about`);
+if (!entry) throw new Error(`Page introuvable : content/pages/${lang}/about.mdoc`);
+const { Content } = await render(entry);
+---
+<StdPage key="about" active="about" heading={entry.data.title} eyebrow={ui.siteSub} {lang} {ui}>
+  <div class="prose"><Content /></div>
+</StdPage>

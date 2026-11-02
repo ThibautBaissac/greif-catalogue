@@ -1,0 +1,17 @@
+---
+import type { Lang } from "~/lib/edtf";
+import { getUi } from "~/lib/i18n";
+import StdPage from "./StdPage.astro";
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const ui = await getUi(lang);
+---
+<StdPage key="search" active="search" eyebrow={ui.siteSub} {lang} {ui}>
+  <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
+  <div id="search" data-placeholder={ui.searchPlaceholder} data-unavailable={ui.searchUnavailable}></div>
+  <script is:inline src="/pagefind/pagefind-ui.js"></script>
+  <script>
+    import "../../scripts/search.ts";
+  </script>
+</StdPage>

@@ -1,5 +1,6 @@
 import type { AstroComponentFactory } from "astro/runtime/server/index.js";
 import type { PageKey } from "~/lib/i18n";
+import About from "./About.astro";
 import Biblio from "./Biblio.astro";
 import Catalogue from "./Catalogue.astro";
 import Chrono from "./Chrono.astro";
@@ -12,6 +13,7 @@ import Performances from "./Performances.astro";
 import Persons from "./Persons.astro";
 import Places from "./Places.astro";
 import Scoring from "./Scoring.astro";
+import Search from "./Search.astro";
 import Sources from "./Sources.astro";
 import TextIncipits from "./TextIncipits.astro";
 import Titles from "./Titles.astro";
@@ -37,4 +39,6 @@ export const PAGE_COMPONENTS: Partial<Record<PageKey, AstroComponentFactory>> = 
   biblio: Biblio,
   disco: Disco,
   journal: Journal,
+  search: Search,
+  about: About,
 };

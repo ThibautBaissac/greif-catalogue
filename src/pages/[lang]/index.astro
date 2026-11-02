@@ -1,5 +1,6 @@
 ---
 import type { GetStaticPaths } from "astro";
+import { getEntry, render } from "astro:content";
 import Base from "~/layouts/Base.astro";
 import { getCatalogue } from "~/lib/catalogue-astro";
 import type { Lang } from "~/lib/edtf";
@@ -10,6 +11,9 @@ export const getStaticPaths = (() => (["fr", "en"] as const).map(lang => ({ para
 
 const lang = Astro.params.lang as Lang;
 const ui = await getUi(lang);
+const intro = await getEntry("pages", `${lang}/home`);
+if (!intro) throw new Error(`Page introuvable : content/pages/${lang}/home.mdoc`);
+const { Content: Intro } = await render(intro);
 const { stats, books } = homeModel(await getCatalogue());
 const other: Lang = lang === "fr" ? "en" : "fr";
 const statCards = (["entries", "located", "performances", "journal"] as const).map(k => [ui.stats[k], stats[k]] as const);
@@ -24,7 +28,7 @@ const idx = ui.idx as Record<string, { title: string; desc: string }>;
     <div class="hero-text">
       <p class="eyebrow">{ui.heroEyebrow}</p>
       <h1 class="hero-h"><span>{ui.site}</span><span class="hero-dates">1950–2000</span></h1>
-      <p class="lede">{ui.siteSub}</p>
+      <div class="lede"><Intro /></div>
       <form class="hero-search" action={pageUrl("search", lang)} role="search">
         <label class="sr" for="hs">{ui.nav.search}</label>
         <input id="hs" name="q" type="search" placeholder={ui.searchPlaceholder} />

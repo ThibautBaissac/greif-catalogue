@@ -3,12 +3,12 @@ import Base from "~/layouts/Base.astro";
 import type { Lang } from "~/lib/edtf";
 import { pageUrl, type PageKey, type Ui } from "~/lib/i18n";
 
-type Props = { key: PageKey; lang: Lang; ui: Ui; active?: PageKey; lede?: string; eyebrow?: string };
+type Props = { key: PageKey; lang: Lang; ui: Ui; active?: PageKey; lede?: string; eyebrow?: string; heading?: string };
 
 const { key, lang, ui, active } = Astro.props;
 const entry = (ui.idx as Record<string, { title: string; desc: string }>)[key];
 const navLabel = (ui.nav as Record<string, string>)[key];
-const heading = entry?.title ?? navLabel ?? key;
+const heading = Astro.props.heading ?? entry?.title ?? navLabel ?? key;
 const lede = Astro.props.lede ?? entry?.desc ?? "";
 const eyebrow = Astro.props.eyebrow ?? (entry ? ui.nav.indexes : ui.siteSub);
 const other: Lang = lang === "fr" ? "en" : "fr";
