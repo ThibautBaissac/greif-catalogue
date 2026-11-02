@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "Si vous utilisez ce catalogue, merci de le citer avec ces métadonnées."
+title: "Catalogue thématique des œuvres d'Olivier Greif"
+type: dataset
+authors:
+  # TODO(user): renseigner les auteurs réels (family-names, given-names, orcid facultatif).
+  # Cette entrée est un espace réservé : aucune personne n'a été choisie à votre place.
+  - name: "TODO(user) : auteur(s) à renseigner"
+# TODO(user): choisir la licence du catalogue et l'écrire sous forme d'identifiant SPDX,
+# par exemple `license: CC-BY-4.0`. Aucune licence n'est déclarée tant que vous n'avez pas décidé.
+# license: TODO
+# TODO(user): URL déduite de keystatic.config.ts (propriétaire et dépôt GitHub) ; à confirmer.
+repository-code: "https://github.com/ThibautBaissac/greif-catalogue"
+# TODO(user): ajouter `version` et `date-released` à chaque release GitHub (voir README.md).
