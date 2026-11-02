@@ -364,7 +364,7 @@ Règles :
 - Fonds : `f-pbmgf` {siglum "F-Pbmgf", name fr "Paris, Bibliothèque musicale La Grange-Fleuret, fonds Olivier Greif.", en "Paris, Bibliothèque musicale La Grange-Fleuret, Olivier Greif collection."} ; `f-pmm` {siglum "F-Pmm", name fr "[à préciser]", en "[to be specified]"}. Tout autre sigle rencontré → `report`.
 - Bibliographie : une entrée par `ref` distinct, id `slug(ref)`, `short = ref`, `type: "other"`, `editorial_notes: ["[migration] compléter la notice CSL (type, auteurs, titre, éditeur, date)"]`.
 
-- [ ] **Step 1: Écrire les tests**
+- [x] **Step 1: Écrire les tests**
   - `invertName("Heinrich Heine")` → `{surname:"Heine", given:"Heinrich"}`
   - `invertName("Jacques Loiseleur des Longchamps")` → `{surname:"Loiseleur des Longchamps", given:"Jacques"}`
   - `invertName("Ludwig van Beethoven")` → `{surname:"Beethoven", given:"Ludwig van"}`
@@ -375,10 +375,10 @@ Règles :
   - `sonate-violon-piano-02` : `report` contient une ligne avec `sonate-violon-piano-02` et `par les mêmes interprètes` ; aucune personne `et-22-fevrier`
   - `roles.get("violon").en === "violin"` ; `places.get("paris").name === "Paris"`
   - `bibliography.get("francois-sappey-nectoux-2013").short === "François-Sappey & Nectoux (2013)"`
-- [ ] **Step 2: Échec** : `npm test tests/migrate` → FAIL.
-- [ ] **Step 3: Implémenter** `names.ts` et `authorities.ts`.
-- [ ] **Step 4: Succès** : PASS. Chaque autorité produite doit aussi passer son schéma Zod : ajouter cette assertion aux tests.
-- [ ] **Step 5: Commit** : `git add scripts/migrate tests/migrate tests/fixtures/prototype && git commit -m "Extract authority records from prototype data"`
+- [x] **Step 2: Échec** : `npm test tests/migrate` → FAIL.
+- [x] **Step 3: Implémenter** `names.ts` et `authorities.ts`.
+- [x] **Step 4: Succès** : PASS. Chaque autorité produite doit aussi passer son schéma Zod : ajouter cette assertion aux tests.
+- [x] **Step 5: Commit** : `git add scripts/migrate tests/migrate tests/fixtures/prototype && git commit -m "Extract authority records from prototype data"`
 
 ### Task 8: Migration : œuvres, exécution et contenu initial
 
