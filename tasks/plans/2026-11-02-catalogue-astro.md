@@ -409,7 +409,7 @@ Correspondances (prototype → nouveau) :
 - `movements[]` reste identique. Ajouter `incipit: "/incipits/<id>/<n>.png"` seulement si le fichier `prototype/incipits/<id>/<n>.png` existe (aucun aujourd'hui).
 - Tous les autres champs sont recopiés tels quels.
 
-- [ ] **Step 1: Écrire les tests** : on appelle `migrate()` sur l'ensemble des fixtures de `tests/fixtures/prototype/`, puis on lit `files["works/<id>.yaml"]`. Il faut tout le lot, car le contrôle des inverses a besoin des deux œuvres.
+- [x] **Step 1: Écrire les tests** : on appelle `migrate()` sur l'ensemble des fixtures de `tests/fixtures/prototype/`, puis on lit `files["works/<id>.yaml"]`. Il faut tout le lot, car le contrôle des inverses a besoin des deux œuvres.
   - `wiener-konzert` : `work.scoring` → `{fr:"Voix de femme et piano", en:"Female voice and piano"}` ; `work.composition.date` → `"1973-11-26"` ; `work.performances[0].premiere` → `true` ; `work.performances[0].place` → `"paris"` ; `work.performances[0].performers[0]` → `{person:"nell-froger", role:"soprano"}` ; `work.performances.length` → `4` (1 création + 3 exécutions) ; `work.sources.institution` → `"f-pbmgf"` ; `work.related` → `[]` (son seul lien est un inverse, porté par `light-music`) ; `work.bibliography[0].ref` → `"francois-sappey-nectoux-2013"`
   - `light-music` : `related` contient `{work:"wiener-konzert", relation:"shared-material"}` et `{work:"the-spirit-s-song", relation:"cycle"}`
   - `the-spirit-s-song` : `related` → `[]`
@@ -418,13 +418,13 @@ Correspondances (prototype → nouveau) :
   - `light-music` : l'exécution du `2021-10-14` n'a qu'un performer (`olivier-cesarini`, rôle `baryton`) ; `editorial_notes` contient une entrée commençant par `[migration] interprète non identifié` ; aucune valeur `person` n'est vide dans tout le lot
   - entrée synthétique (construite dans le test, pas une fixture) avec `sources.features: ["autograph", "« Une citation »"]` → `features` = `["autograph"]`, `documents` contient `« Une citation »`, et une note `[migration] déplacé de sources.features vers documents` est ajoutée
   - chaque `work` produit passe `workSchema.parse`
-- [ ] **Step 2: Échec** : `npm test tests/migrate/works.test.ts` → FAIL.
-- [ ] **Step 3: Implémenter** `works.ts`, puis `index.ts` (la CLI).
-- [ ] **Step 4: Succès et exécution réelle**
+- [x] **Step 2: Échec** : `npm test tests/migrate/works.test.ts` → FAIL.
+- [x] **Step 3: Implémenter** `works.ts`, puis `index.ts` (la CLI).
+- [x] **Step 4: Succès et exécution réelle**
   Run: `npm test tests/migrate && npm run migrate && npx astro sync`
   Expected: tests PASS ; 82 fichiers dans `content/works/` ; code de sortie 0 ; `tasks/migration-report.md` liste les anomalies, dont au minimum `sonate-violon-piano-02` (« par les mêmes interprètes ») et `light-music` (`[?]`) ; `validateCatalogue` ne signale aucun renvoi `[[…]]` inconnu (les deux `[[[id]]` de `wiener-konzert` et `sonate-piano-14` sont résolus grâce à la regex de la tâche 4).
-- [ ] **Step 5: Relecture humaine (action de l'utilisateur)** : relire `tasks/migration-report.md` et un `git diff --stat`, puis ouvrir trois notices au hasard dans `content/works/`.
-- [ ] **Step 6: Commit** : `git add scripts/migrate tests/migrate content tasks/migration-report.md && git commit -m "Migrate prototype works and authorities to content collections"`
+- [x] **Step 5: Relecture humaine (action de l'utilisateur)** : relire `tasks/migration-report.md` et un `git diff --stat`, puis ouvrir trois notices au hasard dans `content/works/`.
+- [x] **Step 6: Commit** : `git add scripts/migrate tests/migrate content tasks/migration-report.md && git commit -m "Migrate prototype works and authorities to content collections"`
 
 ### Task 9: Textes d'interface et i18n
 
