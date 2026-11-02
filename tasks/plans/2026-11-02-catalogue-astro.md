@@ -463,7 +463,7 @@ Contenu de `content/ui/*.yaml`. Le script `scripts/migrate/ui.ts` l'exporte une 
 
 `uiSchema` : objets imbriqués, feuilles `z.string()`, `months: z.array(z.string()).length(12)`, pluriels `z.object({one: z.string(), other: z.string()})`, tous en `.strict()`.
 
-- [ ] **Step 1: Écrire les tests**
+- [x] **Step 1: Écrire les tests**
   - `pageUrl("persons","fr")` → `"/fr/personnes/"` ; `pageUrl("home","en")` → `"/en/"`
   - `workUrl("wiener-konzert","en")` → `"/en/works/wiener-konzert/"`
   - `fill("Th {th} — {title}", {th:"45", title:"W"})` → `"Th 45 — W"`
@@ -471,10 +471,10 @@ Contenu de `content/ui/*.yaml`. Le script `scripts/migrate/ui.ts` l'exporte une 
   - `tn({one:"{n} work", other:"{n} works"}, 0, "en")` → `"0 works"`
   - `uiSchema.parse(yaml.load(content/ui/fr.yaml))` et la même chose pour `en.yaml` → succès
   - `Object.keys(PAGES).length` → `19`
-- [ ] **Step 2: Échec** : `npm test tests/lib/i18n.test.ts` → FAIL.
-- [ ] **Step 3: Implémenter** `ui-schema.ts`, `i18n.ts`, le script `ui.ts` (exécuté une fois : `npx tsx scripts/migrate/ui.ts`) et la collection `ui`.
-- [ ] **Step 4: Succès** : PASS, et `npx astro sync` sans erreur.
-- [ ] **Step 5: Commit** : `git add src/lib content/ui scripts/migrate/ui.ts src/content.config.ts tests/lib/i18n.test.ts && git commit -m "Move interface strings to editable content with i18n helpers"`
+- [x] **Step 2: Échec** : `npm test tests/lib/i18n.test.ts` → FAIL.
+- [x] **Step 3: Implémenter** `ui-schema.ts`, `i18n.ts`, le script `ui.ts` (exécuté une fois : `npx tsx scripts/migrate/ui.ts`) et la collection `ui`.
+- [x] **Step 4: Succès** : PASS, et `npx astro sync` sans erreur.
+- [x] **Step 5: Commit** : `git add src/lib content/ui scripts/migrate/ui.ts src/content.config.ts tests/lib/i18n.test.ts && git commit -m "Move interface strings to editable content with i18n helpers"`
 
 ### Task 10: CMS Keystatic
 
