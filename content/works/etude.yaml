@@ -1,0 +1,27 @@
+th: '11'
+book: 1
+title: Étude
+opus: '8'
+scoring:
+  fr: Piano
+  en: Piano
+categories:
+  - piano
+movements:
+  - bars: 61
+composition:
+  text: '1966'
+  date: '1966'
+sources:
+  status: located
+  papers:
+    - filigrané JD
+  items:
+    - text: 'Ms. autographe à l''encre noire avec ajouts au crayon, non paginé ; 2 f., 2 pages de musique, papier filigrané JD, 270 x 350 mm à 20 portées ; avec indications de tempo, de nuances et de phrasé, sans nº de mes., complet. Page de titre : « Etude [*sic*] | piano | Olivier Greif | 66 ».'
+  institution: f-pbmgf
+  features:
+    - autograph
+remarks:
+  - Ce Ms. est une mise au net ultérieure (date non précisée) à la date de composition originelle.
+unpublished: true
+related: []

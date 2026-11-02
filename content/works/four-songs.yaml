@@ -1,0 +1,15 @@
+th: '67'
+book: 2
+title: Four Songs
+opus: '63'
+scoring:
+  fr: Voix et piano
+  en: Voice and piano
+categories:
+  - voice-piano
+movements:
+  - {}
+  - {}
+  - {}
+  - {}
+related: []

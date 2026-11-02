@@ -1,0 +1,30 @@
+th: '18'
+book: 1
+title: Variations continues
+alt_titles:
+  - title: Cadence
+    source: Ms., CaG
+opus: '16'
+scoring:
+  fr: Piano
+  en: Piano
+categories:
+  - piano
+movements:
+  - {}
+composition:
+  text: janvier 1967
+  date: 1967-01
+sources:
+  status: located
+  papers:
+    - Passantino nº14
+  items:
+    - text: 'Ms. autographe à l''encre noire, non paginé ; 4 f., 7 pages de musique, papier Passantino nº14, 266 x 341 mm à 14 portées ; avec indications de tempo, de nuances et de phrasé, complet. Page de titre : « – œuvre trente et unième – | [signé] Olivier | janvier 1967 | ["Cadence" biffé remplacé par « Variations continues » au crayon] | pour | piano solo | [signé] Olivier | janvier 1967 ». Le Ms. porte l''indication « the end 5'' | [signé] Olivier | 1967 » à droite de la barre de mesure finale.'
+  institution: f-pbmgf
+  features:
+    - autograph
+remarks:
+  - L'œuvre est cataloguée par l'auteur sous le titre de « Cadence » dans son CaG.
+unpublished: true
+related: []

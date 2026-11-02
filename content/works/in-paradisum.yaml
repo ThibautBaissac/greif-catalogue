@@ -1,0 +1,45 @@
+th: 35b
+book: 1
+title: In paradisum
+scoring:
+  fr: Voix de femme, flûte, clarinette, percussions et piano
+  en: Female voice, flute, clarinet, percussion and piano
+categories:
+  - vocal-ensemble
+movements:
+  - {}
+composition:
+  text: '1970'
+  date: '1970'
+sources:
+  status: not_located
+audio_source: F-Pbmgf. Compact Disque
+remarks:
+  - Incipits restitués d'après le témoignage sonore de la création à l'occasion de l'examen final du clarinettiste William Powell.
+performances:
+  - premiere: true
+    date: '1970-05-07'
+    venue: New York, Lincoln Center, Juilliard Drama Theater, « The eyes of OM »
+    place: new-york
+    performers:
+      - person: isabelle-collin-dufresne
+        role: voix
+        alias: Ultra-Violet
+      - person: m-swindler
+        role: flute
+      - person: d-frost
+        role: percussion
+      - person: william-powell
+        role: clarinette
+      - person: olivier-greif
+        role: piano
+    text: New York, Lincoln Center, Juilliard Drama Theater, « The eyes of OM », 7 mai 1970 par Isabelle Collin-Dufresne « Ultra-Violet » (voix), M. Swindler (flûte), D. Frost, percussion, William Powell (clarinette) et l'auteur (piano)
+duration: 37'
+documents:
+  - « [Greif] alla jusqu'à écrire un morceau pour mon récital de fin d'études. [...] Olivier avait écrit pour l'occasion et – rendez-vous compte – il avait demandé à Ultra-Violet de chanter sa pièce... Cette dernière était alors l'égérie, la superstar d'Andy Warhol et du groupe The Velvet Underground [...]. Ultra-Violet chantait et Olivier, bien sûr, tenait la partie de piano. [...]
+  - Quant à sa pièce précédemment citée qu'il avait écrite pour moi, *In Paradisium* [*sic*], il n'en existe même plus de trace... [Le titre] venait de lui. [...] [cette pièce] était inspirée directement par Dante ! [...] Berio était là, [...] il fut particulièrement élogieux à l'égard de la pièce d'Olivier, une sorte de "Fellini-concert" selon lui ! [...] ce fut une exécution unique et dont malheureusement il ne reste aucune trace filmée. »
+  - Interview de William E. Powell retranscrite dans *We are the words, Olivier Greif, Compositeur, Entretiens avec ses amis*, recueillis par Anne Bramard-Blagny, Delatour, 2013.
+bibliography:
+  - ref: francois-sappey-nectoux-2013
+    pages: '283'
+related: []

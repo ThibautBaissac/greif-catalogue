@@ -1,0 +1,13 @@
+th: '69'
+book: 2
+title: Sonate pour piano nº16
+subtitle: Silver String
+opus: '65'
+scoring:
+  fr: Piano
+  en: Piano
+categories:
+  - piano
+movements:
+  - {}
+related: []

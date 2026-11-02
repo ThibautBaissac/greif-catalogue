@@ -1,0 +1,36 @@
+th: '16'
+book: 1
+title: Un Toit
+opus: '13'
+scoring:
+  fr: Voix et piano
+  en: Voice and piano
+categories:
+  - voice-piano
+movements:
+  - bars: 134
+    text_incipit: Oh ! la maison perdue, au fond du vieil hiver
+text:
+  credit: « Un toit, là-bas » de Émile Verhaeren
+  poem_title: Un toit, là-bas
+  authors:
+    - person: emile-verhaeren
+      role: author
+composition:
+  text: '1966'
+  date: '1966'
+sources:
+  status: located
+  papers:
+    - filigrané JD
+  items:
+    - text: 'Ms. autographe à l''encre noire avec ajouts au crayon, non paginé ; 7 f. 12 pages de musique, papier filigrané JD, 270 x 350 mm à 20 portées ; avec indications de tempo, de nuances et de phrasé, avec nº de mes., complet. Collette en bas à gauche de la page 10. Page de titre : « Un Toit | poème d''E. Verhaeren* | chant et piano | Olivier Greif | 1966 | *(C''est volontairement que j''ai mis la troisième partie de ce poème, et | que j''en ai modifié le titre) ». Signature de l''auteur à la verticale de la barre de mesure finale.'
+  institution: f-pbmgf
+  features:
+    - autograph
+remarks:
+  - Ce Ms. est une mise au net ultérieure (date non précisée) à la date de composition originelle.
+unpublished: true
+related: []
+editorial_notes:
+  - Reproduction de l'intégralité des poèmes ?

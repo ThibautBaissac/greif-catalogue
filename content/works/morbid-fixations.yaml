@@ -1,0 +1,37 @@
+th: '36'
+book: 1
+title: Morbid Fixations
+opus: '32'
+scoring:
+  fr: Deux pianos
+  en: Two pianos
+categories:
+  - two-pianos
+movements:
+  - {}
+composition:
+  text: mai – novembre 1969
+  date: 1969-05/1969-11
+dedication:
+  text: Pour Katya et Marielle Labèque
+  persons:
+    - katia-labeque
+    - marielle-labeque
+sources:
+  status: located
+  papers:
+    - Passantino nº14
+  items:
+    - text: 'Ms. autographe à l''encre noire, non paginé ; 7 f., 7 pages de musique, papier Passantino nº14, 265 x 340 mm à 14 portées ; avec indications de tempo, de nuances et de phrasé, sans nº de mes., complet. Page de titre : « – œuvre cinquante sixième – | [signé] Olivier | mai-juin-novembre-1969 | – Paris-New-York – | "morbid fixations" | – for two pianos – | for Katya and Marielle Labèque, | affectionately, | [signé] Olivier | 1969 ». Le Ms. porte l''indication « the | end » à droite de la barre de mesure finale et « [signé] Olivier | 1969 » en dessous du dernier système de la dernière page.'
+  institution: f-pbmgf
+  features:
+    - autograph
+unpublished: true
+editions:
+  - text: Donemus, 2018, D 17859
+    publisher: Donemus
+    year: 2018
+bibliography:
+  - ref: francois-sappey-nectoux-2013
+    pages: 204, 292
+related: []

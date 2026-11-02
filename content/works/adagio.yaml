@@ -1,0 +1,12 @@
+th: '73'
+book: 2
+title: Adagio
+opus: '69'
+scoring:
+  fr: Violon et piano
+  en: Violin and piano
+categories:
+  - chamber
+movements:
+  - {}
+related: []

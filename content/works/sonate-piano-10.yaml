@@ -1,0 +1,49 @@
+th: '38'
+book: 1
+title: Sonate pour piano nº10
+alt_titles:
+  - title: Troisième sonate pour le piano
+    source: Ms.
+  - title: Sonate pour piano nº4
+    source: CaG, biffé
+opus: '34'
+scoring:
+  fr: Piano
+  en: Piano
+categories:
+  - piano
+movements:
+  - title: « -1- Marche »
+    bars: 344
+  - title: « -2- Valse »
+    bars: 270
+composition:
+  text: juillet – décembre 1970
+  date: 1970-07/1970-12
+dedication:
+  text: Pour Geoffroy Paulmier
+  persons:
+    - geoffroy-paulmier
+sources:
+  status: located
+  papers:
+    - Passantino nº14
+  items:
+    - text: 'Ms. autographe à l''encre noire, non paginé ; 7 f., 31 pages de musique, papier Passantino nº14, 265 x 340 mm à 14 portées ; avec indications de tempo, de nuances et de phrasé, sans nº de mes., complet. Page de titre : en haut à gauche, « – œuvre soixante sixième – », en haut à droite « [signé] Olivier | Juillet – Décembre – 1970 | Paris - Santa Fe - New York – Paris », au milieu, « "troisième sonate pour le piano" | -1- marche | -2- valse | pour Geoffroy Paulmier | [signé] Olivier | 1970 ». Les sept dernières mesures du 1^er^ mvt sont raturées au crayon. Le Ms. porte l''indication « the | end » à droite de la barre de mesure finale du dernier mvt. et « Olivier 1970 | - au "moulin des dames" – Septeuil – » dans le coin inférieur droit de la dernière page.'
+  institution: f-pbmgf
+  features:
+    - autograph
+remarks:
+  - 'Le CaG indique pour cette œuvre : « 10^e^ [à l''encre rouge ajouté ultérieurement] Sonate pour piano [nº4 » biffé]'
+unpublished: true
+journal:
+  - date_text: 20 décembre 1970
+    date: '1970-12-20'
+    note: 'Extrait du journal de Patricia Aubertin inséré par l''auteur dans son propre journal :'
+    quotes:
+      - « Olivier va jouer sa Sonate, enfin achevée. À cette occasion, Dalí a fait monter un piano à queue Steinway. Dalí adore la Sonate, en particulier la valse. »
+  - date_text: 15 avril 1971
+    date: '1971-04-15'
+    quotes:
+      - '« J''ai reçu aujourd''hui la visite de Madame Liberman. (Épouse du directeur des Editions Condé-Nast, elle a été l''amie intime de Prokofiev et de Stravinsky.) [...] Je joue la Sonate de 1970. Après le premier mouvement : "C''est merveilleux !" A la fin : "Vous avez un talent extraordinaire, sans doute même du génie. Je suis très impressionnée. Vous me connaissez, je dis ce que je pense. [...] »'
+related: []

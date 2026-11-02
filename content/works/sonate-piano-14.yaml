@@ -1,0 +1,112 @@
+th: '23'
+book: 1
+title: Sonate pour piano nº14
+subtitle: dans le goût ancien
+alt_titles:
+  - title: Sonate dans le goût ancien
+    source: Ms.
+opus: '48'
+scoring:
+  fr: Piano
+  en: Piano
+categories:
+  - piano
+movements:
+  - title: « -1- Sinfonia »
+    bars: 86
+  - title: « -2- Musette »
+    bars: 480
+  - title: « -3- Chasse »
+    bars: 475
+composition:
+  text: '1967'
+  date: '1967'
+dedication:
+  text: À Arthur Rubinstein
+  persons:
+    - arthur-rubinstein
+sources:
+  status: located
+  papers:
+    - filigrané JD
+  items:
+    - text: 'Ms. autographe à l''encre noire avec ajouts au crayon et à l''encre bleue, paginé : 1-55 ; 53 pages de musique, papier filigrané JD, 270 x 350 mm à 20 portées ; quelques passages biffés, avec indications de tempo, de nuance et de phrasé, avec nº de mes., complet. Pages de titre, rº : à l''encre noire « Sonate [souligné] | dans le goût ancien | piano [souligné] | Olivier Greif | 67 – 74 » ; au vº : à l''encre noire, dans le coin supérieur gauche, « À Arthur Rubinstein », au milieu en liste, « -1- Sinfonia | -2- Musette | -3- Chasse ».'
+  institution: f-pbmgf
+  features:
+    - autograph
+remarks:
+  - Nous ignorons si la version d'origine a subi des modifications lors de cette mise au net datant de 1974. La dédicace date de la réécriture. Le brouillon de la dernière page du 1^er^ mvt. a survécu à la destruction du manuscrit de l'œuvre avant réécriture au vº d'une des pièces du *Piano Book,* [[?]], le « Rondo » de mai 1967.
+performances:
+  - premiere: true
+    date: '1977-11-18'
+    venue: Paris, Salle Cortot, pour la Société Nationale de Musique
+    place: paris
+    performers:
+      - person: henri-barda
+        role: piano
+    text: Paris, Salle Cortot, pour la Société Nationale de Musique, 18 novembre 1977, par Henri Barda (piano)
+  - premiere: false
+    date: 1979-02-15/1979-02-18
+    venue: 'Tournée écossaise : Stirling (University campus), Edinburgh (music department of university) , Irvine (sports centre) et Glasgow (Third Eye Centre)'
+    place: ecosse-tournee
+    performers:
+      - person: olivier-greif
+        role: piano
+    text: 'Tournée écossaise : Stirling (University campus), Edinburgh (music department of university) , Irvine (sports centre) et Glasgow (Third Eye Centre), du 15 au 18 février 1979, par l''auteur (piano)'
+  - premiere: false
+    date: '2001-07-24'
+    venue: Tarn, Festival de Cordes-sur-Ciel
+    place: cordes-sur-ciel
+    performers:
+      - person: alexandre-tharaud
+        role: piano
+    text: Tarn, Festival de Cordes-sur-Ciel, 24 juillet 2001, Alexandre Tharaud (piano)
+  - premiere: false
+    date: '2002-06-02'
+    venue: Paris, Conservatoire du 9^e^ arrondissement
+    place: paris
+    performers:
+      - person: henri-barda
+        role: piano
+    text: Paris, Conservatoire du 9^e^ arrondissement, 2 juin 2002, par Henri Barda (piano)
+  - premiere: false
+    date: '2002-11-09'
+    venue: Japon, Tokyo, Toppan Hall
+    place: tokyo
+    performers:
+      - person: henri-barda
+        role: piano
+    text: Japon, Tokyo, Toppan Hall, 9 novembre 2002, par le même interprète
+  - premiere: false
+    date: '2003-05-05'
+    venue: Paris, Maison de Radio-France
+    place: paris
+    performers:
+      - person: henri-barda
+        role: piano
+    text: Paris, Maison de Radio-France, 5 mai 2003, par le même interprète
+  - premiere: false
+    date: '2017-05-13'
+    venue: Paris, Reid Hall
+    place: paris
+    performers:
+      - person: takuya-otaki
+        role: piano
+    text: Paris, Reid Hall, 13 mai 2017, par Takuya Otaki (piano)
+duration: 18'30
+journal:
+  - date_text: 19 février 1979
+    date: '1979-02-19'
+    context: lettre à son père
+    quotes:
+      - « Me voici revenu d'Écosse, où les quatre concerts ont été très bien reçus, particulièrement celui de Glasgow, un franc succès. J'avais inscrit au programme de chaque concert ma "Sonate dans le goût ancien", et à Glasgow, j'ai rajouté le final de ma Sonate en trois mouvements [[[sonate-piano-15]], op.54]. »
+bibliography:
+  - ref: francois-sappey-nectoux-2013
+    pages: 69, 178, 283, 293, 302, 323
+discography:
+  - text: '*Compositeur, pianiste et en entretien* (2013)'
+    title: Compositeur, pianiste et en entretien
+    year: 2013
+related: []
+editorial_notes:
+  - 'Renvoi(s) à résoudre : ThX'

@@ -1,0 +1,32 @@
+th: '33'
+book: 1
+title: L'île du Docteur Moreau
+opus: '29'
+scoring:
+  fr: Piano
+  en: Piano
+categories:
+  - piano
+movements:
+  - bars: 73
+composition:
+  text: septembre 1969
+  date: 1969-09
+dedication:
+  text: À Robert Flinn
+  persons:
+    - robert-flinn
+sources:
+  status: located
+  papers:
+    - Passantino nº14
+  items:
+    - text: 'Ms. autographe à l''encre noire, non paginé ; 2 f., 2 pages de musique, papier Passantino nº14, 265 x 340 mm à 14 portées ; avec indications de tempo, de nuance et de phrasé, sans nº de mes., complet. Page de titre : « – œuvre cinquante huitième – | Olivier | septembre 1969 | "L''île du docteur Moreau" | pour piano solo | New York | to Robert Flinn, | Olivier | 1969 ». Le Ms. porte l''indication « the | end » à droite de la barre de mesure finale et « 1969 Olivier » en dessous du dernier système.'
+  institution: f-pbmgf
+  features:
+    - autograph
+unpublished: true
+bibliography:
+  - ref: francois-sappey-nectoux-2013
+    pages: 177, 204, 292
+related: []

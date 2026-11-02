@@ -1,0 +1,77 @@
+th: 37b
+book: 1
+title: 42^nd^ Street
+scoring:
+  fr: Piano
+  en: Piano
+categories:
+  - piano
+movements:
+  - bars: 335
+composition:
+  text: '1970'
+  date: '1970'
+dedication:
+  text: Pour Devadip et Urmila
+  persons:
+    - devadip
+    - urmila
+sources:
+  status: located
+  intro: '*cf*. [[sonate-piano-09]]'
+remarks:
+  - 'Nom de l''auteur sur l''édition, « Haridas Olivier Greif ». Témoignage sonore par l''auteur au piano dans l''émission radiophonique « Démarches » (épisodes 1 et 2), diffusé le 15 et le 22 janvier 1977 sur France Culture et présenté par Gérard Julien Salvy. INA, notices ID : PHD99252339 et PHD99228330.'
+editions:
+  - text: Max Eschig, 1980, M.E. 8421
+    publisher: Max Eschig
+    year: 1980
+performances:
+  - premiere: true
+    date: '2011-01-03'
+    venue: Allemagne, Heidelberg, Deutsch-Amerikanisches Institut
+    place: heidelberg
+    performers:
+      - person: bertrand-giraud
+        role: piano
+    text: Allemagne, Heidelberg, Deutsch-Amerikanisches Institut, 3 janvier 2011, par Bertrand Giraud (piano)
+  - premiere: false
+    date: '2017-05-13'
+    venue: Paris, Reid Hall
+    place: paris
+    performers:
+      - person: takuya-otaki
+        role: piano
+    text: Paris, Reid Hall, 13 mai 2017, par Takuya Otaki (piano)
+  - premiere: false
+    date: '2019-05-25'
+    venue: Paris, CRR
+    place: paris
+    performers:
+      - person: philippe-hattat
+        role: piano
+    text: Paris, CRR, 25 mai 2019, par Philippe Hattat (piano)
+  - premiere: false
+    date: '2021-10-14'
+    venue: Paris, CNSM
+    place: paris
+    performers:
+      - person: philippe-hattat
+        role: piano
+    text: Paris, CNSM, 14 octobre 2021, par le même interprète
+  - premiere: false
+    date: '2022-03-21'
+    venue: Nice, Musée Marc Chagall
+    place: nice
+    performers:
+      - person: jonathan-benichou
+        role: piano
+    text: Nice, Musée Marc Chagall, 21 mars 2022, par Jonathan Benichou (piano)
+premiere_recording:
+  - '*Olivier Greif, Musique de chambre* (2010) par Bertrand Giraud (piano)'
+duration: 7'40
+bibliography:
+  - ref: francois-sappey-nectoux-2013
+    pages: 22, 28, 68, 167, 204, 292, 302
+related: []
+editorial_notes:
+  - retrouver le manuscrit ayant servi à la gravure

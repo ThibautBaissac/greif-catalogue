@@ -1,0 +1,62 @@
+th: '26'
+book: 1
+title: Sonate pour piano nº3
+subtitle: Quatre Soli
+alt_titles:
+  - title: Quatre soli
+    source: Ms.
+  - title: Sonate pour piano nº1
+    source: CaG, biffé
+opus: '22'
+scoring:
+  fr: Piano
+  en: Piano
+categories:
+  - piano
+movements:
+  - title: -1- Allegro ma non troppo
+    bars: 95
+  - title: -2- Prestissimo
+    bars: 85
+  - title: -3- « Ostinato »
+    bars: 37
+  - title: -4- « Fuga sulle soli uno e due »
+    bars: 107
+composition:
+  text: janvier – septembre 1968
+  date: 1968-01/1968-09
+sources:
+  status: located
+  papers:
+    - Passantino nº14
+  items:
+    - text: 'Ms. autographe à l''encre noire, non paginé ; 4 f., 18 pages de musique, papier Passantino nº14, 265 x 340 mm à 14 portées ; avec indications de tempo, de nuance et de phrasé, sans nº de mes., complet. Page de titre : « – œuvre cinquantième – | [signé] Olivier | janvier – septembre | 1968 | "quatre solis" [*sic*] | – pour le piano – | [signé] Olivier | 1968 | -1- allegro ma non troppo | -2- prestissimo | -3- ostinato | -4- fuga sulle soli uno e due ». Le Ms. porte l''indication « the | end » à droite de la barre de mesure finale et « Olivier 1968 » en dessous du dernier système de la dernière page.'
+  institution: f-pbmgf
+  features:
+    - autograph
+remarks:
+  - 'Le CaG indique pour cette œuvre : [« 3^e^ » à l''encre rouge ajouté ultérieurement] Sonate pour piano [« nº1 » biffé]'
+unpublished: true
+performances:
+  - premiere: true
+    date: '1969-08-06'
+    venue: Suisse, église de Champéry
+    place: champery
+    performers:
+      - person: olivier-greif
+        role: piano
+    text: Suisse, église de Champéry, 6 août 1969, par l'auteur (piano)
+journal:
+  - date_text: 6 août 1969
+    date: '1969-08-06'
+    quotes:
+      - |-
+        « Je donne un récital dans l'Église catholique de Champéry, en Suisse, [...]. Le programme comprend [...] un travail personnel, *Quatre soli* pour piano, composé en 1968.
+
+        [Extraits de deux des trois critiques parues à la suite de ce concert dans les journaux suisses :] "[Greif] s'est essayé également dans la composition. Thèmes traditionnels, avec parfois des recherches mélodiques modernes, des envolées impulsives où le jeune homme fougueux supplante l'artiste qui s'est imposé une discipline basée sur le plus pur classicisme."
+
+        "Compositeur, [Greif] a interprété une de ses œuvres, 'Quatre soli pour un piano', œuvre qui a été très appréciée étant du 'classique-moderne'." »
+bibliography:
+  - ref: francois-sappey-nectoux-2013
+    pages: 171, 176, 292
+related: []

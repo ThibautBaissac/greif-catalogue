@@ -1,0 +1,12 @@
+th: '68'
+book: 2
+title: Sonate pour deux pianos nº3
+opus: '64'
+scoring:
+  fr: Deux pianos
+  en: Two pianos
+categories:
+  - two-pianos
+movements:
+  - {}
+related: []

@@ -1,0 +1,61 @@
+th: '5'
+book: 1
+title: Quatre Poèmes de J. Prévert
+opus: '2'
+scoring:
+  fr: Voix et piano
+  en: Voice and piano
+categories:
+  - voice-piano
+movements:
+  - title: '[1.] Le grand homme'
+    bars: 35
+    text_incipit: Chez un tailleur de pierre
+  - title: '[2.] Immense et rouge'
+    bars: 70
+    text_incipit: Immense et rouge
+  - title: '[3.] Chanson'
+    bars: 44
+    text_incipit: Quel jour sommes-nous
+  - title: '[4.] Sang et plumes'
+    bars: 70
+    text_incipit: Alouette du souvenir
+text:
+  credit: Jacques Prévert
+  authors:
+    - person: jacques-prevert
+      role: author
+composition:
+  text: '1963'
+  date: '1963'
+sources:
+  status: located
+  papers:
+    - filigrané JD
+  items:
+    - text: 'Ms. autographe à l''encre noire avec ajouts au crayon, non paginé ; 6 f., 11 pages de musique, papier filigrané JD, 270 x 350 mm à 20 portées ; avec indications de tempo, de nuances et de phrasé, sans nº de mes., complet. Page de titre : « 4 poêmes [*sic*] de J. Prévert | voice & piano | Olivier Greif | 63 – 71 »'
+  institution: f-pbmgf
+  features:
+    - autograph
+remarks:
+  - Nous ignorons si la version d'origine a subi des modifications lors de cette mise au net datant de 1971. Les droits de mise en musique des poèmes « Immense et rouge » et « Chanson » appartenant de manière exclusive à Joseph Kosma via les éditions Enoch, la publication de cette œuvre est interdite avant que ces poèmes ne tombent dans le domaine public, soit 2047.
+performances:
+  - premiere: true
+    date: '2000-03-04'
+    venue: Université Paris III Sorbonne-Nouvelle
+    place: paris
+    performers:
+      - person: jacques-loiseleur-des-longchamps
+        role: chant
+      - person: grigori-abramian
+        role: piano
+    text: Université Paris III Sorbonne-Nouvelle, 4 mars 2000, par Jacques Loiseleur des Longchamps (chant) et Grigori Abramian (piano)
+duration: 6'20 (0'40 | 1' | 2' | 2'30)
+bibliography:
+  - ref: francois-sappey-nectoux-2013
+    pages: 177, 282, 291
+videography:
+  - text: Les Incontournables, DVD nº 7
+related: []
+editorial_notes:
+  - Reproduction de l'intégralité des poèmes ?

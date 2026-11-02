@@ -1,0 +1,12 @@
+th: '60'
+book: 2
+title: Le Tombeau de Ravel
+opus: '56'
+scoring:
+  fr: Piano quatre mains
+  en: Piano four hands
+categories:
+  - two-pianos
+movements:
+  - {}
+related: []

@@ -1,0 +1,47 @@
+th: '3'
+book: 1
+title: Petite Suite
+alt_titles:
+  - title: Suite
+    source: Carnet de bord
+scoring:
+  fr: Piano
+  en: Piano
+categories:
+  - piano
+movements:
+  - title: '[1.] Mouton'
+  - title: '[2.] Gamme'
+  - title: '[3.] Tristesse'
+  - title: '[4.] Tourbillon'
+composition:
+  text: '1961'
+  date: '1961'
+sources:
+  status: not_located
+remarks:
+  - 'Incipits restitués d''après la transcription d''oreille du témoignage sonore de la création issu du disque INA : *Le Rêve du monde*. Les fichiers d''origine numérisés et conservés dans le fonds font état d''une présentation orale des titres de mouvements absente du disque commercial. L''œuvre est cataloguée par l''auteur sous le titre de « Petite Suite » dans le CaG.'
+editions:
+  - text: '*Piano Book*, op. 78, Donemus, 2019, D 18217'
+    publisher: Donemus
+    year: 2019
+performances:
+  - premiere: true
+    date: '1962-05-23'
+    venue: Paris, « salle de l'ancien Conservatoire »
+    place: paris
+    performers:
+      - person: olivier-greif
+        role: piano
+    text: Paris, « salle de l'ancien Conservatoire », 23 mai 1962, l'auteur au piano
+duration: 5'40
+journal:
+  - date_text: 23 mai 1962
+    date: '1962-05-23'
+    quotes:
+      - « Lors d'un "Concert consacré aux œuvres dédiées à Madame Lucette Descaves", donné dans la salle de l'ancien Conservatoire, j'interprète une *Suite* de ma composition. »
+discography:
+  - text: '*Le Rêve du monde*, (2010)'
+    title: Le Rêve du monde
+    year: 2010
+related: []

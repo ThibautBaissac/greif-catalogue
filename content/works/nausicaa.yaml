@@ -1,0 +1,39 @@
+th: '1'
+book: 1
+title: Nausicaa
+scoring:
+  fr: Piano
+  en: Piano
+categories:
+  - piano
+composition:
+  text: '1957'
+  date: '1957'
+sources:
+  status: not_located
+remarks:
+  - La date de « 1959 » renseignée dans le CaG fait référence à la date de création et non à la date de composition
+performances:
+  - premiere: true
+    date: '1959-07-02'
+    venue: Paris, salle Berlioz du Conservatoire
+    place: paris
+    performers:
+      - person: olivier-greif
+        role: piano
+    text: Paris, salle Berlioz du Conservatoire, 2 juillet 1959, l'auteur au piano
+journal:
+  - date_text: 2 juillet 1959
+    date: '1959-07-02'
+    quotes:
+      - « Audition des élèves de Lucette Descaves à la salle Berlioz. Je joue [...] *Nausicaa*, ma première œuvre, composée en 1957 d'après un épisode célèbre de l'Odyssée d'Homère, dont je possédais alors une édition illustrée pour les enfants. Mon écriture était encore si gauche et incorrecte à l'époque que mon père avait dû prendre lui-même ce morceau en dictée – tandis que je le lui jouais au piano – et en mettre la partition au propre. »
+  - date_text: 6 janvier 1999
+    date: '1999-01-06'
+    quotes:
+      - « Ai vu Philippe Hersant en fin d'après-midi. [...] Il m'a confié qu'en 1958 il m'avait entendu jouer mon opus 1 "Nausicaa" au Conservatoire. »
+documents:
+  - '« À la dernière audition des élèves, [Olivier] a joué un morceau qu''il a composé lui-même. Ça s''appelle *Nausicaa aux bras blancs*. C''est une princesse qui recueille Ulysse dans l''Odyssée. [...] C''est une version pour enfants : Contes et légendes tirés de l''Iliade et de l''Odyssée. » Jean-Jacques Greif, *Sans accent*, p. 217.'
+bibliography:
+  - ref: francois-sappey-nectoux-2013
+    pages: 16, 281
+related: []

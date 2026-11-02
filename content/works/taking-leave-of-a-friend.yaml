@@ -1,0 +1,65 @@
+th: '48'
+book: 1
+title: Taking Leave of a Friend
+opus: '44'
+scoring:
+  fr: Voix et piano
+  en: Voice and piano
+categories:
+  - voice-piano
+movements:
+  - text_incipit: Blue mountains to the north of the walls,
+text:
+  credit: Rihaku (Li T'ai Po) traduit par Ezra Pound
+  authors:
+    - person: li-bai
+      role: author
+      as_written: Rihaku
+    - person: ezra-pound
+      role: translator
+composition:
+  text: 25 mars 1974
+  date: '1974-03-25'
+sources:
+  status: located
+  papers:
+    - filigrané JD
+  items:
+    - text: 'Ms. autographe à l''encre noire avec ajouts au crayon, paginé : 1-8 ; papier filigrané JD, 270 x 350 à 20 portées ; 6 pages de musique, avec indications de tempo, de nuances, de phrasé et de pédale, quelques passages lourdement raturés, avec nº de mes., complet. Page de titre : « Taking Leave of a Friend | By Rihaku (Li T''ai Po) | Ezra Pound | Olivier Greif | 25 mars 74 | voice & piano ». Page 2 : « Range [EXTRAIT FINAL] | Total duration – circa 8'' » ; au crayon « chant | piano | violoncelle | clarinette | flûte | cor | basson | hautbois ». À droite, à la verticale de la barre de mesure finale, dernière page : « 25 mars 74 | Olivier Greif ».'
+  institution: f-pbmgf
+  features:
+    - autograph
+editions:
+  - text: Donemus, 2018, D17860
+    publisher: Donemus
+    year: 2018
+performances:
+  - premiere: true
+    date: '1979-02-28'
+    venue: Paris, Théâtre de la Plaine
+    place: paris
+    performers:
+      - person: nell-froger
+        role: voix
+      - person: olivier-greif
+        role: piano
+    text: Paris, Théâtre de la Plaine, 28 février 1979 par Nell Froger (voix) et l'auteur (piano)
+  - premiere: false
+    date: '1982-03-16'
+    venue: Belgique, Bruxelles, Hôtel Charlier
+    place: bruxelles
+    performers:
+      - person: nell-froger
+        role: voix
+      - person: olivier-greif
+        role: piano
+    text: Belgique, Bruxelles, Hôtel Charlier, 16 mars 1982 par Nell Froger (voix) et l'auteur (piano)
+journal:
+  - date_text: 25 mars 1974
+    date: '1974-03-25'
+    quotes:
+      - « Écrit "Taking Leave of a friend" pendant le diner. »
+bibliography:
+  - ref: francois-sappey-nectoux-2013
+    pages: 171-172, 293
+related: []

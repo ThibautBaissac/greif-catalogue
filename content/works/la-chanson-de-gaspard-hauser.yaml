@@ -1,0 +1,43 @@
+th: '14'
+book: 1
+title: La Chanson de Gaspard Hauser
+opus: '11'
+scoring:
+  fr: Voix et piano
+  en: Voice and piano
+categories:
+  - voice-piano
+movements:
+  - bars: 32
+    text_incipit: Je suis venu calme orphelin
+text:
+  credit: Paul Verlaine
+  authors:
+    - person: paul-verlaine
+      role: author
+composition:
+  text: '1966'
+  date: '1966'
+dedication:
+  text: À Madame Diane von Fürstenberg
+  persons:
+    - diane-von-furstenberg
+sources:
+  status: located
+  intro: 'Ms. autographe à l''encre noire avec ajouts au crayon, paginé : 1-4 ; 2 f. 3 pages de musique, papier filigrané JD, 270 x 350 mm à 22 portées ; quelques passages biffés, avec indications de tempo et de nuances, sans phrasé, avec nº de mes., complet. Page de titre : « La Chanson de Gaspard Hauser | (Verlaine) | Olivier Greif | 66 | voice & piano »'
+  papers:
+    - filigrané JD
+  items:
+    - text: Inédit ?
+  institution: f-pbmgf
+  features:
+    - autograph
+remarks:
+  - Ce Ms. est une mise au net ultérieure (date non précisée) à la date de composition originelle.
+documents:
+  - (*cf*. [[saltimbanques]])
+related: []
+editorial_notes:
+  - Reproduction de l'intégralité des poèmes ?
+  - Fichier audio dans les sauvegardes de JJ
+  - '[migration] item de sources sans texte : étiquette reprise comme texte'

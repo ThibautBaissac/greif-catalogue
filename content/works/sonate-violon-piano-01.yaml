@@ -1,0 +1,63 @@
+th: '19'
+book: 1
+title: Sonate pour violon et piano nº1
+opus: '15'
+scoring:
+  fr: Violon et piano
+  en: Violin and piano
+categories:
+  - chamber
+movements:
+  - title: « -1- Thême [*sic*] et variations »
+  - title: « -2- Intermezzo »
+  - title: « -3- Finale alla concertante
+composition:
+  text: mars – mai 1967
+  date: 1967-03/1967-05
+sources:
+  status: located
+  papers:
+    - Passantino nº14
+  items:
+    - text: '1\) Ms. autographe à l''encre noire, non paginé ; 2 f., 6 pages de musique, papier Passantino nº14, 265 x 340 mm à 14 portées ; avec indications de tempo, de nuances et de phrasé, sans nº de mes. ; 1^e^ et 2^e^ mvts. achevés, 3^e^ mvt. inachevé, complet. Page de titre : « – œuvre trente cinquième – | [signé] Olivier | mars – mai | 1967 | première sonate | pour violon | et piano | [signé] Olivier | 1967 | -1- Thême [*sic*] et variations | -2- intermezzo | -3- Finale alla concertante ». 1^er^ mvt. : Thème (17 mes.) et 6 variations, 1^e^ var. – X mes. ; 2^e^ var. – X mes. ; 3^e^ var. – X mes. ; 4^e^ var. – 8 mes. ; 5^e^ var. – X mes. ; 6^e^ var. – 20 mes.'
+    - text: '2\) Ms. autographe à l''encre turquoise avec ajouts à l''encre noire, paginé : 21-28 ; 3 f., 6 pages de musique, 268 x 348 mm à 16 portées ; incomplet. Porte l''indication « fin | [signé] Olivier | 67 | 15'' » à droite de la barre de mesure finale de la dernière page et « 6'' » sous le dernier système.'
+  institution: f-pbmgf
+  features:
+    - autograph
+    - unfinished
+    - incomplete
+remarks:
+  - Les feuillets à l'encre turquoise appartiennent a... ?
+performances:
+  - premiere: true
+    date: '2010-09-13'
+    venue: Paris, Théâtre de l'Athénée-Louis Jouvet
+    place: paris
+    performers:
+      - person: stephanie-moraly
+        role: violon
+      - person: romain-david
+        role: piano
+    text: Paris, Théâtre de l'Athénée-Louis Jouvet, 13 septembre 2010, par Stéphanie Moraly (violon) et Romain David (piano)
+  - premiere: false
+    date: '2010-11-20'
+    venue: Paris, CRR, « Cantus Formus »
+    place: paris
+    performers:
+      - person: stephanie-moraly
+        role: violon
+      - person: romain-david
+        role: piano
+    text: Paris, CRR, « Cantus Formus », 20 novembre 2010, par les mêmes interprètes
+bibliography:
+  - ref: francois-sappey-nectoux-2013
+    pages: 175, 292
+discography:
+  - text: '*The Meeting of the Waters* (2010)'
+    title: The Meeting of the Waters
+    year: 2010
+videography:
+  - text: Les Incontournables, DVD nº 5
+related: []
+editorial_notes:
+  - Compléter les valeurs « X » (feuillets, pages, mesures)

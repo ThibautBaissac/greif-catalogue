@@ -1,0 +1,41 @@
+th: '51'
+book: 1
+title: La Périgourdine
+opus: '46'
+scoring:
+  fr: Piano
+  en: Piano
+categories:
+  - piano
+movements:
+  - bars: 361
+composition:
+  text: '1974'
+  date: '1974'
+dedication:
+  text: À la mémoire de Igor Stravinsky
+  persons:
+    - igor-stravinsky
+sources:
+  status: located
+  papers:
+    - filigrané JD
+  items:
+    - text: 'Brouillon autographe à l''encre noire et au crayon, non paginé ; X f., 17 pages de musique, papier filigrané JD, 270 x 350 à 20 portées ; s. d., nombreux passages lourdement raturés, sans indications de tempo, de nuance ni de phrasé, sans nº de mes., inachevé, complet. Première page : en haut à gauche, « in memoriam Igor Stravinsky », en haut au milieu « "La Périgourdine"», en dessous « – for two pianos – » ajouté ultérieurement.'
+  institution: f-pbmgf
+  features:
+    - draft
+    - autograph
+    - unfinished
+remarks:
+  - 'Ce Ms. est l''ébauche pour piano seul de la *Sonate pour deux pianos nº2*, op. 64 : *cf*. [[?]].'
+bibliography:
+  - ref: francois-sappey-nectoux-2013
+    pages: 76, 177, 293
+related:
+  - work: sonate-deux-pianos-02
+    relation: sketch
+editorial_notes:
+  - Décrire le manuscrit
+  - Compléter les valeurs « X » (feuillets, pages, mesures)
+  - 'Renvoi(s) à résoudre : ThX'

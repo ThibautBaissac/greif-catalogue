@@ -1,0 +1,51 @@
+th: '24'
+book: 1
+title: Le Mort joyeux
+opus: '20'
+scoring:
+  fr: Voix et piano
+  en: Voice and piano
+categories:
+  - voice-piano
+movements:
+  - bars: 46
+    text_incipit: Dans une terre grasse et pleine d'escargots
+text:
+  credit: Charles Baudelaire
+  authors:
+    - person: charles-baudelaire
+      role: author
+composition:
+  text: avril 1968
+  date: 1968-04
+sources:
+  status: located
+  papers:
+    - Passantino nº14
+  items:
+    - text: 'Ms. autographe à l''encre noire, non paginé ; 2 f., 4 pages de musique, papier Passantino nº14, 266 x 340 mm à 14 portées ; avec indications de tempo, de nuance et de phrasé, sans nº de mes., complet. Page 1 : en haut à gauche, « – œuvre quarante septième – », en haut au milieu, « "Le mort joyeux" | – poême [*sic*] de Charles | Baudelaire – », en haut à droite « [signé] Olivier | avril 1968 ». Le Ms. porte l''indication « the end » à droite de la barre de mesure finale et « Olivier | 1968 » en dessous du dernier système.'
+  institution: f-pbmgf
+  features:
+    - autograph
+editions:
+  - text: Donemus, 2018, D 17858
+    publisher: Donemus
+    year: 2018
+performances:
+  - premiere: false
+    date: '2012-01-07'
+    venue: Paris, CRR, « Cantus Formus »
+    place: paris
+    performers:
+      - person: jacques-loiseleur-des-longchamps
+        role: baryton
+      - person: mary-olivon
+        role: piano
+    text: Paris, CRR, « Cantus Formus », 7 janvier 2012 par Jacques Loiseleur des Longchamps (baryton) et Mary Olivon (piano)
+duration: 3'50
+documents:
+  - (*cf*. [[saltimbanques]])
+related: []
+editorial_notes:
+  - Reproduction de l'intégralité des poèmes ?
+  - 'Création : ? Enregistrement dans les archives Greif ?'

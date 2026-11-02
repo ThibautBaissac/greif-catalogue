@@ -1,0 +1,12 @@
+th: '64'
+book: 2
+title: Rockin' Chairs
+opus: '60'
+scoring:
+  fr: Deux pianos
+  en: Two pianos
+categories:
+  - two-pianos
+movements:
+  - {}
+related: []

@@ -1,0 +1,48 @@
+th: '50'
+book: 1
+title: Bomben auf Engelland
+subtitle: Air de concert
+opus: '43'
+scoring:
+  fr: Voix de femme et piano
+  en: Female voice and piano
+categories:
+  - voice-piano
+movements:
+  - bars: 71
+    text_incipit: Wir fühlen in Horsten
+text:
+  credit: Wilhelm Stöppler
+  authors:
+    - person: wilhelm-stoppler
+      role: author
+composition:
+  text: 12 avril 1974
+  date: '1974-04-12'
+sources:
+  status: located
+  papers:
+    - filigrané JD
+  items:
+    - text: 'Brouillon autographe ébauché à l''encre noire avec ajouts au crayon, paginé : 3-9 ; X f., 8 pages de musique, papier filigrané JD, 270 x 350 mm à 22 portées ; s. d., nombreux passages lourdement raturés, avec indications de tempo, de nuances et de phrasé, avec nº de mes., complet. Page 1 : au crayon, en haut à droite, « Bomben auf Engelland | Air de Concert » ; mention de « olivier greif – resurrexit » à l''encre noire à deux reprises sur la page 3 ; partie de saxophone esquissée au crayon, pages 5 à 9 ; signature de l''auteur à la verticale de la barre de mesure finale, dernière page. Au vº de la page 9, au crayon : ébauche de programme pour le concert du « 13 déc. » 1976, suivi d''une nomenclature d''œuvre inconnue.'
+  institution: f-pbmgf
+  features:
+    - draft
+    - sketch
+    - autograph
+remarks:
+  - 'Cette opus est la version primitive de l''opus 71 (*cf*. [[bomben-auf-engelland-1976]].). Le CaG indique pour cette œuvre : « 1^e^ version pour voix de | femme et piano ».'
+journal:
+  - date_text: 16 avril 1974
+    date: '1974-04-16'
+    quotes:
+      - « Tranquille travail sur *Bomben auf Engelland*. »
+  - date_text: 12 avril 1974
+    date: '1974-04-12'
+    quotes:
+      - « Je finis *Bomben auf Engelland*. »
+related:
+  - work: bomben-auf-engelland-1976
+    relation: revision
+editorial_notes:
+  - Compléter les valeurs « X » (feuillets, pages, mesures)

@@ -1,0 +1,74 @@
+th: '49'
+book: 1
+title: Sonate pour piano nº12
+subtitle: Sonatine
+alt_titles:
+  - title: Sonatine
+    source: Ms., CaG
+opus: '45'
+scoring:
+  fr: Piano
+  en: Piano
+categories:
+  - piano
+movements:
+  - title: « -I- Adagio »
+    bars: 101
+  - title: « -II- Allegro ritmico »
+    bars: 281
+composition:
+  text: 4 avril 1974
+  date: '1974-04-04'
+sources:
+  status: located
+  papers:
+    - filigrané JD
+  items:
+    - text: 'Ms. autographe à l''encre noire, paginé : 1-22 ; X f., 22 pages de musique, papier filigrané JD, 270 x 350 mm à 18 portées ; indications de tempo, de nuances et de phrasé, avec nº de mes., complet. Page de titre : « Sonatine | pour piano 69 – 74 | Olivier Greif » ; au vº : « -I- Adagio | -II- Allegro ritmico | Duration – circa 14'' ». Signature à la verticale de la barre de mesure finale, dernière page.'
+  institution: f-pbmgf
+  features:
+    - autograph
+remarks:
+  - 'Ce Ms. est une mise au net inachevée ultérieure (date non précisée) à la date de composition originelle. Le CaG indique pour cette œuvre : « Sonatine [biffé de rouge et remplacé par 12^e^ Sonate] pour piano »'
+performances:
+  - premiere: true
+    date: '2008-03-11'
+    venue: Toulouse
+    place: toulouse
+    performers:
+      - person: lorene-de-ratuld
+        role: piano
+    text: Toulouse, 11 mars 2008 par Lorène de Ratuld (piano)
+  - premiere: false
+    date: '2008-03-15'
+    venue: Maisons-Laffitte, Salle Malesherbes
+    place: maisons-laffitte
+    performers:
+      - person: lorene-de-ratuld
+        role: piano
+    text: Maisons-Laffitte, Salle Malesherbes, 15 mars 2008 par la même interprète
+  - premiere: false
+    date: '2010-11-12'
+    venue: Joigny (Yonne), Salle Debussy
+    place: joigny
+    performers:
+      - person: anastasya-terenkova
+        role: piano
+    text: Joigny (Yonne), Salle Debussy, 12 novembre 2010 par Anastasya Terenkova (piano)
+duration: 7' | 6'40
+journal:
+  - date_text: 4 avril 1974
+    date: '1974-04-04'
+    quotes:
+      - « Cet après-midi, je me suis senti soudain très énervé, presque au bord des larmes. De ce piétinement est sortie une sonatine pour piano en deux mouvements, écrite en l'espace d'une heure et demie. Je me suis senti beaucoup mieux après, surtout que ce n'est pas de la mauvaise musique. »
+  - date_text: 20 août 1974
+    date: '1974-08-20'
+    context: lettre à Nathalie Cholodenko
+    quotes:
+      - '« J''ai joué hier au soir *Sonatine* à ma belle-sœur Annette. Après l''audition, il y a eu un silence et lorsque je lui ai demandé si cela lui avait plu, elle s''est contentée de me répondre : "Moyen !". Et tout est là. La différence réside dans l''écoute. Bien entendre la musique, c''est la trouver belle. »'
+bibliography:
+  - ref: francois-sappey-nectoux-2013
+    pages: 29, 174, 293
+related: []
+editorial_notes:
+  - Compléter les valeurs « X » (feuillets, pages, mesures)

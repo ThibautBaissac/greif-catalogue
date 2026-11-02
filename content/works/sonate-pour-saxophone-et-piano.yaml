@@ -1,0 +1,12 @@
+th: '78'
+book: 2
+title: Sonate pour saxophone et piano
+opus: '74'
+scoring:
+  fr: Saxophone et piano
+  en: Saxophone and piano
+categories:
+  - chamber
+movements:
+  - {}
+related: []

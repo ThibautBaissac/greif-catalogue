@@ -1,0 +1,72 @@
+th: '65'
+book: 2
+title: Éloïse
+alt_titles:
+  - title: Oratorio
+    source: Carnet de bord
+opus: '61'
+scoring:
+  fr: Instrumentation
+  en: Scoring to be determined
+categories:
+  - choral
+movements:
+  - {}
+remarks:
+  - Entre X 1975 et X 1976, O.G. assista à diverses séances de spiritisme données au Moulin des dames (Septeuil) par la médium Esther Galil dont il retranscrit la majorité dans son journal. Au cours de ces séances, l'esprit de Berlioz demande à OG d'écrire une œuvre intitulée après son enfant mort-né, « Éloïse » dont l'esprit se serait réincarné en la mère du compositeur. Des discussions sur le titre, le contenu, le choix du système tonal ou harmonique ont lieu ainsi que le choix du texte.
+journal:
+  - date_text: 9 mai 1975
+    date: '1975-05-09'
+    quotes:
+      - « (Mon projet initial était d'émailler des extraits de la Genèse avec des poèmes de Blake.) »
+  - date_text: 7 juillet 1975
+    date: '1975-07-07'
+    context: lettre à Alis Lévi
+    quotes:
+      - « J'écris en ce moment un oratorio, basé sur des textes de l'Ancien Testament. Je compose avec mon cœur, mais j'ai bien peur que cela ne soit pas tout à fait de mise. Enfin, il faut bien se distinguer de quelque manière que ce soit ! »
+  - date_text: 7 août 1975
+    date: '1975-08-07'
+    context: lettre à Alis Lévi
+    quotes:
+      - « Je n'ai pas terminé mon Oratorio, mais je vous tiendrai au courant de son évolution. »
+  - date_text: 11 août 1975
+    date: '1975-08-11'
+    context: lettre à Bruno Rigutto
+    quotes:
+      - « Mon oratorio "Éloïse" avance bien. Je t'écris justement au milieu de la composition d'un air de ténor – "And God said, let us make man in our image" – situé au début de la partition. Si tu pouvais savoir quel bonheur est le mien ! Je n'en ai jamais éprouvé de semblable à écrire de la musique. Et pourtant, rien n'est plus fugitif que ce bonheur-là (pareillement à celui qu'il suscite chez l'auditeur). Comme s'il n'était permis à l'homme de goûter une telle félicité qu'un très court instant et en réalité nous tirons un plaisir supplémentaire de cette limite, comme nous éprouvons un désespoir tout particulier à être heureux – comme si dans ces moments extrêmes, les sentiments se mélangeaient les uns les autres). »
+  - date_text: 12 août 1975
+    date: '1975-08-12'
+    quotes:
+      - '« Travail sur l''Air : "And God said, let us make man in our image". Quel bonheur que d''écrire cette musique ! Je sens que j''irradie la lumière. Je comprends ce que sont les larmes : des jets de lumière ! »'
+  - date_text: 13 août 1975
+    date: '1975-08-13'
+    quotes:
+      - « Je trouve certaines parties d'"Eloïse" d'une qualité telle que j'en juge mon âme indigne et que je sens parfois ma constitution mentale et mes nerfs insuffisamment préparés à en supporter l'écriture. »
+  - date_text: 23 septembre 1975
+    date: '1975-09-23'
+    context: lettre à Alis Levi
+    quotes:
+      - « [...]c'est que j'ai en ce moment du travail plus que de coutume ; car je me suis fait fort de terminer une version non-orchestrée de mon oratorio avant le début de l'année prochaine. »
+  - date_text: 3 décembre 1975
+    date: '1975-12-03'
+    context: lettre à Alis Levi
+    quotes:
+      - |-
+        « Mes projets, chère Alis ? Eh bien, c'est toujours cet oratorio qui me demande tout mon temps. N'est-ce pas peu de choses en égard de ce qu'il me donne ? Quelle joie, quelle satisfaction je retire de chaque note ! Chacune d'entre elles est en quelque sorte comme une certitude que je reçois d'ailleurs. Je n'y réfléchis absolument jamais, et je n'accepte que les solutions qui ont su s'imposer naturellement en moi.
+
+        Voilà le secret, ne point essayer de posséder la connaissance des choses, mais la laisser vous posséder à son tour. »
+  - date_text: 26 décembre 1975
+    date: '1975-12-26'
+    context: lettre à ses parents
+    quotes:
+      - « Je travaille comme vous pouvez l'imaginer. Je dois terminer mon oratorio avant le 3 janvier. »
+  - date_text: 29 décembre 1975
+    date: '1975-12-29'
+    quotes:
+      - « Terminé une version non-orchestrée d'Éloïse, commencée le 21 mai. Je suis extrêmement heureux. Je vais me faire un petit concert, ce soir… »
+  - date_text: 20 janvier 1976
+    date: '1976-01-20'
+    context: lettre à Alis Levi
+    quotes:
+      - « Mon oratorio est terminé, mais non orchestré. Encore un sacré travail ! »
+related: []

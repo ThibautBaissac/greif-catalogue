@@ -1,0 +1,35 @@
+th: '40'
+book: 1
+title: Sonate pour deux pianos nº1
+alt_titles:
+  - title: Concerto pour deux pianos
+    source: Ms.
+opus: '36'
+scoring:
+  fr: Deux pianos
+  en: Two pianos
+categories:
+  - two-pianos
+movements:
+  - {}
+composition:
+  text: '1971'
+  date: '1971'
+sources:
+  status: located
+  papers:
+    - Passantino nº14
+  items:
+    - text: 'Brouillon autographe à l''encre noire et bleue, non paginé ; 7 f., 14 pages de musique, papier Passantino nº14, 267 x 340 mm à 14 portées et X f., X pages de musique, 240 x 316 mm à 12 portées ; sans indications de tempo, de nuances ni de phrasé, inachevé, incomplet ? Page 1 : en haut au milieu, « Sonate [biffé et remplacé par Concerto] pour deux pianos » ; dans le coin supérieur droit « [signé] Olivier 19771 [*sic*] ».'
+  institution: f-pbmgf
+  features:
+    - draft
+    - autograph
+    - unfinished
+    - incomplete
+remarks:
+  - 'Le CaG indique pour cette œuvre : « Sonate pour 2 pianos nº1 ».'
+related: []
+editorial_notes:
+  - Décrire la suite du ms.
+  - Compléter les valeurs « X » (feuillets, pages, mesures)

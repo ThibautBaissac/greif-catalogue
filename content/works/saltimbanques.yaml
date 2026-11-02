@@ -1,0 +1,46 @@
+th: '6'
+book: 1
+title: Saltimbanques
+alt_titles:
+  - title: Les Saltimbanques
+    source: CaG
+opus: '3'
+scoring:
+  fr: Voix et piano
+  en: Voice and piano
+categories:
+  - voice-piano
+movements:
+  - bars: 65
+    text_incipit: Dans la plaine les baladins
+text:
+  credit: Guillaume Apollinaire
+  authors:
+    - person: guillaume-apollinaire
+      role: author
+composition:
+  text: '1965'
+  date: '1965'
+sources:
+  status: located
+  items:
+    - text: 'Ms. autographe à l''encre noire, paginé : 1-4 ; 3 f., 4 pages de musique, 275 x 365 mm à 12 portées ; avec indications de tempo, de nuances, et quelques liaisons de phrasé, sans nº de mes., complet. Page de titre** **: « Saltimbanques | poème d''Apollinaire | 1965 ». Ms. relié par un fil blanc à une couverture cartonnée de couleur marron portant le titre de « mélodie »'
+  institution: f-pbmgf
+  features:
+    - autograph
+remarks:
+  - L'œuvre est référencée sous le titre « Les Saltimbanques » dans le CaG.
+unpublished: true
+editions:
+  - text: Donemus, 2018, D 17853
+    publisher: Donemus
+    year: 2018
+documents:
+  - « À cette époque –- les années 60 – et dans la classe de composition où je me trouvais – celle de Tony Aubin – l'écriture de mélodies françaises était un passage obligé, [...]. Je me souviens que Tony Aubin, sans doute de crainte que je ne m'égare dans le choix des textes, me conseilla – le mot est faible – les noms des auteurs le long des vers desquels j'allais déposer ma musique. C'est ainsi que l'adolescent que j'étais pris Apollinaire, Verlaine, du Bellay, ou encore Baudelaire, pour support de ses premiers essais de mélodiste. »
+  - O. Greif, « Pourquoi écrire des mélodies sur des textes en langues étrangères... », *Le Journal de l'A.F.P.C.*, nº5, juillet 1998, p. 57-61
+bibliography:
+  - ref: francois-sappey-nectoux-2013
+    pages: 171, 291
+related: []
+editorial_notes:
+  - Reproduction de l'intégralité des poèmes ?

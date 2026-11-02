@@ -1,0 +1,48 @@
+th: '43'
+book: 1
+title: Die Ilse
+subtitle: Paradisiac Memories nº2
+alt_titles:
+  - title: Paradisiac Memories nº2
+    source: Ms.
+  - title: The Ballad of Gulliver in his Mother's Cunt
+    source: Ms.
+opus: '39'
+scoring:
+  fr: Mezzo-soprano, clarinette, quatuor à cordes, piano et percussions
+  en: Mezzo-soprano, clarinet, string quartet, piano and percussion
+categories:
+  - vocal-ensemble
+movements:
+  - bars: 360
+    text_incipit: Ich bin die Prinzessin Ilse
+text:
+  credit: Heinrich Heine
+  authors:
+    - person: heinrich-heine
+      role: author
+composition:
+  text: 5 janvier 1972
+  date: '1972-01-05'
+dedication:
+  text: Isabelle Collin Dufresne
+  persons:
+    - isabelle-collin-dufresne
+sources:
+  status: located
+  papers:
+    - filigrané JD
+  items:
+    - text: 'Ms. autographe à l''encre noire avec ajouts au crayon, paginé : II-XXXIX ; X f., 39 pages de musique, papier filigrané JD, 270 x 350 mm à 14 portées ; quelques passages biffés, avec indications de tempo, de nuances et de phrasé, avec nº de mes., conducteur sans parties séparées, complet. Page de titre : « - Paradisiac Memories nº2 | nº2 : "The ballad of Gulliver in his mother''s | cunt" | including: "Die Ilse" | a poem by Heinrich | Heine - | for mezzo-soprano, clarinet, string quartet, | piano and percussion - | Pour mon amie | Isabelle Colin Dufresne [*sic*] ». Au vº : « Pour mon amie Isabelle Colin Dufresne [*sic*] | Paris | the fifth of january – 19772 – » [*sic*] Présence sur la page de titre et la page II d''autocollants rouge « FRAGILE | HANDLE WITH CARE ». Page XXXIX, « PARIS – 8 AVRIL 1972 – | [signé] Olivier | Greif » à droite de la barre de mesure finale de l''œuvre.'
+  institution: f-pbmgf
+  features:
+    - autograph
+remarks:
+  - 'Le chanteur tient également le rôle de récitant. Le CaG indique pour cette œuvre : « Die Ilse | Cantate pour voix de femme | et ensemble instrumental | sur un poème d''Heinrich Heine »'
+bibliography:
+  - ref: francois-sappey-nectoux-2013
+    pages: 28, 155, 169, 293
+related: []
+editorial_notes:
+  - Autre à dire ?
+  - Compléter les valeurs « X » (feuillets, pages, mesures)

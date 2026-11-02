@@ -1,0 +1,34 @@
+th: '27'
+book: 1
+title: Alabama Song
+opus: '23'
+scoring:
+  fr: Piano
+  en: Piano
+categories:
+  - piano
+movements:
+  - bars: 83
+composition:
+  text: novembre 1968
+  date: 1968-11
+dedication:
+  text: À la mémoire de Kurt Weil
+  persons:
+    - kurt-weill
+sources:
+  status: located
+  papers:
+    - Passantino nº14
+  items:
+    - text: 'Ms. autographe à l''encre noire avec ajouts à l''encre rouge et bleue, non paginé ; 7 f., 2 pages de musique, papier Passantino nº14, 265 x 340 mm à 14 portées ; avec indications de tempo, de nuance et de phrasé, sans nº de mes., complet. Page de titre : « – œuvre cinquante et unième – | Olivier | novembre 1968 | "Alabama Song" | for piano solo | a melody by Kurt Weil | a paraphrase by Olivier Greif | to the memory of Kurt Weil | Olivier 1968 ». L''indication « the end | [signé] Olivier 1968 » se trouve à droite de la barre de mesure finale sur la dernière page. Une page supplémentaire se trouve avec l''œuvre, 265 x 340 mm à 14 portées, contenant une ébauche au crayon de 5 systèmes incomplets pour piano au rº ; le vº est blanc.'
+  institution: f-pbmgf
+  features:
+    - autograph
+remarks:
+  - 'Le CaG indique en dessous du titre : « paraphrase pour piano »'
+unpublished: true
+bibliography:
+  - ref: francois-sappey-nectoux-2013
+    pages: 167, 292
+related: []

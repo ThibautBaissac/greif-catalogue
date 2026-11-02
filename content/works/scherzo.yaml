@@ -1,0 +1,38 @@
+th: '56'
+book: 2
+title: Scherzo
+opus: '52'
+scoring:
+  fr: Piano
+  en: Piano
+categories:
+  - piano
+movements:
+  - bars: 638
+composition:
+  text: '1975'
+  date: '1975'
+sources:
+  status: located
+  intro: 'Ce Scherzo est un ensemble composite formé de deux manuscrits : une tentative de mise au net inachevée et un brouillon.'
+  papers:
+    - filigrané JD
+  items:
+    - text: '1\) Ms autographe à l''encre noire avec ajouts au crayon et à l''encre bleue, partiellement paginé à l''encre noire : 1-7 et entièrement paginé au crayon rouge : 38-59 ; X f., 22 pages de musique, papier filigrané JD, 270 x 350 mm à 20 portées ; quelques ratures, sans indication de tempo, de nuance ni de phrasé, sans nº de mes., inachevé, complet. Première page : en haut , au milieu, à l''encre noire : « -3- | Scherzo ».'
+    - text: 2\) Brouillon autographe au crayon et un peu d'encre noire, non paginé ; 3f., 5 pages de musique, papier filigrané JD, 270 x 350 mm à 20 portées ; avec indication de tempo, de nuance et de phrasé, sans nº de mes., incomplet. Le vº de la 1^re^ page et le rº de la 3^e^ page portent des traces de scotch sur tout le cadre de la page ; le vº de la 2^e^ page porte 4 systèmes avec barre de mesure finale, signature de l'auteur au crayon en dessous du mot « ende » [*sic*] ainsi qu'un texte de sept lignes, lourdement biffé à l'encre noire au bas de la page ; le vº de la dernière est laissé blanc.
+  institution: f-pbmgf
+  features:
+    - draft
+    - fair_copy
+    - autograph
+    - unfinished
+    - incomplete
+remarks:
+  - Longtemps considéré comme inachevé, la découverte des pages de brouillon durant l'inventaire a permis de compléter le texte pour édition.
+editions:
+  - text: Symétrie ?
+    publisher: Symétrie
+    status: uncertain
+related: []
+editorial_notes:
+  - Compléter les valeurs « X » (feuillets, pages, mesures)

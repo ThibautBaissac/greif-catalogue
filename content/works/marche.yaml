@@ -1,0 +1,28 @@
+th: '17'
+book: 1
+title: Marche
+opus: '14'
+scoring:
+  fr: Flûte et piano
+  en: Flute and piano
+categories:
+  - chamber
+movements:
+  - bars: 39
+composition:
+  text: janvier 1967
+  date: 1967-01
+sources:
+  status: located
+  papers:
+    - Passantino nº14
+  items:
+    - text: 'Ms. autographe à l''encre noire, non paginé ; 2 f., 2 pages de musique, papier Passantino nº14, 266 x 341 mm à 14 portées ; avec indications de tempo, de nuances et de phrasé, sans nº de mes., complet. Page de titre : « - œuvre trentième - | [signé] Olivier | janvier | 1967 | "Marche" | pour | flûte et piano | [signé] Olivier | 1967 ». Le Ms. porte l''indication « 1''15'''' | the | end | [signé] Olivier | 1967 » à droite de la barre de mesure finale, dernière page.'
+  institution: f-pbmgf
+  features:
+    - autograph
+unpublished: true
+bibliography:
+  - ref: francois-sappey-nectoux-2013
+    pages: 177, 292
+related: []

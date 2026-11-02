@@ -1,0 +1,35 @@
+th: '15'
+book: 1
+title: Les Regrets
+opus: '12'
+scoring:
+  fr: Soprano, alto, basse et piano
+  en: Soprano, alto, bass and piano
+categories:
+  - voice-piano
+movements:
+  - bars: 73
+    text_incipit: France, mère des arts, des armes, et des loix,
+text:
+  credit: Joachim du Bellay
+  authors:
+    - person: joachim-du-bellay
+      role: author
+composition:
+  text: mai 1966
+  date: 1966-05
+sources:
+  status: located
+  papers:
+    - Passantino nº10 medium
+  items:
+    - text: 'Ms. autographe à l''encre noire avec ajouts au crayon, non paginé ; 4 f. 6 pages de musique, papier Passantino nº10 medium, 240 x 317 mm à 14 portées ; avec indications de tempo, de nuances et de phrasé, sans nº de mes., complet. Page de titre : « – œuvre vingt-deuxième – | [signé] Olivier | mai 1966 | "Les Regrets" | pour soprano alto basse | et piano | sur un poême [*sic*] de | Joachim du Bellay ». Le Ms. porte l''indication « 4''15'''' [signé] Olivier 1966 » en dessous du dernier système de la dernière page.'
+  institution: f-pbmgf
+  features:
+    - autograph
+unpublished: true
+documents:
+  - (*cf*. [[saltimbanques]])
+related: []
+editorial_notes:
+  - Reproduction de l'intégralité des poèmes ?

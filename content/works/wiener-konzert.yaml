@@ -1,0 +1,281 @@
+th: '45'
+book: 1
+title: Wiener Konzert
+alt_titles:
+  - title: Concert viennois
+    source: Carnet de bord, refusé par l'auteur
+opus: '40'
+scoring:
+  fr: Voix de femme et piano
+  en: Female voice and piano
+categories:
+  - voice-piano
+movements:
+  - title: « 1) VERGIFTET SIND MEINE LIEDER »
+    bars: 30
+    text_incipit: Vergiftet sind meine Lieder
+  - title: « 2) AUS MEINEN GROßEN SCHMERZEN »
+    bars: 26
+    text_incipit: Aus meinen grossen Schmerzen
+  - title: « 3) WENN ZWEI VON EINANDER [*sic*] SCHEIDEN | (Argentinische Trennung) »
+    bars: 55
+    text_incipit: Wenn zwei voneinander scheiden
+  - title: « 4) AM KREUZWEG WIRD BEGRABEN »
+    bars: 50
+    text_incipit: Am Kreuzweg wird begraben
+  - title: « 5) MEIN SÜßES LIEB, WENN DU IM GRAB »
+    bars: 184
+    text_incipit: Mein süsses Lib, wenn du im Grab
+text:
+  credit: Heinrich Heine
+  authors:
+    - person: heinrich-heine
+      role: author
+composition:
+  text: 26 novembre 1973
+  date: '1973-11-26'
+dedication:
+  text: |-
+    1 – À Jean-Jacques Greif
+    2 – À madame Alis Levi
+    3 – À Mrs Alexander Libermann
+    4 – À Marc Cholodenko
+    5 – À Isabelle Colin-Dufresne et Richard Strauss
+  persons:
+    - jean-jacques-greif
+    - alis-levi
+    - mrs-alexander-liberman
+    - marc-cholodenko
+    - isabelle-collin-dufresne
+    - richard-strauss
+sources:
+  status: located
+  papers:
+    - filigrané JD
+  items:
+    - text: 'Ms. autographe mis au net à l''encre noire avec ajouts au crayon, paginé : 1-39 ; X f., 35 pages de musique, papier filigrané JD, 270 x 350 mm à 24 portées ; avec indications de tempo, de nuances et de phrasé, avec nº de mes. encadrés, complet. Feuilles volantes reliées par anneaux de plastique blanc et 2 feuilles blanches cartonnées en guise de couverture. Page de titre : « Wiener Konzert | cycle de 5 Lieder | sur des poêmes [*sic*] | de Heinrich Heine | (Lyrisches Intermezzo) | voice & piano | Olivier Greif | mai – novembre 73 ». Chaque Lied porte sa date de fin de composition mentionnée à droite de la barre de mesure finale respectivement : « 8 mai 73 (p.6) ; 17 juillet 73 (p.11) ; 31 juillet 73 (p.15) ; 18 juillet 73 (p.20) ; 26 novembre 73 (p.39) ».'
+  institution: f-pbmgf
+  features:
+    - fair_copy
+    - autograph
+remarks:
+  - '*cf*. [[?]], op.310, Carnet de bord, 2 août 1979'
+editions:
+  - text: Symétrie, 2006, M-23-18-0173-6
+    publisher: Symétrie
+    year: 2006
+performances:
+  - premiere: true
+    date: '1974-04-24'
+    venue: Paris, École normale de musique, salle Cortot, 778^e^ concert de la Société nationale de musique
+    place: paris
+    performers:
+      - person: nell-froger
+        role: soprano
+      - person: olivier-greif
+        role: piano
+    text: Paris, École normale de musique, salle Cortot, 778^e^ concert de la Société nationale de musique, 24 avril 1974 par Nell Froger (soprano) et l'auteur (piano)
+  - premiere: false
+    date: '1974-05-15'
+    venue: Paris, École normale de musique, salle Cortot, Union des femmes professeurs et compositeurs de musique
+    place: paris
+    performers:
+      - person: nell-froger
+        role: soprano
+      - person: olivier-greif
+        role: piano
+    text: Paris, École normale de musique, salle Cortot, Union des femmes professeurs et compositeurs de musique, 15 mai 1974 par les mêmes interprètes
+  - premiere: false
+    date: '1976-03-18'
+    venue: Paris, salon de Mme Louis Jacquinot
+    place: paris
+    performers:
+      - person: nell-froger
+        role: soprano
+      - person: olivier-greif
+        role: piano
+    text: Paris, salon de Mme Louis Jacquinot, 18 mars 1976 par les mêmes interprètes
+  - premiere: false
+    date: '1976-12-13'
+    venue: Paris, théâtre Essaïon, carte blanche à Olivier Greif
+    place: paris
+    performers:
+      - person: nell-froger
+        role: soprano
+      - person: olivier-greif
+        role: piano
+    text: Paris, théâtre Essaïon, carte blanche à Olivier Greif, 13 décembre 1976 par les mêmes interprètes
+duration: 2' | 1' | 2'30 | 3'50 | 8'10
+journal:
+  - date_text: 18 juillet 1973
+    date: '1973-07-18'
+    quotes:
+      - « Je termine "Aus Meinen Grossen Schmerzen" [*sic*], que j'ai décidé de dédier à Madame Levi. »
+  - date_text: 19 juillet 1973
+    date: '1973-07-19'
+    quotes:
+      - « Je me rends chez Madame Levi pour travailler sur son piano à la composition de mes lieder sur des poèmes d'Heine. [...] Je finis "Am Kreuzweg Wird Begraben" [*sic*], dédié à Marc. »
+  - date_text: 31 juillet 1973
+    date: '1973-07-31'
+    quotes:
+      - « J'ai écrit la totalité de "Wenn Zwei von Einander Scheiden" [*sic*] en l'espace d'un après-midi. Je commence à travailler "Mein, Züsses Lieb, wenn du im Grab" [*sic*], que je dédie à Isabelle Colin-Dufresne.
+  - date_text: 4 août et 8 août 1973
+    date: '1973-08-04'
+    quotes:
+      - « Bon travail sur "Mein Züsses Lieb, …". »
+  - date_text: 9 août 1973
+    date: '1973-08-09'
+    quotes:
+      - « J'ai de plus en plus de mal avec "Mein Züsses Lieb, …". Il va falloir remettre en question la conception du lied dans sa totalité. »
+  - date_text: 12 août
+    date: '1973-08-12'
+    quotes:
+      - « Je suis accablé par la chaleur [...]. Je trouve malgré tout l'énergie de composer deux pages de "Mein Züsses Lieb, …". »
+  - date_text: 13 août
+    date: '1973-08-13'
+    quotes:
+      - « Continuation de l'excellent travail amorcé hier sur "Mein Züsses Lieb, …". »
+  - date_text: 14 août
+    date: '1973-08-14'
+    quotes:
+      - « J'écris six mesures. »
+  - date_text: 15 août
+    date: '1973-08-15'
+    quotes:
+      - « Je célèbre la Sainte-Vierge à ma façon en ne composant que deux mesures… »
+  - date_text: 16 août
+    date: '1973-08-16'
+    quotes:
+      - « Travail intense, mais dont rien ne définit le sort. "Mein Züsses Lieb, …" me donne un mal fou. »
+  - date_text: 17 août
+    date: '1973-08-17'
+    quotes:
+      - « Journée de réflexion, mais pas une note d'écrite. »
+  - date_text: 18 août
+    date: '1973-08-18'
+    quotes:
+      - '« Travail intense. Un véritable combat : une seule mesure composée ! Poussé par l''énergie du désespoir, je prends la décision de restructurer mon lied pour la quatrième fois. »'
+  - date_text: 19 août
+    date: '1973-08-19'
+    quotes:
+      - « Le combat continue. Une mesure composée ! »
+  - date_text: 21 août
+    date: '1973-08-21'
+    quotes:
+      - « Travail lamentable. Je ne compose pas une seule note. La traversée du désert. »
+  - date_text: 22 août
+    date: '1973-08-22'
+    quotes:
+      - « Sortirais-je du tunnel ? J'écris cinq mesures. »
+  - date_text: 24 août
+    date: '1973-08-24'
+    quotes:
+      - « Quatre mesures aujourd'hui. »
+  - date_text: 25 août
+    date: '1973-08-25'
+    quotes:
+      - « Réflexion positive, mais une seule mesure écrite. »
+  - date_text: 26 août
+    date: '1973-08-26'
+    quotes:
+      - « Je revois pour la énième fois ma conception du lied. »
+  - date_text: 27 août
+    date: '1973-08-27'
+    quotes:
+      - « 17 mesures. »
+  - date_text: 28 août
+    date: '1973-08-28'
+    quotes:
+      - « 37 mesures. »
+  - date_text: 29 août
+    date: '1973-08-29'
+    quotes:
+      - « 20 mesures. Voici terminée, en seize jours, une première version de "Mein Züsses Lieb, wenn du im Grab". »
+  - date_text: 26 septembre
+    date: '1973-09-26'
+    context: lettre à Lucile Avisse
+    quotes:
+      - « Pour ce qui est de mon ouvrage, pour lequel j'accompagnerai moi-même Nell Froger, il s'agit de six lieder sur des poèmes d'Heinrich Heine (tirés du cycle des "Intermezzi Lyriques"), et précédés d'une courte introduction au piano. L'ensemble de ce travail devrait avoir une durée totale de 23 minutes au maximum. J'emploie le conditionnel car il me reste encore quelques mesures à composer avant d'avoir terminé. »
+  - date_text: 28 septembre
+    date: '1973-09-28'
+    context: lettre à Nathalie Cholodenko
+    quotes:
+      - |-
+        « Voici l'explication tant attendue concernant la composition de "Wenn Zwei von Einander Scheiden" [sic]. Le 2 février 1973, alors que je m'apprêtais un nouveau poème de Heine en musique, je tombais par inadvertance sur…
+
+        Wenn zwei von einander scheiden, | So geben sie sich die Händ' | Und fangen an zu weinen | Und seufzen ohne End'. | Wir haben nicht geweinet, | Wir seufzten nicht „Weh!" und „Ach!" | Die Tränen und die Seufzer, | Die kamen hintennach.
+
+        … et fus immédiatement frappé par l'imperceptible transformation que subissait au cours du poème la proposition initiale, en passant de la généralité à la particularité. En vérité, une très légère équation. Assez présente cependant pour que nous en ressentions l'apesantissante influence. La première strophe, en effet, se tient volontairement à distance de tout engagement émotionnel. Elle cherche à nous présenter le côté le plus antipathique des protagonistes. Ils sont d'un effroyable illogisme ("Wenn zwei von einander scheiden, so geben sie sich die Händ'"), affreusement larmoyants ("Und seufzen ohne End'"). Enfin, elle est tournée vers le passé. Ironiser ainsi permet à Heine de mieux préparer sa conclusion pessimiste. Dans la deuxième strophe, Heine va encore plus loin dans la distanciation. Le refus de toute manifestation extérieure en est un effet des plus significatifs, ("Wir haben nicht geweinet, wir seufzten nicht „Weh!" und „Ach!") . Cette surprenante cruauté envers soi-même est revendiquée par les deux derniers vers : "Die Tränen und die Seufzer, die kamen hintennach". Du coup la thématique initiale, si je puis dire, bascule dans le présent, et même dans le futur ("hintennach").
+
+        Après avoir ainsi ressenti le poème, je constatais qu'il existait en musique un moyen de traduire cette dichotomie. Je veux parler du jeu harmonique. En effet, la même mélodie apparaîtra singulièrement différenciée selon qu'elle se résout sur la tonique ou sur la sous-dominante, par exemple. La musique populaire fait un usage fréquent de ce procédé, mais une forme musicale l'a épitomisé mieux qu'aucune autre, c'est le tango.
+
+        Je me dirigeais alors vers un de mes tangos favoris : "Caminito", dont le texte, dû à Coria Peñaloza, n'est pas sans présenter certaines similitudes avec celui d'Heine :
+
+        Desde que se fué | Triste vivo yo | Caminito amigo | Yo tambièn me voy… | Desde que se fué, | Munca màs volvio ; | Sequiré sus pasos | Caminito, Adios.
+
+        J'accentuais ainsi le parallélisme entre texte et musique, sans verser dans le pléonasme. Je sous-titrais le lied : "Argentinische Trennung", dans le double sens de séparation entre deux êtres et de séparation (démarcation) entre deux objets. [...] »
+  - date_text: 10 octobre
+    date: '1973-10-10'
+    quotes:
+      - « Je décide de retirer de mon "Wiener Konzert" le lied "Die Sterne in der Höh'" [*cf.* [[light-music]], op.49], qui s'intégrera dans un autre cycle, complété ultérieurement. Par ailleurs, l'ordre de succession des différents lieder est à nouveau bouleversé. "Aus meinen Grossen Schmerzen"[*sic*] se place désormais en troisième position, entre "Vergiftet sind meine Lieder" et "Wenn zwei von einander Scheiden"[*sic*]. »
+  - date_text: 11 octobre
+    date: '1973-10-11'
+    quotes:
+      - « De sérieux obstacles ralentissent l'achèvement de "Mein Züsses Lieb, wenn du im Grab" [*sic*]. »
+  - date_text: 27 novembre
+    date: '1973-11-27'
+    quotes:
+      - « Enfin… j'ai terminé "Wiener Konzert" hier au soir. »
+  - date_text: 5 décembre
+    date: '1973-12-05'
+    quotes:
+      - « Déjeuner en compagnie de Tony Aubin, à la suite duquel je lui joue "Wiener Konzert". Il n'aime pas du tout mon travail, et cela se passe assez mal entre nous. »
+  - date_text: 20 décembre
+    date: '1973-12-20'
+    context: lettre à Tony Aubin
+    quotes:
+      - « Je voudrais vous remercier une nouvelle fois de m'avoir permis de soumettre mon travail au jury de la Société Nationale. Je me suis senti très honoré par votre parrainage et espère ne pas avoir déçu la confiance que vous me faites. Le dernier lied est un peu long, en effet. Comme tout ce qui est d'une essence rare, il ne supporte guère la redondance. »
+  - date_text: 31 décembre 1973
+    date: '1973-12-31'
+    context: lettre d'Henri Martelli [président de la Société nationale de musique]
+    quotes:
+      - « Donc, pour vos remarquables "lieder", la meilleure date [pour la création] sera celle du mercredi 24 avril (Salle Cortot). Ayez l'obligeance, aussi, de me donner le titre et les sous-titres (traduits en français, naturellement) et le nom de votre interprète. [...] »
+  - date_text: 7 janvier 1974
+    date: '1974-01-07'
+    context: lettre à Henri Martelli
+    quotes:
+      - « En ce qui concerne le titre, il me paraît non souhaitable d'en donner une traduction. En effet, "Concert viennois", cela a une couleur par trop légère, trop marquée par la Vienne impériale et son inconscience (les valses, les chevaux, la crème fouettée, et le reste…), alors qu'il s'agit bien plus ici du désespoir terriblement lucide de la Vienne de la Sécession. Quant aux sous-titres, ce sont simplement les premiers vers de chaque poème. Heine lui-même n'a pas prévu d'appellations distinctes, l'ensemble de ces poèmes étant réuni sous le titre de "Lyrisches Intermezzo". Il serait donc préférable selon moi de n'indiquer aucun sous-titre sur le programme. Le nom général de ce cycle est "Wiener Konzert". Il s'agit de cinq lieder sur des poèmes d'Heinrich Heine, précédés d'une introduction pianistique. »
+  - date_text: 3 avril 1974
+    date: '1974-04-03'
+    quotes:
+      - « Vingt jours avant sa création, répétition catastrophique de *Wiener Konzert*. »
+  - date_text: 24 avril 1974
+    date: '1974-04-24'
+    quotes:
+      - « Première de *Wiener Konzert* à la Société nationale. »
+  - date_text: 29 avril 1974
+    date: '1974-04-29'
+    quotes:
+      - « Je décide de retirer "Fare Thee Well" de *Wiener Konzert*. » [Cette introduction pianistique est devenue une pièce indépendante intégrée au *Piano Book*, *cf*. [[?]].]
+  - date_text: 27 mai 1974
+    date: '1974-05-27'
+    context: lettre de Luciano Berio à OG
+    quotes:
+      - « J'aurai beaucoup aimé entendre ton "Wiener Konzert". Peux-tu m'envoyer la musique ? »
+  - date_text: 19 juillet 1993
+    date: '1993-07-19'
+    quotes:
+      - « Un concert de *tango* est donné dans la nouvelle salle de l'Arts Centre par le Maestro Osvaldo Requena et son ensemble. Je n'ai pas supporté plus de cinq minutes. Non pas que je fasse la fine bouche devant le *tango* ; c'est une tradition musicale que j'aime suffisamment pour l'avoir utilisée dans ma propre musique (*Piano Book, Wiener Konzert, Sonate pour piano* en quatre mouvements [[[sonate-piano-13]], op.47], etc.). Mais ici, entendu au milieu d'un contexte classique, elle pose avec acuité le problème du rapport entre musique populaire et musique savante. »
+bibliography:
+  - ref: francois-sappey-nectoux-2013
+    pages: 28, 35, 65, 169, 177, 283, 293, 308, 318-319
+discography:
+  - text: Olivier Greif à l'Archipel (2006) par Jhördis Thébault (soprano) et Charles Bouisset (piano)
+    title: Olivier Greif à l'Archipel
+    year: 2006
+    details: par Jhördis Thébault (soprano) et Charles Bouisset (piano)
+related: []
+editorial_notes:
+  - Reproduction de l'intégralité des poèmes ?
+  - Compléter les valeurs « X » (feuillets, pages, mesures)
+  - 'Renvoi(s) à résoudre : ThX ; ThX, op.310'

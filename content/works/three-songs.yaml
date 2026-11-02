@@ -1,0 +1,57 @@
+th: '54'
+book: 2
+title: Three Songs
+alt_titles:
+  - title: Seven Songs
+    source: Carnet de bord
+opus: '50'
+scoring:
+  fr: Voix et piano
+  en: Voice and piano
+categories:
+  - voice-piano
+movements:
+  - title: « -1- Schoenberg »
+    bars: 164
+    text_incipit: Yes, no
+  - title: « -2- » [Allegro deciso]
+    bars: 164
+    text_incipit: 'Liliane said to the boy : "For you must have lost your mind"'
+  - title: « -Nº2 – Craddle Song »
+    bars: 97
+    text_incipit: Sleep tight baby
+text:
+  credit: Olivier Greif
+  authors:
+    - person: olivier-greif
+      role: author
+composition:
+  text: 1974 – 1975
+  date: 1974/1975
+dedication:
+  text: Inès de la Fressange
+  persons:
+    - ines-de-la-fressange
+sources:
+  status: located
+  intro: Ce cycle est un ensemble composite...
+  institution: f-pbmgf
+remarks:
+  - 'Précédemment intitulé « Seven Songs », le CaG indique pour cette œuvre : « Three Songs | (Textes de l''auteur) | voix et piano ».'
+unpublished: true
+journal:
+  - date_text: 31 décembre 1974
+    date: '1974-12-31'
+    quotes:
+      - « J'offre la dédicace des "Seven Songs" à Inès de la Fressange. »
+  - date_text: 4 janvier 1975
+    date: '1975-01-04'
+    quotes:
+      - « Alors que je travaillais sur la première des "Seven Songs", dans le petit salon du Moulin des Dames, j'eus l'impression que tous mes sens se dérèglaient, ou il s'agit plutôt d'une confusion de tous les sens entre eux – un fauteuil est en sol majeur et une table pourra se transformer en Mozart – ou bien encore comme si l'Univers tout entier n'avait attendu que cet instant précis pour exister en moi. »
+  - date_text: 19 janvier 1975
+    date: '1975-01-19'
+    quotes:
+      - « Luciano [Berio] dit qu'il fera tout ce qu'il pourra pour que l'on joue mes "Seven Songs".
+related: []
+editorial_notes:
+  - Reproduction de l'intégralité des poèmes ?

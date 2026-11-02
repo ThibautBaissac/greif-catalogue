@@ -1,0 +1,13 @@
+th: '74'
+book: 2
+title: Sonate pour violon et piano nº3
+subtitle: The Meeting of the Waters
+opus: '70'
+scoring:
+  fr: Violon et piano
+  en: Violin and piano
+categories:
+  - chamber
+movements:
+  - {}
+related: []

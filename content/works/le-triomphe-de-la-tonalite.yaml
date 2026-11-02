@@ -1,0 +1,35 @@
+th: 44a
+book: 1
+title: Le Triomphe de la tonalité
+alt_titles:
+  - title: 7.000 pounds
+    source: Ms., CaG
+scoring:
+  fr: Piano
+  en: Piano
+categories:
+  - piano
+movements:
+  - bars: 66
+composition:
+  text: '1972'
+  date: '1972'
+sources:
+  status: located
+  papers:
+    - non identifié
+  items:
+    - text: 'Brouillon autographe à l''encre noire, non paginé ; 1 f., 2 pages de musique, papier non identifié, 270 x 345 mm à 24 portées, Registre ARM ? ; sans indications de tempo, de nuances ni de phrasé, sans nº de mes., inachevé, complet. Page 1 : en haut au milieu, « 7.000 pounds », en haut à droite, « Le Triomphe de la | Tonalité », dans le coin supérieur droit, « 1972 | Haridas ». Seule la première ligne du Ms. est complète avec les deux voix du piano, le reste de la pièce n''a que la main droite d''écrite et sans accords.'
+  institution: f-pbmgf
+  features:
+    - draft
+    - autograph
+    - unfinished
+remarks:
+  - 'Cette œuvre sans opus est indiquée dans le CaG entre les opus 39 et 40 sous cette mention : « Le Triomphe de la tonalité | (rebaptisé : "7.000 pounds" en 1992 ) | pour piano », *cf*. [[7000-pounds]].'
+bibliography:
+  - ref: francois-sappey-nectoux-2013
+    pages: 169, 293
+related:
+  - work: 7000-pounds
+    relation: revision

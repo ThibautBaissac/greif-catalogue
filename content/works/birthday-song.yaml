@@ -1,0 +1,33 @@
+th: '55'
+book: 2
+title: Birthday Song
+opus: '51'
+scoring:
+  fr: Voix et piano
+  en: Voice and piano
+categories:
+  - voice-piano
+movements:
+  - bars: 142
+text:
+  credit: Marc Cholodenko
+  authors:
+    - person: marc-cholodenko
+      role: author
+composition:
+  text: '1974'
+  date: '1974'
+sources:
+  status: located
+  papers:
+    - filigrané JD
+  items:
+    - text: 'Ms. autographe à l''encre noire avec ajouts au crayon, non paginé ; X f., 10 pages de musique, papier filigrané JD, 270 x 350 mm à 22 portées ; avec indications de tempo, de nuance et de phrasé, sans nº de mes., complet. Pages de titre : « Birthday Song [souligné] | voice & piano | poême [*sic*] de Marc Cholodenko | Olivier Greif | 74 » à l''encre noire au milieu au de la page.'
+  institution: f-pbmgf
+  features:
+    - autograph
+unpublished: true
+related: []
+editorial_notes:
+  - Reproduction de l'intégralité des poèmes ?
+  - Compléter les valeurs « X » (feuillets, pages, mesures)
