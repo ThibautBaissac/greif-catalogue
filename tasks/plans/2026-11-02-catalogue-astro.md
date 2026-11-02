@@ -71,15 +71,15 @@
 
 **Risk:** normal
 
-- [ ] **Step 1: Initialiser Git et le projet**
+- [x] **Step 1: Initialiser Git et le projet**
 
   À la racine `greif-catalogue/` : `git init -b main`. Le dépôt existe déjà, initialisé sur `main` lors de la relecture du plan : ne rien refaire si `.git` est présent. Créer `.nvmrc` (`22`) et `.gitignore` (`node_modules/`, `dist/`, `.astro/`, `.netlify/`, `.env`, `.DS_Store`). Installer `astro`, `@astrojs/markdoc`, `@astrojs/react`, `react`, `react-dom`, `@astrojs/netlify`, `@keystatic/core`, `@keystatic/astro`, `js-yaml` (dépendances ; pas de `zod` direct : on importe `z` depuis `astro/zod` partout, y compris dans les scripts lancés avec tsx) ainsi que `typescript`, `vitest`, `tsx`, `pagefind`, `node-html-parser`, `@types/js-yaml`, `@astrojs/check` (devDependencies).
 
-- [ ] **Step 2: Vérifier la compatibilité de Keystatic**
+- [x] **Step 2: Vérifier la compatibilité de Keystatic**
 
   Lire `peerDependencies` de `@keystatic/astro` (`npm view @keystatic/astro peerDependencies`). Si la plage `astro` n'accepte pas la majeure 6, réinstaller `astro@5` et les `@astrojs/*` de la majeure correspondante. Noter la version retenue dans le message de commit.
 
-- [ ] **Step 3: Configurer**
+- [x] **Step 3: Configurer**
 
   - `astro.config.mjs` : `output: "static"`, `trailingSlash: "always"`, `build.format: "directory"`, `site: "https://catalogue-greif.netlify.app"` (valeur provisoire, à corriger en tâche 12), intégrations `markdoc()`. React, Keystatic et l'adapter viendront en tâche 10.
   - `tsconfig.json` : étend `astro/tsconfigs/strict`, `paths: { "~/*": ["src/*"] }`.
@@ -98,16 +98,16 @@
   - Copier `prototype/assets/style.css` vers `src/styles/global.css` sans modification.
   - `src/pages/index.astro` : page minimale `<html lang="fr">` contenant `Olivier Greif`. Elle sera remplacée en tâche 12.
 
-- [ ] **Step 4: Écrire le test de fumée**
+- [x] **Step 4: Écrire le test de fumée**
 
   `tests/site/smoke.test.ts` : lire `dist/index.html` et vérifier qu'il contient `Olivier Greif`.
 
-- [ ] **Step 5: Vérifier**
+- [x] **Step 5: Vérifier**
 
   Run: `npm run build && npm run test:site && npm test -- --passWithNoTests`
   Expected: build OK, 1 test PASS.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
   ```bash
   git add -A
@@ -132,7 +132,7 @@
 
 **Risk:** normal
 
-- [ ] **Step 1: Écrire les tests**
+- [x] **Step 1: Écrire les tests**
   - `fold("Éloïse")` → `"eloise"`
   - `slug("Mrs Alexander Liberman")` → `"mrs-alexander-liberman"`
   - `slug("Isabelle Collin-Dufresne")` → `"isabelle-collin-dufresne"`
@@ -142,10 +142,10 @@
   - `sortTitle("« 1) Vergiftet")` → `"vergiftet"`
   - `thKey("35b")` → `352` ; `thKey("7")` → `70` ; `thKey("X")` → `Infinity`
   - `["10","2a","2","35b","35a"].sort(compareTh)` → `["2","2a","10","35a","35b"]`
-- [ ] **Step 2: Lancer les tests, constater l'échec** : `npm test tests/lib` → FAIL (modules absents).
-- [ ] **Step 3: Implémenter** `text.ts` et `th.ts` : fonctions pures, sans dépendance.
-- [ ] **Step 4: Lancer les tests, constater le succès** : `npm test tests/lib` → PASS.
-- [ ] **Step 5: Commit** : `git add src/lib tests/lib && git commit -m "Add text folding, slug and Th ordering helpers"`
+- [x] **Step 2: Lancer les tests, constater l'échec** : `npm test tests/lib` → FAIL (modules absents).
+- [x] **Step 3: Implémenter** `text.ts` et `th.ts` : fonctions pures, sans dépendance.
+- [x] **Step 4: Lancer les tests, constater le succès** : `npm test tests/lib` → PASS.
+- [x] **Step 5: Commit** : `git add src/lib tests/lib && git commit -m "Add text folding, slug and Th ordering helpers"`
 
 ### Task 3: Dates EDTF
 
@@ -177,7 +177,7 @@ Règles de formatage, reprises de `fmtDate` et `fmtRange` (`prototype/build.mjs:
 - Intervalle, même année : `"<début sans l'année> – <fin>"`, tiret demi-cadratin entouré d'espaces.
 - Intervalle, années différentes : `"<début> – <fin>"`.
 
-- [ ] **Step 1: Écrire les tests** (avec `FR = ["janvier",…,"décembre"]` et `EN = ["January",…,"December"]`)
+- [x] **Step 1: Écrire les tests** (avec `FR = ["janvier",…,"décembre"]` et `EN = ["January",…,"December"]`)
   - `formatEdtf("1973-11-26","fr",FR)` → `"26 novembre 1973"` ; en EN → `"26 November 1973"`
   - `formatEdtf("1974-05-01","fr",FR)` → `"1er mai 1974"`
   - `formatEdtf("1968-11","en",EN)` → `"November 1968"`
@@ -192,10 +192,10 @@ Règles de formatage, reprises de `fmtDate` et `fmtRange` (`prototype/build.mjs:
   - `edtfYear("197X")` → `1970` ; `edtfYear("1973-05/1974")` → `1973` ; `edtfYear(undefined)` → `null`
   - `edtfSortKey("1973-05?/1974")` → `"1973-05"` ; `edtfSortKey(undefined)` → `"9999"`
   - `fromLegacy("1973-05","1973-11")` → `"1973-05/1973-11"` ; `fromLegacy("1970")` → `"1970"` ; `fromLegacy()` → `undefined`
-- [ ] **Step 2: Échec** : `npm test tests/lib/edtf.test.ts` → FAIL.
-- [ ] **Step 3: Implémenter** `edtf.ts`, en fonctions pures.
-- [ ] **Step 4: Succès** : même commande → PASS.
-- [ ] **Step 5: Commit** : `git add src/lib/edtf.ts tests/lib/edtf.test.ts && git commit -m "Add EDTF subset parsing and formatting"`
+- [x] **Step 2: Échec** : `npm test tests/lib/edtf.test.ts` → FAIL.
+- [x] **Step 3: Implémenter** `edtf.ts`, en fonctions pures.
+- [x] **Step 4: Succès** : même commande → PASS.
+- [x] **Step 5: Commit** : `git add src/lib/edtf.ts tests/lib/edtf.test.ts && git commit -m "Add EDTF subset parsing and formatting"`
 
 ### Task 4: Balisage léger
 
@@ -220,7 +220,7 @@ Regex des renvois, à reprendre exactement : `/\[\[([^\[\]]*)\]\]/g`. Elle diff�
 
 Ordre des transformations, repris de `md()` (`prototype/build.mjs:61-74`) : échappement HTML (`& < > "`), puis renvois, puis `**…**` → `<strong>`, puis `*…*` (sans saut de ligne) → `<em>`, puis `^…^` → `<sup>`, puis ` | ` → ` <span class="lb" aria-label="{lineBreak}">|</span> `, puis `[sic]` → `[<em>sic</em>]`.
 
-- [ ] **Step 1: Écrire les tests** (`resolve` connaît `wiener-konzert` → `{th:"45", title:"Wiener Konzert", href:"/fr/oeuvres/wiener-konzert/"}`, `labels = {lineBreak:"saut de ligne", unresolved:"Renvoi à résoudre"}`)
+- [x] **Step 1: Écrire les tests** (`resolve` connaît `wiener-konzert` → `{th:"45", title:"Wiener Konzert", href:"/fr/oeuvres/wiener-konzert/"}`, `labels = {lineBreak:"saut de ligne", unresolved:"Renvoi à résoudre"}`)
   - `renderInline("*Wiener Konzert*")` → `<em>Wiener Konzert</em>`
   - `renderInline("**a**")` → `<strong>a</strong>`
   - `renderInline("778^e^ concert")` → `778<sup>e</sup> concert`
@@ -235,10 +235,10 @@ Ordre des transformations, repris de `md()` (`prototype/build.mjs:61-74`) : éch
   - `extractRefs("cf. [[a]] et [[?]], [[b]]")` → `["a","?","b"]`
   - `extractRefs("en quatre mouvements [[[sonate-piano-13]], op.47]")` → `["sonate-piano-13"]`
   - `renderInline("[[[wiener-konzert]], op.40]")` → `[<a class="xref" href="/fr/oeuvres/wiener-konzert/" title="Wiener Konzert">Th&nbsp;45</a>, op.40]`
-- [ ] **Step 2: Échec** : `npm test tests/lib/markup.test.ts` → FAIL.
-- [ ] **Step 3: Implémenter** `markup.ts`.
-- [ ] **Step 4: Succès** : PASS.
-- [ ] **Step 5: Commit** : `git add src/lib/markup.ts tests/lib/markup.test.ts && git commit -m "Add light markup renderer with cross-references"`
+- [x] **Step 2: Échec** : `npm test tests/lib/markup.test.ts` → FAIL.
+- [x] **Step 3: Implémenter** `markup.ts`.
+- [x] **Step 4: Succès** : PASS.
+- [x] **Step 5: Commit** : `git add src/lib/markup.ts tests/lib/markup.test.ts && git commit -m "Add light markup renderer with cross-references"`
 
 ### Task 5: Schémas de contenu
 
