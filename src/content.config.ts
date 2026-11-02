@@ -13,7 +13,7 @@ import {
   workSchema,
 } from "./lib/schemas";
 
-const yamlDir = (dir: string, schema: Parameters<typeof defineCollection>[0]["schema"]) =>
+const yamlDir = <S extends z.ZodType>(dir: string, schema: S) =>
   defineCollection({ loader: glob({ pattern: "*.yaml", base: `./content/${dir}` }), schema });
 
 export const collections = {
