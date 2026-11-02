@@ -1,0 +1,10 @@
+---
+import type { Catalogue, WorkEntry } from "~/lib/catalogue";
+import type { Lang } from "~/lib/edtf";
+import type { Ui } from "~/lib/i18n";
+import Markup from "./Markup.astro";
+
+type Props = { work: WorkEntry; lang: Lang; ui: Ui; cat: Catalogue };
+const { work, lang, ui, cat } = Astro.props;
+---
+<cite class="wt"><Markup src={work.title} {lang} {ui} {cat} /></cite>{work.subtitle && (<>{" "}<span class="wst">«&nbsp;<Markup src={work.subtitle} {lang} {ui} {cat} />&nbsp;»</span></>)}

@@ -1,0 +1,24 @@
+---
+import type { Catalogue, WorkEntry } from "~/lib/catalogue";
+import { formatEdtf, type Lang } from "~/lib/edtf";
+import type { Ui } from "~/lib/i18n";
+import type { JournalEntry } from "~/lib/schemas";
+import Markup from "./Markup.astro";
+import WorkRef from "./WorkRef.astro";
+
+type Props = { entry: JournalEntry; work?: WorkEntry; lang: Lang; ui: Ui; cat: Catalogue };
+const { entry: e, work, lang, ui, cat } = Astro.props;
+const fr = lang === "en" ? "fr" : undefined;
+const enDate = lang === "en" && e.date ? formatEdtf(e.date, lang, ui.months) : undefined;
+---
+<div class="j-entry">
+  <div class="j-date">
+    {enDate ?? <Markup src={e.date_text} {lang} {ui} {cat} />}
+    {e.context && <span class="j-ctx" lang={fr}><Markup src={e.context} {lang} {ui} {cat} /></span>}
+    {work && <span class="j-work"><WorkRef {work} {lang} {ui} {cat} /></span>}
+  </div>
+  <div class="j-body" lang={fr}>
+    {e.note && <p class="muted"><Markup src={e.note} {lang} {ui} {cat} /></p>}
+    {e.quotes.map(q => <blockquote><Markup src={q} block {lang} {ui} {cat} /></blockquote>)}
+  </div>
+</div>

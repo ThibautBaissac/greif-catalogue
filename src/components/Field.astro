@@ -1,0 +1,8 @@
+---
+type Props = { id: string; label: string; cls?: string };
+const { id, label, cls = "" } = Astro.props;
+---
+<section class={`field ${cls}`.trim()} id={id} aria-labelledby={`${id}-h`}>
+  <h2 class="field-label" id={`${id}-h`}>{label}</h2>
+  <div class="field-body"><slot /></div>
+</section>

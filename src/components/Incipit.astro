@@ -1,0 +1,30 @@
+---
+import type { Catalogue, WorkEntry } from "~/lib/catalogue";
+import type { Lang } from "~/lib/edtf";
+import type { Ui } from "~/lib/i18n";
+import type { Movement } from "~/lib/schemas";
+import { stripMarkup } from "~/lib/markup";
+import Markup from "./Markup.astro";
+
+type Props = { work: WorkEntry; index: number; movement: Movement; lang: Lang; ui: Ui; cat: Catalogue };
+const { work, index, movement: m, lang, ui, cat } = Astro.props;
+const fr = lang === "en" ? "fr" : undefined;
+const label = stripMarkup(m.title ?? work.title);
+const expected = `public/incipits/${work.id}/${index + 1}.png`;
+---
+<figure class="mvt">
+  {m.title && <figcaption class="mvt-title" lang={fr}><Markup src={m.title} {lang} {ui} {cat} /></figcaption>}
+  <div class="incipit">
+    {m.incipit
+      ? <img src={m.incipit} alt={`${ui.f.movements} : ${label}`} loading="lazy" />
+      : <div class="staff-ph" role="img" aria-label={ui.incipitMissing}>
+          <span>{ui.incipitMissing}{m.incipit_count ? ` (${m.incipit_count})` : ""}</span><code>{expected}</code>
+        </div>}
+  </div>
+  <div class="mvt-meta">
+    {m.bars
+      ? <span class="bars">{m.bars}&nbsp;{ui.bars}</span>
+      : <span class="bars missing">{ui.barsUnknown}</span>}
+    {m.text_incipit && <span class="txt-inc" lang={fr}><Markup src={m.text_incipit} {lang} {ui} {cat} /></span>}
+  </div>
+</figure>

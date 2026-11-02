@@ -1,0 +1,10 @@
+---
+import type { Catalogue, WorkEntry } from "~/lib/catalogue";
+import type { Lang } from "~/lib/edtf";
+import { workUrl, type Ui } from "~/lib/i18n";
+import WorkTitle from "./WorkTitle.astro";
+
+type Props = { work: WorkEntry; lang: Lang; ui: Ui; cat: Catalogue };
+const { work, lang, ui, cat } = Astro.props;
+---
+<a class="wref" href={workUrl(work.id, lang)}><span class="thn">Th&nbsp;{work.th}</span>{" "}<WorkTitle {work} {lang} {ui} {cat} /></a>

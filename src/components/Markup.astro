@@ -1,0 +1,18 @@
+---
+import type { Catalogue } from "~/lib/catalogue";
+import type { Lang } from "~/lib/edtf";
+import { markupOptions, type Ui } from "~/lib/i18n";
+import { renderBlock, renderInline } from "~/lib/markup";
+
+type Props = { src: string; block?: boolean; lang: Lang; ui: Ui; cat: Catalogue; orig?: boolean };
+
+const { src, block = false, lang, ui, cat, orig = false } = Astro.props;
+const o = markupOptions(ui, lang, cat);
+const html = block ? renderBlock(src, o) : renderInline(src, o);
+const fr = orig && lang === "en";
+---
+{fr
+  ? block
+    ? <div lang="fr" set:html={html} />
+    : <span lang="fr" set:html={html} />
+  : <Fragment set:html={html} />}

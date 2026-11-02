@@ -1,0 +1,50 @@
+---
+import type { Catalogue, PerformanceRow } from "~/lib/catalogue";
+import { formatEdtf, type Lang } from "~/lib/edtf";
+import { pageUrl, type Ui } from "~/lib/i18n";
+import Markup from "./Markup.astro";
+import WorkRef from "./WorkRef.astro";
+
+type Props = { rows: PerformanceRow[]; showWork: boolean; lang: Lang; ui: Ui; cat: Catalogue };
+const { rows, showWork, lang, ui, cat } = Astro.props;
+const fr = lang === "en" ? "fr" : undefined;
+const personHref = (id: string) => `${pageUrl("persons", lang)}#${id}`;
+---
+<div class="table-scroll">
+  <table class="perf">
+    <thead>
+      <tr>
+        <th>{ui.col.date2}</th>{showWork && <th>{ui.col.work}</th>}<th>{ui.col.place}</th><th>{ui.col.performers}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map(({ work, perf }) => (
+        <tr class={perf.premiere ? "is-premiere" : undefined}>
+          <td class="c-date">
+            {perf.date ? formatEdtf(perf.date, lang, ui.months) : <span class="muted">{ui.unknownDate}</span>}
+            {perf.premiere && <span class="tag tag-red">{ui.premiereTag}</span>}
+          </td>
+          {showWork && <td class="c-work"><WorkRef {work} {lang} {ui} {cat} /></td>}
+          <td class="c-place" lang={fr}>
+            {perf.venue
+              ? <Markup src={perf.venue} {lang} {ui} {cat} />
+              : perf.place ? cat.places.get(perf.place)?.name : null}
+          </td>
+          <td class="c-perf">
+            {perf.performers.map((p, i) => {
+              const role = p.role ? cat.roles.get(p.role)?.[lang] : undefined;
+              return (
+                <Fragment>
+                  {i > 0 && ", "}
+                  <a class="pl" href={personHref(p.person)}>{cat.persons.get(p.person)?.name}</a>
+                  {p.alias && <Fragment>{" "}«&nbsp;{p.alias}&nbsp;»</Fragment>}
+                  {role && <Fragment>{" "}<span class="role">({role})</span></Fragment>}
+                </Fragment>
+              );
+            })}
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

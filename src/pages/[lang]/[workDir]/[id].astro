@@ -1,0 +1,314 @@
+---
+import type { GetStaticPaths } from "astro";
+import Base from "~/layouts/Base.astro";
+import Field from "~/components/Field.astro";
+import Incipit from "~/components/Incipit.astro";
+import JournalEntry from "~/components/JournalEntry.astro";
+import Markup from "~/components/Markup.astro";
+import PerfTable from "~/components/PerfTable.astro";
+import WorkRef from "~/components/WorkRef.astro";
+import WorkTitle from "~/components/WorkTitle.astro";
+import { getCatalogue } from "~/lib/catalogue-astro";
+import { edtfSortKey, formatEdtf, type Lang } from "~/lib/edtf";
+import { fill, getUi, pageUrl, WORK_DIR, workUrl } from "~/lib/i18n";
+import { stripMarkup } from "~/lib/markup";
+
+export const getStaticPaths = (async () => {
+  const cat = await getCatalogue();
+  return (["fr", "en"] as const).flatMap(lang =>
+    cat.works.map(w => ({ params: { lang, workDir: WORK_DIR[lang], id: w.id } })),
+  );
+}) satisfies GetStaticPaths;
+
+const { id } = Astro.params;
+const lang = Astro.params.lang as Lang;
+const cat = await getCatalogue();
+const ui = await getUi(lang);
+const w = cat.byId.get(id!)!;
+const fr = lang === "en" ? "fr" : undefined;
+const { prev, next } = cat.neighbours(w.id);
+const book = cat.books.find(b => b.number === w.book);
+const roman = book?.roman ?? String(w.book);
+const title = stripMarkup(w.title);
+const catalogueUrl = pageUrl("catalogue", lang);
+const personHref = (pid: string) => `${pageUrl("persons", lang)}#${pid}`;
+const personName = (pid: string) => cat.persons.get(pid)?.name ?? pid;
+const relationLabel = (key: string) => (ui.relation as Record<string, string>)[key.replace(":inverse", "_inverse")] ?? key;
+
+// Composition : « inconnue » ou absente s'affiche comme date inconnue.
+const compText = w.composition
+  ? lang === "fr"
+    ? w.composition.text
+    : w.composition.date
+      ? formatEdtf(w.composition.date, lang, ui.months)
+      : w.composition.text
+  : "";
+const compKnown = compText !== "" && compText !== "inconnue";
+const compIsPlain = lang === "en" && !!w.composition?.date;
+
+// Rubriques
+const authors = w.text?.authors ?? [];
+const textSameAsAuthor = !!w.text && authors.length === 1 && stripMarkup(w.text.credit) === personName(authors[0].person);
+const has = {
+  textes: !!w.text,
+  dedicace: !!(w.dedication?.text || w.dedication?.persons.length),
+  sources: !!(w.sources || w.audio_source),
+  remarques: w.remarks.length > 0,
+  intertexte: w.intertextual.length > 0,
+  edition: w.editions.length > 0 || w.unpublished,
+  executions: w.performances.length > 0 || w.premiere_recording.length > 0,
+  carnet: w.journal.length > 0,
+  documents: w.documents.length > 0,
+  bibliographie: w.bibliography.length > 0,
+  discographie: w.discography.length > 0,
+  videographie: w.videography.length > 0,
+  liens: false,
+};
+const related = cat.related(w.id);
+has.liens = related.length > 0;
+const labels = {
+  textes: ui.f.text,
+  dedicace: ui.f.dedication,
+  sources: ui.f.sources,
+  remarques: ui.f.remarks,
+  intertexte: ui.f.intertextual,
+  edition: ui.f.editions,
+  executions: `${ui.f.premiere} · ${ui.f.performances}`,
+  carnet: ui.f.journal,
+  documents: ui.f.documents,
+  bibliographie: ui.f.bibliography,
+  discographie: ui.f.discography,
+  videographie: ui.f.videography,
+  liens: ui.f.related,
+};
+const order = Object.keys(labels) as (keyof typeof labels)[];
+const toc = order.filter(k => has[k]);
+
+const buildDate = formatEdtf(new Date().toISOString().slice(0, 10), lang, ui.months);
+const citeTemplate = fill(ui.citeTemplate, { th: w.th, title, url: "{url}", date: "{date}" });
+const citeText = fill(ui.citeTemplate, { th: w.th, title, url: "[URL]", date: buildDate });
+
+const jsonld = {
+  "@context": "https://schema.org",
+  "@type": "MusicComposition",
+  name: title + (w.subtitle ? ` « ${stripMarkup(w.subtitle)} »` : ""),
+  identifier: `Th ${w.th}`,
+  composer: { "@type": "Person", name: "Olivier Greif" },
+  ...(w.composition?.date ? { dateCreated: edtfSortKey(w.composition.date) } : {}),
+  ...(w.opus ? { alternateName: `op. ${w.opus}` } : {}),
+  ...(authors.length ? { lyricist: authors.map(a => ({ "@type": "Person", name: personName(a.person) })) } : {}),
+};
+const desc = `Th ${w.th}, ${title}, ${w.scoring[lang]}${w.composition ? ", " + stripMarkup(w.composition.text) : ""}`;
+const other: Lang = lang === "fr" ? "en" : "fr";
+---
+<Base lang={lang} title={`Th ${w.th} ${title}`} {desc} alt={workUrl(w.id, other)} active="catalogue" {jsonld}>
+  <nav class="crumbs wrap" aria-label="breadcrumb">
+    <a href={catalogueUrl}>{ui.nav.catalogue}</a> <span>›</span>
+    <a href={`${catalogueUrl}#livre-${w.book}`}>{ui.book} {roman}</a> <span>›</span>
+    <span>Th {w.th}</span>
+  </nav>
+  <article class="notice wrap" data-pagefind-body>
+    <div hidden>
+      <span data-pagefind-filter="book">{ui.book} {roman}</span>
+      {w.categories.map(c => <span data-pagefind-filter="category">{ui.cat[c]}</span>)}
+      <span data-pagefind-meta="th">{w.th}</span>
+    </div>
+    <header class="notice-head">
+      <div class="th-mark" aria-hidden="true"></div>
+      <p class="th-big"><span class="th-lab">Th</span>{w.th}</p>
+      <div class="title-block">
+        <h1><WorkTitle work={w} {lang} {ui} {cat} /></h1>
+        <p class="opus-line">{w.opus ? <Fragment>{ui.opus}&nbsp;{w.opus}</Fragment> : ui.noOpus}</p>
+        {w.alt_titles.length > 0 && (
+          <p class="alt-titles">
+            <span class="sub-label">{ui.f.altTitles}</span>{" "}
+            {w.alt_titles.map((a, i) => (
+              <Fragment>
+                {i > 0 && " · "}
+                <span><cite><Markup src={a.title} {lang} {ui} {cat} /></cite>{" "}<span class="muted" lang={fr}>({a.source})</span></span>
+              </Fragment>
+            ))}
+          </p>
+        )}
+      </div>
+      <dl class="facts">
+        <div>
+          <dt>{ui.f.scoring}</dt>
+          <dd>
+            <Markup src={w.scoring[lang]} {lang} {ui} {cat} />
+            {w.scoring_note && <Fragment><br /><span class="muted" lang={fr}><Markup src={w.scoring_note} {lang} {ui} {cat} /></span></Fragment>}
+          </dd>
+        </div>
+        <div>
+          <dt>{ui.f.composition}</dt>
+          <dd>
+            {compKnown
+              ? compIsPlain ? compText : <Markup src={compText} {lang} {ui} {cat} />
+              : <span class="muted">{ui.unknownDate}</span>}
+          </dd>
+        </div>
+        {w.duration && <div><dt>{ui.f.duration}</dt><dd>{w.duration.replace(/ \| /g, " · ")}</dd></div>}
+        <div><dt>{ui.book}</dt><dd><a href={`${catalogueUrl}#livre-${w.book}`}>{roman}</a></dd></div>
+      </dl>
+    </header>
+    {lang === "en" && <p class="lang-note">{ui.frOnly}</p>}
+    {w.movements.length > 0 && (
+      <section class="incipits" aria-label={ui.f.movements}>
+        <div class={`mvts${w.movements.length > 1 ? " multi" : ""}`}>
+          {w.movements.map((m, i) => <Incipit work={w} index={i} movement={m} {lang} {ui} {cat} />)}
+        </div>
+      </section>
+    )}
+    <div class="notice-grid">
+      <nav class="toc" aria-label={ui.entrySections}>
+        {toc.map(k => <a href={`#${k}`}>{labels[k]}</a>)}<a href="#citer">{ui.f.cite}</a>
+      </nav>
+      <div class="fields">
+        {has.textes && (
+          <Field id="textes" label={labels.textes}>
+            {textSameAsAuthor
+              ? <p><a class="pl" href={personHref(authors[0].person)}>{personName(authors[0].person)}</a></p>
+              : <Fragment>
+                  <p lang={fr}><Markup src={w.text!.credit} {lang} {ui} {cat} /></p>
+                  {authors.length > 0 && (
+                    <p class="persons-line">
+                      {authors.map((a, i) => <Fragment>{i > 0 && " · "}<a class="pl" href={personHref(a.person)}>{personName(a.person)}</a></Fragment>)}
+                    </p>
+                  )}
+                </Fragment>}
+          </Field>
+        )}
+        {has.dedicace && (
+          <Field id="dedicace" label={labels.dedicace}>
+            {w.dedication?.text && <p lang={fr}><Markup src={w.dedication.text} {lang} {ui} {cat} /></p>}
+            {w.dedication && w.dedication.persons.length > 0 && (
+              <p class="persons-line">
+                {w.dedication.persons.map((p, i) => <Fragment>{i > 0 && " · "}<a class="pl" href={personHref(p)}>{personName(p)}</a></Fragment>)}
+              </p>
+            )}
+          </Field>
+        )}
+        {has.sources && (
+          <Field id="sources" label={labels.sources}>
+            {w.sources && (
+              <Fragment>
+                <div class="badges">
+                  <span class={`tag${w.sources.status === "located" ? "" : " tag-red"}`}>{ui.srcStatus[w.sources.status]}</span>
+                  {w.sources.institution && <span class="siglum" title={ui.f.siglum}>{cat.institutions.get(w.sources.institution)?.siglum}</span>}
+                  {w.sources.features.filter(f => f !== "autograph").map(f => <span class="tag tag-ghost">{ui.features[f]}</span>)}
+                </div>
+                {w.sources.intro && <p lang={fr}><Markup src={w.sources.intro} {lang} {ui} {cat} /></p>}
+                {w.sources.items.length > 0 && (
+                  <ol class="src-items">
+                    {w.sources.items.map(it => (
+                      <li lang={fr}>
+                        {it.label && <span class="src-lab">{it.label}</span>}
+                        <div><Markup src={it.text} {lang} {ui} {cat} /></div>
+                      </li>
+                    ))}
+                  </ol>
+                )}
+              </Fragment>
+            )}
+            {w.audio_source && (
+              <Fragment>
+                <p class="sub-label">{ui.f.audio}</p>
+                <p lang={fr}><Markup src={w.audio_source} {lang} {ui} {cat} /></p>
+              </Fragment>
+            )}
+          </Field>
+        )}
+        {has.remarques && (
+          <Field id="remarques" label={labels.remarques}>
+            {w.remarks.map(r => <p lang={fr}><Markup src={r} {lang} {ui} {cat} /></p>)}
+          </Field>
+        )}
+        {has.intertexte && (
+          <Field id="intertexte" label={labels.intertexte}>
+            {w.intertextual.map(r => <p lang={fr}><Markup src={r} {lang} {ui} {cat} /></p>)}
+          </Field>
+        )}
+        {has.edition && (
+          <Field id="edition" label={labels.edition}>
+            {w.unpublished && <p><span class="tag tag-red">{ui.f.unpublished}</span></p>}
+            {w.editions.map(e => (
+              <p lang={fr}>
+                <Markup src={e.text} {lang} {ui} {cat} />
+                {e.status === "forthcoming" && <Fragment>{" "}<span class="tag">{ui.forthcoming}</span></Fragment>}
+              </p>
+            ))}
+          </Field>
+        )}
+        {has.executions && (
+          <Field id="executions" label={labels.executions}>
+            {w.performances.length > 0 && (
+              <PerfTable rows={w.performances.map(perf => ({ work: w, perf }))} showWork={false} {lang} {ui} {cat} />
+            )}
+            {w.premiere_recording.length > 0 && (
+              <Fragment>
+                <p class="sub-label">{ui.f.premiereRec}</p>
+                {w.premiere_recording.map(p => <p lang={fr}><Markup src={p} {lang} {ui} {cat} /></p>)}
+              </Fragment>
+            )}
+          </Field>
+        )}
+        {has.carnet && (
+          <Field id="carnet" label={labels.carnet}>
+            <div class="journal">
+              {w.journal.map(entry => <JournalEntry {entry} {lang} {ui} {cat} />)}
+            </div>
+          </Field>
+        )}
+        {has.documents && (
+          <Field id="documents" label={labels.documents}>
+            {w.documents.map(d => <div class={`doc${d.startsWith("«") ? " quote" : ""}`} lang={fr}><Markup src={d} block {lang} {ui} {cat} /></div>)}
+          </Field>
+        )}
+        {has.bibliographie && (
+          <Field id="bibliographie" label={labels.bibliographie}>
+            <ul class="plain">
+              {w.bibliography.map(b => (
+                <li lang={fr}>{cat.bibliography.get(b.ref)?.short}{b.pages && <Fragment>, p.&nbsp;{b.pages}</Fragment>}</li>
+              ))}
+            </ul>
+          </Field>
+        )}
+        {has.discographie && (
+          <Field id="discographie" label={labels.discographie}>
+            <ul class="plain">{w.discography.map(d => <li lang={fr}><Markup src={d.text} {lang} {ui} {cat} /></li>)}</ul>
+          </Field>
+        )}
+        {has.videographie && (
+          <Field id="videographie" label={labels.videographie}>
+            <ul class="plain">{w.videography.map(d => <li lang={fr}><Markup src={d.text} {lang} {ui} {cat} /></li>)}</ul>
+          </Field>
+        )}
+        {has.liens && (
+          <Field id="liens" label={labels.liens}>
+            <ul class="plain rel-list">
+              {related.map(r => (
+                <li><span class="rel">{relationLabel(r.relation)}</span>{" "}<WorkRef work={r.work} {lang} {ui} {cat} /></li>
+              ))}
+            </ul>
+          </Field>
+        )}
+        <section class="cite" id="citer">
+          <h2 class="field-label">{ui.f.cite}</h2>
+          <p class="cite-text" data-template={citeTemplate}>{citeText}</p>
+          <button type="button" class="btn copy" data-copy=".cite-text" data-label-done={ui.copied}>{ui.copy}</button>
+        </section>
+      </div>
+    </div>
+    <nav class="pager" aria-label="pager">
+      {prev
+        ? <a class="pg prev" href={workUrl(prev.id, lang)}><span class="pg-lab">← {ui.prev}</span><span class="thn">Th&nbsp;{prev.th}</span>{" "}<WorkTitle work={prev} {lang} {ui} {cat} /></a>
+        : <span></span>}
+      {next
+        ? <a class="pg next" href={workUrl(next.id, lang)}><span class="pg-lab">{ui.next} →</span><span class="thn">Th&nbsp;{next.th}</span>{" "}<WorkTitle work={next} {lang} {ui} {cat} /></a>
+        : <span></span>}
+    </nav>
+  </article>
+  <script>
+    import "../../../scripts/cite.ts";
+  </script>
+</Base>

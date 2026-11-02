@@ -1,0 +1,72 @@
+---
+import "~/styles/global.css";
+import type { Lang } from "~/lib/edtf";
+import { formatEdtf } from "~/lib/edtf";
+import { getUi, pageUrl, type PageKey } from "~/lib/i18n";
+
+type Props = {
+  lang: Lang;
+  title?: string;
+  desc?: string;
+  /** URL of the same page in the other language. */
+  alt: string;
+  active?: PageKey;
+  jsonld?: object;
+  noindex?: boolean;
+  bodyClass?: string;
+};
+
+const { lang, title, desc = "", alt, active, jsonld, noindex = false, bodyClass = "" } = Astro.props;
+const ui = await getUi(lang);
+const other: Lang = lang === "fr" ? "en" : "fr";
+const fullTitle = title
+  ? `${title} · ${ui.site}, ${ui.siteSub.toLowerCase()}`
+  : `${ui.site} · ${ui.siteSub}`;
+const buildDate = formatEdtf(new Date().toISOString().slice(0, 10), lang, ui.months);
+const navKeys = ["catalogue", "indexes", "journal", "search", "about"] as const;
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <title>{fullTitle}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content={desc || ui.siteSub} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="alternate" hreflang={other} href={alt} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=IBM+Plex+Sans+Condensed:wght@400;500;600&display=swap"
+    />
+    {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
+  </head>
+  <body data-lang={lang}>
+    <a class="skip" href="#main">{ui.skipLink}</a>
+    <header class="site-head">
+      <div class="wrap head-row">
+        <a class="brand" href={pageUrl("home", lang)}>
+          <span class="brand-name">{ui.site}</span><span class="brand-sub">{ui.siteSub}</span>
+        </a>
+        <nav class="site-nav" aria-label={ui.mainNav}>
+          {navKeys.map(k => (
+            <a href={pageUrl(k, lang)} aria-current={active === k ? "page" : undefined}>{ui.nav[k]}</a>
+          ))}
+          <a class="lang" href={alt} hreflang={other} lang={other} title={ui.otherLang}>{ui.otherLangCode}</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main" class={bodyClass || undefined}>
+      <slot />
+    </main>
+    <footer class="site-foot">
+      <div class="wrap foot-row">
+        <p>{ui.site} (1950–2000) · {ui.siteSub}</p>
+        <p class="muted">
+          {ui.footerStatus} · {ui.sinceDate} {buildDate} · <a href={pageUrl("about", lang)}>{ui.nav.about}</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
