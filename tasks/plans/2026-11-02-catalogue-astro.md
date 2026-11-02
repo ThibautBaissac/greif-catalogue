@@ -500,17 +500,17 @@ Configuration, à reprendre exactement :
 - Champs des œuvres : enums → `fields.select` (catégories : `fields.multiselect`) ; ids d'autorité → `fields.relationship({ collection: "persons" | "places" | "institutions" | "roles" | "bibliography" | "works" })` ; dates → `fields.text`, avec une `validation.pattern` reprenant la regex EDTF de la tâche 3 sous forme d'intervalle optionnel ; tableaux → `fields.array(…, { itemLabel })`. `itemLabel` affiche `date_text` pour le carnet, `date + venue` pour une exécution, `title` pour un mouvement. `movements[].incipit` → `fields.image({ directory: "public/incipits", publicPath: "/incipits/" })`.
 - Libellés des champs en français.
 
-- [ ] **Step 1: Écrire le test de parité**
+- [x] **Step 1: Écrire le test de parité**
   Écrire un parcours récursif des deux arbres : forme Zod (en déballant les wrappers optionnel, défaut et refine selon l'API de la version de Zod fournie par `astro/zod`) et champs Keystatic (`kind: "object"` → `fields`, `kind: "array"` → `element`, sinon feuille). Pour chaque collection et chaque singleton, l'ensemble des chemins de clés doit être identique ; un `fields.slug` compte comme sa clé. Cas :
   - `works` : chemins Zod = chemins Keystatic (avec `movements.[].incipit`, `performances.[].performers.[].role`, etc.)
   - `persons`, `places`, `institutions`, `roles`, `bibliography` : même égalité ; `books` comparé à `booksFileSchema` ; `uiFr` et `uiEn` comparés à `uiSchema`. Les collections Markdoc `pagesFr` et `pagesEn` sont exclues.
   - test négatif : un champ factice `foo` ajouté à une copie de la forme `works` fait échouer la comparaison
-- [ ] **Step 2: Échec** : `npm test tests/cms` → FAIL.
-- [ ] **Step 3: Implémenter** `keystatic.config.ts` et `keystatic-ui.ts`, puis brancher les intégrations.
-- [ ] **Step 4: Succès** : `npm test && npm run build` → PASS. Le build reste statique ; seules les routes Keystatic sont rendues à la demande.
-- [ ] **Step 5: Script de validation hors Astro**
+- [x] **Step 2: Échec** : `npm test tests/cms` → FAIL.
+- [x] **Step 3: Implémenter** `keystatic.config.ts` et `keystatic-ui.ts`, puis brancher les intégrations.
+- [x] **Step 4: Succès** : `npm test && npm run build` → PASS. Le build reste statique ; seules les routes Keystatic sont rendues à la demande.
+- [x] **Step 5: Script de validation hors Astro**
   Créer `scripts/validate.ts` et le script npm `"validate": "tsx scripts/validate.ts"`. Le script lit `content/` avec js-yaml, parse chaque fichier avec son schéma, construit un `CatalogueInput` et appelle `validateCatalogue`. Il affiche une ligne par erreur, au format `fichier › chemin : message`, et se termine en code 1 s'il y en a au moins une. Run: `npm run validate` → code 0 sur le contenu migré.
-- [ ] **Step 6: Aller-retour CMS → YAML → schéma (vérification manuelle, avant toute page)**
+- [x] **Step 6: Aller-retour CMS → YAML → schéma (vérification manuelle, avant toute page)**
   Dans `npm run dev` → `http://localhost:4321/keystatic`, faire chaque essai, puis `npm run validate` et `git diff content` :
   1. **Notice existante complète** : ouvrir `Wiener Konzert`, modifier une seule virgule dans `remarks`, enregistrer. `validate` → 0 erreur ; le diff ne retire aucune clé ni aucune valeur (seule la mise en forme YAML peut changer).
   2. **Notice minimale** : créer `Essai CMS` avec seulement les champs obligatoires. `validate` → 0 erreur ; le fichier ne contient ni `""` ni `null` pour un champ optionnel (ou bien les schémas les acceptent grâce à la règle de la tâche 5).
@@ -519,7 +519,7 @@ Configuration, à reprendre exactement :
   5. Saisir une date invalide `2026-13` : le formulaire la refuse.
   6. Modifier `ui fr › nav › catalogue` et enregistrer. `uiSchema.parse` doit toujours réussir (vérifié par `npm test tests/lib/i18n.test.ts`).
   Pour chaque échec, corriger le schéma (tâche 5) ou la configuration Keystatic, et ajouter le YAML fautif comme cas de régression dans `tests/lib/schemas.test.ts`. Enfin, annuler les essais avec `git checkout content && git clean -fd content`.
-- [ ] **Step 7: Commit** : `git add -A keystatic.config.ts src scripts/validate.ts astro.config.mjs tests .env.example package*.json && git commit -m "Add Keystatic CMS with schema parity test and content validation"`
+- [x] **Step 7: Commit** : `git add -A keystatic.config.ts src scripts/validate.ts astro.config.mjs tests .env.example package*.json && git commit -m "Add Keystatic CMS with schema parity test and content validation"`
   `.env.example` liste les quatre noms de variables (`KEYSTATIC_GITHUB_CLIENT_ID`, `KEYSTATIC_GITHUB_CLIENT_SECRET`, `KEYSTATIC_SECRET`, `PUBLIC_KEYSTATIC_GITHUB_APP_SLUG`), sans valeur. Le passage en mode GitHub de production se fait en tâche 12, après le premier déploiement.
 
 ### Task 11: Gabarit et page d'œuvre
