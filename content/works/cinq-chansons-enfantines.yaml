@@ -1,6 +1,6 @@
+title: Cinq Chansons enfantines
 th: '4'
 book: 1
-title: Cinq Chansons enfantines
 alt_titles:
   - title: Cinq Mélodies
     source: CaG
@@ -32,8 +32,9 @@ text:
     - person: olivier-greif
       role: author
 composition:
-  text: '1961'
+  text: 1961-1973
   date: '1961'
+duration: 4'40
 dedication:
   text: « À ma belle-sœur Annette | À mon neveu Emmanuel »
   persons:
@@ -41,19 +42,42 @@ dedication:
     - emmanuel-neveu-du-compositeur
 sources:
   status: located
+  institution: f-pbmgf
+  items:
+    - text: >-
+        Ms. autographe à l'encre noire avec ajouts au crayon, paginé : 1-8 ; 5
+        f., 8 pages de musique, papier filigrané JD, 270 x 350 mm à 22 portées ;
+        avec indications de tempo, de nuances et de phrasé, avec nº de mes.,
+        complet. Page de titre : « 5 chansons enfantines | Olivier Greif | 61 –
+        73 | voice & piano ».
   papers:
     - filigrané JD
-  items:
-    - text: 'Ms. autographe à l''encre noire avec ajouts au crayon, paginé : 1-8 ; 5 f., 8 pages de musique, papier filigrané JD, 270 x 350 mm à 22 portées ; avec indications de tempo, de nuances et de phrasé, avec nº de mes., complet. Page de titre : « 5 chansons enfantines | Olivier Greif | 61 – 73 | voice & piano ».'
-  institution: f-pbmgf
   features:
     - autograph
 remarks:
-  - Nous ignorons si la version d'origine a subi des modifications lors de cette mise au net datant de 1973. La dédicace a été ajoutée lors de la révision. Le titre de l'œuvre a été changé dans le CaG pour celui de « Cinq Mélodies » mais conserve son titre d'origine sur le Ms. Les titres des mouvements ne figurent pas sur le Ms. mais sont renseignés dans le CaG.
+  - >-
+    1961 (mention autographe « 61-73 » sur le manuscrit). 
+
+    Ordre relatif avec T 4 (*Petite Suite*, [1961]) : incertain ; voir la notice
+    T 4.
+
+    Nous ignorons si la version d'origine a subi des modifications lors de cette
+    mise au net datant de 1973. La dédicace a été ajoutée lors de la révision. 
+
+    Le titre de l'œuvre a été changé dans le CaG pour celui de « Cinq Mélodies »
+    mais conserve son titre d'origine sur le Ms. 
+
+    Les titres des mouvements ne figurent pas sur le Ms. mais sont renseignés
+    dans le CaG.
+intertextual: []
+documents: []
+premiere_recording: []
 editions:
   - text: Donemus, 2018, D 18216
     publisher: Donemus
     year: 2018
+    status: ''
+unpublished: false
 performances:
   - premiere: true
     date: '2001-05-14'
@@ -64,7 +88,9 @@ performances:
         role: baryton
       - person: grigori-abramian
         role: piano
-    text: Paris, Théâtre du Tambour Royal, 14 mai 2001, par Jacques Loiseleur des Longchamps (baryton) et Grigori Abramian (piano)
+    text: >-
+      Paris, Théâtre du Tambour Royal, 14 mai 2001, par Jacques Loiseleur des
+      Longchamps (baryton) et Grigori Abramian (piano)
   - premiere: false
     date: '2004-10-16'
     venue: Paris, Christie's
@@ -84,7 +110,9 @@ performances:
         role: baryton
       - person: leo-de-bono
         role: piano
-    text: Grange de La Prée, 15 mai 2010, par Jacques Loiseleur des Longchamps (baryton) et Léo de Bono (piano)
+    text: >-
+      Grange de La Prée, 15 mai 2010, par Jacques Loiseleur des Longchamps
+      (baryton) et Léo de Bono (piano)
   - premiere: false
     date: '2013-01-13'
     venue: Dijon, Hôtel Maleteste
@@ -94,13 +122,15 @@ performances:
         role: baryton
       - person: mary-olivon
         role: piano
-    text: Dijon, Hôtel Maleteste, 13 janvier 2013, par Jacques Loiseleur des Longchamps (baryton) et Mary Olivon (piano)
-duration: 4'40
+    text: >-
+      Dijon, Hôtel Maleteste, 13 janvier 2013, par Jacques Loiseleur des
+      Longchamps (baryton) et Mary Olivon (piano)
+journal: []
 bibliography:
   - ref: francois-sappey-nectoux-2013
     pages: 18, 21, 73, 150-152, 282, 291
+discography: []
 videography:
   - text: Les Incontournables, DVD nº 7
 related: []
-editorial_notes:
-  - Reproduction de l'intégralité des poèmes ?
+editorial_notes: []
