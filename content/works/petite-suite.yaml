@@ -1,6 +1,6 @@
+title: Petite Suite
 th: '3'
 book: 1
-title: Petite Suite
 alt_titles:
   - title: Suite
     source: Carnet de bord
@@ -14,17 +14,53 @@ movements:
   - title: '[2.] Gamme'
   - title: '[3.] Tristesse'
   - title: '[4.] Tourbillon'
+text:
+  authors: []
 composition:
-  text: '1961'
+  text: '[1961]'
   date: '1961'
+duration: 5'40
+dedication:
+  persons: []
 sources:
   status: not_located
+  items: []
+  papers: []
+  features: []
 remarks:
-  - 'Incipits restitués d''après la transcription d''oreille du témoignage sonore de la création issu du disque INA : *Le Rêve du monde*. Les fichiers d''origine numérisés et conservés dans le fonds font état d''une présentation orale des titres de mouvements absente du disque commercial. L''œuvre est cataloguée par l''auteur sous le titre de « Petite Suite » dans le CaG.'
+  - >-
+    Incipits restitués d’après la transcription d’oreille du témoignage sonore
+    de la création issu du disque INA : *Le Rêve du monde*. 
+
+    L’œuvre est cataloguée par l’auteur sous le titre de « Petite Suite » dans
+    le CaG.
+
+
+    [1961]. Date établie d’après l’annonce faite lors de la création (mai 1962 ;
+    enregistrement INA) : « écrite à l’âge de onze ans », soit entre le 3
+    janvier 1961 et le 2 janvier 1962. Aucune source ne permet de situer l’œuvre
+    plus précisément dans l’année.
+
+
+    Ordre relatif avec T 5 (*Cinq Chansons enfantines*, op. 1, 1961) :
+    incertain. 
+
+    La *Petite Suite* est placée avant l’op. 1 par convention, sur la foi d’un
+    indice stylistique : son écriture, telle que la restitue l’enregistrement de
+    1962, paraît moins élaborée que celle de l’op. 1. Mais cet indice est
+    fragile. L’op. 1 n’est connu que par un manuscrit de 1973 (mention « 61-73
+    »), qui peut refléter une potentielle révision postérieure ; la comparaison
+    porte en outre sur des sources de nature différente (enregistrement et
+    partition) et sur des genres distincts.
+intertextual: []
+documents: []
+premiere_recording: []
 editions:
   - text: '*Piano Book*, op. 78, Donemus, 2019, D 18217'
     publisher: Donemus
     year: 2019
+    status: ''
+unpublished: false
 performances:
   - premiere: true
     date: '1962-05-23'
@@ -34,14 +70,19 @@ performances:
       - person: olivier-greif
         role: piano
     text: Paris, « salle de l'ancien Conservatoire », 23 mai 1962, l'auteur au piano
-duration: 5'40
 journal:
   - date_text: 23 mai 1962
     date: '1962-05-23'
     quotes:
-      - « Lors d'un "Concert consacré aux œuvres dédiées à Madame Lucette Descaves", donné dans la salle de l'ancien Conservatoire, j'interprète une *Suite* de ma composition. »
+      - >-
+        « Lors d'un "Concert consacré aux œuvres dédiées à Madame Lucette
+        Descaves", donné dans la salle de l'ancien Conservatoire, j'interprète
+        une *Suite* de ma composition. »
+bibliography: []
 discography:
   - text: '*Le Rêve du monde*, (2010)'
     title: Le Rêve du monde
     year: 2010
+videography: []
 related: []
+editorial_notes: []
