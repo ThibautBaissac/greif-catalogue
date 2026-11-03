@@ -37,13 +37,17 @@ try {
   for (const { id, to } of changes) writeWorkTh(id, to);
 
   const edited = Object.keys(head).filter(id => base.ths[id] !== head[id]).sort();
+  const removed = Object.keys(base.ths).filter(id => !(id in head)).sort();
+  const cause = [edited.length && `editing ${edited.join(", ")}`, removed.length && `removing ${removed.join(", ")}`]
+    .filter(Boolean)
+    .join(" and ");
   const lines = changes.map(c => `${c.id}: Th ${c.from} -> Th ${c.to}`);
-  console.log(`Base ${base.sha.slice(0, 7)}, œuvres éditées : ${edited.join(", ")}`);
+  console.log(`Base ${base.sha.slice(0, 7)} ; ${cause}`);
   console.log(lines.join("\n"));
 
   if (process.argv.includes("--commit")) {
     git("add", WORKS_DIR);
-    git("commit", "-m", `Renumber Th after editing ${edited.join(", ")}`, "-m", lines.join("\n"));
+    git("commit", "-m", `Renumber Th after ${cause}`, "-m", lines.join("\n"));
   }
 } catch (e) {
   if (!(e instanceof RenumberError)) throw e;

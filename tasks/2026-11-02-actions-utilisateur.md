@@ -29,7 +29,11 @@ Le contrôle a déjà été fait sur les œuvres : un enregistrement dans Keysta
 2. Sur Netlify, importer le dépôt (la configuration vient de `netlify.toml`), puis reporter l'URL obtenue dans `astro.config.mjs` (`site`).
 3. Pour Keystatic en production : passer temporairement `storage` en `github` en local, puis suivre l'assistant de création de la GitHub App. Copier les quatre variables de `.env.example` dans Netlify. Ajouter la callback `https://<site>/api/keystatic/github/oauth/callback`.
 
-## 4. Décisions éditoriales
+## 4. Renumérotation automatique des Th
+
+Après le premier push qui contient `.github/workflows/renumber-th.yml`, vérifier sur GitHub (onglet Actions) que l'Action « Renumber Th » tourne. Si le push de l'Action est refusé, activer « Read and write permissions » dans Settings → Actions → General → Workflow permissions. Premier essai conseillé : créer dans Keystatic la nouvelle œuvre à Th 3, puis contrôler le commit « Renumber Th » et le déploiement Netlify qui suit.
+
+## 5. Décisions éditoriales
 
 - `CITATION.cff` : auteurs et licence (marqueurs `TODO(user)`).
 - Bibliographie : compléter la notice CSL « François-Sappey & Nectoux (2013) » dans Keystatic.

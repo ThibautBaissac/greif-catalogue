@@ -59,6 +59,8 @@ const workFields = {
   title: slugField("Titre"),
   th: fields.text({
     label: "Th",
+    description:
+      "Pour insérer ou déplacer une œuvre, ne changer que son numéro : les suivants se décalent seuls après l'enregistrement (une à deux minutes en production).",
     validation: { isRequired: true, pattern: { regex: TH_PATTERN, message: "Un nombre, éventuellement suivi d'une lettre (ex. 45, 45a)" } },
   }),
   book: fields.integer({ label: "Livre", validation: { isRequired: true, min: 1, max: 6 } }),

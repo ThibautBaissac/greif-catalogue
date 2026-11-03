@@ -44,6 +44,7 @@ Une œuvre est à `/fr/oeuvres/<id>/` et `/en/works/<id>/`. Renommer un fichier 
 - En local : `npm run dev`, puis ouvrir `/keystatic`. Les modifications sont écrites directement dans `content/`.
 - En production : Keystatic passe par GitHub (mode `github`, dépôt déclaré dans `keystatic.config.ts`). Les variables à fournir, dans Netlify et dans un `.env` local ignoré par Git, sont listées dans `.env.example`. Aucun secret ne doit être commité.
 - Chaque enregistrement est un commit ; Netlify reconstruit le site à chaque push.
+- Numéros Th : pour insérer, déplacer ou supprimer une œuvre, on ne change que cette œuvre. La GitHub Action `.github/workflows/renumber-th.yml` décale ensuite les autres numéros pour qu'ils restent continus à partir de 1, et fait un commit « Renumber Th ». Un groupe à suffixes (`35a`, `35b`) se décale d'un bloc ; un Th à suffixe (`35c`) rejoint le groupe existant sans rien décaler. Netlify ignore le build intermédiaire (`ignore` dans `netlify.toml`, script `scripts/th-ignore.ts`). En local, après une modification dans `content/works/`, lancer `node scripts/renumber-th.ts` produit le même résultat sans commit.
 - Les pages `home` et `about` sont des fichiers Markdoc (`content/pages/<lang>/*.mdoc`) éditables dans Keystatic (« Pages (FR) », « Pages (EN) »).
 
 ## Mode éditorial
