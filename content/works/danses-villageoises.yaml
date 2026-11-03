@@ -1,6 +1,6 @@
+title: Danses villageoises
 th: '2'
 book: 1
-title: Danses villageoises
 alt_titles:
   - title: Scènes villageoises
     source: Enregistrement
@@ -12,13 +12,33 @@ categories:
 movements:
   - title: '[1. Village perdu]'
   - title: '[2. La Gardeuse d''oies]'
+text:
+  authors: []
 composition:
-  text: inconnue
+  text: '[1960?]'
+  date: 1960?
+duration: 1'10
+dedication:
+  persons: []
 sources:
   status: lost
-audio_source: F-Pbmgf. Numérisation sur Compact Disc du disque vinyle original Pyral 45 tours Voxigrave conservé à l'INA.
+  items: []
+  papers: []
+  features: []
+audio_source: >-
+  F-Pbmgf. Numérisation sur Compact Disc du disque vinyle original Pyral 45
+  tours Voxigrave conservé à l'INA.
 remarks:
-  - Incipits restitués d'après la transcription d'oreille du témoignage sonore issu du disque vinyle. Le disque porte le tampon « 12 juin 1960 ». La pièce annoncée oralement dans l'enregistrement est présentée sous le titre de « Scènes villageoises ».
+  - >-
+    Incipits restitués d'après la transcription d'oreille du témoignage sonore
+    issu du disque vinyle. Le disque porte le tampon « 12 juin 1960 ». La pièce
+    annoncée oralement dans l'enregistrement est présentée sous le titre de «
+    Scènes villageoises ».
+intertextual: []
+documents: []
+premiere_recording: []
+editions: []
+unpublished: false
 performances:
   - premiere: true
     date: '1960-06-12'
@@ -28,10 +48,16 @@ performances:
       - person: olivier-greif
         role: piano
     text: '[Paris, 12 juin 1960], l''auteur au piano'
-duration: 1'10
 journal:
   - date_text: 24 juin 1960
     date: '1960-06-24'
     quotes:
-      - « Audition des élèves de Lucette Descaves à la salle Berlioz. Je joue la *Sicilienne* de Fauré et des *Danses villageoises* de mon cru, dont j'ai hélas égaré la partition depuis. »
+      - >-
+        « Audition des élèves de Lucette Descaves à la salle Berlioz. Je joue la
+        *Sicilienne* de Fauré et des *Danses villageoises* de mon cru, dont j'ai
+        hélas égaré la partition depuis. »
+bibliography: []
+discography: []
+videography: []
 related: []
+editorial_notes: []
