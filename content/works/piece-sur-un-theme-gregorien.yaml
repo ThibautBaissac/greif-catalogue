@@ -16,7 +16,7 @@ composition:
 dedication:
   persons: []
 sources:
-  status: ''
+  status: not_located
   items: []
   papers: []
   features: []
@@ -27,7 +27,17 @@ premiere_recording: []
 editions: []
 unpublished: false
 performances: []
-journal: []
+journal:
+  - date_text: 28 octobre 1977
+    date: '1977-10-28'
+    context: Lettre au père Jean Claire de Solesmes
+    quotes:
+      - >-
+        « Lorsque j’étais petit, vers l’âge de dix ans, j’ai écrit une pièce
+        pour piano, dont je ne me souviens plus du titre mais qui était basée
+        sur un thème “chanté par les moines de l’Abbaye de Solesmes” (comme je
+        l’avais fièrement noté sur la partition). J’avais trouvé cela dans un
+        Dictionnaire de la Musique. »
 bibliography: []
 discography: []
 videography: []
