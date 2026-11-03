@@ -1,0 +1,39 @@
+# After a Th edit in Keystatic, shift the other works so the Th stay contiguous, then commit.
+# Pushes made with GITHUB_TOKEN do not trigger workflows, so the Action's own commit does not loop.
+name: Renumber Th
+
+on:
+  push:
+    branches: [main]
+    paths: ["content/works/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: renumber-th
+  cancel-in-progress: false
+
+jobs:
+  renumber:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 200
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Renumber and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3; do
+            node scripts/renumber-th.ts --commit
+            git push origin HEAD:main && exit 0
+            git fetch origin main
+            git reset --hard origin/main
+          done
+          exit 1

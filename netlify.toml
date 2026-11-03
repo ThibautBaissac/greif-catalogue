@@ -1,6 +1,8 @@
 [build]
   command = "npm run build"
   publish = "dist"
+  # Skips the build of a Keystatic push whose Th await renumbering (see .github/workflows/renumber-th.yml).
+  ignore = "node scripts/th-ignore.ts"
 
 [build.environment]
   NODE_VERSION = "22"
